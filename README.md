@@ -110,7 +110,7 @@ export DC_CAP_USD=3                 # spend cap; the next live call stops once t
 
 Results go to `runs/<case>/result.json`; the call log to `runs/<case>/calls.jsonl`; the spend ledger to `runs/ledger.jsonl`. `python -m discovery_clock reverify --case <id>` re-runs the code checks over the saved model answer without calling any model.
 
-Tests: `.venv/bin/python -m pytest` (87 tests, no network).
+Tests: `.venv/bin/python -m pytest` (89 tests, no network).
 
 ## Evaluation
 
@@ -167,7 +167,7 @@ Watching the file once at normal speed takes 31.7 minutes; the run returned a ti
 
 ## Data and rights
 
-All videos come from the official YouTube channel of the Volusia Sheriff's Office (@VolusiaSheriff). They are public records under Florida law (Florida Statutes ch. 119), released by the agency; Florida agencies cannot claim copyright in public records (*Microdecisions, Inc. v. Skinner*, 889 So. 2d 871, Fla. 2d DCA 2004).
+All videos were published by the Volusia Sheriff's Office on its official YouTube channel (@VolusiaSheriff); copies for replay are in the `eval-media` release (below). They are public records under Florida law (Florida Statutes ch. 119), released by the agency; Florida agencies cannot claim copyright in public records (*Microdecisions, Inc. v. Skinner*, 889 So. 2d 871, Fla. 2d DCA 2004).
 
 | case | video |
 |---|---|
