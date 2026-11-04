@@ -109,4 +109,105 @@
     });
   }
   drawMarkers();
+
+  // ---------------- SAM 3.1: follow a person (click in the video) and draw the box during playback
+  const caseId = dataEl.dataset.case;
+  const wrap = document.querySelector(".vwrap");
+  const canvas = document.getElementById("overlay");
+  const followBtn = document.getElementById("follow");
+  const followStatus = document.getElementById("follow-status");
+  let trackData = null;
+
+  function contentRect() {
+    const cw = video.clientWidth, ch = video.clientHeight, vw = video.videoWidth || 1280, vh = video.videoHeight || 720;
+    const s = Math.min(cw / vw, ch / vh);
+    return { s, ox: (cw - vw * s) / 2, oy: (ch - vh * s) / 2, vw, vh };
+  }
+  function drawTrack() {
+    if (!canvas || !video) return;
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = video.clientWidth * dpr; canvas.height = video.clientHeight * dpr;
+    const g = canvas.getContext("2d");
+    g.setTransform(dpr, 0, 0, dpr, 0, 0);
+    g.clearRect(0, 0, canvas.width, canvas.height);
+    if (!trackData || !trackData.boxes || !trackData.boxes.length) return;
+    const t = video.currentTime;
+    let best = null;
+    for (const b of trackData.boxes) if (!best || Math.abs(b.t - t) < Math.abs(best.t - t)) best = b;
+    if (!best || Math.abs(best.t - t) > 0.15) return;
+    const r = contentRect();
+    const [x1, y1, x2, y2] = best.box;
+    g.strokeStyle = "#2dd4bf"; g.lineWidth = 3;
+    g.strokeRect(r.ox + x1 * r.s, r.oy + y1 * r.s, (x2 - x1) * r.s, (y2 - y1) * r.s);
+    g.fillStyle = "#2dd4bf"; g.font = "bold 13px -apple-system, sans-serif";
+    g.fillText("followed person · SAM 3.1", r.ox + x1 * r.s + 4, Math.max(14, r.oy + y1 * r.s - 6));
+  }
+  const fmt = s => new Date(s * 1000).toISOString().slice(11, 19);
+  async function pollTrack(once) {
+    try {
+      const st = await (await fetch(`/api/cases/${encodeURIComponent(caseId)}/track`, { cache: "no-store" })).json();
+      if (st.state === "done") {
+        trackData = st;
+        followStatus.textContent = `Following from ${fmt(st.window[0])} to ${fmt(st.window[1])} · ${st.boxes.length} boxes`;
+        drawTrack();
+        return;
+      }
+      if (st.state === "failed") { followStatus.textContent = `SAM 3.1 failed: ${st.error}`; return; }
+      if (st.state === "running") { followStatus.textContent = "SAM 3.1 is following the person…"; if (!once || true) setTimeout(() => pollTrack(false), 2000); }
+    } catch (e) { setTimeout(() => pollTrack(false), 3000); }
+  }
+  if (video && canvas && followBtn) {
+    video.addEventListener("timeupdate", drawTrack);
+    video.addEventListener("seeked", drawTrack);
+    window.addEventListener("resize", drawTrack);
+    followBtn.addEventListener("click", () => {
+      const on = !wrap.classList.contains("picking");
+      wrap.classList.toggle("picking", on);
+      followBtn.classList.toggle("on", on);
+      followStatus.textContent = on ? "Pause on a frame and click the person to follow" : "";
+      if (on) video.pause();
+    });
+    canvas.addEventListener("click", async e => {
+      if (!wrap.classList.contains("picking")) return;
+      const rect = canvas.getBoundingClientRect(), r = contentRect();
+      const x = Math.round((e.clientX - rect.left - r.ox) / r.s), y = Math.round((e.clientY - rect.top - r.oy) / r.s);
+      if (x < 0 || y < 0 || x >= r.vw || y >= r.vh) return;
+      wrap.classList.remove("picking"); followBtn.classList.remove("on");
+      video.pause();
+      followStatus.textContent = "SAM 3.1 is following the person…";
+      const res = await fetch(`/api/cases/${encodeURIComponent(caseId)}/track`, {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ t: video.currentTime, x, y }) });
+      if (!res.ok) { followStatus.textContent = `Could not start: ${await res.text()}`; return; }
+      setTimeout(() => pollTrack(false), 1500);
+    });
+    pollTrack(true);
+  }
+
+  // ---------------- export a clip for a claim with bystander faces blurred (SAM 3.1 "face")
+  document.querySelectorAll(".clip-btn").forEach(btn => {
+    const status = btn.parentElement.querySelector(".clip-status");
+    const url = `/api/cases/${encodeURIComponent(caseId)}/claims/${encodeURIComponent(btn.dataset.id)}/clip`;
+    const show = st => {
+      if (st.state === "done") {
+        status.innerHTML = `<a href="${st.url}" target="_blank" rel="noopener">Open clip</a> · ${fmt(st.window[0])}–${fmt(st.window[1])} · ${st.face_boxes} face boxes blurred${st.kept_followed_person ? " · followed person kept" : ""}`;
+        return true;
+      }
+      if (st.state === "failed") { status.textContent = `Failed: ${st.error}`; return true; }
+      if (st.state === "running") { status.textContent = "SAM 3.1 is finding faces…"; return false; }
+      return true;
+    };
+    const poll = async () => {
+      try { if (!show(await (await fetch(url, { cache: "no-store" })).json())) setTimeout(poll, 2000); }
+      catch (e) { setTimeout(poll, 3000); }
+    };
+    btn.addEventListener("click", async ev => {
+      ev.stopPropagation();
+      status.textContent = "Starting…";
+      const r = await fetch(url, { method: "POST" });
+      if (!r.ok) { status.textContent = `Could not start: ${await r.text()}`; return; }
+      setTimeout(poll, 1500);
+    });
+    poll();
+  });
 })();

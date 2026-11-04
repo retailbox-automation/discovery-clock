@@ -29,7 +29,7 @@ def test_case_page_shows_statuses_player_clock_and_code_notes(web):
     assert 'src="/media/case1"' in t and "Camera clock 21:00:29" in t
     assert "Code check · model said “on recording”" in t and "quote not found near timecode" in t
     assert "Muse Voice Transcribe" in t and "Muse Spark 1.3" in t
-    data = json.loads(t.split('id="case-data" type="application/json">', 1)[1].split("</script>", 1)[0])
+    data = json.loads(t.split('type="application/json">', 1)[1].split("</script>", 1)[0])
     assert len(data["claims"]) == 3
 
 
@@ -77,3 +77,32 @@ def test_progress_page_while_running(web, dirs):
 def test_create_case_rejects_missing_video(web):
     r = web.post("/cases", data={"report": "A man fell.", "mode": "lines"})
     assert r.status_code == 400
+
+
+def _wait(web, url, tries=100):
+    import time
+    for _ in range(tries):
+        st = web.get(url).json()
+        if st.get("state") in ("done", "failed"):
+            return st
+        time.sleep(0.05)
+    raise AssertionError("job did not finish")
+
+
+def test_follow_person_and_export_clip(web, dirs, monkeypatch):
+    from test_track import SamClient
+    monkeypatch.setattr(A, "MetaClient", lambda case_id, runs_dir=None: SamClient(
+        case_id, runs_dir=dirs["runs"], recordings_dir=dirs["recordings"], ledger_path=dirs["ledger"]))
+    assert web.post("/api/cases/case1/track", json={"t": 1.0, "x": 9999, "y": 1}).status_code == 400
+    assert web.post("/api/cases/case1/track", json={"t": 1.0, "x": 80, "y": 45}).json()["state"] == "running"
+    st = _wait(web, "/api/cases/case1/track")
+    assert st["state"] == "done" and st["boxes"], st
+    r = web.post("/api/cases/case1/claims/C1/clip")
+    assert r.status_code == 200
+    st = _wait(web, "/api/cases/case1/claims/C1/clip")
+    assert st["state"] == "done", st
+    clip = web.get(st["url"])
+    assert clip.status_code == 200 and len(clip.content) > 1000
+    assert web.post("/api/cases/case1/claims/C3/clip").status_code == 404  # not_found claim has no timecode
+    t = web.get("/cases/case1").text
+    assert "Follow a person · SAM 3.1" in t and "Export clip · bystander faces blurred" in t

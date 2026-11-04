@@ -14,8 +14,8 @@ from fastapi.responses import FileResponse, HTMLResponse, JSONResponse, Redirect
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
-from . import RUNS, pipeline
-from .meta import SPARK_MODEL, SPARK_OPEN_MODEL, VOICE_MODEL, SAM_MODEL, read_calls
+from . import RUNS, pipeline, track as track_mod
+from .meta import SPARK_MODEL, SPARK_OPEN_MODEL, VOICE_MODEL, SAM_MODEL, MetaClient, read_calls
 
 HERE = Path(__file__).resolve().parent
 CASE_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,80}$")
@@ -175,3 +175,113 @@ def api_calls(case: str = "", limit: int = 60):
     for r in rows:
         r["model_name"] = MODEL_NAMES.get(r.get("model"), r.get("model"))
     return JSONResponse({"calls": rows[::-1], "total_usd": round(sum(r.get("usd", 0) or 0 for r in rows), 5)})
+
+
+# ---------------------------------------------------------------- SAM 3.1: follow a person, export a clip with faces blurred
+CLIP_PAD_S = 2.0
+CLIP_MAX_S = 30.0
+JOB_LOCK = threading.Lock()
+
+
+def _job(status_path: Path, fn):
+    status_path.parent.mkdir(parents=True, exist_ok=True)
+    status_path.write_text(json.dumps({"state": "running", "started": time.time()}))
+
+    def work():
+        with JOB_LOCK:
+            try:
+                out = fn()
+                status_path.write_text(json.dumps({"state": "done", **out}))
+            except Exception as e:  # shown in the UI
+                status_path.write_text(json.dumps({"state": "failed", "error": f"{type(e).__name__}: {str(e)[:400]}"}))
+    threading.Thread(target=work, daemon=True).start()
+
+
+def _case_media(case_id: str) -> tuple[Path, dict, dict]:
+    d = _case_dir(case_id)
+    result, case = _read(d / "result.json"), _read(d / "case.json") or {}
+    if not result:
+        raise HTTPException(409, "the case has no result yet")
+    vp = video_path(case_id)
+    if vp is None:
+        raise HTTPException(404, "video file is not on this computer")
+    return vp, result, case
+
+
+@app.post("/api/cases/{case_id}/track")
+async def start_track(case_id: str, request: Request):
+    vp, result, case = _case_media(case_id)
+    body = await request.json()
+    try:
+        t, x, y = float(body["t"]), int(body["x"]), int(body["y"])
+    except (KeyError, TypeError, ValueError):
+        raise HTTPException(400, "need t, x, y")
+    dur = result["video"]["duration_s"]
+    w, h = track_mod.video_size(vp)
+    if not (0 <= t <= dur and 0 <= x < w and 0 <= y < h):
+        raise HTTPException(400, "point outside the video")
+    d = _case_dir(case_id)
+    status = d / "tracks" / "latest.json"
+
+    def run():
+        client = MetaClient(case_id, runs_dir=runs_dir())
+        out = track_mod.track(client, vp, result["video"]["sha256"], dur, t, x, y)
+        track_mod.save_json(out, d / "tracks" / f"{t:.1f}-{x}-{y}.json")
+        return out
+    _job(status, run)
+    return JSONResponse({"state": "running"})
+
+
+@app.get("/api/cases/{case_id}/track")
+def get_track(case_id: str):
+    st = _read(_case_dir(case_id) / "tracks" / "latest.json")
+    return JSONResponse(st or {"state": "none"})
+
+
+def _clip_window(c: dict, dur: float) -> tuple[float, float]:
+    a = max(0.0, c["start_s"] - CLIP_PAD_S)
+    b = min(dur, max(c["end_s"], c["start_s"]) + CLIP_PAD_S)
+    return round(a, 2), round(min(b, a + CLIP_MAX_S), 2)
+
+
+@app.post("/api/cases/{case_id}/claims/{claim_id}/clip")
+def start_clip(case_id: str, claim_id: str):
+    vp, result, case = _case_media(case_id)
+    c = next((x for x in result["claims"] if x["id"] == claim_id), None)
+    if c is None or c.get("start_s") is None:
+        raise HTTPException(404, "claim has no timecode")
+    if not CASE_RE.match(claim_id):
+        raise HTTPException(400, "bad claim id")
+    d = _case_dir(case_id)
+    dur = result["video"]["duration_s"]
+    a, b = _clip_window(c, dur)
+
+    def run():
+        client = MetaClient(case_id, runs_dir=runs_dir())
+        fc = track_mod.faces(client, vp, result["video"]["sha256"], dur, a, b)
+        latest = _read(d / "tracks" / "latest.json") or {}
+        keep = latest.get("boxes") if latest.get("state") == "done" else None
+        out_path = d / "clips" / f"{claim_id}.mp4"
+        track_mod.export_clip(vp, a, b, fc["boxes"], out_path, keep_boxes=keep)
+        faces_n = len({(r["t"], r["id"]) for r in fc["boxes"]})
+        return {"url": f"/clips/{case_id}/{claim_id}.mp4", "window": [a, b], "face_boxes": faces_n,
+                "kept_followed_person": bool(keep)}
+    _job(d / "clips" / f"{claim_id}.json", run)
+    return JSONResponse({"state": "running", "window": [a, b]})
+
+
+@app.get("/api/cases/{case_id}/claims/{claim_id}/clip")
+def get_clip(case_id: str, claim_id: str):
+    if not CASE_RE.match(claim_id):
+        raise HTTPException(400, "bad claim id")
+    return JSONResponse(_read(_case_dir(case_id) / "clips" / f"{claim_id}.json") or {"state": "none"})
+
+
+@app.get("/clips/{case_id}/{claim_id}.mp4")
+def clip_file(case_id: str, claim_id: str):
+    if not CASE_RE.match(claim_id):
+        raise HTTPException(400, "bad claim id")
+    p = _case_dir(case_id) / "clips" / f"{claim_id}.mp4"
+    if not p.is_file():
+        raise HTTPException(404, "no clip")
+    return FileResponse(p, media_type="video/mp4", filename=f"{case_id}-{claim_id}-faces-blurred.mp4")
