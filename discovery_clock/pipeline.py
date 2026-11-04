@@ -9,12 +9,12 @@ import time
 import traceback
 from pathlib import Path
 
-from . import RECORDINGS, ROOT, RUNS, claims as claims_mod, review as review_mod, verify as verify_mod
+from . import RECORDINGS, ROOT, RUNS, claims as claims_mod, review as review_mod, stamp as stamp_mod, verify as verify_mod
 from .meta import SPARK_MODEL, VOICE_MODEL, MetaClient, sha256_file, utc_now
 
 STEPS = ["claims", "transcribe", "upload", "review", "verify"]
 STEP_LABELS = {"claims": "Split the report into claims", "transcribe": "Transcribe speech with speakers",
-               "upload": "Upload the recording", "review": "Place each claim on the recording",
+               "upload": "Stamp video time on each frame, upload", "review": "Place each claim on the recording",
                "verify": "Code checks the model's answer"}
 RUN_LOCK = threading.Lock()
 
@@ -88,7 +88,14 @@ def run(case_id: str, video: str | Path, report_text: str, *, claims_mode: str =
 
         current = "upload"
         st.step("upload", "running")
-        fid = client.upload(video)
+        media_key = f"{media_sha}:{stamp_mod.STAMP_VERSION}"
+        if client.replay:  # the recorded upload is found by media_key; no need to rebuild the stamped copy
+            fid = client.upload(video, media_key=media_key)
+        else:
+            stamped = case_dir / "upload-stamped.mp4"
+            stamp_mod.make_stamped(video, stamped, duration)
+            fid = client.upload(stamped, media_key=media_key)
+            stamped.unlink(missing_ok=True)
         st.step("upload", "done")
 
         current = "review"

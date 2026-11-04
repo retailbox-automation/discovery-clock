@@ -253,9 +253,11 @@ class MetaClient:
         return json.loads(out.stdout)
 
     # ---------- Files API ----------
-    def upload(self, path: str | os.PathLike, *, step: str = "upload") -> str:
-        sha = sha256_file(path)
-        size = os.path.getsize(path)
+    def upload(self, path: str | os.PathLike, *, step: str = "upload", media_key: str | None = None) -> str:
+        """media_key identifies the content for record/replay (default: sha256 of the file). The pipeline passes
+        "<sha256 of the original recording>:<stamp version>" so a replay does not need to rebuild the stamped copy."""
+        sha = media_key or sha256_file(path)
+        size = os.path.getsize(path) if os.path.exists(path) else None
         key = {"endpoint": "/files", "purpose": "user_data", "media_sha256": sha}
         h = canonical_hash(key)
         t0 = time.time()
@@ -271,7 +273,7 @@ class MetaClient:
         self.file_sha[fid] = sha
         self._save_recording(step, h, key, {"id": fid}, {"latency_s": round(sec, 2)})
         self._log({"step": step, "model": "-", "endpoint": "POST /files", "latency_s": round(sec, 2), "usd": 0.0,
-                   "request": {"purpose": "user_data", "file": Path(path).name, "bytes": size, "sha256": sha[:16]},
+                   "request": {"purpose": "user_data", "file": Path(path).name, "bytes": size, "content": sha[:16] + sha[64:]},
                    "response": _clip(json.dumps({"id": fid})), "replay_changed": changed})
         return fid
 

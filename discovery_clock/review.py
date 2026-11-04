@@ -21,14 +21,20 @@ SCHEMA = {"type": "object", "additionalProperties": False, "required": ["claims"
 
 PROMPT = """You review a body-worn camera recording against a written account of the same incident.
 For each numbered CLAIM, find where the recording shows or says it.
+TIME: our software stamped every frame in the top-left corner with "t=N s" = seconds from the start of this video
+(the stamp is not part of the original recording). Read start_s, end_s and every video_s from that stamp; do not estimate time.
 status: on_recording = the video or the speech clearly supports the claim at start_s..end_s;
-not_found = the claim is not visible or audible anywhere in this recording (start_s=end_s=-1);
-check = the recording shows something that does not match the claim, or support is only partial. Never guess: if unsure, use check.
+not_found = the recording neither shows nor contradicts the claim (start_s=end_s=-1);
+check = the recording contradicts the claim, or shows only part of it in a way that matters (for example the claim says
+a man was clinging to a pipe and the recording shows him floating free). If unsure between on_recording and check, use check.
+A name, rank or job title that the recording cannot show does not by itself make a claim partial: if the event is shown,
+use on_recording and say in reason that the name or rank is not shown.
 evidence: what is visible or said at that time. When you quote speech, copy the words exactly from TURNS inside double quotes.
-reason: one sentence why this status. Times are seconds from the start of the video.
-camera_clock: read the date and time burned into the frame by the camera (for example "2026-09-27 21:00:29 -0400  AXON BODY 4 D01A16937")
-on the first frame, on the last frame, and at each point where the camera id or the clock jumps (the video can join several cameras).
-For each reading give video_s, clock exactly as printed (date and time) and camera (the id printed, or ""). If no clock is printed, return an empty list.
+reason: one sentence why this status.
+camera_clock: read the date and time the body camera burned into the frame (for example "2026-09-27 21:00:29 -0400  AXON BODY 4 D01A16937",
+usually top-right) on the first frame, on the last frame, and wherever the camera id or the clock jumps (the video can join several cameras).
+For each reading give video_s (from our stamp), clock exactly as printed (date and time) and camera (the id printed, or "").
+If the camera prints no clock, return an empty list.
 TURNS (speech with speaker labels and times, from a separate transcriber):
 {turns}
 CLAIMS (kind in brackets):
