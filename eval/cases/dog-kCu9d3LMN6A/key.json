@@ -1,0 +1,17 @@
+{
+ "case": "dog-kCu9d3LMN6A",
+ "video_id": "kCu9d3LMN6A",
+ "source": "https://www.youtube.com/watch?v=kCu9d3LMN6A",
+ "publisher": "Volusia Sheriff's Office (official channel)",
+ "labels": {
+  "C1": "account",
+  "C2": "account",
+  "C3": "account",
+  "C4": "account",
+  "C5": "account",
+  "C6": "account",
+  "C7": "planted_invented",
+  "C8": "planted_contradiction"
+ },
+ "how_labels_were_made": "account = sentence from the official narrative published with the video (names replaced); planted_* = written by us before any model run; planted claims must never be marked on_recording."
+}

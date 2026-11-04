@@ -1,0 +1,16 @@
+{
+ "case": "housefire-phHtxd9Ln3Q",
+ "video_id": "phHtxd9Ln3Q",
+ "source": "https://www.youtube.com/watch?v=phHtxd9Ln3Q",
+ "publisher": "Volusia Sheriff's Office (official channel)",
+ "labels": {
+  "C1": "account",
+  "C2": "account",
+  "C3": "account",
+  "C4": "account",
+  "C5": "account",
+  "C6": "planted_contradiction",
+  "C7": "planted_invented"
+ },
+ "how_labels_were_made": "account = sentence from the official narrative published with the video (names replaced); planted_* = written by us before any model run; planted claims must never be marked on_recording."
+}
