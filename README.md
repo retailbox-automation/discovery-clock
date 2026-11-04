@@ -4,7 +4,7 @@
 
 For each claim in the report it returns **On recording** (with the timecode and what is seen or said there), **Not found on recording**, or **Check this claim** (the recording shows something different or only partly supports it). Click a claim and the player jumps to that second. It never says "the officer lied": it points a public defender or prosecutor to the second of footage, and the lawyer looks.
 
-**Demo video (2:56):** VIDEO_URL · **Built:** all code in this repository was written on Nov 4, 2026, during the Meta Global AI Developer Hackathon.
+**Demo video (2:56):** https://youtu.be/A5G9qWKiq2Y · **Built:** all code in this repository was written on Nov 4, 2026, during the Meta Global AI Developer Hackathon.
 
 **At a glance**
 - **Tested on 5 public body-camera videos** (Volusia Sheriff's Office, 39 claims): all 5 planted contradictions came back as *check this claim*, 4 of the 5 planted invented claims as *not found* (1 as *check*), and none of the 10 as *on recording*; 21 of 29 claims from the agency's own written accounts got a timecode, 3 of them flagged *check*; 8 of 8 timecodes we checked against the frames by eye matched. Answer keys were sealed by hash before the first model run ([eval/RESULTS.md](eval/RESULTS.md)).
