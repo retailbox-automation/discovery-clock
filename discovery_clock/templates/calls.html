@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Live Meta calls · Discovery Clock{% endblock %}
+{% block body_class %}dark{% endblock %}
+{% block main %}
+<section class="calls-head">
+  <h1>Live Meta model calls</h1>
+  <div class="calls-ctl">
+    <label>Case
+      <select id="case-filter">
+        <option value="">all cases</option>
+        {% for c in cases %}<option value="{{ c }}" {{ 'selected' if c == case }}>{{ c }}</option>{% endfor %}
+      </select>
+    </label>
+    <span id="live-dot" class="live">● updating every 2 s</span>
+    <span id="total" class="total"></span>
+  </div>
+  <p class="muted">Each row is a real request to a Meta model and the answer it returned: time (UTC), model, endpoint, request, response, latency, cost. Keys are never shown or stored. <b>REPLAY</b> rows re-serve a recorded live answer without network.</p>
+</section>
+<section id="feed" class="feed"></section>
+{% endblock %}
+{% block scripts %}<script src="/static/calls.js"></script>{% endblock %}

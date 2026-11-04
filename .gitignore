@@ -10,3 +10,4 @@ data/media/
 *.mp4
 *.wav
 .pytest_cache/
+runs/

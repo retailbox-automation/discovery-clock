@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block title %}{{ ((result or {}).get('source') or case.get('source') or {}).get('title') or case_id }} · Discovery Clock{% endblock %}
+{% block main %}
+{% set src = (result or {}).get('source') or case.get('source') %}
+<section class="case-head">
+  <h1>{{ (src or {}).get('title') or case_id }}</h1>
+  <div class="muted small"><code>{{ case_id }}</code>
+    {% if src %} · <a href="{{ src.url }}" target="_blank" rel="noopener">{{ src.publisher or 'source' }}</a>{% endif %}
+    {% if result and result.replay %} · <span class="pill rp">replayed from recorded Meta responses</span>{% endif %}
+  </div>
+</section>
+
+{% if not result %}
+<section class="card progress" id="progress" data-case="{{ case_id }}">
+  <h2>{% if status.state == 'failed' %}The run failed{% else %}Checking the report…{% endif %}</h2>
+  <ol class="steps">
+  {% for s in steps %}
+    {% set st = (status.steps or {}).get(s, {}) %}
+    <li class="step {{ st.state or 'pending' }}" data-step="{{ s }}"><span class="mark"></span>{{ labels[s] }}<span class="extra">{% if st.model %} · {{ st.model | model_name }}{% endif %}{% if st.count %} · {{ st.count }} claims{% endif %}{% if st.turns %} · {{ st.turns }} speech turns{% endif %}</span></li>
+  {% endfor %}
+  </ol>
+  {% if status.error %}<pre class="err">{{ status.error }}</pre>{% endif %}
+  <p class="muted small">Every model call is visible on <a href="/calls?case={{ case_id }}">Live Meta calls</a>.</p>
+</section>
+{% else %}
+{% set s = result.summary %}
+<section class="summary">
+  <div class="big">{{ s.total }} claims checked · <span class="t-on">{{ s.on_recording }} on recording</span> · <span class="t-nf">{{ s.not_found }} not found</span> · <span class="t-ck">{{ s.check }} to check</span></div>
+  <div class="chips">
+    {% if result.camera_clock %}<span class="chip clock">Camera clock {{ result.camera_clock.start }} → {{ result.camera_clock.end }}{% if result.camera_clock.date %} · {{ result.camera_clock.date }}{% endif %}</span>{% endif %}
+    <span class="chip">Claims: {{ result.models.claims | model_name }}</span>
+    <span class="chip">Speech: {{ result.models.transcribe | model_name }}</span>
+    <span class="chip">Review: {{ result.models.review | model_name }}</span>
+    <span class="chip">Checks: code ({{ s.changed_by_code }} changed)</span>
+    <a class="chip link" href="/calls?case={{ case_id }}">Meta calls →</a>
+  </div>
+</section>
+
+<div class="workspace">
+  <section class="claims" id="claims">
+    {% for c in result.claims %}
+    {% set cls = {'on_recording': 'on', 'not_found': 'nf', 'check': 'ck'}[c.status] %}
+    <article class="claim {{ cls }}" data-id="{{ c.id }}" data-start="{{ c.start_s if c.start_s is not none else '' }}" tabindex="0">
+      <div class="claim-top">
+        <span class="num">{{ loop.index }}</span>
+        <p class="claim-text">{{ c.text }}</p>
+      </div>
+      <div class="claim-status">
+        {% if c.status == 'on_recording' %}<span class="pill on">On recording · {{ c.start_s | hms }}</span>
+        {% elif c.status == 'not_found' %}<span class="pill nf">Not found on recording</span>
+        {% else %}<span class="pill ck">Check this claim{% if c.start_s is not none %} · {{ c.start_s | hms }}{% endif %}</span>{% endif %}
+        <span class="kind">{{ c.kind }}</span>
+      </div>
+      {% if c.evidence %}<p class="evidence">{{ c.evidence }}</p>{% endif %}
+      {% if c.reason %}<p class="reason">{{ c.reason }}</p>{% endif %}
+      {% for n in c.verify_notes %}
+      <p class="vnote {{ 'changed' if n.changed_status }}"><b>Code check{% if n.changed_status %} · model said “{{ c.model.status | replace('_', ' ') }}”{% endif %}:</b> {{ n.detail }}</p>
+      {% endfor %}
+    </article>
+    {% endfor %}
+  </section>
+
+  <section class="player-col">
+    <div class="sticky">
+      {% if has_video %}
+      <video id="video" controls preload="metadata" src="/media/{{ case_id }}"></video>
+      {% else %}
+      <div class="novideo">The video file is not on this computer.{% if src %} Fetch it with <code>python scripts/fetch_media.py {{ src.id }}</code>.{% endif %}</div>
+      {% endif %}
+      <div class="timeline" id="timeline" title="Claims on the recording"><div class="playhead" id="playhead"></div></div>
+      <div class="legend small"><span class="sw on"></span>on recording <span class="sw ck"></span>check this claim</div>
+      <h3>Speech on the recording <span class="muted small">· {{ result.models.transcribe | model_name }}, speakers A, B, C…</span></h3>
+      <div class="turns" id="turns">
+        {% for t in result.turns %}
+        <div class="turn" data-start="{{ t.startMs / 1000 }}" data-end="{{ t.endMs / 1000 }}"><span class="tc">{{ (t.startMs / 1000) | hms }}</span><span class="spk">{{ t.speaker }}</span><span class="tx">{{ t.transcript }}</span></div>
+        {% else %}
+        <p class="muted">No speech detected.</p>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</div>
+{% endif %}
+{% endblock %}
+{% block scripts %}
+<script id="case-data" type="application/json">{{ result_json | safe }}</script>
+<script src="/static/case.js"></script>
+{% endblock %}

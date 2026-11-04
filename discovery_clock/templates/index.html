@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block main %}
+<section class="intro">
+  <h1>Check a written report against the body-camera recording</h1>
+  <p>Every claim in the report gets a status: <span class="pill on">On recording</span> with the exact timecode,
+    <span class="pill nf">Not found on recording</span>, or <span class="pill ck">Check this claim</span> when the recording shows something different.</p>
+</section>
+
+<div class="grid2">
+<section class="card">
+  <h2>Cases</h2>
+  {% if not cases %}<p class="muted">No cases yet.</p>{% endif %}
+  <ul class="cases">
+  {% for c in cases %}
+    {% set s = (c.result or {}).get('summary') %}
+    <li>
+      <a href="/cases/{{ c.id }}" class="case-title">{{ c.title }}</a>
+      <div class="case-meta">
+        <code>{{ c.id }}</code>
+        {% if c.status.state in ('running', 'queued') %}<span class="pill run">running</span>{% endif %}
+        {% if c.status.state == 'failed' %}<span class="pill ck">failed</span>{% endif %}
+        {% if (c.result or {}).get('replay') %}<span class="pill rp">replay</span>{% endif %}
+      </div>
+      {% if s %}
+      <div class="case-sum">{{ s.total }} claims · <b class="t-on">{{ s.on_recording }}</b> on recording · <b class="t-nf">{{ s.not_found }}</b> not found · <b class="t-ck">{{ s.check }}</b> to check</div>
+      {% endif %}
+    </li>
+  {% endfor %}
+  </ul>
+</section>
+
+<section class="card">
+  <h2>New case</h2>
+  <form method="post" action="/cases" enctype="multipart/form-data" class="form">
+    <label>Case name <input name="name" placeholder="e.g. marina rescue"></label>
+    <label>Body-camera video <input type="file" name="video" accept="video/*"></label>
+    <label class="muted small">…or a video path on this computer <input name="video_path_text" placeholder="/path/to/video.mp4"></label>
+    <label>Report text <textarea name="report" rows="9" required placeholder="Paste the written incident report"></textarea></label>
+    <fieldset class="mode">
+      <label><input type="radio" name="mode" value="extract" checked> Split the report into claims (Muse Spark Open)</label>
+      <label><input type="radio" name="mode" value="lines"> One claim per line</label>
+    </fieldset>
+    <button type="submit">Check the report</button>
+  </form>
+</section>
+</div>
+{% endblock %}
