@@ -7,7 +7,7 @@ For each claim in the report it returns **On recording** (with the timecode and 
 **Demo video (2:38):** VIDEO_URL · **Built:** all code in this repository was written on Nov 4, 2026, during the Meta Global AI Developer Hackathon.
 
 **At a glance**
-- **Tested on 5 public body-camera videos** (Volusia Sheriff's Office, 39 claims): none of the 10 claims we planted (false or absent) came back as *on recording*; 21 of 29 claims from the agency's own written accounts got a timecode, 3 of them flagged *check*; 8 of 8 timecodes we checked against the frames by eye matched. Answer keys were sealed by hash before the first model run ([eval/RESULTS.md](eval/RESULTS.md)).
+- **Tested on 5 public body-camera videos** (Volusia Sheriff's Office, 39 claims): all 5 planted contradictions came back as *check this claim*, 4 of the 5 planted invented claims as *not found* (1 as *check*), and none of the 10 as *on recording*; 21 of 29 claims from the agency's own written accounts got a timecode, 3 of them flagged *check*; 8 of 8 timecodes we checked against the frames by eye matched. Answer keys were sealed by hash before the first model run ([eval/RESULTS.md](eval/RESULTS.md)).
 - **Live Meta calls on screen:** `/calls` shows every request and answer with latency and cost. A live run on a 3.7-minute video makes 4 calls and costs about $0.12.
 - **Four Meta models, nothing else at runtime:** Muse Spark 1.3, Muse Voice Transcribe and SAM 3.1 on the Meta Model API; Muse Spark Open (open weights) on Baseten. Plain code checks every model answer and can only move a claim to *check*.
 - **Run it without a key** (recorded live answers for all five cases are in `recordings/`):
@@ -83,7 +83,7 @@ DC_REPLAY=1 .venv/bin/python -m discovery_clock serve --port 8765      # http://
 
 Replaying all five evaluation cases this way gives exactly the numbers in `eval/RESULTS.md` (`python eval/run.py --results runs`).
 
-A replay checks that each request matches the recorded one (hash of the full request, with uploaded files identified by the sha256 of the video). If a request differs — changed code, or a download of the video that is not byte-identical — the recorded answer for that step is still used and `/calls` marks the row "request changed since recording". In replay, SAM 3.1 answers exist for the recorded actions only: on the fisherman case, *Follow a person* at 00:02:40 (the deputy on the dock) and *Export clip* for claim 2.
+A replay checks that each request matches the recorded one (hash of the full request, with uploaded files identified by the sha256 of the video). If a request differs — changed code, or a download of the video that is not byte-identical — the recorded answer for that step is still used and `/calls` marks the row "request changed since recording". In replay, SAM 3.1 answers exist for the recorded actions only: on the fisherman case, *Follow a person* at 00:02:40 and at 00:03:02 (the deputy on the dock; the second one is the live take shown in the video) and *Export clip* for claim 2.
 
 **With a key:**
 
@@ -115,6 +115,8 @@ One live run per case, 39 claims (from `eval/RESULTS.md`):
 | | result |
 |---|---|
 | planted claims kept off "on recording" | **10 / 10** |
+| … planted contradictions flagged "check this claim" | **5 / 5** |
+| … planted invented claims marked "not found" | 4 / 5 (1 marked "check") |
 | official-account claims that got a timecode | 21 / 29 |
 | … of which marked "check this claim" (listed in RESULTS.md with evidence and timecode for a human look) | 3 |
 | official-account claims not found in the published clip | 8 |
