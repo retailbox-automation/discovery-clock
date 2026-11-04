@@ -137,3 +137,5 @@ button.ghost { background: #fff; color: var(--teal); border: 1px solid #99f6e4; 
 button.ghost:hover { background: var(--teal-bg); }
 button.ghost.on { background: var(--teal); color: #fff; }
 .claim-actions { margin: 8px 0 0 34px; display: flex; align-items: center; gap: 10px; }
+.code-reason { margin: 8px 0 0 34px; font-size: 13.5px; color: #78350f; background: var(--amber-bg); border: 1px solid #fcd34d; border-radius: 6px; padding: 6px 9px; }
+.reason .who { font-weight: 600; color: var(--grey); }

@@ -1,0 +1,556 @@
+{
+ "case": "fisherman-fy6dRGapw_4",
+ "created_utc": "2026-11-04T18:50:24Z",
+ "replay": false,
+ "video": {
+  "name": "fy6dRGapw_4.mp4",
+  "sha256": "959f3fbcf44a0e448b9d6f7684ccdf56e8119d7a94e6bcb420f2b3164b545fce",
+  "duration_s": 222.354
+ },
+ "source": {
+  "id": "fy6dRGapw_4",
+  "url": "https://www.youtube.com/watch?v=fy6dRGapw_4",
+  "title": "Fisherman falls out of wheelchair into water - rescued!",
+  "publisher": "Volusia Sheriff's Office (official YouTube channel @VolusiaSheriff)",
+  "rights": "Florida public record (Fla. Stat. ch. 119), released by the agency; Florida agencies cannot claim copyright in public records (Microdecisions, Inc. v. Skinner, 889 So. 2d 871, Fla. 2d DCA 2004). Faces of bystanders are blurred in anything we publish; names of arrested people are not used."
+ },
+ "report": "Deputies responded to a report of a possible drowning in the marina.\nThe area was behind a locked gate.\nA man had fallen out of his wheelchair into the marina.\nThe man was clinging to a pipe to keep his head above water.\nA sergeant jumped into the water with a buoy.\nThe man was floated to safety.\nThe man was evaluated by the fire department and declined further medical attention.\nA passing boater pulled the man out of the water before deputies arrived.\nThe man told deputies he had been drinking.\n",
+ "claims_mode": "lines",
+ "models": {
+  "claims": "meta-models/muse-spark-open-1026",
+  "transcribe": "muse-voice-transcribe-1.0",
+  "review": "muse-spark-1.3",
+  "verify": "code"
+ },
+ "claims_notes": [],
+ "turns": [
+  {
+   "startMs": 1020,
+   "endMs": 7340,
+   "speaker": "A",
+   "transcript": "Alright, Ocean 20 Central, I'm coming on scene and whatever it's on scene. scene I've got a with me",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 21740,
+   "endMs": 27340,
+   "speaker": "A",
+   "transcript": "Can you see him?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 30220,
+   "endMs": 31260,
+   "speaker": "B",
+   "transcript": "You want to",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 31500,
+   "endMs": 39980,
+   "speaker": "A",
+   "transcript": "Where'd you see him at? Like out or in here?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 42540,
+   "endMs": 45500,
+   "speaker": "A",
+   "transcript": "Alright.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 52460,
+   "endMs": 57340,
+   "speaker": "A",
+   "transcript": "You got that bottom part? You good buddy?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 77660,
+   "endMs": 77900,
+   "speaker": "?",
+   "transcript": "",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 77900,
+   "endMs": 89980,
+   "speaker": "A",
+   "transcript": "You good buddy? Okay. Ocean 20 Central, I'm getting in the water and I'll be waiting for him.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 101820,
+   "endMs": 103340,
+   "speaker": "C",
+   "transcript": "Pretty good or not at all? all?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 103580,
+   "endMs": 103980,
+   "speaker": "D",
+   "transcript": "What?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 104060,
+   "endMs": 105900,
+   "speaker": "C",
+   "transcript": "Can you swim at all?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 106060,
+   "endMs": 109660,
+   "speaker": "B",
+   "transcript": "Like a ladder to get up anywhere around here.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 110060,
+   "endMs": 114060,
+   "speaker": "C",
+   "transcript": "You can what? Okay",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 115180,
+   "endMs": 128300,
+   "speaker": "C",
+   "transcript": "What's that? that? Yeah, I'm going to get in with in with you and we're going to go over there. At least get to somewhere where do your legs over where?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 129100,
+   "endMs": 132460,
+   "speaker": "C",
+   "transcript": "Okay, give me one second",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 135180,
+   "endMs": 137340,
+   "speaker": "A",
+   "transcript": "Can I stand?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 137500,
+   "endMs": 137900,
+   "speaker": "B",
+   "transcript": "it's pretty deep",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 137980,
+   "endMs": 138940,
+   "speaker": "A",
+   "transcript": "absolutely not",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 138940,
+   "endMs": 144780,
+   "speaker": "B",
+   "transcript": "it's pretty deep here",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 153100,
+   "endMs": 157980,
+   "speaker": "E",
+   "transcript": "You got",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 157980,
+   "endMs": 158620,
+   "speaker": "A",
+   "transcript": "Yeah, don't come in",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 158780,
+   "endMs": 159100,
+   "speaker": "F",
+   "transcript": "What do you need",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 159100,
+   "endMs": 163020,
+   "speaker": "A",
+   "transcript": "find me somewhere",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 168700,
+   "endMs": 169180,
+   "speaker": "?",
+   "transcript": "Yeah",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 169180,
+   "endMs": 175020,
+   "speaker": "F",
+   "transcript": "Yeah. Alright, we have eyes eyes on 20. He has the patient. We're just trying to get him on the water.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 177500,
+   "endMs": 179900,
+   "speaker": "B",
+   "transcript": "Are you okay, man? You good?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 179900,
+   "endMs": 181020,
+   "speaker": "A",
+   "transcript": "Yeah.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 181020,
+   "endMs": 188380,
+   "speaker": "G",
+   "transcript": "Good luck. You're going to want to you're going to want to come underneath the deep part right here and there's a big set of stairs that can get get him out on the other side.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 188860,
+   "endMs": 192060,
+   "speaker": "D",
+   "transcript": "I gotta go back and try to retrieve my",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 192060,
+   "endMs": 192700,
+   "speaker": "G",
+   "transcript": "We got your bag.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 192700,
+   "endMs": 193020,
+   "speaker": "C",
+   "transcript": "I got it.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 193260,
+   "endMs": 196300,
+   "speaker": "G",
+   "transcript": "We got your bag. Yep.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 196300,
+   "endMs": 197260,
+   "speaker": "G",
+   "transcript": "He seen it seen it floating.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 197260,
+   "endMs": 197740,
+   "speaker": "C",
+   "transcript": "I hooked it",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 197740,
+   "endMs": 199260,
+   "speaker": "C",
+   "transcript": "And by",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 199500,
+   "endMs": 203900,
+   "speaker": "H",
+   "transcript": "Well, catch",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 203900,
+   "endMs": 204060,
+   "speaker": "H",
+   "transcript": "",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 204060,
+   "endMs": 206300,
+   "speaker": "C",
+   "transcript": "just floating by. I saw it.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 206300,
+   "endMs": 208140,
+   "speaker": "A",
+   "transcript": "I would say it's your lucky day.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 208300,
+   "endMs": 210780,
+   "speaker": "G",
+   "transcript": "Yeah, we got all your stuff. You're just a little wet.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 211180,
+   "endMs": 211340,
+   "speaker": "D",
+   "transcript": "Yeah.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 211340,
+   "endMs": 211420,
+   "speaker": "D",
+   "transcript": "That's",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 211420,
+   "endMs": 214540,
+   "speaker": "G",
+   "transcript": "That's all.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 214540,
+   "endMs": 221900,
+   "speaker": "A",
+   "transcript": "Water.",
+   "piece_offset_s": 0.0
+  }
+ ],
+ "camera_clock": {
+  "start": "21:00:25",
+  "end": "21:20:00",
+  "date": "2026-09-27",
+  "readings": [
+   {
+    "video_s": 0.0,
+    "clock": "2026-09-27 21:00:25 -0400",
+    "camera": "D01A16937"
+   },
+   {
+    "video_s": 8.0,
+    "clock": "2026-09-27 21:01:19 -0400",
+    "camera": "D01A16937"
+   },
+   {
+    "video_s": 140.0,
+    "clock": "2026-09-27 21:04:22 -0400",
+    "camera": "D01AP085E"
+   },
+   {
+    "video_s": 188.0,
+    "clock": "2026-09-27 21:11:41 -0400",
+    "camera": "D01AP085E"
+   },
+   {
+    "video_s": 213.0,
+    "clock": "2026-09-27 21:19:50 -0400",
+    "camera": "D01AP085E"
+   },
+   {
+    "video_s": 222.0,
+    "clock": "2026-09-27 21:20:00 -0400",
+    "camera": "D01AP085E"
+   }
+  ]
+ },
+ "claims": [
+  {
+   "id": "C1",
+   "text": "Deputies responded to a report of a possible drowning in the marina.",
+   "kind": "action",
+   "line": 1,
+   "status": "on_recording",
+   "start_s": 154.0,
+   "end_s": 160.0,
+   "evidence": "Night marina dock with deputies shining lights on a man floating in the water while radio says \"Yeah. Alright, we have eyes eyes on 20. He has the patient. We're just trying to get him on the water.\"",
+   "reason": "Video and speech show deputies on scene at a marina with a person in the water requiring rescue.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 154,
+    "end_s": 160,
+    "evidence": "Night marina dock with deputies shining lights on a man floating in the water while radio says \"Yeah. Alright, we have eyes eyes on 20. He has the patient. We're just trying to get him on the water.\"",
+    "reason": "Video and speech show deputies on scene at a marina with a person in the water requiring rescue."
+   },
+   "verify_notes": []
+  },
+  {
+   "id": "C2",
+   "text": "The area was behind a locked gate.",
+   "kind": "object",
+   "line": 2,
+   "status": "on_recording",
+   "start_s": 24.0,
+   "end_s": 30.0,
+   "evidence": "White metal barred gate across dock walkway is opened by two men as deputy with light approaches to enter marina docks.",
+   "reason": "Video clearly shows a gate blocking dock access being opened for entry.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 24,
+    "end_s": 30,
+    "evidence": "White metal barred gate across dock walkway is opened by two men as deputy with light approaches to enter marina docks.",
+    "reason": "Video clearly shows a gate blocking dock access being opened for entry."
+   },
+   "verify_notes": []
+  },
+  {
+   "id": "C3",
+   "text": "A man had fallen out of his wheelchair into the marina.",
+   "kind": "action",
+   "line": 3,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "No footage or speech shows a fall from a wheelchair; a wheelchair is only seen later being pushed on a sidewalk.",
+   "reason": "The recording never shows how the man entered the water.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1,
+    "end_s": -1,
+    "evidence": "No footage or speech shows a fall from a wheelchair; a wheelchair is only seen later being pushed on a sidewalk.",
+    "reason": "The recording never shows how the man entered the water."
+   },
+   "verify_notes": []
+  },
+  {
+   "id": "C4",
+   "text": "The man was clinging to a pipe to keep his head above water.",
+   "kind": "action",
+   "line": 4,
+   "status": "check",
+   "start_s": 155.0,
+   "end_s": 173.0,
+   "evidence": "Man in red shorts floating on his back in open green-lit water beside the dock with no pipe visible or held.",
+   "reason": "Recording shows the man floating free, not clinging to a pipe.",
+   "model": {
+    "status": "check",
+    "start_s": 155,
+    "end_s": 173,
+    "evidence": "Man in red shorts floating on his back in open green-lit water beside the dock with no pipe visible or held.",
+    "reason": "Recording shows the man floating free, not clinging to a pipe."
+   },
+   "verify_notes": []
+  },
+  {
+   "id": "C5",
+   "text": "A sergeant jumped into the water with a buoy.",
+   "kind": "action",
+   "line": 5,
+   "status": "on_recording",
+   "start_s": 52.0,
+   "end_s": 90.0,
+   "evidence": "Green rescue buoy carried on dock then dark water view as deputy says \"You good buddy? Okay. Ocean 20 Central, I'm getting in the water and I'll be waiting for him.\"",
+   "reason": "Video and speech show deputy entering the water with flotation, though rank is not shown.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 52,
+    "end_s": 90,
+    "evidence": "Green rescue buoy carried on dock then dark water view as deputy says \"You good buddy? Okay. Ocean 20 Central, I'm getting in the water and I'll be waiting for him.\"",
+    "reason": "Video and speech show deputy entering the water with flotation, though rank is not shown."
+   },
+   "verify_notes": []
+  },
+  {
+   "id": "C6",
+   "text": "The man was floated to safety.",
+   "kind": "action",
+   "line": 6,
+   "status": "on_recording",
+   "start_s": 155.0,
+   "end_s": 188.0,
+   "evidence": "Man floating on back under flashlight while deputy is with him and voice directs \"Good luck. You're going to want to you're going to want to come underneath the deep part right here and there's a big set of stairs that can get get him out on the other side.\"",
+   "reason": "Recording shows the man kept afloat and moved toward stairs for exit.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 155,
+    "end_s": 188,
+    "evidence": "Man floating on back under flashlight while deputy is with him and voice directs \"Good luck. You're going to want to you're going to want to come underneath the deep part right here and there's a big set of stairs that can get get him out on the other side.\"",
+    "reason": "Recording shows the man kept afloat and moved toward stairs for exit."
+   },
+   "verify_notes": []
+  },
+  {
+   "id": "C7",
+   "text": "The man was evaluated by the fire department and declined further medical attention.",
+   "kind": "action",
+   "line": 7,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "No fire department evaluation, treatment, or refusal is seen or heard in video or speech.",
+   "reason": "The recording contains no medical evaluation or declination.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1,
+    "end_s": -1,
+    "evidence": "No fire department evaluation, treatment, or refusal is seen or heard in video or speech.",
+    "reason": "The recording contains no medical evaluation or declination."
+   },
+   "verify_notes": []
+  },
+  {
+   "id": "C8",
+   "text": "A passing boater pulled the man out of the water before deputies arrived.",
+   "kind": "action",
+   "line": 8,
+   "status": "check",
+   "start_s": 155.0,
+   "end_s": 175.0,
+   "evidence": "Man still floating in water after deputies are on the dock with lights on him while radio says \"Yeah. Alright, we have eyes eyes on 20. He has the patient. We're just trying to get him on the water.\"",
+   "reason": "Recording shows the man still in the water during deputies' rescue, contradicting earlier removal.",
+   "model": {
+    "status": "check",
+    "start_s": 155,
+    "end_s": 175,
+    "evidence": "Man still floating in water after deputies are on the dock with lights on him while radio says \"Yeah. Alright, we have eyes eyes on 20. He has the patient. We're just trying to get him on the water.\"",
+    "reason": "Recording shows the man still in the water during deputies' rescue, contradicting earlier removal."
+   },
+   "verify_notes": []
+  },
+  {
+   "id": "C9",
+   "text": "The man told deputies he had been drinking.",
+   "kind": "speech",
+   "line": 9,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "No speech about drinking appears in TURNS and no such statement is audible in the described audio.",
+   "reason": "The recording contains no admission of drinking by the man.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1,
+    "end_s": -1,
+    "evidence": "No speech about drinking appears in TURNS and no such statement is audible in the described audio.",
+    "reason": "The recording contains no admission of drinking by the man."
+   },
+   "verify_notes": []
+  }
+ ],
+ "summary": {
+  "total": 9,
+  "on_recording": 4,
+  "not_found": 3,
+  "check": 2,
+  "changed_by_code": 0
+ },
+ "verify_notes": [],
+ "spend_usd": 0.11301,
+ "seconds": 102.1
+}

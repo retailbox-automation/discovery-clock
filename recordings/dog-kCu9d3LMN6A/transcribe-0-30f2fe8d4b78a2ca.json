@@ -1,0 +1,335 @@
+{
+ "step": "transcribe-0",
+ "hash": "30f2fe8d4b78a2ca",
+ "recorded_utc": "2026-11-04T19:01:09Z",
+ "request": {
+  "endpoint": "/asr/transcribe",
+  "mode": "DIARIZATION",
+  "model": "muse-voice-transcribe-1.0",
+  "audioEncoding": "WAV",
+  "media_sha256": "5f9202da2f6534bbb2d03e8a46cb9f37667dba30711f0fc507fa2db97b8c5fd0",
+  "piece_s": [
+   0.0,
+   170.945
+  ],
+  "audio": "mono s16le 24000 Hz"
+ },
+ "response": {
+  "sessionId": "dc-4dea00bd7bbf",
+  "transcript": "Whoa. It's awesome. Hey come here. Why? Come here answer the sheriff's office office come here Whoa Come here you're under arrest stop stop fighting What happened what's going on what is going on Stop fighting Please just tell me why am I being am I being arrested? Be under Quit resisting you're going to catch an extra charge Do you not understand me right now? Put your hand behind your back Why? Stop resisting Get out of the chair We'll talk to you in a second. What is going on? Can you please just tell me why I'm being arrested? Yeah, we will just a second once we okay? I don't understand what's going on. Stop resisting. I'm not resisting You are you're pulling away. Can you call my mom? This way. This way. Walk to the car. Yes sir but I just like I just want to know what's going on. Well you're under arrest now you just gotta do a charge too. Like what is happening? Aggravated animal cruelty is what you're getting arrested for today. Why? Why? You're also catching an additional charge for resisting us. I did all I don't even know what was going on. i'm so confused right now i i took care of my dog i don't understand apparently apparently not your dog is one of the worst states states of a dog I've seen in my career career do not take care of that dog we did you do not take care of that dog that dog has been in custody of animal control for a month and has gained almost 15 pounds just simply from eating I pretty sad how how bad Tanner was I tried I swear I did I don't know why I swear I took care of my dog I love my dog Hello. We're going to go let's take him over to your car just go through it one more time I don't know. end up against the car car",
+  "audioDurationMs": 170960,
+  "turns": [
+   {
+    "turnId": 0,
+    "startMs": 1580,
+    "endMs": 6940,
+    "transcript": "Whoa. It's awesome. Hey come here.",
+    "speaker": "A"
+   },
+   {
+    "turnId": 1,
+    "startMs": 7020,
+    "endMs": 7340,
+    "transcript": "Why?",
+    "speaker": "B"
+   },
+   {
+    "turnId": 2,
+    "startMs": 7340,
+    "endMs": 9100,
+    "transcript": "Come here answer the sheriff's office office come here",
+    "speaker": "A"
+   },
+   {
+    "turnId": 3,
+    "startMs": 9180,
+    "endMs": 13500,
+    "transcript": "Whoa Come here you're under arrest",
+    "speaker": "A"
+   },
+   {
+    "turnId": 4,
+    "startMs": 14060,
+    "endMs": 19900,
+    "transcript": "stop stop fighting",
+    "speaker": "A"
+   },
+   {
+    "turnId": 5,
+    "startMs": 20700,
+    "endMs": 24460,
+    "transcript": "What happened what's going on what is going on",
+    "speaker": "B"
+   },
+   {
+    "turnId": 6,
+    "startMs": 24460,
+    "endMs": 25180,
+    "transcript": "Stop fighting",
+    "speaker": "A"
+   },
+   {
+    "turnId": 7,
+    "startMs": 25180,
+    "endMs": 27420,
+    "transcript": "Please just tell me why am I being am I being arrested?",
+    "speaker": "B"
+   },
+   {
+    "turnId": 8,
+    "startMs": 27420,
+    "endMs": 28460,
+    "transcript": "Be under",
+    "speaker": "A"
+   },
+   {
+    "turnId": 9,
+    "startMs": 28780,
+    "endMs": 33740,
+    "transcript": "Quit resisting you're going to catch an extra charge Do you not understand me right now? Put your hand behind your back",
+    "speaker": "C"
+   },
+   {
+    "turnId": 10,
+    "startMs": 33740,
+    "endMs": 38540,
+    "transcript": "Why?",
+    "speaker": "B"
+   },
+   {
+    "turnId": 11,
+    "startMs": 38780,
+    "endMs": 39980,
+    "transcript": "Stop",
+    "speaker": "A"
+   },
+   {
+    "turnId": 12,
+    "startMs": 40140,
+    "endMs": 41260,
+    "transcript": "resisting",
+    "speaker": "C"
+   },
+   {
+    "turnId": 13,
+    "startMs": 41420,
+    "endMs": 42620,
+    "transcript": "Get out of the chair",
+    "speaker": "A"
+   },
+   {
+    "turnId": 14,
+    "startMs": 42620,
+    "endMs": 43980,
+    "transcript": "We'll talk to you in a second.",
+    "speaker": "C"
+   },
+   {
+    "turnId": 15,
+    "startMs": 44140,
+    "endMs": 48220,
+    "transcript": "What is going on? Can you please just tell me why I'm being arrested?",
+    "speaker": "B"
+   },
+   {
+    "turnId": 16,
+    "startMs": 48460,
+    "endMs": 52220,
+    "transcript": "Yeah, we will just a second once we okay?",
+    "speaker": "C"
+   },
+   {
+    "turnId": 17,
+    "startMs": 52460,
+    "endMs": 53820,
+    "transcript": "I don't understand what's going on.",
+    "speaker": "B"
+   },
+   {
+    "turnId": 18,
+    "startMs": 53820,
+    "endMs": 55340,
+    "transcript": "Stop resisting.",
+    "speaker": "A"
+   },
+   {
+    "turnId": 19,
+    "startMs": 55340,
+    "endMs": 56460,
+    "transcript": "I'm not resisting",
+    "speaker": "B"
+   },
+   {
+    "turnId": 20,
+    "startMs": 56460,
+    "endMs": 59740,
+    "transcript": "You are you're pulling away.",
+    "speaker": "A"
+   },
+   {
+    "turnId": 21,
+    "startMs": 60220,
+    "endMs": 63260,
+    "transcript": "Can you call my mom?",
+    "speaker": "B"
+   },
+   {
+    "turnId": 22,
+    "startMs": 65740,
+    "endMs": 69820,
+    "transcript": "This way. This way.",
+    "speaker": "A"
+   },
+   {
+    "turnId": 23,
+    "startMs": 70060,
+    "endMs": 71260,
+    "transcript": "Walk to the car.",
+    "speaker": "A"
+   },
+   {
+    "turnId": 24,
+    "startMs": 71260,
+    "endMs": 75100,
+    "transcript": "Yes sir but I just like I just want to know what's going on.",
+    "speaker": "B"
+   },
+   {
+    "turnId": 25,
+    "startMs": 75340,
+    "endMs": 79660,
+    "transcript": "Well you're under arrest now you just gotta do a charge too.",
+    "speaker": "A"
+   },
+   {
+    "turnId": 26,
+    "startMs": 81020,
+    "endMs": 83100,
+    "transcript": "Like what is happening?",
+    "speaker": "B"
+   },
+   {
+    "turnId": 27,
+    "startMs": 83260,
+    "endMs": 85980,
+    "transcript": "Aggravated animal cruelty is what you're getting arrested for today.",
+    "speaker": "C"
+   },
+   {
+    "turnId": 28,
+    "startMs": 86060,
+    "endMs": 86300,
+    "transcript": "Why? Why?",
+    "speaker": "B"
+   },
+   {
+    "turnId": 29,
+    "startMs": 86300,
+    "endMs": 89900,
+    "transcript": "You're also catching an additional charge for resisting us.",
+    "speaker": "C"
+   },
+   {
+    "turnId": 30,
+    "startMs": 89900,
+    "endMs": 95980,
+    "transcript": "I did all I don't even know what was going on.",
+    "speaker": "B"
+   },
+   {
+    "turnId": 31,
+    "startMs": 97740,
+    "endMs": 100860,
+    "transcript": "i'm so confused right now",
+    "speaker": "B"
+   },
+   {
+    "turnId": 32,
+    "startMs": 102460,
+    "endMs": 105260,
+    "transcript": "i i took care of my dog i don't understand",
+    "speaker": "B"
+   },
+   {
+    "turnId": 33,
+    "startMs": 105260,
+    "endMs": 107260,
+    "transcript": "apparently apparently not",
+    "speaker": "A"
+   },
+   {
+    "turnId": 34,
+    "startMs": 107260,
+    "endMs": 114220,
+    "transcript": "your dog is one of the worst states states of a dog I've seen in my career career do not take care of that dog",
+    "speaker": "C"
+   },
+   {
+    "turnId": 35,
+    "startMs": 114380,
+    "endMs": 115900,
+    "transcript": "we did",
+    "speaker": "B"
+   },
+   {
+    "turnId": 36,
+    "startMs": 115900,
+    "endMs": 124860,
+    "transcript": "you do not take care of that dog that dog has been in custody of animal control for a month and has gained almost 15 pounds just simply from eating",
+    "speaker": "C"
+   },
+   {
+    "turnId": 37,
+    "startMs": 125180,
+    "endMs": 132860,
+    "transcript": "I",
+    "speaker": "B"
+   },
+   {
+    "turnId": 38,
+    "startMs": 133100,
+    "endMs": 136940,
+    "transcript": "pretty sad how how bad Tanner was",
+    "speaker": "C"
+   },
+   {
+    "turnId": 39,
+    "startMs": 137500,
+    "endMs": 142940,
+    "transcript": "I tried I swear I did I don't know why",
+    "speaker": "B"
+   },
+   {
+    "turnId": 40,
+    "startMs": 144220,
+    "endMs": 151980,
+    "transcript": "I swear I took care of my dog I love my dog",
+    "speaker": "B"
+   },
+   {
+    "turnId": 41,
+    "startMs": 153980,
+    "endMs": 162940,
+    "transcript": "Hello. We're going to go let's take him over to your car just go through it one more time",
+    "speaker": "A"
+   },
+   {
+    "turnId": 42,
+    "startMs": 165980,
+    "endMs": 169100,
+    "transcript": "I don't know.",
+    "speaker": "B"
+   },
+   {
+    "turnId": 43,
+    "startMs": 169180,
+    "endMs": 170460,
+    "transcript": "end up against the car car",
+    "speaker": "A"
+   }
+  ]
+ },
+ "latency_s": 32.29,
+ "usd": 0.008548,
+ "model": "muse-voice-transcribe-1.0"
+}

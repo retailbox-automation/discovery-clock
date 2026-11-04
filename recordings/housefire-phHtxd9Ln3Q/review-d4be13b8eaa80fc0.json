@@ -1,0 +1,252 @@
+{
+ "step": "review",
+ "hash": "d4be13b8eaa80fc0",
+ "recorded_utc": "2026-11-04T18:58:12Z",
+ "request": {
+  "endpoint": "/responses",
+  "body": {
+   "model": "muse-spark-1.3",
+   "input": [
+    {
+     "type": "message",
+     "role": "user",
+     "content": [
+      {
+       "type": "input_text",
+       "text": "You review a body-worn camera recording against a written account of the same incident.\nFor each numbered CLAIM, find where the recording shows or says it.\nTIME: our software stamped every frame in the top-left corner with \"t=N s\" = seconds from the start of this video\n(the stamp is not part of the original recording). Read start_s, end_s and every video_s from that stamp; do not estimate time.\nstatus: on_recording = the video or the speech clearly supports the claim at start_s..end_s;\nnot_found = the recording neither shows nor contradicts the claim (start_s=end_s=-1);\ncheck = the recording contradicts the claim, or shows only part of it in a way that matters (for example the claim says\na man was clinging to a pipe and the recording shows him floating free). If unsure between on_recording and check, use check.\nA name, rank or job title that the recording cannot show does not by itself make a claim partial: if the event is shown,\nuse on_recording and say in reason that the name or rank is not shown.\nevidence: what is visible or said at that time. When you quote speech, copy the words exactly from TURNS inside double quotes.\nreason: one sentence why this status.\ncamera_clock: read the date and time the body camera burned into the frame (for example \"2026-09-27 21:00:29 -0400  AXON BODY 4 D01A16937\",\nusually top-right) on the first frame, on the last frame, and wherever the camera id or the clock jumps (the video can join several cameras).\nFor each reading give video_s (from our stamp), clock exactly as printed (date and time) and camera (the id printed, or \"\").\nIf the camera prints no clock, return an empty list.\nTURNS (speech with speaker labels and times, from a separate transcriber):\n[9.6-10.4s] A: I haven't seen them, I haven't heard them.\n[10.7-12.2s] B: How many people might be inside?\n[12.5-13.4s] C: Two elderly people.\n[13.5-14.5s] B: Two elderly people.\n[14.5-15.1s] C: They are not outside.\n[15.4-16.2s] B: A male and a female? female?\n[16.2-33.2s] C: Yes.\n[33.3-52.6s] B: Damn! Hey, there might be another one in there.\n[52.9-59.2s] B: Ma'am. Ma'am. Can you breathing?\n[59.9-64.3s] B: Keep breathing sweetheart. There you go\n[64.7-70.0s] B: Keep breathing Yeah she's breathing\n[70.9-78.9s] B: I pulled one from the house he's trying to get another one she's she's diagonal she's breathing but it might be one more in there yes\n[82.3-96.0s] B: There you go go baby girl keep breathing you hear me can you hear me there you go your eyes are open good job sweetheart You keep breathing okay just stay here don't move don't move relax I got you\nCLAIMS (kind in brackets):\nC1. [action] Units responded to a house fire with two people believed to be inside.\nC2. [action] A deputy kicked down the front door.\nC3. [action] The deputy pulled the female resident to safety.\nC4. [action] The deputy rendered aid until Fire Rescue took over.\nC5. [action] Firefighters pulled the male occupant from the house.\nC6. [action] The deputy entered the house through a back window.\nC7. [action] A neighbor handed the deputy a fire extinguisher."
+      },
+      {
+       "type": "input_file",
+       "file_id": "sha256:05e654d152564b01ad5567cf1601aa18e1fe9ec85cc9838c4c0f61f7a6e000f2:t-seconds-v1"
+      }
+     ]
+    }
+   ],
+   "text": {
+    "format": {
+     "type": "json_schema",
+     "name": "claims_review",
+     "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "claims",
+       "camera_clock"
+      ],
+      "properties": {
+       "claims": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "additionalProperties": false,
+         "required": [
+          "id",
+          "status",
+          "start_s",
+          "end_s",
+          "evidence",
+          "reason"
+         ],
+         "properties": {
+          "id": {
+           "type": "string"
+          },
+          "status": {
+           "type": "string",
+           "enum": [
+            "on_recording",
+            "not_found",
+            "check"
+           ]
+          },
+          "start_s": {
+           "type": "number"
+          },
+          "end_s": {
+           "type": "number"
+          },
+          "evidence": {
+           "type": "string"
+          },
+          "reason": {
+           "type": "string"
+          }
+         }
+        }
+       },
+       "camera_clock": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "additionalProperties": false,
+         "required": [
+          "video_s",
+          "clock",
+          "camera"
+         ],
+         "properties": {
+          "video_s": {
+           "type": "number"
+          },
+          "clock": {
+           "type": "string"
+          },
+          "camera": {
+           "type": "string"
+          }
+         }
+        }
+       }
+      }
+     },
+     "strict": true
+    }
+   },
+   "max_output_tokens": 30000,
+   "reasoning": {
+    "effort": "medium"
+   }
+  }
+ },
+ "response": {
+  "top_logprobs": 0,
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "service_tier": "default",
+  "model": "muse-spark-1.3",
+  "reasoning": {
+   "effort": "medium"
+  },
+  "background": false,
+  "text": {
+   "format": {
+    "type": "json_schema",
+    "name": "claims_review",
+    "schema": {
+     "properties": {
+      "camera_clock": {
+       "items": {
+        "additionalProperties": false,
+        "properties": {
+         "camera": {
+          "type": "string"
+         },
+         "clock": {
+          "type": "string"
+         },
+         "video_s": {
+          "type": "number"
+         }
+        },
+        "required": [
+         "video_s",
+         "clock",
+         "camera"
+        ],
+        "type": "object"
+       },
+       "type": "array"
+      },
+      "claims": {
+       "items": {
+        "additionalProperties": false,
+        "properties": {
+         "end_s": {
+          "type": "number"
+         },
+         "evidence": {
+          "type": "string"
+         },
+         "id": {
+          "type": "string"
+         },
+         "reason": {
+          "type": "string"
+         },
+         "start_s": {
+          "type": "number"
+         },
+         "status": {
+          "enum": [
+           "on_recording",
+           "not_found",
+           "check"
+          ],
+          "type": "string"
+         }
+        },
+        "required": [
+         "id",
+         "status",
+         "start_s",
+         "end_s",
+         "evidence",
+         "reason"
+        ],
+        "type": "object"
+       },
+       "type": "array"
+      }
+     },
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "claims",
+      "camera_clock"
+     ]
+    },
+    "strict": true
+   }
+  },
+  "tools": [],
+  "tool_choice": "auto",
+  "truncation": "disabled",
+  "id": "resp_6aeb80441a3cc6356aaa4a68",
+  "object": "response",
+  "status": "completed",
+  "created_at": 1793818692.0,
+  "completed_at": 1793818692.0,
+  "error": null,
+  "incomplete_details": null,
+  "output": [
+   {
+    "type": "reasoning",
+    "id": "rs_6aeb80441a3cc6356aaa4a68:rs_ed25a622-0f43-476a-910e-3320d1b77d6a",
+    "summary": [],
+    "status": "completed"
+   },
+   {
+    "type": "message",
+    "id": "msg_bb534fcd-5a63-4f6e-a937-9a536d25a453",
+    "role": "assistant",
+    "content": [
+     {
+      "type": "output_text",
+      "text": "{\"camera_clock\": [{\"camera\": \"AXON BODY 4 D01A14892\", \"clock\": \"2026-05-18 23:41:57 -0400\", \"video_s\": 0}, {\"camera\": \"AXON BODY 4 D01A14892\", \"clock\": \"2026-05-18 23:42:54 -0400\", \"video_s\": 49}, {\"camera\": \"AXON BODY 4 D01A14892\", \"clock\": \"2026-05-18 23:43:10 -0400\", \"video_s\": 57}, {\"camera\": \"AXON BODY 4 D01A14892\", \"clock\": \"2026-05-18 23:43:15 -0400\", \"video_s\": 59}, {\"camera\": \"AXON BODY 4 D01A14892\", \"clock\": \"2026-05-18 23:43:57 -0400\", \"video_s\": 66}, {\"camera\": \"AXON BODY 4 D01A14892\", \"clock\": \"2026-05-18 23:44:38 -0400\", \"video_s\": 82}, {\"camera\": \"AXON BODY 4 D01A14892\", \"clock\": \"2026-05-18 23:45:04 -0400\", \"video_s\": 86}, {\"camera\": \"AXON BODY 4 D01A14892\", \"clock\": \"2026-05-18 23:45:14 -0400\", \"video_s\": 96}], \"claims\": [{\"end_s\": 15.1, \"evidence\": \"Night video shows house with orange flames and speech \\\"How many people might be inside?\\\" \\\"Two elderly people.\\\" \\\"Two elderly people.\\\" \\\"They are not outside.\\\"\", \"id\": \"C1\", \"reason\": \"Video shows a burning house while speech states two elderly people are believed inside and not outside.\", \"start_s\": 10.7, \"status\": \"on_recording\"}, {\"end_s\": -1, \"evidence\": \"Deputy approaches front porch with flashlight at t=21-30 but no kick is clearly visible and no speech mentions kicking a door.\", \"id\": \"C2\", \"reason\": \"The recording neither shows a kick nor mentions it.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": 78.9, \"evidence\": \"Speech \\\"I pulled one from the house he's trying to get another one she's she's diagonal she's breathing but it might be one more in there yes\\\" with prior coaching \\\"Ma'am. Ma'am. Can you breathing?\\\" \\\"Keep breathing sweetheart. There you go\\\"\", \"id\": \"C3\", \"reason\": \"Speech states the speaker pulled an occupant who is female and breathing, though name and rank are not shown.\", \"start_s\": 70.9, \"status\": \"on_recording\"}, {\"end_s\": 96.0, \"evidence\": \"Speech \\\"Ma'am. Ma'am. Can you breathing?\\\" \\\"Keep breathing sweetheart. There you go\\\" \\\"Keep breathing Yeah she's breathing\\\" through \\\"just stay here don't move don't move relax I got you\\\" with no Fire Rescue handover seen or heard.\", \"id\": \"C4\", \"reason\": \"Aid and breathing coaching are shown but no takeover by Fire Rescue is shown or said.\", \"start_s\": 52.9, \"status\": \"check\"}, {\"end_s\": -1, \"evidence\": \"No visual of firefighters removing anyone is clear in blurred footage and no speech says firefighters pulled the male occupant.\", \"id\": \"C5\", \"reason\": \"The recording neither shows nor contradicts firefighters pulling a male occupant.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": 26.0, \"evidence\": \"Flashlight illuminates front door with wreath and wall sign about LEAVE as deputy moves to and through front entry, no back window shown.\", \"id\": \"C6\", \"reason\": \"Video shows entry at the front door which contradicts entry through a back window.\", \"start_s\": 21.0, \"status\": \"check\"}, {\"end_s\": -1, \"evidence\": \"No extinguisher or handover from a neighbor is visible and no speech mentions a fire extinguisher.\", \"id\": \"C7\", \"reason\": \"The recording neither shows nor mentions a neighbor handing an extinguisher.\", \"start_s\": -1, \"status\": \"not_found\"}]}",
+      "annotations": [],
+      "logprobs": []
+     }
+    ],
+    "status": "completed"
+   }
+  ],
+  "instructions": null,
+  "usage": {
+   "input_tokens": 27266,
+   "input_tokens_details": {
+    "cached_tokens": 0
+   },
+   "output_tokens": 6460,
+   "output_tokens_details": {
+    "reasoning_tokens": 5490
+   },
+   "total_tokens": 33726
+  },
+  "parallel_tool_calls": true,
+  "store": true,
+  "max_output_tokens": 30000
+ },
+ "latency_s": 28.51,
+ "usd": 0.061537,
+ "model": "muse-spark-1.3"
+}

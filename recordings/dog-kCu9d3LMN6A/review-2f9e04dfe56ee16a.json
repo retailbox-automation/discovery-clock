@@ -1,0 +1,252 @@
+{
+ "step": "review",
+ "hash": "2f9e04dfe56ee16a",
+ "recorded_utc": "2026-11-04T19:01:51Z",
+ "request": {
+  "endpoint": "/responses",
+  "body": {
+   "model": "muse-spark-1.3",
+   "input": [
+    {
+     "type": "message",
+     "role": "user",
+     "content": [
+      {
+       "type": "input_text",
+       "text": "You review a body-worn camera recording against a written account of the same incident.\nFor each numbered CLAIM, find where the recording shows or says it.\nTIME: our software stamped every frame in the top-left corner with \"t=N s\" = seconds from the start of this video\n(the stamp is not part of the original recording). Read start_s, end_s and every video_s from that stamp; do not estimate time.\nstatus: on_recording = the video or the speech clearly supports the claim at start_s..end_s;\nnot_found = the recording neither shows nor contradicts the claim (start_s=end_s=-1);\ncheck = the recording contradicts the claim, or shows only part of it in a way that matters (for example the claim says\na man was clinging to a pipe and the recording shows him floating free). If unsure between on_recording and check, use check.\nA name, rank or job title that the recording cannot show does not by itself make a claim partial: if the event is shown,\nuse on_recording and say in reason that the name or rank is not shown.\nevidence: what is visible or said at that time. When you quote speech, copy the words exactly from TURNS inside double quotes.\nreason: one sentence why this status.\ncamera_clock: read the date and time the body camera burned into the frame (for example \"2026-09-27 21:00:29 -0400  AXON BODY 4 D01A16937\",\nusually top-right) on the first frame, on the last frame, and wherever the camera id or the clock jumps (the video can join several cameras).\nFor each reading give video_s (from our stamp), clock exactly as printed (date and time) and camera (the id printed, or \"\").\nIf the camera prints no clock, return an empty list.\nTURNS (speech with speaker labels and times, from a separate transcriber):\n[1.6-6.9s] A: Whoa. It's awesome. Hey come here.\n[7.0-7.3s] B: Why?\n[7.3-9.1s] A: Come here answer the sheriff's office office come here\n[9.2-13.5s] A: Whoa Come here you're under arrest\n[14.1-19.9s] A: stop stop fighting\n[20.7-24.5s] B: What happened what's going on what is going on\n[24.5-25.2s] A: Stop fighting\n[25.2-27.4s] B: Please just tell me why am I being am I being arrested?\n[27.4-28.5s] A: Be under\n[28.8-33.7s] C: Quit resisting you're going to catch an extra charge Do you not understand me right now? Put your hand behind your back\n[33.7-38.5s] B: Why?\n[38.8-40.0s] A: Stop\n[40.1-41.3s] C: resisting\n[41.4-42.6s] A: Get out of the chair\n[42.6-44.0s] C: We'll talk to you in a second.\n[44.1-48.2s] B: What is going on? Can you please just tell me why I'm being arrested?\n[48.5-52.2s] C: Yeah, we will just a second once we okay?\n[52.5-53.8s] B: I don't understand what's going on.\n[53.8-55.3s] A: Stop resisting.\n[55.3-56.5s] B: I'm not resisting\n[56.5-59.7s] A: You are you're pulling away.\n[60.2-63.3s] B: Can you call my mom?\n[65.7-69.8s] A: This way. This way.\n[70.1-71.3s] A: Walk to the car.\n[71.3-75.1s] B: Yes sir but I just like I just want to know what's going on.\n[75.3-79.7s] A: Well you're under arrest now you just gotta do a charge too.\n[81.0-83.1s] B: Like what is happening?\n[83.3-86.0s] C: Aggravated animal cruelty is what you're getting arrested for today.\n[86.1-86.3s] B: Why? Why?\n[86.3-89.9s] C: You're also catching an additional charge for resisting us.\n[89.9-96.0s] B: I did all I don't even know what was going on.\n[97.7-100.9s] B: i'm so confused right now\n[102.5-105.3s] B: i i took care of my dog i don't understand\n[105.3-107.3s] A: apparently apparently not\n[107.3-114.2s] C: your dog is one of the worst states states of a dog I've seen in my career career do not take care of that dog\n[114.4-115.9s] B: we did\n[115.9-124.9s] C: you do not take care of that dog that dog has been in custody of animal control for a month and has gained almost 15 pounds just simply from eating\n[125.2-132.9s] B: I\n[133.1-136.9s] C: pretty sad how how bad Tanner was\n[137.5-142.9s] B: I tried I swear I did I don't know why\n[144.2-152.0s] B: I swear I took care of my dog I love my dog\n[154.0-162.9s] A: Hello. We're going to go let's take him over to your car just go through it one more time\n[166.0-169.1s] B: I don't know.\n[169.2-170.5s] A: end up against the car car\nCLAIMS (kind in brackets):\nC1. [object] When found, the dog's body was covered in sores and he was weak.\nC2. [object] The dog has gained a significant amount of weight since he was admitted to the shelter.\nC3. [action] The owner was arrested.\nC4. [speech] The owner denied the neglect.\nC5. [speech] The owner asked for his mom.\nC6. [object] A pipe was found in the owner's pocket.\nC7. [speech] The owner thanked the detectives for taking care of the dog.\nC8. [action] The owner was arrested inside a moving car during a traffic stop."
+      },
+      {
+       "type": "input_file",
+       "file_id": "sha256:5f9202da2f6534bbb2d03e8a46cb9f37667dba30711f0fc507fa2db97b8c5fd0:t-seconds-v1"
+      }
+     ]
+    }
+   ],
+   "text": {
+    "format": {
+     "type": "json_schema",
+     "name": "claims_review",
+     "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "claims",
+       "camera_clock"
+      ],
+      "properties": {
+       "claims": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "additionalProperties": false,
+         "required": [
+          "id",
+          "status",
+          "start_s",
+          "end_s",
+          "evidence",
+          "reason"
+         ],
+         "properties": {
+          "id": {
+           "type": "string"
+          },
+          "status": {
+           "type": "string",
+           "enum": [
+            "on_recording",
+            "not_found",
+            "check"
+           ]
+          },
+          "start_s": {
+           "type": "number"
+          },
+          "end_s": {
+           "type": "number"
+          },
+          "evidence": {
+           "type": "string"
+          },
+          "reason": {
+           "type": "string"
+          }
+         }
+        }
+       },
+       "camera_clock": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "additionalProperties": false,
+         "required": [
+          "video_s",
+          "clock",
+          "camera"
+         ],
+         "properties": {
+          "video_s": {
+           "type": "number"
+          },
+          "clock": {
+           "type": "string"
+          },
+          "camera": {
+           "type": "string"
+          }
+         }
+        }
+       }
+      }
+     },
+     "strict": true
+    }
+   },
+   "max_output_tokens": 30000,
+   "reasoning": {
+    "effort": "medium"
+   }
+  }
+ },
+ "response": {
+  "top_logprobs": 0,
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "service_tier": "default",
+  "model": "muse-spark-1.3",
+  "reasoning": {
+   "effort": "medium"
+  },
+  "background": false,
+  "text": {
+   "format": {
+    "type": "json_schema",
+    "name": "claims_review",
+    "schema": {
+     "properties": {
+      "camera_clock": {
+       "items": {
+        "additionalProperties": false,
+        "properties": {
+         "camera": {
+          "type": "string"
+         },
+         "clock": {
+          "type": "string"
+         },
+         "video_s": {
+          "type": "number"
+         }
+        },
+        "required": [
+         "video_s",
+         "clock",
+         "camera"
+        ],
+        "type": "object"
+       },
+       "type": "array"
+      },
+      "claims": {
+       "items": {
+        "additionalProperties": false,
+        "properties": {
+         "end_s": {
+          "type": "number"
+         },
+         "evidence": {
+          "type": "string"
+         },
+         "id": {
+          "type": "string"
+         },
+         "reason": {
+          "type": "string"
+         },
+         "start_s": {
+          "type": "number"
+         },
+         "status": {
+          "enum": [
+           "on_recording",
+           "not_found",
+           "check"
+          ],
+          "type": "string"
+         }
+        },
+        "required": [
+         "id",
+         "status",
+         "start_s",
+         "end_s",
+         "evidence",
+         "reason"
+        ],
+        "type": "object"
+       },
+       "type": "array"
+      }
+     },
+     "additionalProperties": false,
+     "required": [
+      "claims",
+      "camera_clock"
+     ],
+     "type": "object"
+    },
+    "strict": true
+   }
+  },
+  "tools": [],
+  "tool_choice": "auto",
+  "truncation": "disabled",
+  "id": "resp_6aeb811fc3b17d201297422f",
+  "object": "response",
+  "status": "completed",
+  "created_at": 1793818911.0,
+  "completed_at": 1793818911.0,
+  "error": null,
+  "incomplete_details": null,
+  "output": [
+   {
+    "type": "reasoning",
+    "id": "rs_6aeb811fc3b17d201297422f:rs_741af9cc-40d9-42f5-91a2-b2d49f27263d",
+    "summary": [],
+    "status": "completed"
+   },
+   {
+    "type": "message",
+    "id": "msg_babe9737-1de9-4e76-8850-5acc12ab66f4",
+    "role": "assistant",
+    "content": [
+     {
+      "type": "output_text",
+      "text": "{\"camera_clock\": [{\"camera\": \"D01A0460X\", \"clock\": \"2026-09-29 10:30:10 -0400\", \"video_s\": 0.0}, {\"camera\": \"D01A0460X\", \"clock\": \"2026-09-29 10:33:00 -0400\", \"video_s\": 170.0}], \"claims\": [{\"end_s\": 142.0, \"evidence\": \"Inserted still photos show an emaciated light-colored dog with prominent ribs, spine and thin limbs and red skin lesions/sores on legs and body standing on tile and a towel.\", \"id\": \"C1\", \"reason\": \"The photos show an extremely thin weak-looking dog with visible skin sores, supporting the claim.\", \"start_s\": 131.0, \"status\": \"on_recording\"}, {\"end_s\": 124.9, \"evidence\": \"C says \\\"you do not take care of that dog that dog has been in custody of animal control for a month and has gained almost 15 pounds just simply from eating\\\"\", \"id\": \"C2\", \"reason\": \"Speech explicitly states the ~15 pound weight gain in a month in custody.\", \"start_s\": 115.9, \"status\": \"on_recording\"}, {\"end_s\": 13.5, \"evidence\": \"A says \\\"Whoa Come here you're under arrest\\\" while video shows officers grabbing, restraining and handcuffing the man in the orange shirt.\", \"id\": \"C3\", \"reason\": \"Video and speech show the owner being told he is under arrest and being physically restrained and handcuffed.\", \"start_s\": 9.2, \"status\": \"on_recording\"}, {\"end_s\": 105.3, \"evidence\": \"B says \\\"i i took care of my dog i don't understand\\\"\", \"id\": \"C4\", \"reason\": \"The owner asserts he took care of his dog, denying neglect.\", \"start_s\": 102.5, \"status\": \"on_recording\"}, {\"end_s\": 63.3, \"evidence\": \"B says \\\"Can you call my mom?\\\"\", \"id\": \"C5\", \"reason\": \"The owner explicitly asks for his mom on the recording.\", \"start_s\": 60.2, \"status\": \"on_recording\"}, {\"end_s\": -1.0, \"evidence\": \"No pipe is shown in the pocket search and no speech mentions a pipe.\", \"id\": \"C6\", \"reason\": \"The recording neither shows nor mentions a pipe.\", \"start_s\": -1.0, \"status\": \"not_found\"}, {\"end_s\": -1.0, \"evidence\": \"No speech thanks detectives; owner only expresses confusion and claims he cared for the dog.\", \"id\": \"C7\", \"reason\": \"The recording contains no thank-you for taking care of the dog.\", \"start_s\": -1.0, \"status\": \"not_found\"}, {\"end_s\": 10.0, \"evidence\": \"Arrest begins outdoors on a dirt driveway/patio by trailers and parked cars with the man standing outside, then walked to a car, not inside a moving car.\", \"id\": \"C8\", \"reason\": \"The recording shows an outdoor on-foot arrest, contradicting arrest inside a moving car during a traffic stop.\", \"start_s\": 0.0, \"status\": \"check\"}]}",
+      "annotations": [],
+      "logprobs": []
+     }
+    ],
+    "status": "completed"
+   }
+  ],
+  "instructions": null,
+  "usage": {
+   "input_tokens": 47812,
+   "input_tokens_details": {
+    "cached_tokens": 0
+   },
+   "output_tokens": 2830,
+   "output_tokens_details": {
+    "reasoning_tokens": 2092
+   },
+   "total_tokens": 50642
+  },
+  "parallel_tool_calls": true,
+  "store": true,
+  "max_output_tokens": 30000
+ },
+ "latency_s": 22.16,
+ "usd": 0.071792,
+ "model": "muse-spark-1.3"
+}

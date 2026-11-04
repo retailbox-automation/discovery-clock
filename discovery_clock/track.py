@@ -154,6 +154,7 @@ def export_clip(video: str | Path, a: float, b: float, face_boxes: list[dict], o
     """Re-encode [a, b] with faces blurred frame by frame (Pillow); keeps the original frame rate and audio."""
     from PIL import Image, ImageFilter
     video, out = Path(video), Path(out)
+    out.parent.mkdir(parents=True, exist_ok=True)
     w, h = video_size(video)
     fps_s = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=r_frame_rate",
                             "-of", "csv=p=0", str(video)], capture_output=True, text=True, check=True).stdout.strip()

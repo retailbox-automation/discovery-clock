@@ -244,10 +244,15 @@ class MetaClient:
 
     def _post_multipart(self, url: str, parts: list[str], key: str, timeout: int = 900) -> dict:
         # curl streams large files; the Authorization header goes through stdin so the key never shows in `ps`.
-        cmd = ["curl", "-sS", "--fail-with-body", "-m", str(timeout), url, "-H", "@-", "-H", "Accept: application/json"]
+        cmd = ["curl", "-sS", "--fail-with-body", "-m", str(timeout), "--connect-timeout", "30",
+               "--speed-limit", "2000", "--speed-time", "90",  # abort a stalled transfer instead of hanging for 15 min
+               url, "-H", "@-", "-H", "Accept: application/json"]
         for p in parts:
             cmd += ["-F", p]
-        out = subprocess.run(cmd, input=f"Authorization: Bearer {key}\n", capture_output=True, text=True)
+        for attempt in range(2):  # one retry for a stalled or dropped transfer (curl 28 timeout, 7/56 connection)
+            out = subprocess.run(cmd, input=f"Authorization: Bearer {key}\n", capture_output=True, text=True)
+            if out.returncode not in (7, 28, 56):
+                break
         if out.returncode:
             raise MetaAPIError(f"curl rc={out.returncode} for {url.split('?')[0]}: {out.stdout[:600]} {out.stderr[:300]}")
         return json.loads(out.stdout)

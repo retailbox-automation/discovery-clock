@@ -1,0 +1,14 @@
+{
+ "step": "upload-window-156-168",
+ "hash": "d0647d54d6f62f64",
+ "recorded_utc": "2026-11-04T19:03:51Z",
+ "request": {
+  "endpoint": "/files",
+  "purpose": "user_data",
+  "media_sha256": "959f3fbcf44a0e448b9d6f7684ccdf56e8119d7a94e6bcb420f2b3164b545fce:window:156.00-168.00@10fps"
+ },
+ "response": {
+  "id": "file-3927269390748387"
+ },
+ "latency_s": 200.66
+}

@@ -1,0 +1,517 @@
+{
+ "case": "dog-kCu9d3LMN6A",
+ "created_utc": "2026-11-04T19:01:51Z",
+ "replay": false,
+ "video": {
+  "name": "kCu9d3LMN6A.mp4",
+  "sha256": "5f9202da2f6534bbb2d03e8a46cb9f37667dba30711f0fc507fa2db97b8c5fd0",
+  "duration_s": 170.945
+ },
+ "source": {
+  "id": "kCu9d3LMN6A",
+  "url": "https://www.youtube.com/watch?v=kCu9d3LMN6A",
+  "title": "Dog saved from starving, owner arrested",
+  "publisher": "Volusia Sheriff's Office (official YouTube channel @VolusiaSheriff)",
+  "rights": "Florida public record (Fla. Stat. ch. 119), released by the agency; Florida agencies cannot claim copyright in public records (Microdecisions, Inc. v. Skinner, 889 So. 2d 871, Fla. 2d DCA 2004). Faces of bystanders are blurred in anything we publish; names of arrested people are not used."
+ },
+ "report": "When found, the dog's body was covered in sores and he was weak.\nThe dog has gained a significant amount of weight since he was admitted to the shelter.\nThe owner was arrested.\nThe owner denied the neglect.\nThe owner asked for his mom.\nA pipe was found in the owner's pocket.\nThe owner thanked the detectives for taking care of the dog.\nThe owner was arrested inside a moving car during a traffic stop.\n",
+ "claims_mode": "lines",
+ "models": {
+  "claims": "meta-models/muse-spark-open-1026",
+  "transcribe": "muse-voice-transcribe-1.0",
+  "review": "muse-spark-1.3",
+  "verify": "code"
+ },
+ "claims_notes": [],
+ "turns": [
+  {
+   "startMs": 1580,
+   "endMs": 6940,
+   "speaker": "A",
+   "transcript": "Whoa. It's awesome. Hey come here.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 7020,
+   "endMs": 7340,
+   "speaker": "B",
+   "transcript": "Why?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 7340,
+   "endMs": 9100,
+   "speaker": "A",
+   "transcript": "Come here answer the sheriff's office office come here",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 9180,
+   "endMs": 13500,
+   "speaker": "A",
+   "transcript": "Whoa Come here you're under arrest",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 14060,
+   "endMs": 19900,
+   "speaker": "A",
+   "transcript": "stop stop fighting",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 20700,
+   "endMs": 24460,
+   "speaker": "B",
+   "transcript": "What happened what's going on what is going on",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 24460,
+   "endMs": 25180,
+   "speaker": "A",
+   "transcript": "Stop fighting",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 25180,
+   "endMs": 27420,
+   "speaker": "B",
+   "transcript": "Please just tell me why am I being am I being arrested?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 27420,
+   "endMs": 28460,
+   "speaker": "A",
+   "transcript": "Be under",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 28780,
+   "endMs": 33740,
+   "speaker": "C",
+   "transcript": "Quit resisting you're going to catch an extra charge Do you not understand me right now? Put your hand behind your back",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 33740,
+   "endMs": 38540,
+   "speaker": "B",
+   "transcript": "Why?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 38780,
+   "endMs": 39980,
+   "speaker": "A",
+   "transcript": "Stop",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 40140,
+   "endMs": 41260,
+   "speaker": "C",
+   "transcript": "resisting",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 41420,
+   "endMs": 42620,
+   "speaker": "A",
+   "transcript": "Get out of the chair",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 42620,
+   "endMs": 43980,
+   "speaker": "C",
+   "transcript": "We'll talk to you in a second.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 44140,
+   "endMs": 48220,
+   "speaker": "B",
+   "transcript": "What is going on? Can you please just tell me why I'm being arrested?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 48460,
+   "endMs": 52220,
+   "speaker": "C",
+   "transcript": "Yeah, we will just a second once we okay?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 52460,
+   "endMs": 53820,
+   "speaker": "B",
+   "transcript": "I don't understand what's going on.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 53820,
+   "endMs": 55340,
+   "speaker": "A",
+   "transcript": "Stop resisting.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 55340,
+   "endMs": 56460,
+   "speaker": "B",
+   "transcript": "I'm not resisting",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 56460,
+   "endMs": 59740,
+   "speaker": "A",
+   "transcript": "You are you're pulling away.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 60220,
+   "endMs": 63260,
+   "speaker": "B",
+   "transcript": "Can you call my mom?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 65740,
+   "endMs": 69820,
+   "speaker": "A",
+   "transcript": "This way. This way.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 70060,
+   "endMs": 71260,
+   "speaker": "A",
+   "transcript": "Walk to the car.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 71260,
+   "endMs": 75100,
+   "speaker": "B",
+   "transcript": "Yes sir but I just like I just want to know what's going on.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 75340,
+   "endMs": 79660,
+   "speaker": "A",
+   "transcript": "Well you're under arrest now you just gotta do a charge too.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 81020,
+   "endMs": 83100,
+   "speaker": "B",
+   "transcript": "Like what is happening?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 83260,
+   "endMs": 85980,
+   "speaker": "C",
+   "transcript": "Aggravated animal cruelty is what you're getting arrested for today.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 86060,
+   "endMs": 86300,
+   "speaker": "B",
+   "transcript": "Why? Why?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 86300,
+   "endMs": 89900,
+   "speaker": "C",
+   "transcript": "You're also catching an additional charge for resisting us.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 89900,
+   "endMs": 95980,
+   "speaker": "B",
+   "transcript": "I did all I don't even know what was going on.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 97740,
+   "endMs": 100860,
+   "speaker": "B",
+   "transcript": "i'm so confused right now",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 102460,
+   "endMs": 105260,
+   "speaker": "B",
+   "transcript": "i i took care of my dog i don't understand",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 105260,
+   "endMs": 107260,
+   "speaker": "A",
+   "transcript": "apparently apparently not",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 107260,
+   "endMs": 114220,
+   "speaker": "C",
+   "transcript": "your dog is one of the worst states states of a dog I've seen in my career career do not take care of that dog",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 114380,
+   "endMs": 115900,
+   "speaker": "B",
+   "transcript": "we did",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 115900,
+   "endMs": 124860,
+   "speaker": "C",
+   "transcript": "you do not take care of that dog that dog has been in custody of animal control for a month and has gained almost 15 pounds just simply from eating",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 125180,
+   "endMs": 132860,
+   "speaker": "B",
+   "transcript": "I",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 133100,
+   "endMs": 136940,
+   "speaker": "C",
+   "transcript": "pretty sad how how bad Tanner was",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 137500,
+   "endMs": 142940,
+   "speaker": "B",
+   "transcript": "I tried I swear I did I don't know why",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 144220,
+   "endMs": 151980,
+   "speaker": "B",
+   "transcript": "I swear I took care of my dog I love my dog",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 153980,
+   "endMs": 162940,
+   "speaker": "A",
+   "transcript": "Hello. We're going to go let's take him over to your car just go through it one more time",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 165980,
+   "endMs": 169100,
+   "speaker": "B",
+   "transcript": "I don't know.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 169180,
+   "endMs": 170460,
+   "speaker": "A",
+   "transcript": "end up against the car car",
+   "piece_offset_s": 0.0
+  }
+ ],
+ "camera_clock": {
+  "start": "10:30:10",
+  "end": "10:33:00",
+  "date": "2026-09-29",
+  "readings": [
+   {
+    "video_s": 0.0,
+    "clock": "2026-09-29 10:30:10 -0400",
+    "camera": "D01A0460X"
+   },
+   {
+    "video_s": 170.0,
+    "clock": "2026-09-29 10:33:00 -0400",
+    "camera": "D01A0460X"
+   }
+  ]
+ },
+ "claims": [
+  {
+   "id": "C1",
+   "text": "When found, the dog's body was covered in sores and he was weak.",
+   "kind": "object",
+   "line": 1,
+   "status": "on_recording",
+   "start_s": 131.0,
+   "end_s": 142.0,
+   "evidence": "Inserted still photos show an emaciated light-colored dog with prominent ribs, spine and thin limbs and red skin lesions/sores on legs and body standing on tile and a towel.",
+   "reason": "The photos show an extremely thin weak-looking dog with visible skin sores, supporting the claim.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 131.0,
+    "end_s": 142.0,
+    "evidence": "Inserted still photos show an emaciated light-colored dog with prominent ribs, spine and thin limbs and red skin lesions/sores on legs and body standing on tile and a towel.",
+    "reason": "The photos show an extremely thin weak-looking dog with visible skin sores, supporting the claim."
+   },
+   "verify_notes": []
+  },
+  {
+   "id": "C2",
+   "text": "The dog has gained a significant amount of weight since he was admitted to the shelter.",
+   "kind": "object",
+   "line": 2,
+   "status": "on_recording",
+   "start_s": 115.9,
+   "end_s": 124.9,
+   "evidence": "C says \"you do not take care of that dog that dog has been in custody of animal control for a month and has gained almost 15 pounds just simply from eating\"",
+   "reason": "Speech explicitly states the ~15 pound weight gain in a month in custody.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 115.9,
+    "end_s": 124.9,
+    "evidence": "C says \"you do not take care of that dog that dog has been in custody of animal control for a month and has gained almost 15 pounds just simply from eating\"",
+    "reason": "Speech explicitly states the ~15 pound weight gain in a month in custody."
+   },
+   "verify_notes": []
+  },
+  {
+   "id": "C3",
+   "text": "The owner was arrested.",
+   "kind": "action",
+   "line": 3,
+   "status": "on_recording",
+   "start_s": 9.2,
+   "end_s": 13.5,
+   "evidence": "A says \"Whoa Come here you're under arrest\" while video shows officers grabbing, restraining and handcuffing the man in the orange shirt.",
+   "reason": "Video and speech show the owner being told he is under arrest and being physically restrained and handcuffed.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 9.2,
+    "end_s": 13.5,
+    "evidence": "A says \"Whoa Come here you're under arrest\" while video shows officers grabbing, restraining and handcuffing the man in the orange shirt.",
+    "reason": "Video and speech show the owner being told he is under arrest and being physically restrained and handcuffed."
+   },
+   "verify_notes": []
+  },
+  {
+   "id": "C4",
+   "text": "The owner denied the neglect.",
+   "kind": "speech",
+   "line": 4,
+   "status": "on_recording",
+   "start_s": 102.5,
+   "end_s": 105.3,
+   "evidence": "B says \"i i took care of my dog i don't understand\"",
+   "reason": "The owner asserts he took care of his dog, denying neglect.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 102.5,
+    "end_s": 105.3,
+    "evidence": "B says \"i i took care of my dog i don't understand\"",
+    "reason": "The owner asserts he took care of his dog, denying neglect."
+   },
+   "verify_notes": []
+  },
+  {
+   "id": "C5",
+   "text": "The owner asked for his mom.",
+   "kind": "speech",
+   "line": 5,
+   "status": "on_recording",
+   "start_s": 60.2,
+   "end_s": 63.3,
+   "evidence": "B says \"Can you call my mom?\"",
+   "reason": "The owner explicitly asks for his mom on the recording.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 60.2,
+    "end_s": 63.3,
+    "evidence": "B says \"Can you call my mom?\"",
+    "reason": "The owner explicitly asks for his mom on the recording."
+   },
+   "verify_notes": []
+  },
+  {
+   "id": "C6",
+   "text": "A pipe was found in the owner's pocket.",
+   "kind": "object",
+   "line": 6,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "No pipe is shown in the pocket search and no speech mentions a pipe.",
+   "reason": "The recording neither shows nor mentions a pipe.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1.0,
+    "end_s": -1.0,
+    "evidence": "No pipe is shown in the pocket search and no speech mentions a pipe.",
+    "reason": "The recording neither shows nor mentions a pipe."
+   },
+   "verify_notes": []
+  },
+  {
+   "id": "C7",
+   "text": "The owner thanked the detectives for taking care of the dog.",
+   "kind": "speech",
+   "line": 7,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "No speech thanks detectives; owner only expresses confusion and claims he cared for the dog.",
+   "reason": "The recording contains no thank-you for taking care of the dog.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1.0,
+    "end_s": -1.0,
+    "evidence": "No speech thanks detectives; owner only expresses confusion and claims he cared for the dog.",
+    "reason": "The recording contains no thank-you for taking care of the dog."
+   },
+   "verify_notes": []
+  },
+  {
+   "id": "C8",
+   "text": "The owner was arrested inside a moving car during a traffic stop.",
+   "kind": "action",
+   "line": 8,
+   "status": "check",
+   "start_s": 0.0,
+   "end_s": 10.0,
+   "evidence": "Arrest begins outdoors on a dirt driveway/patio by trailers and parked cars with the man standing outside, then walked to a car, not inside a moving car.",
+   "reason": "The recording shows an outdoor on-foot arrest, contradicting arrest inside a moving car during a traffic stop.",
+   "model": {
+    "status": "check",
+    "start_s": 0.0,
+    "end_s": 10.0,
+    "evidence": "Arrest begins outdoors on a dirt driveway/patio by trailers and parked cars with the man standing outside, then walked to a car, not inside a moving car.",
+    "reason": "The recording shows an outdoor on-foot arrest, contradicting arrest inside a moving car during a traffic stop."
+   },
+   "verify_notes": []
+  }
+ ],
+ "summary": {
+  "total": 8,
+  "on_recording": 5,
+  "not_found": 2,
+  "check": 1,
+  "changed_by_code": 0
+ },
+ "verify_notes": [],
+ "spend_usd": 0.08034,
+ "seconds": 77.8
+}

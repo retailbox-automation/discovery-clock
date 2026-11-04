@@ -1,0 +1,95 @@
+{
+ "step": "claims-kind-open",
+ "hash": "affb77422f6cc402",
+ "recorded_utc": "2026-11-04T18:58:19Z",
+ "request": {
+  "endpoint": "https://inference.baseten.co/v1/chat/completions",
+  "body": {
+   "model": "meta-models/muse-spark-open-1026",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Label each claim from an incident report with its kind.\nkind: action (someone did something), speech (someone said something), time (a clock time or date is stated), object (a thing, place or condition was present).\nKeep every id exactly as given. Answer with JSON only: {\"claims\":[{\"id\":\"C1\",\"kind\":\"action\"}]}\nCLAIMS:\nC1. The suspect vehicle had lost a front wheel.\nC2. The vehicle got stuck at a construction site.\nC3. Deputies detained the driver.\nC4. The driver appeared to be under the influence.\nC5. The driver resisted and kicked a deputy while being escorted into the back of a patrol vehicle.\nC6. When asked about the crash, the driver responded \"What crash?\"\nC7. The driver asked deputies to release him in exchange for $2,000.\nC8. The driver walked to the patrol car calmly and without resisting.\nC9. The driver said he was late for a job interview."
+    }
+   ],
+   "max_tokens": 8000,
+   "temperature": 0,
+   "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+     "name": "claims-kind-open",
+     "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "claims"
+      ],
+      "properties": {
+       "claims": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "additionalProperties": false,
+         "required": [
+          "id",
+          "kind"
+         ],
+         "properties": {
+          "id": {
+           "type": "string"
+          },
+          "kind": {
+           "type": "string",
+           "enum": [
+            "action",
+            "speech",
+            "time",
+            "object"
+           ]
+          }
+         }
+        }
+       }
+      }
+     },
+     "strict": true
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "chatcmpl-9bde283b4cef4d26a0c2ac981fcd22b6",
+  "choices": [
+   {
+    "index": 0,
+    "message": {
+     "content": "{\"claims\":[{\"id\":\"C1\",\"kind\":\"object\"},{\"id\":\"C2\",\"kind\":\"object\"},{\"id\":\"C3\",\"kind\":\"action\"},{\"id\":\"C4\",\"kind\":\"object\"},{\"id\":\"C5\",\"kind\":\"action\"},{\"id\":\"C6\",\"kind\":\"speech\"},{\"id\":\"C7\",\"kind\":\"speech\"},{\"id\":\"C8\",\"kind\":\"action\"},{\"id\":\"C9\",\"kind\":\"speech\"}]}",
+     "role": "assistant",
+     "reasoning_content": "We need to label each claim with its kind: action, speech, time, object.\n\nDefinitions:\n- action (someone did something)\n- speech (someone said something)\n- time (a clock time or date is stated)\n- object (a thing, place or condition was present)\n\nWe have claims:\n\nC1. The suspect vehicle had lost a front wheel.\nIs that object? \"a thing, place or condition was present\" - lost a front wheel is condition was present. Could be object. Or action? Someone did something? The vehicle lost wheel - not someone did something. So object.\n\nC2. The vehicle got stuck at a construction site.\nVehicle got stuck - is that action? Or object? \"a thing, place or condition was present\" - construction site is place present. But \"got stuck\" is maybe action? However definitions: action = someone did something. Vehicle is not someone? But maybe vehicle action? Need interpret. Probably C2 is object? Or action? Let's think typical classification tasks: action vs object distinction. \"The vehicle got stuck at a construction site.\" Could be object because it describes condition/place. But also could be action? Let's hold.\n\nC3. Deputies detained the driver. That's action: someone did something.\n\nC4. The driver appeared to be under the influence. That's object: a condition was present (under influence). Not action, not speech.\n\nC5. The driver resisted and kicked a deputy while being escorted into the back of a patrol vehicle. That's action: someone did something (resisted, kicked).\n\nC6. When asked about the crash, the driver responded \"What crash?\" That's speech: someone said something.\n\nC7. The driver asked deputies to release him in exchange for $2,000. That's speech: someone said something (asked). Even though it's a bribe offer, it's speech.\n\nC8. The driver walked to the patrol car calmly and without resisting. That's action: someone did something (walked).\n\nC9. The driver said he was late for a job interview. That's speech: someone said something.\n\nWe need to ensure JSON only: {\"claims\":[{\"id\":\"C1\",\"kind\":\"action\"}]}\n\nWe must keep every id exactly as given. Provide all 9.\n\nPotential nuance: C1 and C2 could be considered object. Let's verify typical definitions in such tasks: object = a thing, place or condition was present. So C1: The suspect vehicle had lost a front wheel. That's describing condition of vehicle - object. C2: The vehicle got stuck at a construction site. That's describing place/condition - object. Could also be action but \"got stuck\" is not intentional action by someone. So object fits better.\n\nC4: appeared to be under influence - object (condition).\n\nCheck if any time claims? None have clock time or date. So no time.\n\nWe should output JSON with all claims.\n\nMake sure kind values are exactly as given: action, speech, time, object - lowercase.\n\nProvide JSON: {\"claims\":[{\"id\":\"C1\",\"kind\":\"object\"},...]}\n\nWe must ensure valid JSON.\n\nPotential alternative: C1 could be action? But \"had lost a front wheel\" could be considered action? However definition says action = someone did something. Vehicle losing wheel is not someone doing something. So object.\n\nC2 similar.\n\nThus final answer:\n\nC1 object\nC2 object\nC3 action\nC4 object\nC5 action\nC6 speech\nC7 speech\nC8 action\nC9 speech\n\nCheck C7: \"The driver asked deputies to release him in exchange for $2,000.\" That's speech. Yes.\n\nC8: walked calmly - action.\n\nWe should output JSON only.\n\nEnsure no extra text.\n\nProbably need to output exactly {\"claims\":[...]}\n\nMake sure ordering same as input: C1..C9.\n\nProvide final answer."
+    },
+    "finish_reason": "stop"
+   }
+  ],
+  "created": 1793818696,
+  "model": "meta-models/muse-spark-open-1026",
+  "object": "chat.completion",
+  "usage": {
+   "prompt_tokens": 355,
+   "completion_tokens": 899,
+   "total_tokens": 1254,
+   "prompt_tokens_details": {
+    "audio_tokens": 0,
+    "cached_tokens": 128
+   },
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": 684,
+    "audio_tokens": 0,
+    "reasoning_tokens": 804,
+    "rejected_prediction_tokens": 821
+   }
+  }
+ },
+ "latency_s": 2.9,
+ "usd": 0.0,
+ "model": "meta-models/muse-spark-open-1026"
+}

@@ -1,0 +1,118 @@
+{
+ "step": "transcribe-0",
+ "hash": "0abf0a9e7b42a6e8",
+ "recorded_utc": "2026-11-04T18:57:28Z",
+ "request": {
+  "endpoint": "/asr/transcribe",
+  "mode": "DIARIZATION",
+  "model": "muse-voice-transcribe-1.0",
+  "audioEncoding": "WAV",
+  "media_sha256": "05e654d152564b01ad5567cf1601aa18e1fe9ec85cc9838c4c0f61f7a6e000f2",
+  "piece_s": [
+   0.0,
+   97.199
+  ],
+  "audio": "mono s16le 24000 Hz"
+ },
+ "response": {
+  "sessionId": "dc-00939e1bb097",
+  "transcript": "I haven't seen them, I haven't heard them. How many people might be inside? Two elderly people. Two elderly people. They are not outside. A male and a female? female? Yes. Damn! Hey, there might be another one in there. Ma'am. Ma'am. Can you breathing? Keep breathing sweetheart. There you go Keep breathing Yeah she's breathing I pulled one from the house he's trying to get another one she's she's diagonal she's breathing but it might be one more in there yes There you go go baby girl keep breathing you hear me can you hear me there you go your eyes are open good job sweetheart You keep breathing okay just stay here don't move don't move relax I got you",
+  "audioDurationMs": 97200,
+  "turns": [
+   {
+    "turnId": 0,
+    "startMs": 9580,
+    "endMs": 10380,
+    "transcript": "I haven't seen them, I haven't heard them.",
+    "speaker": "A"
+   },
+   {
+    "turnId": 1,
+    "startMs": 10700,
+    "endMs": 12220,
+    "transcript": "How many people might be inside?",
+    "speaker": "B"
+   },
+   {
+    "turnId": 2,
+    "startMs": 12540,
+    "endMs": 13420,
+    "transcript": "Two elderly people.",
+    "speaker": "C"
+   },
+   {
+    "turnId": 3,
+    "startMs": 13500,
+    "endMs": 14540,
+    "transcript": "Two elderly people.",
+    "speaker": "B"
+   },
+   {
+    "turnId": 4,
+    "startMs": 14540,
+    "endMs": 15100,
+    "transcript": "They are not outside.",
+    "speaker": "C"
+   },
+   {
+    "turnId": 5,
+    "startMs": 15420,
+    "endMs": 16220,
+    "transcript": "A male and a female? female?",
+    "speaker": "B"
+   },
+   {
+    "turnId": 6,
+    "startMs": 16220,
+    "endMs": 33180,
+    "transcript": "Yes.",
+    "speaker": "C"
+   },
+   {
+    "turnId": 7,
+    "startMs": 33260,
+    "endMs": 52620,
+    "transcript": "Damn! Hey, there might be another one in there.",
+    "speaker": "B"
+   },
+   {
+    "turnId": 8,
+    "startMs": 52860,
+    "endMs": 59180,
+    "transcript": "Ma'am. Ma'am. Can you breathing?",
+    "speaker": "B"
+   },
+   {
+    "turnId": 9,
+    "startMs": 59900,
+    "endMs": 64300,
+    "transcript": "Keep breathing sweetheart. There you go",
+    "speaker": "B"
+   },
+   {
+    "turnId": 10,
+    "startMs": 64700,
+    "endMs": 69980,
+    "transcript": "Keep breathing Yeah she's breathing",
+    "speaker": "B"
+   },
+   {
+    "turnId": 11,
+    "startMs": 70940,
+    "endMs": 78860,
+    "transcript": "I pulled one from the house he's trying to get another one she's she's diagonal she's breathing but it might be one more in there yes",
+    "speaker": "B"
+   },
+   {
+    "turnId": 12,
+    "startMs": 82300,
+    "endMs": 95980,
+    "transcript": "There you go go baby girl keep breathing you hear me can you hear me there you go your eyes are open good job sweetheart You keep breathing okay just stay here don't move don't move relax I got you",
+    "speaker": "B"
+   }
+  ]
+ },
+ "latency_s": 13.91,
+ "usd": 0.00486,
+ "model": "muse-voice-transcribe-1.0"
+}

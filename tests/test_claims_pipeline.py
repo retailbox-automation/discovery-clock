@@ -85,3 +85,20 @@ def test_pipeline_failure_is_written_to_status(dirs, tiny_video):
                      runs_dir=dirs["runs"])
     st = json.loads((dirs["runs"] / "bad" / "status.json").read_text())
     assert st["state"] == "failed" and st["steps"]["transcribe"]["state"] == "failed"
+
+
+def test_reverify_uses_saved_answer_without_calls(dirs, tiny_video):
+    client = make_client(dirs, case="rv")
+    pipeline.run("rv", tiny_video, "The deputy got in the water.\nA boater pulled him out.\nNo one.", claims_mode="lines",
+                 client=client, runs_dir=dirs["runs"])
+    p = dirs["runs"] / "rv" / "result.json"
+    r = json.loads(p.read_text())
+    r["verify_version"] = 1
+    r["claims"][0]["status"] = "check"  # pretend the old rule had downgraded it
+    p.write_text(json.dumps(r))
+    n_http = len(client.http)
+    res = pipeline.reverify("rv", runs_dir=dirs["runs"], recordings_dir=dirs["recordings"])
+    assert len(client.http) == n_http
+    assert res["claims"][0]["status"] == "on_recording" and res["verify_version"] == 2
+    assert json.loads((dirs["runs"] / "rv" / "result-v1.json").read_text())["claims"][0]["status"] == "check"
+    assert (dirs["recordings"] / "rv" / "result-v1.json").exists()

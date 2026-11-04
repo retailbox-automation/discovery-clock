@@ -27,7 +27,7 @@ def test_case_page_shows_statuses_player_clock_and_code_notes(web):
     t = r.text
     assert "On recording · 00:00:00" in t and "Check this claim" in t and "Not found on recording" in t
     assert 'src="/media/case1"' in t and "Camera clock 21:00:29" in t
-    assert "Code check · model said “on recording”" in t and "quote not found near timecode" in t
+    assert "Changed by code check</b> (the model said “on recording”)" in t and "quote not in the transcript" in t
     assert "Muse Voice Transcribe" in t and "Muse Spark 1.3" in t
     data = json.loads(t.split('type="application/json">', 1)[1].split("</script>", 1)[0])
     assert len(data["claims"]) == 3

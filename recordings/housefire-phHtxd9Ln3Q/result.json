@@ -1,0 +1,319 @@
+{
+ "case": "housefire-phHtxd9Ln3Q",
+ "created_utc": "2026-11-04T18:58:12Z",
+ "replay": false,
+ "video": {
+  "name": "phHtxd9Ln3Q.mp4",
+  "sha256": "05e654d152564b01ad5567cf1601aa18e1fe9ec85cc9838c4c0f61f7a6e000f2",
+  "duration_s": 97.199
+ },
+ "source": {
+  "id": "phHtxd9Ln3Q",
+  "url": "https://www.youtube.com/watch?v=phHtxd9Ln3Q",
+  "title": "House fire rescue: 5/18/26",
+  "publisher": "Volusia Sheriff's Office (official YouTube channel @VolusiaSheriff)",
+  "rights": "Florida public record (Fla. Stat. ch. 119), released by the agency; Florida agencies cannot claim copyright in public records (Microdecisions, Inc. v. Skinner, 889 So. 2d 871, Fla. 2d DCA 2004). Faces of bystanders are blurred in anything we publish; names of arrested people are not used."
+ },
+ "report": "Units responded to a house fire with two people believed to be inside.\nA deputy kicked down the front door.\nThe deputy pulled the female resident to safety.\nThe deputy rendered aid until Fire Rescue took over.\nFirefighters pulled the male occupant from the house.\nThe deputy entered the house through a back window.\nA neighbor handed the deputy a fire extinguisher.\n",
+ "claims_mode": "lines",
+ "models": {
+  "claims": "meta-models/muse-spark-open-1026",
+  "transcribe": "muse-voice-transcribe-1.0",
+  "review": "muse-spark-1.3",
+  "verify": "code"
+ },
+ "claims_notes": [],
+ "turns": [
+  {
+   "startMs": 9580,
+   "endMs": 10380,
+   "speaker": "A",
+   "transcript": "I haven't seen them, I haven't heard them.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 10700,
+   "endMs": 12220,
+   "speaker": "B",
+   "transcript": "How many people might be inside?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 12540,
+   "endMs": 13420,
+   "speaker": "C",
+   "transcript": "Two elderly people.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 13500,
+   "endMs": 14540,
+   "speaker": "B",
+   "transcript": "Two elderly people.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 14540,
+   "endMs": 15100,
+   "speaker": "C",
+   "transcript": "They are not outside.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 15420,
+   "endMs": 16220,
+   "speaker": "B",
+   "transcript": "A male and a female? female?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 16220,
+   "endMs": 33180,
+   "speaker": "C",
+   "transcript": "Yes.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 33260,
+   "endMs": 52620,
+   "speaker": "B",
+   "transcript": "Damn! Hey, there might be another one in there.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 52860,
+   "endMs": 59180,
+   "speaker": "B",
+   "transcript": "Ma'am. Ma'am. Can you breathing?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 59900,
+   "endMs": 64300,
+   "speaker": "B",
+   "transcript": "Keep breathing sweetheart. There you go",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 64700,
+   "endMs": 69980,
+   "speaker": "B",
+   "transcript": "Keep breathing Yeah she's breathing",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 70940,
+   "endMs": 78860,
+   "speaker": "B",
+   "transcript": "I pulled one from the house he's trying to get another one she's she's diagonal she's breathing but it might be one more in there yes",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 82300,
+   "endMs": 95980,
+   "speaker": "B",
+   "transcript": "There you go go baby girl keep breathing you hear me can you hear me there you go your eyes are open good job sweetheart You keep breathing okay just stay here don't move don't move relax I got you",
+   "piece_offset_s": 0.0
+  }
+ ],
+ "camera_clock": {
+  "start": "23:41:57",
+  "end": "23:45:15",
+  "date": "2026-05-18",
+  "readings": [
+   {
+    "video_s": 0.0,
+    "clock": "2026-05-18 23:41:57 -0400",
+    "camera": "AXON BODY 4 D01A14892"
+   },
+   {
+    "video_s": 49.0,
+    "clock": "2026-05-18 23:42:54 -0400",
+    "camera": "AXON BODY 4 D01A14892"
+   },
+   {
+    "video_s": 57.0,
+    "clock": "2026-05-18 23:43:10 -0400",
+    "camera": "AXON BODY 4 D01A14892"
+   },
+   {
+    "video_s": 59.0,
+    "clock": "2026-05-18 23:43:15 -0400",
+    "camera": "AXON BODY 4 D01A14892"
+   },
+   {
+    "video_s": 66.0,
+    "clock": "2026-05-18 23:43:57 -0400",
+    "camera": "AXON BODY 4 D01A14892"
+   },
+   {
+    "video_s": 82.0,
+    "clock": "2026-05-18 23:44:38 -0400",
+    "camera": "AXON BODY 4 D01A14892"
+   },
+   {
+    "video_s": 86.0,
+    "clock": "2026-05-18 23:45:04 -0400",
+    "camera": "AXON BODY 4 D01A14892"
+   },
+   {
+    "video_s": 96.0,
+    "clock": "2026-05-18 23:45:14 -0400",
+    "camera": "AXON BODY 4 D01A14892"
+   }
+  ]
+ },
+ "claims": [
+  {
+   "id": "C1",
+   "text": "Units responded to a house fire with two people believed to be inside.",
+   "kind": "action",
+   "line": 1,
+   "status": "on_recording",
+   "start_s": 10.7,
+   "end_s": 15.1,
+   "evidence": "Night video shows house with orange flames and speech \"How many people might be inside?\" \"Two elderly people.\" \"Two elderly people.\" \"They are not outside.\"",
+   "reason": "Video shows a burning house while speech states two elderly people are believed inside and not outside.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 10.7,
+    "end_s": 15.1,
+    "evidence": "Night video shows house with orange flames and speech \"How many people might be inside?\" \"Two elderly people.\" \"Two elderly people.\" \"They are not outside.\"",
+    "reason": "Video shows a burning house while speech states two elderly people are believed inside and not outside."
+   },
+   "verify_notes": []
+  },
+  {
+   "id": "C2",
+   "text": "A deputy kicked down the front door.",
+   "kind": "action",
+   "line": 2,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "Deputy approaches front porch with flashlight at t=21-30 but no kick is clearly visible and no speech mentions kicking a door.",
+   "reason": "The recording neither shows a kick nor mentions it.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1,
+    "end_s": -1,
+    "evidence": "Deputy approaches front porch with flashlight at t=21-30 but no kick is clearly visible and no speech mentions kicking a door.",
+    "reason": "The recording neither shows a kick nor mentions it."
+   },
+   "verify_notes": []
+  },
+  {
+   "id": "C3",
+   "text": "The deputy pulled the female resident to safety.",
+   "kind": "action",
+   "line": 3,
+   "status": "on_recording",
+   "start_s": 52.86,
+   "end_s": 78.9,
+   "evidence": "Speech \"I pulled one from the house he's trying to get another one she's she's diagonal she's breathing but it might be one more in there yes\" with prior coaching \"Ma'am. Ma'am. Can you breathing?\" \"Keep breathing sweetheart. There you go\"",
+   "reason": "Speech states the speaker pulled an occupant who is female and breathing, though name and rank are not shown.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 70.9,
+    "end_s": 78.9,
+    "evidence": "Speech \"I pulled one from the house he's trying to get another one she's she's diagonal she's breathing but it might be one more in there yes\" with prior coaching \"Ma'am. Ma'am. Can you breathing?\" \"Keep breathing sweetheart. There you go\"",
+    "reason": "Speech states the speaker pulled an occupant who is female and breathing, though name and rank are not shown."
+   },
+   "verify_notes": [
+    {
+     "rule": "quote",
+     "changed_status": false,
+     "detail": "quote is at t=52.9 s, outside the claim's window 70.9..78.9 s: \"Ma'am. Ma'am. Can you breathing?\"; window widened to 52.9..78.9 s"
+    }
+   ]
+  },
+  {
+   "id": "C4",
+   "text": "The deputy rendered aid until Fire Rescue took over.",
+   "kind": "action",
+   "line": 4,
+   "status": "check",
+   "start_s": 52.9,
+   "end_s": 96.0,
+   "evidence": "Speech \"Ma'am. Ma'am. Can you breathing?\" \"Keep breathing sweetheart. There you go\" \"Keep breathing Yeah she's breathing\" through \"just stay here don't move don't move relax I got you\" with no Fire Rescue handover seen or heard.",
+   "reason": "Aid and breathing coaching are shown but no takeover by Fire Rescue is shown or said.",
+   "model": {
+    "status": "check",
+    "start_s": 52.9,
+    "end_s": 96.0,
+    "evidence": "Speech \"Ma'am. Ma'am. Can you breathing?\" \"Keep breathing sweetheart. There you go\" \"Keep breathing Yeah she's breathing\" through \"just stay here don't move don't move relax I got you\" with no Fire Rescue handover seen or heard.",
+    "reason": "Aid and breathing coaching are shown but no takeover by Fire Rescue is shown or said."
+   },
+   "verify_notes": []
+  },
+  {
+   "id": "C5",
+   "text": "Firefighters pulled the male occupant from the house.",
+   "kind": "action",
+   "line": 5,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "No visual of firefighters removing anyone is clear in blurred footage and no speech says firefighters pulled the male occupant.",
+   "reason": "The recording neither shows nor contradicts firefighters pulling a male occupant.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1,
+    "end_s": -1,
+    "evidence": "No visual of firefighters removing anyone is clear in blurred footage and no speech says firefighters pulled the male occupant.",
+    "reason": "The recording neither shows nor contradicts firefighters pulling a male occupant."
+   },
+   "verify_notes": []
+  },
+  {
+   "id": "C6",
+   "text": "The deputy entered the house through a back window.",
+   "kind": "action",
+   "line": 6,
+   "status": "check",
+   "start_s": 21.0,
+   "end_s": 26.0,
+   "evidence": "Flashlight illuminates front door with wreath and wall sign about LEAVE as deputy moves to and through front entry, no back window shown.",
+   "reason": "Video shows entry at the front door which contradicts entry through a back window.",
+   "model": {
+    "status": "check",
+    "start_s": 21.0,
+    "end_s": 26.0,
+    "evidence": "Flashlight illuminates front door with wreath and wall sign about LEAVE as deputy moves to and through front entry, no back window shown.",
+    "reason": "Video shows entry at the front door which contradicts entry through a back window."
+   },
+   "verify_notes": []
+  },
+  {
+   "id": "C7",
+   "text": "A neighbor handed the deputy a fire extinguisher.",
+   "kind": "action",
+   "line": 7,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "No extinguisher or handover from a neighbor is visible and no speech mentions a fire extinguisher.",
+   "reason": "The recording neither shows nor mentions a neighbor handing an extinguisher.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1,
+    "end_s": -1,
+    "evidence": "No extinguisher or handover from a neighbor is visible and no speech mentions a fire extinguisher.",
+    "reason": "The recording neither shows nor mentions a neighbor handing an extinguisher."
+   },
+   "verify_notes": []
+  }
+ ],
+ "summary": {
+  "total": 7,
+  "on_recording": 2,
+  "not_found": 3,
+  "check": 2,
+  "changed_by_code": 0
+ },
+ "verify_notes": [],
+ "spend_usd": 0.0664,
+ "seconds": 60.9,
+ "verify_version": 2,
+ "reverified_utc": "2026-11-04T19:03:59Z"
+}

@@ -32,6 +32,8 @@ def main(argv=None):
     p = sub.add_parser("replay", help="re-run a recorded case from recordings/ without network or key")
     p.add_argument("--case", required=True)
     p.add_argument("--video", required=True)
+    v = sub.add_parser("reverify", help="re-run the code checks over saved model answers (no model calls)")
+    v.add_argument("--case", action="append", required=True)
     s = sub.add_parser("serve", help="web interface on 127.0.0.1")
     s.add_argument("--port", type=int, default=8765)
     a = ap.parse_args(argv)
@@ -45,6 +47,11 @@ def main(argv=None):
         rc = pipeline.recorded_case(a.case)
         res = pipeline.run(a.case, a.video, rc["report"], claims_mode=rc.get("claims_mode", "extract"))
         _print_result(res)
+    elif a.cmd == "reverify":
+        for cid in a.case:
+            res = pipeline.reverify(cid)
+            print(f"== {cid} (verify v{res['verify_version']})")
+            _print_result(res)
     elif a.cmd == "serve":
         import uvicorn
         uvicorn.run("discovery_clock.app:app", host="127.0.0.1", port=a.port, log_level="warning")

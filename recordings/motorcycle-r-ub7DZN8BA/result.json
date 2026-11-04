@@ -1,0 +1,381 @@
+{
+ "case": "motorcycle-r-ub7DZN8BA",
+ "created_utc": "2026-11-04T19:03:47Z",
+ "replay": false,
+ "video": {
+  "name": "r-ub7DZN8BA.mp4",
+  "sha256": "5fb06781c45861633b4cf61018aae5e5db92c783818b0d5c74927327f39539dc",
+  "duration_s": 203.685
+ },
+ "source": {
+  "id": "r-ub7DZN8BA",
+  "url": "https://www.youtube.com/watch?v=r-ub7DZN8BA",
+  "title": "Fleeing motorcyclist arrest",
+  "publisher": "Volusia Sheriff's Office (official YouTube channel @VolusiaSheriff)",
+  "rights": "Florida public record (Fla. Stat. ch. 119), released by the agency; Florida agencies cannot claim copyright in public records (Microdecisions, Inc. v. Skinner, 889 So. 2d 871, Fla. 2d DCA 2004). Faces of bystanders are blurred in anything we publish; names of arrested people are not used."
+ },
+ "report": "A motorcycle fled from deputies during a traffic operation.\nThe motorcycle sped at high speed, weaving in and out of traffic.\nThe aviation unit was overhead when the rider stopped to refuel.\nThe rider stopped to refuel at a gas station.\nThe rider stopped voluntarily for deputies on the highway shoulder.\nA passenger was riding on the back of the motorcycle.\n",
+ "claims_mode": "lines",
+ "models": {
+  "claims": "meta-models/muse-spark-open-1026",
+  "transcribe": "muse-voice-transcribe-1.0",
+  "review": "muse-spark-1.3",
+  "verify": "code"
+ },
+ "claims_notes": [],
+ "turns": [
+  {
+   "startMs": 3180,
+   "endMs": 5820,
+   "speaker": "A",
+   "transcript": "I think the middle one we can't see a tag on the camera.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 8620,
+   "endMs": 12620,
+   "speaker": "B",
+   "transcript": "They're 12 half. weaving through traffic. traffic.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 12780,
+   "endMs": 16380,
+   "speaker": "C",
+   "transcript": "I won't deny it, I'm a straight rider",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 29180,
+   "endMs": 32300,
+   "speaker": "B",
+   "transcript": "Traffic, I don't have eyes",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 32460,
+   "endMs": 38380,
+   "speaker": "D",
+   "transcript": "Alright, he just passed he's 12 F in and out of traffic",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 38700,
+   "endMs": 43580,
+   "speaker": "E",
+   "transcript": "Soon I hear in the left lane",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 45420,
+   "endMs": 52140,
+   "speaker": "E",
+   "transcript": "Rider no tag on the bike. In the fast lane right now. Inside lane.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 52300,
+   "endMs": 52380,
+   "speaker": "?",
+   "transcript": "",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 52380,
+   "endMs": 59100,
+   "speaker": "F",
+   "transcript": "Got a multi color selfie stick one shield.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 60700,
+   "endMs": 63900,
+   "speaker": "E",
+   "transcript": "He's cutting in and out of traffic.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 67340,
+   "endMs": 72540,
+   "speaker": "A",
+   "transcript": "He He just passed your unit. high rate of speed.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 72860,
+   "endMs": 77340,
+   "speaker": "G",
+   "transcript": "Yes, 12 playing all leading charges.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 81260,
+   "endMs": 90940,
+   "speaker": "A",
+   "transcript": "He just flew by a trooper here here that's 1050 with somebody. Okay, he's pulling into a gas station here. Uh, 40640 D Street.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 92060,
+   "endMs": 94060,
+   "speaker": "A",
+   "transcript": "Be at J and 44.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 96300,
+   "endMs": 99420,
+   "speaker": "F",
+   "transcript": "So far from there.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 99500,
+   "endMs": 109980,
+   "speaker": "A",
+   "transcript": "Okay, still got his helmet on, white helmet, black t-shirt, black pants, don't see a plate and he's got his credit card out paying for gas.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 111420,
+   "endMs": 113980,
+   "speaker": "A",
+   "transcript": "Okay, back on the go 44 eastbound",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 114460,
+   "endMs": 120300,
+   "speaker": "H",
+   "transcript": "County on 44 on a step on it.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 120380,
+   "endMs": 123820,
+   "speaker": "B",
+   "transcript": "Yeah all of us are here",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 123900,
+   "endMs": 125180,
+   "speaker": "I",
+   "transcript": "Officer lane of travel.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 136860,
+   "endMs": 138940,
+   "speaker": "A",
+   "transcript": "Okay, still signal 12 eastbound 44.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 141020,
+   "endMs": 146780,
+   "speaker": "J",
+   "transcript": "Victor 16 on a traffic stop internationally here he comes down",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 146860,
+   "endMs": 152060,
+   "speaker": "A",
+   "transcript": "Eastbound 92 from 15 A",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 153660,
+   "endMs": 155660,
+   "speaker": "E",
+   "transcript": "Looks like three north now now in Daytona.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 155980,
+   "endMs": 162540,
+   "speaker": "A",
+   "transcript": "Okay we're at stone and 92 through the red light still eastbound",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 162540,
+   "endMs": 162700,
+   "speaker": "A",
+   "transcript": "",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 162700,
+   "endMs": 169100,
+   "speaker": "F",
+   "transcript": "There's about four on March now shadowing you so if he pulls he pulls in somewhere we got enough people to to grab him",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 169260,
+   "endMs": 169340,
+   "speaker": "?",
+   "transcript": "",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 169340,
+   "endMs": 189980,
+   "speaker": "A",
+   "transcript": "Great thank you still eastbound coming up to Thames Now we're still northbound he's he's so fast he's pulling away from us right now we're trying to catch up uh our map showing mile marker 280 Air one we're going to have to break off he's he's so far ahead we're barely getting him on camera he's north of the way station up here",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 190140,
+   "endMs": 193980,
+   "speaker": "K",
+   "transcript": "Air one's all the way up there. And he's breaking off",
+   "piece_offset_s": 0.0
+  }
+ ],
+ "camera_clock": {
+  "start": "20:48:47",
+  "end": "20:49:01",
+  "date": "2026-06-12",
+  "readings": [
+   {
+    "video_s": 189.0,
+    "clock": "2026-06-12 20:48:47 -0400",
+    "camera": "AXON FLEET 3 F X6847272X"
+   },
+   {
+    "video_s": 192.0,
+    "clock": "2026-06-12 20:48:50 -0400",
+    "camera": "AXON FLEET 3 F X6847272X"
+   }
+  ]
+ },
+ "claims": [
+  {
+   "id": "C1",
+   "text": "A motorcycle fled from deputies during a traffic operation.",
+   "kind": "action",
+   "line": 1,
+   "status": "on_recording",
+   "start_s": 0.0,
+   "end_s": 13.0,
+   "evidence": "Aerial helicopter view follows motorcycles on the interstate with a white patrol vehicle behind while radio says \"They're 12 half. weaving through traffic. traffic.\"",
+   "reason": "Video shows pursuit and speech describes fleeing behavior, with names/ranks not shown.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 0,
+    "end_s": 13,
+    "evidence": "Aerial helicopter view follows motorcycles on the interstate with a white patrol vehicle behind while radio says \"They're 12 half. weaving through traffic. traffic.\"",
+    "reason": "Video shows pursuit and speech describes fleeing behavior, with names/ranks not shown."
+   },
+   "verify_notes": []
+  },
+  {
+   "id": "C2",
+   "text": "The motorcycle sped at high speed, weaving in and out of traffic.",
+   "kind": "action",
+   "line": 2,
+   "status": "on_recording",
+   "start_s": 60.0,
+   "end_s": 72.0,
+   "evidence": "Aerial view shows motorcycle overtaking cars on the highway while radio says \"He's cutting in and out of traffic.\" and \"He He just passed your unit. high rate of speed.\"",
+   "reason": "Both the visuals of passing traffic and the radio descriptions confirm high speed weaving.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 60,
+    "end_s": 72,
+    "evidence": "Aerial view shows motorcycle overtaking cars on the highway while radio says \"He's cutting in and out of traffic.\" and \"He He just passed your unit. high rate of speed.\"",
+    "reason": "Both the visuals of passing traffic and the radio descriptions confirm high speed weaving."
+   },
+   "verify_notes": []
+  },
+  {
+   "id": "C3",
+   "text": "The aviation unit was overhead when the rider stopped to refuel.",
+   "kind": "object",
+   "line": 3,
+   "status": "on_recording",
+   "start_s": 84.0,
+   "end_s": 101.0,
+   "evidence": "Overhead VOLUSIA SHERIFF aerial view zooms from wide gas station to close overhead of motorcycle stopped under the fuel canopy.",
+   "reason": "The continuous overhead perspective proves the aviation unit watched the refuel stop.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 84,
+    "end_s": 101,
+    "evidence": "Overhead VOLUSIA SHERIFF aerial view zooms from wide gas station to close overhead of motorcycle stopped under the fuel canopy.",
+    "reason": "The continuous overhead perspective proves the aviation unit watched the refuel stop."
+   },
+   "verify_notes": []
+  },
+  {
+   "id": "C4",
+   "text": "The rider stopped to refuel at a gas station.",
+   "kind": "action",
+   "line": 4,
+   "status": "on_recording",
+   "start_s": 99.0,
+   "end_s": 103.0,
+   "evidence": "Overhead shows rider beside bike at pump island handling the pump while radio says \"Okay, still got his helmet on, white helmet, black t-shirt, black pants, don't see a plate and he's got his credit card out paying for gas.\"",
+   "reason": "Video shows the stop at the pump and speech confirms paying for gas.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 99,
+    "end_s": 103,
+    "evidence": "Overhead shows rider beside bike at pump island handling the pump while radio says \"Okay, still got his helmet on, white helmet, black t-shirt, black pants, don't see a plate and he's got his credit card out paying for gas.\"",
+    "reason": "Video shows the stop at the pump and speech confirms paying for gas."
+   },
+   "verify_notes": []
+  },
+  {
+   "id": "C5",
+   "text": "The rider stopped voluntarily for deputies on the highway shoulder.",
+   "kind": "action",
+   "line": 5,
+   "status": "check",
+   "start_s": 109.0,
+   "end_s": 114.0,
+   "evidence": "Overhead shows rider leaving the pump on the motorcycle and riding back onto the road while radio says \"Okay, back on the go 44 eastbound\"",
+   "reason": "Video shows continued flight after fueling rather than a voluntary stop for deputies on the shoulder.",
+   "model": {
+    "status": "check",
+    "start_s": 109,
+    "end_s": 114,
+    "evidence": "Overhead shows rider leaving the pump on the motorcycle and riding back onto the road while radio says \"Okay, back on the go 44 eastbound\"",
+    "reason": "Video shows continued flight after fueling rather than a voluntary stop for deputies on the shoulder."
+   },
+   "verify_notes": []
+  },
+  {
+   "id": "C6",
+   "text": "A passenger was riding on the back of the motorcycle.",
+   "kind": "object",
+   "line": 6,
+   "status": "check",
+   "start_s": 95.0,
+   "end_s": 100.0,
+   "evidence": "Close overhead of bike at pump 149 shows one person in black clothing and white shoes with the motorcycle and no second person on the back.",
+   "reason": "Only a single rider is visible on or with the motorcycle, contradicting a passenger.",
+   "model": {
+    "status": "check",
+    "start_s": 95,
+    "end_s": 100,
+    "evidence": "Close overhead of bike at pump 149 shows one person in black clothing and white shoes with the motorcycle and no second person on the back.",
+    "reason": "Only a single rider is visible on or with the motorcycle, contradicting a passenger."
+   },
+   "verify_notes": []
+  }
+ ],
+ "summary": {
+  "total": 6,
+  "on_recording": 4,
+  "not_found": 0,
+  "check": 2,
+  "changed_by_code": 0
+ },
+ "verify_notes": [],
+ "spend_usd": 0.10106,
+ "seconds": 112.8
+}

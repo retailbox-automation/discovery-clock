@@ -51,14 +51,17 @@
         {% else %}<span class="pill ck">Check this claim{% if c.start_s is not none %} · {{ c.start_s | hms }}{% endif %}</span>{% endif %}
         <span class="kind">{{ c.kind }}</span>
       </div>
+      {% for n in c.verify_notes if n.changed_status %}
+      <p class="code-reason"><b>Changed by code check</b> (the model said “{{ (c.model.status or 'nothing') | replace('_', ' ') }}”): {{ n.detail }}</p>
+      {% endfor %}
       {% if c.evidence %}<p class="evidence">{{ c.evidence }}</p>{% endif %}
-      {% if c.reason %}<p class="reason">{{ c.reason }}</p>{% endif %}
+      {% if c.reason %}<p class="reason"><span class="who">{{ result.models.review | model_name }}:</span> {{ c.reason }}</p>{% endif %}
+      {% for n in c.verify_notes if not n.changed_status %}
+      <p class="vnote"><b>Code check:</b> {{ n.detail }}</p>
+      {% endfor %}
       {% if c.start_s is not none and has_video %}
       <div class="claim-actions"><button type="button" class="ghost clip-btn" data-id="{{ c.id }}">Export clip · bystander faces blurred</button><span class="clip-status small muted"></span></div>
       {% endif %}
-      {% for n in c.verify_notes %}
-      <p class="vnote {{ 'changed' if n.changed_status }}"><b>Code check{% if n.changed_status %} · model said “{{ c.model.status | replace('_', ' ') }}”{% endif %}:</b> {{ n.detail }}</p>
-      {% endfor %}
     </article>
     {% endfor %}
   </section>

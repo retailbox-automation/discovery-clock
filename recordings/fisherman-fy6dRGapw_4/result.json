@@ -552,5 +552,7 @@
  },
  "verify_notes": [],
  "spend_usd": 0.11301,
- "seconds": 102.1
+ "seconds": 102.1,
+ "verify_version": 2,
+ "reverified_utc": "2026-11-04T19:03:59Z"
 }

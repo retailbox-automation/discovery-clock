@@ -1,0 +1,252 @@
+{
+ "step": "review",
+ "hash": "880f2425c48e48ab",
+ "recorded_utc": "2026-11-04T19:00:31Z",
+ "request": {
+  "endpoint": "/responses",
+  "body": {
+   "model": "muse-spark-1.3",
+   "input": [
+    {
+     "type": "message",
+     "role": "user",
+     "content": [
+      {
+       "type": "input_text",
+       "text": "You review a body-worn camera recording against a written account of the same incident.\nFor each numbered CLAIM, find where the recording shows or says it.\nTIME: our software stamped every frame in the top-left corner with \"t=N s\" = seconds from the start of this video\n(the stamp is not part of the original recording). Read start_s, end_s and every video_s from that stamp; do not estimate time.\nstatus: on_recording = the video or the speech clearly supports the claim at start_s..end_s;\nnot_found = the recording neither shows nor contradicts the claim (start_s=end_s=-1);\ncheck = the recording contradicts the claim, or shows only part of it in a way that matters (for example the claim says\na man was clinging to a pipe and the recording shows him floating free). If unsure between on_recording and check, use check.\nA name, rank or job title that the recording cannot show does not by itself make a claim partial: if the event is shown,\nuse on_recording and say in reason that the name or rank is not shown.\nevidence: what is visible or said at that time. When you quote speech, copy the words exactly from TURNS inside double quotes.\nreason: one sentence why this status.\ncamera_clock: read the date and time the body camera burned into the frame (for example \"2026-09-27 21:00:29 -0400  AXON BODY 4 D01A16937\",\nusually top-right) on the first frame, on the last frame, and wherever the camera id or the clock jumps (the video can join several cameras).\nFor each reading give video_s (from our stamp), clock exactly as printed (date and time) and camera (the id printed, or \"\").\nIf the camera prints no clock, return an empty list.\nTURNS (speech with speaker labels and times, from a separate transcriber):\n[0.1-14.6s] A: And I just need need to report that there's a pickup truck with three wheels that rammed a bunch of people across huge accident on I-4 just a few moments ago and somehow he continued to drive with no wheel and flew off\n[14.6-15.8s] B: what color is the truck?\n[16.1-23.3s] A: it's a white pickup truck it's a big truck I'm so sorry I don't know if it was a Chevy or Chevy or but it's a big truck\n[29.1-39.1s] C: Kilo uniform delta November November nine three white Chevy Hey, I'm going to move the I'm going to move these barricades so you can make\n[39.7-48.1s] D: Hey, what's going on today?\n[48.1-48.7s] E: How are you?\n[48.9-49.5s] D: What's going on?\n[49.8-50.7s] E: Good. How are you?\n[50.9-51.5s] D: What's going on?\n[51.5-59.2s] E: Nothing. We're It's fine. It's not fine.\n[59.3-60.3s] D: Go stand over here.\n[60.3-60.6s] E: It's fine.\n[60.6-63.5s] D: Go stand in front of the car. Go stand over there.\n[63.5-64.0s] F: Who?\n[64.0-67.2s] D: Go stand by the car.\n[67.8-69.1s] F: Are you serious?\n[69.1-70.4s] D: Yeah, go stand by the car.\n[70.5-73.0s] F: Oh, hold\n[73.0-75.8s] D: Stand by the car. You too. Go stand by the car.\n[77.7-78.5s] D: Stand by the car.\n[78.5-80.5s] F: You better look\n[80.5-82.0s] D: go stand by the car\n[82.1-82.9s] F: For what?\n[82.9-83.6s] D: Go stand by the car\n[83.7-84.4s] F: For what?\n[84.4-85.2s] D: Go stand by the car\n[85.2-90.4s] F: Are you good?\n[90.5-94.3s] F: For what? For For what?\n[94.4-98.1s] F: Stop I'm not stop\n[98.2-103.6s] F: Throw me under you were your boy\n[108.1-112.5s] F: Hey boy. What is this?\n[112.9-116.7s] D: You need to relax, okay?\n[116.8-119.2s] F: You better talk to your boss\n[119.3-128.7s] D: In a second whenever whenever I get to you you can talk as of right now go stand over there please at the at the back of the car\n[136.3-138.1s] F: What's what do you\n[138.3-138.7s] C: Huh?\n[138.8-145.3s] F: What are you doing? I mean seriously what is this? What's\n[145.3-145.3s] C: Is it good?\n[145.3-146.5s] G: Yeah, he's good.\n[146.5-146.7s] C: Front pocket. Just make sure.\n[146.9-150.9s] F: Yeah, no. I'm not trying\n[155.0-159.2s] C: Can I ask you a question? Is that normal?\n[159.6-166.1s] C: from where you guys were driving? Because I don't think it is.\n[171.3-174.2s] D: Just stand right here, man. We'll talk to you in a little bit.\n[174.4-175.4s] F: What's your name?\n[175.7-178.8s] D: I'm Gomez.\n[179.1-187.1s] F: All and all your bosses shit.\n[187.6-189.3s] F: Yeah.\n[189.3-191.7s] D: Fuck this way. Walk this way, dude.\n[191.7-193.6s] F: What's hey man, what the fuck?\n[193.7-194.6s] D: Walk this way.\n[194.6-199.0s] F: I mean, I'm not you got damn fucking kidding me?\n[199.1-201.3s] C: We're keeping you out of the heat for now.\n[201.6-204.1s] F: You put me in the fucking truck with those those two\n[204.1-204.7s] D: sit down\n[204.9-205.5s] F: I really\n[205.5-206.2s] D: sit down dude\n[206.2-207.3s] F: are you really\n[207.5-208.1s] D: sit down\n[208.1-208.9s] F: are you really\n[208.9-209.7s] D: sit down\n[209.7-210.9s] D: sit down\n[210.9-211.5s] F: what's your name\n[211.6-212.1s] D: dude sit in the car\n[212.5-213.3s] F: no what's your name\n[213.4-214.1s] D: sit in the car\n[214.1-216.1s] F: yeah you better fucking grow\n[216.2-217.7s] C: Hey is this your buddy\n[217.7-218.5s] D: hey\n[218.6-218.7s] ?: \n[218.7-219.9s] C: now you just got charged\n[219.9-223.1s] F: I don't give a fuck\n[223.5-223.9s] C: sit down\n[223.9-225.7s] C: boy you're good\n[225.7-226.5s] C: yeah\n[226.5-231.7s] F: yeah for what\n[233.7-234.5s] E: good enough\n[234.5-235.0s] D: yep\n[235.0-235.3s] E: you good\n[235.3-237.3s] D: yeah I'm good\n[237.6-238.6s] G: can we not do this\n[238.6-254.5s] D: No, no, we're past that. He just kicked my partner over here. Okay, we're past that. He's going to jail on a bare minimum on a felony. I don't give a fuck if that's that's his shop or not. We're done. Okay, he wants to act out. He can he can suffer the consequences for it. We're done.\nCLAIMS (kind in brackets):\nC1. [object] The suspect vehicle had lost a front wheel.\nC2. [object] The vehicle got stuck at a construction site.\nC3. [action] Deputies detained the driver.\nC4. [object] The driver appeared to be under the influence.\nC5. [action] The driver resisted and kicked a deputy while being escorted into the back of a patrol vehicle.\nC6. [speech] When asked about the crash, the driver responded \"What crash?\"\nC7. [speech] The driver asked deputies to release him in exchange for $2,000.\nC8. [action] The driver walked to the patrol car calmly and without resisting.\nC9. [speech] The driver said he was late for a job interview."
+      },
+      {
+       "type": "input_file",
+       "file_id": "sha256:25c46a3ed2f4eda8029bf2857d0285b12d721aa496c74ac97f4680f37b2d78b3:t-seconds-v1"
+      }
+     ]
+    }
+   ],
+   "text": {
+    "format": {
+     "type": "json_schema",
+     "name": "claims_review",
+     "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "claims",
+       "camera_clock"
+      ],
+      "properties": {
+       "claims": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "additionalProperties": false,
+         "required": [
+          "id",
+          "status",
+          "start_s",
+          "end_s",
+          "evidence",
+          "reason"
+         ],
+         "properties": {
+          "id": {
+           "type": "string"
+          },
+          "status": {
+           "type": "string",
+           "enum": [
+            "on_recording",
+            "not_found",
+            "check"
+           ]
+          },
+          "start_s": {
+           "type": "number"
+          },
+          "end_s": {
+           "type": "number"
+          },
+          "evidence": {
+           "type": "string"
+          },
+          "reason": {
+           "type": "string"
+          }
+         }
+        }
+       },
+       "camera_clock": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "additionalProperties": false,
+         "required": [
+          "video_s",
+          "clock",
+          "camera"
+         ],
+         "properties": {
+          "video_s": {
+           "type": "number"
+          },
+          "clock": {
+           "type": "string"
+          },
+          "camera": {
+           "type": "string"
+          }
+         }
+        }
+       }
+      }
+     },
+     "strict": true
+    }
+   },
+   "max_output_tokens": 30000,
+   "reasoning": {
+    "effort": "medium"
+   }
+  }
+ },
+ "response": {
+  "top_logprobs": 0,
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "service_tier": "default",
+  "model": "muse-spark-1.3",
+  "reasoning": {
+   "effort": "medium"
+  },
+  "background": false,
+  "text": {
+   "format": {
+    "type": "json_schema",
+    "name": "claims_review",
+    "schema": {
+     "additionalProperties": false,
+     "properties": {
+      "camera_clock": {
+       "items": {
+        "additionalProperties": false,
+        "properties": {
+         "camera": {
+          "type": "string"
+         },
+         "clock": {
+          "type": "string"
+         },
+         "video_s": {
+          "type": "number"
+         }
+        },
+        "required": [
+         "video_s",
+         "clock",
+         "camera"
+        ],
+        "type": "object"
+       },
+       "type": "array"
+      },
+      "claims": {
+       "items": {
+        "additionalProperties": false,
+        "properties": {
+         "end_s": {
+          "type": "number"
+         },
+         "evidence": {
+          "type": "string"
+         },
+         "id": {
+          "type": "string"
+         },
+         "reason": {
+          "type": "string"
+         },
+         "start_s": {
+          "type": "number"
+         },
+         "status": {
+          "enum": [
+           "on_recording",
+           "not_found",
+           "check"
+          ],
+          "type": "string"
+         }
+        },
+        "required": [
+         "id",
+         "status",
+         "start_s",
+         "end_s",
+         "evidence",
+         "reason"
+        ],
+        "type": "object"
+       },
+       "type": "array"
+      }
+     },
+     "required": [
+      "claims",
+      "camera_clock"
+     ],
+     "type": "object"
+    },
+    "strict": true
+   }
+  },
+  "tools": [],
+  "tool_choice": "auto",
+  "truncation": "disabled",
+  "id": "resp_6aeb80ced059841a8adc4a86",
+  "object": "response",
+  "status": "completed",
+  "created_at": 1793818830.0,
+  "completed_at": 1793818830.0,
+  "error": null,
+  "incomplete_details": null,
+  "output": [
+   {
+    "type": "reasoning",
+    "id": "rs_6aeb80ced059841a8adc4a86:rs_0803c8e6-abd8-4265-af47-1b9503166f2d",
+    "summary": [],
+    "status": "completed"
+   },
+   {
+    "type": "message",
+    "id": "msg_551b8e3c-1eb0-423f-bc3b-27bf7dfeb83e",
+    "role": "assistant",
+    "content": [
+     {
+      "type": "output_text",
+      "text": "{\"camera_clock\": [{\"camera\": \"D01A15389\", \"clock\": \"2026-04-22 16:05:40 -0400\", \"video_s\": 19}, {\"camera\": \"D01A1012C\", \"clock\": \"2026-04-22 16:46:54 -0400\", \"video_s\": 38}, {\"camera\": \"D01A1212B\", \"clock\": \"2026-04-22 16:47:33 -0400\", \"video_s\": 78}, {\"camera\": \"D01A15389\", \"clock\": \"2026-04-22 16:48:28 -0400\", \"video_s\": 133}, {\"camera\": \"D01A1012C\", \"clock\": \"2026-04-22 16:49:08 -0400\", \"video_s\": 166}, {\"camera\": \"D01A1212B\", \"clock\": \"2026-04-22 16:50:35 -0400\", \"video_s\": 237}, {\"camera\": \"D01A1212B\", \"clock\": \"2026-04-22 16:50:53 -0400\", \"video_s\": 255}], \"claims\": [{\"end_s\": 14.6, \"evidence\": \"Heard \\\"there's a pickup truck with three wheels that rammed a bunch of people\\\" and white pickup seen driving, wheel count but not which wheel is front is visible.\", \"id\": \"C1\", \"reason\": \"Recording confirms a missing wheel but does not show it was the front wheel.\", \"start_s\": 0.1, \"status\": \"check\"}, {\"end_s\": 28, \"evidence\": \"White pickup stationary off paved road on dirt mound beside water in unfinished construction area.\", \"id\": \"C2\", \"reason\": \"Video shows the truck stuck at the construction site.\", \"start_s\": 19, \"status\": \"on_recording\"}, {\"end_s\": 145, \"evidence\": \"Man in black shirt with hands cuffed behind back leaning on patrol SUV hood while deputy searches his pockets.\", \"id\": \"C3\", \"reason\": \"Video shows the driver handcuffed and detained, name/rank not shown.\", \"start_s\": 133, \"status\": \"on_recording\"}, {\"end_s\": -1, \"evidence\": \"No video or speech about intoxication or appearance of influence.\", \"id\": \"C4\", \"reason\": \"Recording neither shows nor contradicts influence.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": 245, \"evidence\": \"Deputies force handcuffed man into rear seat and heard \\\"He just kicked my partner over here.\\\"\", \"id\": \"C5\", \"reason\": \"Video shows forced escort into patrol vehicle and speech confirms the kick.\", \"start_s\": 217, \"status\": \"on_recording\"}, {\"end_s\": -1, \"evidence\": \"No \\\"What crash?\\\" response heard in recording.\", \"id\": \"C6\", \"reason\": \"Recording neither shows nor contradicts the quote.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No offer of $2,000 heard in recording.\", \"id\": \"C7\", \"reason\": \"Recording neither shows nor contradicts the bribe.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": 225, \"evidence\": \"Handcuffed man resists being pushed into rear seat while deputies order \\\"sit down\\\" \\\"sit down\\\" repeatedly.\", \"id\": \"C8\", \"reason\": \"Recording contradicts calm compliance and shows resistance.\", \"start_s\": 200, \"status\": \"check\"}, {\"end_s\": -1, \"evidence\": \"No statement about job interview heard in recording.\", \"id\": \"C9\", \"reason\": \"Recording neither shows nor contradicts the statement.\", \"start_s\": -1, \"status\": \"not_found\"}]}",
+      "annotations": [],
+      "logprobs": []
+     }
+    ],
+    "status": "completed"
+   }
+  ],
+  "instructions": null,
+  "usage": {
+   "input_tokens": 71702,
+   "input_tokens_details": {
+    "cached_tokens": 0
+   },
+   "output_tokens": 5512,
+   "output_tokens_details": {
+    "reasoning_tokens": 4642
+   },
+   "total_tokens": 77214
+  },
+  "parallel_tool_calls": true,
+  "store": true,
+  "max_output_tokens": 30000
+ },
+ "latency_s": 39.39,
+ "usd": 0.113054,
+ "model": "muse-spark-1.3"
+}

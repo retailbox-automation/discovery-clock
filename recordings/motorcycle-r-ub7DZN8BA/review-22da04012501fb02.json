@@ -1,0 +1,252 @@
+{
+ "step": "review",
+ "hash": "22da04012501fb02",
+ "recorded_utc": "2026-11-04T19:03:47Z",
+ "request": {
+  "endpoint": "/responses",
+  "body": {
+   "model": "muse-spark-1.3",
+   "input": [
+    {
+     "type": "message",
+     "role": "user",
+     "content": [
+      {
+       "type": "input_text",
+       "text": "You review a body-worn camera recording against a written account of the same incident.\nFor each numbered CLAIM, find where the recording shows or says it.\nTIME: our software stamped every frame in the top-left corner with \"t=N s\" = seconds from the start of this video\n(the stamp is not part of the original recording). Read start_s, end_s and every video_s from that stamp; do not estimate time.\nstatus: on_recording = the video or the speech clearly supports the claim at start_s..end_s;\nnot_found = the recording neither shows nor contradicts the claim (start_s=end_s=-1);\ncheck = the recording contradicts the claim, or shows only part of it in a way that matters (for example the claim says\na man was clinging to a pipe and the recording shows him floating free). If unsure between on_recording and check, use check.\nA name, rank or job title that the recording cannot show does not by itself make a claim partial: if the event is shown,\nuse on_recording and say in reason that the name or rank is not shown.\nevidence: what is visible or said at that time. When you quote speech, copy the words exactly from TURNS inside double quotes.\nreason: one sentence why this status.\ncamera_clock: read the date and time the body camera burned into the frame (for example \"2026-09-27 21:00:29 -0400  AXON BODY 4 D01A16937\",\nusually top-right) on the first frame, on the last frame, and wherever the camera id or the clock jumps (the video can join several cameras).\nFor each reading give video_s (from our stamp), clock exactly as printed (date and time) and camera (the id printed, or \"\").\nIf the camera prints no clock, return an empty list.\nTURNS (speech with speaker labels and times, from a separate transcriber):\n[3.2-5.8s] A: I think the middle one we can't see a tag on the camera.\n[8.6-12.6s] B: They're 12 half. weaving through traffic. traffic.\n[12.8-16.4s] C: I won't deny it, I'm a straight rider\n[29.2-32.3s] B: Traffic, I don't have eyes\n[32.5-38.4s] D: Alright, he just passed he's 12 F in and out of traffic\n[38.7-43.6s] E: Soon I hear in the left lane\n[45.4-52.1s] E: Rider no tag on the bike. In the fast lane right now. Inside lane.\n[52.3-52.4s] ?: \n[52.4-59.1s] F: Got a multi color selfie stick one shield.\n[60.7-63.9s] E: He's cutting in and out of traffic.\n[67.3-72.5s] A: He He just passed your unit. high rate of speed.\n[72.9-77.3s] G: Yes, 12 playing all leading charges.\n[81.3-90.9s] A: He just flew by a trooper here here that's 1050 with somebody. Okay, he's pulling into a gas station here. Uh, 40640 D Street.\n[92.1-94.1s] A: Be at J and 44.\n[96.3-99.4s] F: So far from there.\n[99.5-110.0s] A: Okay, still got his helmet on, white helmet, black t-shirt, black pants, don't see a plate and he's got his credit card out paying for gas.\n[111.4-114.0s] A: Okay, back on the go 44 eastbound\n[114.5-120.3s] H: County on 44 on a step on it.\n[120.4-123.8s] B: Yeah all of us are here\n[123.9-125.2s] I: Officer lane of travel.\n[136.9-138.9s] A: Okay, still signal 12 eastbound 44.\n[141.0-146.8s] J: Victor 16 on a traffic stop internationally here he comes down\n[146.9-152.1s] A: Eastbound 92 from 15 A\n[153.7-155.7s] E: Looks like three north now now in Daytona.\n[156.0-162.5s] A: Okay we're at stone and 92 through the red light still eastbound\n[162.5-162.7s] A: \n[162.7-169.1s] F: There's about four on March now shadowing you so if he pulls he pulls in somewhere we got enough people to to grab him\n[169.3-169.3s] ?: \n[169.3-190.0s] A: Great thank you still eastbound coming up to Thames Now we're still northbound he's he's so fast he's pulling away from us right now we're trying to catch up uh our map showing mile marker 280 Air one we're going to have to break off he's he's so far ahead we're barely getting him on camera he's north of the way station up here\n[190.1-194.0s] K: Air one's all the way up there. And he's breaking off\nCLAIMS (kind in brackets):\nC1. [action] A motorcycle fled from deputies during a traffic operation.\nC2. [action] The motorcycle sped at high speed, weaving in and out of traffic.\nC3. [object] The aviation unit was overhead when the rider stopped to refuel.\nC4. [action] The rider stopped to refuel at a gas station.\nC5. [action] The rider stopped voluntarily for deputies on the highway shoulder.\nC6. [object] A passenger was riding on the back of the motorcycle."
+      },
+      {
+       "type": "input_file",
+       "file_id": "sha256:5fb06781c45861633b4cf61018aae5e5db92c783818b0d5c74927327f39539dc:t-seconds-v1"
+      }
+     ]
+    }
+   ],
+   "text": {
+    "format": {
+     "type": "json_schema",
+     "name": "claims_review",
+     "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "claims",
+       "camera_clock"
+      ],
+      "properties": {
+       "claims": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "additionalProperties": false,
+         "required": [
+          "id",
+          "status",
+          "start_s",
+          "end_s",
+          "evidence",
+          "reason"
+         ],
+         "properties": {
+          "id": {
+           "type": "string"
+          },
+          "status": {
+           "type": "string",
+           "enum": [
+            "on_recording",
+            "not_found",
+            "check"
+           ]
+          },
+          "start_s": {
+           "type": "number"
+          },
+          "end_s": {
+           "type": "number"
+          },
+          "evidence": {
+           "type": "string"
+          },
+          "reason": {
+           "type": "string"
+          }
+         }
+        }
+       },
+       "camera_clock": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "additionalProperties": false,
+         "required": [
+          "video_s",
+          "clock",
+          "camera"
+         ],
+         "properties": {
+          "video_s": {
+           "type": "number"
+          },
+          "clock": {
+           "type": "string"
+          },
+          "camera": {
+           "type": "string"
+          }
+         }
+        }
+       }
+      }
+     },
+     "strict": true
+    }
+   },
+   "max_output_tokens": 30000,
+   "reasoning": {
+    "effort": "medium"
+   }
+  }
+ },
+ "response": {
+  "top_logprobs": 0,
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "service_tier": "default",
+  "model": "muse-spark-1.3",
+  "reasoning": {
+   "effort": "medium"
+  },
+  "background": false,
+  "text": {
+   "format": {
+    "type": "json_schema",
+    "name": "claims_review",
+    "schema": {
+     "additionalProperties": false,
+     "properties": {
+      "camera_clock": {
+       "items": {
+        "additionalProperties": false,
+        "properties": {
+         "camera": {
+          "type": "string"
+         },
+         "clock": {
+          "type": "string"
+         },
+         "video_s": {
+          "type": "number"
+         }
+        },
+        "required": [
+         "video_s",
+         "clock",
+         "camera"
+        ],
+        "type": "object"
+       },
+       "type": "array"
+      },
+      "claims": {
+       "items": {
+        "additionalProperties": false,
+        "properties": {
+         "end_s": {
+          "type": "number"
+         },
+         "evidence": {
+          "type": "string"
+         },
+         "id": {
+          "type": "string"
+         },
+         "reason": {
+          "type": "string"
+         },
+         "start_s": {
+          "type": "number"
+         },
+         "status": {
+          "enum": [
+           "on_recording",
+           "not_found",
+           "check"
+          ],
+          "type": "string"
+         }
+        },
+        "required": [
+         "id",
+         "status",
+         "start_s",
+         "end_s",
+         "evidence",
+         "reason"
+        ],
+        "type": "object"
+       },
+       "type": "array"
+      }
+     },
+     "type": "object",
+     "required": [
+      "claims",
+      "camera_clock"
+     ]
+    },
+    "strict": true
+   }
+  },
+  "tools": [],
+  "tool_choice": "auto",
+  "truncation": "disabled",
+  "id": "resp_6aeb8193cd14a375aa8542f5",
+  "object": "response",
+  "status": "completed",
+  "created_at": 1793819027.0,
+  "completed_at": 1793819027.0,
+  "error": null,
+  "incomplete_details": null,
+  "output": [
+   {
+    "type": "reasoning",
+    "id": "rs_6aeb8193cd14a375aa8542f5:rs_f3bff71b-a98a-401a-8b56-d3c7b8208960",
+    "summary": [],
+    "status": "completed"
+   },
+   {
+    "type": "message",
+    "id": "msg_d5f3e386-fd1e-4076-a4be-b564d4d90333",
+    "role": "assistant",
+    "content": [
+     {
+      "type": "output_text",
+      "text": "{\"camera_clock\": [{\"camera\": \"AXON FLEET 3 F X6847272X\", \"clock\": \"2026-06-12 20:48:47 -0400\", \"video_s\": 189}, {\"camera\": \"AXON FLEET 3 F X6847272X\", \"clock\": \"2026-06-12 20:48:50 -0400\", \"video_s\": 192}], \"claims\": [{\"end_s\": 13, \"evidence\": \"Aerial helicopter view follows motorcycles on the interstate with a white patrol vehicle behind while radio says \\\"They're 12 half. weaving through traffic. traffic.\\\"\", \"id\": \"C1\", \"reason\": \"Video shows pursuit and speech describes fleeing behavior, with names/ranks not shown.\", \"start_s\": 0, \"status\": \"on_recording\"}, {\"end_s\": 72, \"evidence\": \"Aerial view shows motorcycle overtaking cars on the highway while radio says \\\"He's cutting in and out of traffic.\\\" and \\\"He He just passed your unit. high rate of speed.\\\"\", \"id\": \"C2\", \"reason\": \"Both the visuals of passing traffic and the radio descriptions confirm high speed weaving.\", \"start_s\": 60, \"status\": \"on_recording\"}, {\"end_s\": 101, \"evidence\": \"Overhead VOLUSIA SHERIFF aerial view zooms from wide gas station to close overhead of motorcycle stopped under the fuel canopy.\", \"id\": \"C3\", \"reason\": \"The continuous overhead perspective proves the aviation unit watched the refuel stop.\", \"start_s\": 84, \"status\": \"on_recording\"}, {\"end_s\": 103, \"evidence\": \"Overhead shows rider beside bike at pump island handling the pump while radio says \\\"Okay, still got his helmet on, white helmet, black t-shirt, black pants, don't see a plate and he's got his credit card out paying for gas.\\\"\", \"id\": \"C4\", \"reason\": \"Video shows the stop at the pump and speech confirms paying for gas.\", \"start_s\": 99, \"status\": \"on_recording\"}, {\"end_s\": 114, \"evidence\": \"Overhead shows rider leaving the pump on the motorcycle and riding back onto the road while radio says \\\"Okay, back on the go 44 eastbound\\\"\", \"id\": \"C5\", \"reason\": \"Video shows continued flight after fueling rather than a voluntary stop for deputies on the shoulder.\", \"start_s\": 109, \"status\": \"check\"}, {\"end_s\": 100, \"evidence\": \"Close overhead of bike at pump 149 shows one person in black clothing and white shoes with the motorcycle and no second person on the back.\", \"id\": \"C6\", \"reason\": \"Only a single rider is visible on or with the motorcycle, contradicting a passenger.\", \"start_s\": 95, \"status\": \"check\"}]}",
+      "annotations": [],
+      "logprobs": []
+     }
+    ],
+    "status": "completed"
+   }
+  ],
+  "instructions": null,
+  "usage": {
+   "input_tokens": 56608,
+   "input_tokens_details": {
+    "cached_tokens": 0
+   },
+   "output_tokens": 4732,
+   "output_tokens_details": {
+    "reasoning_tokens": 4103
+   },
+   "total_tokens": 61340
+  },
+  "parallel_tool_calls": true,
+  "store": true,
+  "max_output_tokens": 30000
+ },
+ "latency_s": 36.77,
+ "usd": 0.090871,
+ "model": "muse-spark-1.3"
+}

@@ -1,0 +1,14 @@
+{
+ "step": "upload",
+ "hash": "c5844ef19ca766cb",
+ "recorded_utc": "2026-11-04T19:03:10Z",
+ "request": {
+  "endpoint": "/files",
+  "purpose": "user_data",
+  "media_sha256": "5fb06781c45861633b4cf61018aae5e5db92c783818b0d5c74927327f39539dc:t-seconds-v1"
+ },
+ "response": {
+  "id": "file-985200557994437"
+ },
+ "latency_s": 15.87
+}

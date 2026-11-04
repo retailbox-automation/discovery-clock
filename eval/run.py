@@ -12,6 +12,8 @@ Metrics
 2. account claims marked check = "disputed": listed with evidence and timecode for a human to look at
 3. share of account claims that got a timecode (on_recording or check with start_s)
 Secondary: expected status (account -> on_recording, planted_contradiction -> check, planted_invented -> not_found).
+Scores use the current code checks re-run over the saved model answers (runs/<case>/review-raw.json); the
+"as run" numbers are listed next to them when the checks changed after a run.
 The keys carry no timecodes, so timecode accuracy is checked by eye from the disputed table, not scored here.
 """
 from __future__ import annotations
@@ -51,6 +53,30 @@ def load_result(case: str, results: Path | None) -> tuple[dict | None, str]:
         if p.exists():
             return json.loads(p.read_text()), str(p.relative_to(ROOT) if p.is_relative_to(ROOT) else p)
     return None, ""
+
+
+def saved_answer(case: str, result_src: Path) -> dict | None:
+    """The model's saved review answer for a case: runs/<case>/review-raw.json, else the recorded review response."""
+    p = result_src.parent / "review-raw.json"
+    if p.exists():
+        return json.loads(p.read_text()).get("answer")
+    for q in sorted((ROOT / "recordings" / case).glob("review-*.json")):
+        raw = json.loads(q.read_text())["response"]
+        text = "".join(c.get("text", "") for o in raw.get("output", []) if o.get("type") == "message" for c in o.get("content", []))
+        try:
+            return json.loads(text)
+        except json.JSONDecodeError:
+            return None
+    return None
+
+
+def reverified(result: dict, answer: dict) -> dict:
+    """Current code checks over the saved model answer (no model calls)."""
+    sys.path.insert(0, str(ROOT))
+    from discovery_clock import verify as V
+    base = [{k: c.get(k) for k in ("id", "text", "kind", "line")} for c in result["claims"]]
+    chk = V.verify(answer, base, result.get("turns", []), result["video"]["duration_s"])
+    return {**result, "claims": chk["claims"], "summary": chk["summary"], "verify_version": chk["verify_version"]}
 
 
 def norm(s: str) -> str:
@@ -113,8 +139,14 @@ def main(argv=None) -> int:
         if res is None:
             missing.append(case_dir.name)
             continue
-        s = score_case(case_dir, res)
+        as_run = score_case(case_dir, res)
+        answer = saved_answer(case_dir.name, ROOT / src if not Path(src).is_absolute() else Path(src))
+        s = as_run
+        if answer is not None:
+            s = score_case(case_dir, reverified(res, answer))
         s["source"] = src
+        s["as_run"] = as_run
+        s["as_run_version"] = res.get("verify_version", 1)
         scored.append(s)
 
     T = lambda k: sum(s[k] if isinstance(s[k], int) else len(s[k]) for s in scored)
@@ -140,6 +172,29 @@ def main(argv=None) -> int:
         for s in scored:
             for r in s["planted_missed"]:
                 out.append(f"- MISS {s['case']} {r['id']} ({r['label']}): {r['text']} — at {hms(r['start_s'])}: {r['evidence']}")
+        changed_rows = []
+        for s in scored:
+            before = {r["id"]: r for r in s["as_run"]["rows"]}
+            for r in s["rows"]:
+                b = before.get(r["id"])
+                if b and (b["status"] != r["status"] or b["start_s"] != r["start_s"]):
+                    changed_rows.append((s, b, r))
+        out += ["", "## Code-check rule change after run 1", "",
+                "**quote rule changed after run 1 (housefire C3).** Run 1 moved a claim to *check* when a quoted line was not "
+                "within 10 s of the claim's timecode, even if the line exists elsewhere in the transcript (housefire C3 quoted a "
+                "real line at 52.9 s). Rule v2: a quote found anywhere in the transcript keeps the status and widens the claim's "
+                "window to that line; only a quote found nowhere (invented) moves the claim to *check*. All numbers above are the "
+                "v2 checks re-run over the saved model answers — no new model calls.", "",
+                "| case | verify as run | planted caught (as run → v2) | account on recording (as run → v2) | disputed (as run → v2) |",
+                "|---|---|---|---|---|"]
+        for s in scored:
+            ar = s["as_run"]
+            out.append(f"| {s['case']} | v{s['as_run_version']} | {ar['planted_caught']}/{ar['planted']} → {s['planted_caught']}/{s['planted']} | "
+                       f"{ar['account_on']}/{ar['account']} → {s['account_on']}/{s['account']} | "
+                       f"{len(ar['account_check'])} → {len(s['account_check'])} |")
+        out += ["", "Claims whose status or timecode changed under v2:", ""]
+        out += [f"- {s['case']} {r['id']}: {b['status']} {hms(b['start_s'])} → {r['status']} {hms(r['start_s'])}–{hms(r['end_s'])}"
+                for s, b, r in changed_rows] or ["- none"]
         out += ["", "## Disputed account claims (check by eye)", "",
                 "Official-narrative sentences the tool marked **check this claim**. Each needs a human look at the timecode: "
                 "either the recording really differs from the narrative, or the tool is wrong.", "",

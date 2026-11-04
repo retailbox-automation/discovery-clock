@@ -116,6 +116,7 @@ def run(case_id: str, video: str | Path, report_text: str, *, claims_mode: str =
                   "models": {"claims": cl["model"], "transcribe": VOICE_MODEL, "review": SPARK_MODEL, "verify": "code"},
                   "claims_notes": cl["notes"], "turns": tr["turns"], "camera_clock": checked["camera_clock"],
                   "claims": checked["claims"], "summary": checked["summary"], "verify_notes": checked["notes"],
+                  "verify_version": checked["verify_version"],
                   "spend_usd": round(client.case_spend, 5), "seconds": round(time.time() - t_start, 1)}
         (case_dir / "result.json").write_text(json.dumps(result, indent=1, ensure_ascii=False))
         if client.record:
@@ -137,3 +138,31 @@ def recorded_case(case_id: str, recordings_dir: Path | None = None) -> dict:
     if not p.exists():
         raise FileNotFoundError(f"no recorded case {case_id} ({p})")
     return json.loads(p.read_text())
+
+
+def reverify(case_id: str, runs_dir: Path | None = None, recordings_dir: Path | None = None) -> dict:
+    """Run the current code checks again over the saved model answer of a finished case (no model calls).
+    The previous result is kept once as result-v<old version>.json."""
+    d = Path(runs_dir or RUNS) / case_id
+    status = json.loads((d / "status.json").read_text()) if (d / "status.json").exists() else {}
+    if status.get("state") in ("running", "queued"):
+        raise RuntimeError(f"{case_id} is still running")
+    result = json.loads((d / "result.json").read_text())
+    raw = json.loads((d / "review-raw.json").read_text())
+    old_v = result.get("verify_version", 1)
+    base = [{k: c.get(k) for k in ("id", "text", "kind", "line")} for c in result["claims"]]
+    checked = verify_mod.verify(raw["answer"], base, result["turns"], result["video"]["duration_s"])
+    if old_v != checked["verify_version"]:
+        keep = d / f"result-v{old_v}.json"
+        if not keep.exists():
+            shutil.copy(d / "result.json", keep)
+    result.update({"claims": checked["claims"], "summary": checked["summary"], "camera_clock": checked["camera_clock"],
+                   "verify_notes": checked["notes"], "verify_version": checked["verify_version"],
+                   "reverified_utc": utc_now()})
+    (d / "result.json").write_text(json.dumps(result, indent=1, ensure_ascii=False))
+    rec = Path(recordings_dir or RECORDINGS) / case_id
+    if (rec / "result.json").exists():
+        if old_v != checked["verify_version"] and not (rec / f"result-v{old_v}.json").exists() and (d / f"result-v{old_v}.json").exists():
+            shutil.copy(d / f"result-v{old_v}.json", rec / f"result-v{old_v}.json")
+        shutil.copy(d / "result.json", rec / "result.json")
+    return result

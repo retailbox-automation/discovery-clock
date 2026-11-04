@@ -1,0 +1,95 @@
+{
+ "step": "claims-kind-open",
+ "hash": "6b4b5702460890f1",
+ "recorded_utc": "2026-11-04T19:00:37Z",
+ "request": {
+  "endpoint": "https://inference.baseten.co/v1/chat/completions",
+  "body": {
+   "model": "meta-models/muse-spark-open-1026",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Label each claim from an incident report with its kind.\nkind: action (someone did something), speech (someone said something), time (a clock time or date is stated), object (a thing, place or condition was present).\nKeep every id exactly as given. Answer with JSON only: {\"claims\":[{\"id\":\"C1\",\"kind\":\"action\"}]}\nCLAIMS:\nC1. When found, the dog's body was covered in sores and he was weak.\nC2. The dog has gained a significant amount of weight since he was admitted to the shelter.\nC3. The owner was arrested.\nC4. The owner denied the neglect.\nC5. The owner asked for his mom.\nC6. A pipe was found in the owner's pocket.\nC7. The owner thanked the detectives for taking care of the dog.\nC8. The owner was arrested inside a moving car during a traffic stop."
+    }
+   ],
+   "max_tokens": 8000,
+   "temperature": 0,
+   "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+     "name": "claims-kind-open",
+     "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "claims"
+      ],
+      "properties": {
+       "claims": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "additionalProperties": false,
+         "required": [
+          "id",
+          "kind"
+         ],
+         "properties": {
+          "id": {
+           "type": "string"
+          },
+          "kind": {
+           "type": "string",
+           "enum": [
+            "action",
+            "speech",
+            "time",
+            "object"
+           ]
+          }
+         }
+        }
+       }
+      }
+     },
+     "strict": true
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "chatcmpl-09601c227a334111b538261ee6530806",
+  "choices": [
+   {
+    "index": 0,
+    "message": {
+     "content": "{\"claims\":[{\"id\":\"C1\",\"kind\":\"object\"},{\"id\":\"C2\",\"kind\":\"object\"},{\"id\":\"C3\",\"kind\":\"action\"},{\"id\":\"C4\",\"kind\":\"speech\"},{\"id\":\"C5\",\"kind\":\"speech\"},{\"id\":\"C6\",\"kind\":\"object\"},{\"id\":\"C7\",\"kind\":\"speech\"},{\"id\":\"C8\",\"kind\":\"action\"}]}",
+     "role": "assistant",
+     "reasoning_content": "We need to label each claim with its kind: action, speech, time, object.\n\nDefinitions:\n- action (someone did something)\n- speech (someone said something)\n- time (a clock time or date is stated)\n- object (a thing, place or condition was present)\n\nWe have claims:\n\nC1. When found, the dog's body was covered in sores and he was weak.\nThis is object: a thing, place or condition was present. The dog's body covered in sores and weak is condition. So object.\n\nC2. The dog has gained a significant amount of weight since he was admitted to the shelter.\nThis is also object? Or action? Gained weight is condition? But it's a change in condition. Could be object as condition was present. However \"gained weight\" could be considered action? But dog didn't do action intentionally. The definition: action (someone did something). Object (a thing, place or condition was present). Gaining weight is condition. So object.\n\nC3. The owner was arrested.\nSomeone did something (police arrested). So action.\n\nC4. The owner denied the neglect.\nDenied is speech? Denied is saying something. So speech.\n\nC5. The owner asked for his mom.\nAsked is speech. So speech.\n\nC6. A pipe was found in the owner's pocket.\nA pipe was found - object present. So object.\n\nC7. The owner thanked the detectives for taking care of the dog.\nThanked is speech. So speech.\n\nC8. The owner was arrested inside a moving car during a traffic stop.\nThis is action (arrested) but also includes place/condition? However primary is action. But need to choose one kind. The instruction: label each claim with its kind. Probably C8 is action as well. However could be object? Let's see: \"inside a moving car during a traffic stop\" describes place/condition. But the core claim is arrest. So action.\n\nWe need to output JSON only: {\"claims\":[{\"id\":\"C1\",\"kind\":\"action\"}]}\n\nWe must keep every id exactly as given. Provide all 8.\n\nWe need to ensure correct JSON.\n\nPotential nuance: C1 and C2 are object. C3 action. C4 speech. C5 speech. C6 object. C7 speech. C8 action.\n\nCheck if any time claims? None have clock time or date. So no time.\n\nMake sure JSON format exactly as requested.\n\nWe should output: {\"claims\":[{\"id\":\"C1\",\"kind\":\"object\"},...]}\n\nEnsure lowercase kinds.\n\nWe must not add extra text.\n\nWe should be careful: The user wants JSON only.\n\nWe should provide that.\n\nPotential alternative interpretation: C2 could be action? But likely object.\n\nC6: A pipe was found in the owner's pocket. Could be object (thing present). Yes.\n\nC1: When found, the dog's body was covered in sores and he was weak. That's object.\n\nThus final answer.\n\nWe must ensure valid JSON.\n\nWe should not include trailing commas.\n\nWe should output exactly that.\n\nWe should consider if C8 might be considered object because \"inside a moving car\" is place? But the claim is \"The owner was arrested inside a moving car during a traffic stop.\" The kind definitions: action (someone did something), speech (someone said something), time (a clock time or date is stated), object (a thing, place or condition was present). The arrest is action. So action.\n\nThus final JSON.\n\nWe should ensure we include all ids C1-C8.\n\nWe should output in order.\n\nWe must not add explanation.\n\nWe should comply.\n\nWe should also consider that the system wants JSON only, no markdown.\n\nWe should output raw JSON.\n\nWe should ensure we use double quotes.\n\nWe should not add extra whitespace? Whitespace is okay but keep minimal.\n\nWe should output: {\"claims\":[{\"id\":\"C1\",\"kind\":\"object\"},{\"id\":\"C2\",\"kind\":\"object\"},{\"id\":\"C3\",\"kind\":\"action\"},{\"id\":\"C4\",\"kind\":\"speech\"},{\"id\":\"C5\",\"kind\":\"speech\"},{\"id\":\"C6\",\"kind\":\"object\"},{\"id\":\"C7\",\"kind\":\"speech\"},{\"id\":\"C8\",\"kind\":\"action\"}]}\n\nCheck.\n\nWe should ensure we follow instruction: Keep every id exactly as given. Answer with JSON only: {\"claims\":[{\"id\":\"C1\",\"kind\":\"action\"}]}\n\nWe should do that.\n\nWe should not add any other text.\n\nWe should proceed to final."
+    },
+    "finish_reason": "stop"
+   }
+  ],
+  "created": 1793818834,
+  "model": "meta-models/muse-spark-open-1026",
+  "object": "chat.completion",
+  "usage": {
+   "prompt_tokens": 332,
+   "completion_tokens": 1018,
+   "total_tokens": 1350,
+   "prompt_tokens_details": {
+    "audio_tokens": 0,
+    "cached_tokens": 128
+   },
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": 780,
+    "audio_tokens": 0,
+    "reasoning_tokens": 932,
+    "rejected_prediction_tokens": 886
+   }
+  }
+ },
+ "latency_s": 3.27,
+ "usd": 0.0,
+ "model": "meta-models/muse-spark-open-1026"
+}

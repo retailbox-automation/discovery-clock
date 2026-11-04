@@ -4,8 +4,9 @@ next to the final one.
 
 Rules
 1. timecode outside the recording (or end before start)          -> check
-2. a speech quote in the evidence must be found (fuzzy, >= 0.8 by tokens) in the transcribed turns that overlap
-   [start_s - 10, end_s + 10]                                     -> otherwise check
+2. a speech quote in the evidence must exist in the transcribed turns (fuzzy, >= 0.8 by tokens): found within
+   [start_s - 10, end_s + 10] -> fine; found elsewhere -> status kept, window widened to that line, noted;
+   found nowhere (invented quote)                                 -> check
 3. on_recording without visual or speech evidence                 -> check
 4. a clock time stated in the claim vs the camera clock burned into the frames: more than 10 min apart -> check,
    with both times in the note
@@ -17,6 +18,7 @@ import re
 from datetime import datetime, timedelta
 from difflib import SequenceMatcher
 
+VERIFY_VERSION = 2  # 2026-11-04: a real quote found away from the timecode no longer downgrades (housefire C3)
 STATUSES = ("on_recording", "not_found", "check")
 TOL_S = 1.0
 QUOTE_PAD_S = 10.0
@@ -71,14 +73,17 @@ def turns_near(turns: list[dict], start_s: float, end_s: float, pad: float = QUO
     return [t for t in turns if t["endMs"] >= a and t["startMs"] <= b]
 
 
-def locate_quote(quote: str, turns: list[dict]) -> float | None:
-    """Seconds where the quote best matches anywhere in the transcript (for the note), or None."""
+def locate_quote(quote: str, turns: list[dict]) -> tuple[float, float] | None:
+    """(start_s, end_s) of the turn(s) where the quote best matches anywhere in the transcript, or None."""
     best, at = (0.0, 0.0), None
     for i, t in enumerate(turns):
-        pair = quote_score(quote, " ".join(x.get("transcript", "") for x in turns[i: i + 2]))  # quote may span two turns
-        key = (round(pair, 3), quote_score(quote, t.get("transcript", "")))
+        pair_turns = turns[i: i + 2]
+        pair = quote_score(quote, " ".join(x.get("transcript", "") for x in pair_turns))  # quote may span two turns
+        single = quote_score(quote, t.get("transcript", ""))
+        key = (round(pair, 3), single)
         if key > best:
-            best, at = key, t["startMs"] / 1000
+            end = t["endMs"] if single >= QUOTE_MIN_RATIO else pair_turns[-1]["endMs"]
+            best, at = key, (t["startMs"] / 1000, end / 1000)
     return at if best[0] >= QUOTE_MIN_RATIO else None
 
 
@@ -244,16 +249,25 @@ def verify(answer: dict, claims: list[dict], turns: list[dict], duration_s: floa
             elif _NEGATION.search(c["evidence"]):
                 _note(c, "evidence", f"evidence says the claim is not shown: \"{_NEGATION.search(c['evidence']).group(0)}\"", True)
 
-        # rule 2: quotes must be in the transcript near the timecode
+        # rule 2: a quoted line must exist in the transcript. Found near the timecode: fine. Found elsewhere: the model
+        # cited a real line from another moment -> keep the status, widen the claim's window to include that line, note it.
+        # Found nowhere: the quote is invented -> check.
         if c["start_s"] is not None and c["status"] in ("on_recording", "check"):
-            near = " ".join(t.get("transcript", "") for t in turns_near(turns, c["start_s"], c["end_s"]))
             for q in find_quotes(c["evidence"]):
+                near = " ".join(t.get("transcript", "") for t in turns_near(turns, c["start_s"], c["end_s"]))
                 score = quote_score(q, near)
-                if score < QUOTE_MIN_RATIO:
-                    where = locate_quote(q, turns)
-                    hint = f"; found at {where:.1f} s" if where is not None else "; not in the transcript"
-                    _note(c, "quote", f"quote not found near timecode: \"{q[:80]}\" (best match {score:.2f} within "
-                                      f"{c['start_s'] - QUOTE_PAD_S:.0f}..{c['end_s'] + QUOTE_PAD_S:.0f} s{hint})",
+                if score >= QUOTE_MIN_RATIO:
+                    continue
+                where = locate_quote(q, turns)
+                if where is not None:
+                    a, b = where
+                    old = f"{c['start_s']:.1f}..{c['end_s']:.1f} s"
+                    c["start_s"], c["end_s"] = min(c["start_s"], a), max(c["end_s"], b)
+                    c["verify_notes"].append({"rule": "quote", "changed_status": False,
+                                              "detail": f"quote is at t={a:.1f} s, outside the claim's window {old}: "
+                                                        f"\"{q[:80]}\"; window widened to {c['start_s']:.1f}..{c['end_s']:.1f} s"})
+                else:
+                    _note(c, "quote", f"quote not in the transcript: \"{q[:80]}\" (best match near the timecode {score:.2f})",
                           c["status"] == "on_recording")
 
         # rule 4: stated clock time vs camera clock
@@ -289,4 +303,4 @@ def verify(answer: dict, claims: list[dict], turns: list[dict], duration_s: floa
         clock = {"start": readings[0]["dt"].strftime("%H:%M:%S"), "end": end_dt.strftime("%H:%M:%S"),
                  "date": readings[0]["dt"].strftime("%Y-%m-%d") if readings[0]["dt"].year != 2000 else "",
                  "readings": [{k: r[k] for k in ("video_s", "clock", "camera")} for r in readings]}
-    return {"claims": out, "summary": summary, "camera_clock": clock, "notes": extra_notes}
+    return {"claims": out, "summary": summary, "camera_clock": clock, "notes": extra_notes, "verify_version": VERIFY_VERSION}

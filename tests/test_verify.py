@@ -74,19 +74,34 @@ def test_quote_invented_goes_to_check():
     assert n["rule"] == "quote" and "not in the transcript" in n["detail"] and n["changed_status"]
 
 
-def test_quote_real_but_far_from_timecode():
+def test_real_quote_far_from_timecode_keeps_status_and_widens_window():
+    # housefire C3 case: the model cited a real earlier line; that is not an invented quote
     ev = 'Radio: "Alright we have eyes on 20. He has the patient."'
     c = one(V.verify(ans(a("C2", s=10, e=20, ev=ev)), CLAIMS[1:], TURNS, DUR), "C2")
-    assert c["status"] == "check"
-    assert "found at 168.7 s" in c["verify_notes"][0]["detail"]
+    assert c["status"] == "on_recording"
+    n = c["verify_notes"][0]
+    assert n["rule"] == "quote" and n["changed_status"] is False and "quote is at t=168.7 s" in n["detail"]
+    assert (c["start_s"], c["end_s"]) == (10, 173.6)  # widened to include the quoted turn
+
+
+def test_real_quote_before_window_widens_start():
+    ev = 'He says "alright, Ocean 20 Central coming on scene"'
+    c = one(V.verify(ans(a("C2", s=85.5, e=89.4, ev=ev)), CLAIMS[1:], TURNS, DUR), "C2")
+    assert c["status"] == "on_recording" and c["start_s"] == 0.78 and c["end_s"] == 89.4
+
+
+def test_one_real_and_one_invented_quote():
+    ev = '"I\'m getting in the water" and then "the boater already has him"'
+    c = one(V.verify(ans(a("C2", s=86, e=88, ev=ev)), CLAIMS[1:], TURNS, DUR), "C2")
+    assert c["status"] == "check" and "not in the transcript" in c["verify_notes"][0]["detail"]
 
 
 def test_quote_within_ten_second_pad_counts():
     ev = '"Alright we have eyes on 20"'
     c = one(V.verify(ans(a("C2", s=176, e=182, ev=ev)), CLAIMS[1:], TURNS, DUR), "C2")  # turn ends 173.6, pad 10 s
-    assert c["status"] == "on_recording"
-    c = one(V.verify(ans(a("C2", s=185, e=190, ev=ev)), CLAIMS[1:], TURNS, DUR), "C2")  # 11.4 s away
-    assert c["status"] == "check"
+    assert c["status"] == "on_recording" and c["verify_notes"] == []
+    c = one(V.verify(ans(a("C2", s=185, e=190, ev=ev)), CLAIMS[1:], TURNS, DUR), "C2")  # 11.4 s away: real, widened
+    assert c["status"] == "on_recording" and c["start_s"] == 168.7
 
 
 def test_single_quoted_speech_with_apostrophes():

@@ -1,0 +1,95 @@
+{
+ "step": "claims-kind-open",
+ "hash": "ee8fbbc297d6a1de",
+ "recorded_utc": "2026-11-04T18:57:14Z",
+ "request": {
+  "endpoint": "https://inference.baseten.co/v1/chat/completions",
+  "body": {
+   "model": "meta-models/muse-spark-open-1026",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Label each claim from an incident report with its kind.\nkind: action (someone did something), speech (someone said something), time (a clock time or date is stated), object (a thing, place or condition was present).\nKeep every id exactly as given. Answer with JSON only: {\"claims\":[{\"id\":\"C1\",\"kind\":\"action\"}]}\nCLAIMS:\nC1. Units responded to a house fire with two people believed to be inside.\nC2. A deputy kicked down the front door.\nC3. The deputy pulled the female resident to safety.\nC4. The deputy rendered aid until Fire Rescue took over.\nC5. Firefighters pulled the male occupant from the house.\nC6. The deputy entered the house through a back window.\nC7. A neighbor handed the deputy a fire extinguisher."
+    }
+   ],
+   "max_tokens": 8000,
+   "temperature": 0,
+   "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+     "name": "claims-kind-open",
+     "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "claims"
+      ],
+      "properties": {
+       "claims": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "additionalProperties": false,
+         "required": [
+          "id",
+          "kind"
+         ],
+         "properties": {
+          "id": {
+           "type": "string"
+          },
+          "kind": {
+           "type": "string",
+           "enum": [
+            "action",
+            "speech",
+            "time",
+            "object"
+           ]
+          }
+         }
+        }
+       }
+      }
+     },
+     "strict": true
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "chatcmpl-711a1974c2a94c1184333690ef095a88",
+  "choices": [
+   {
+    "index": 0,
+    "message": {
+     "content": "{\"claims\":[{\"id\":\"C1\",\"kind\":\"action\"},{\"id\":\"C2\",\"kind\":\"action\"},{\"id\":\"C3\",\"kind\":\"action\"},{\"id\":\"C4\",\"kind\":\"action\"},{\"id\":\"C5\",\"kind\":\"action\"},{\"id\":\"C6\",\"kind\":\"action\"},{\"id\":\"C7\",\"kind\":\"action\"}]}",
+     "role": "assistant",
+     "reasoning_content": "We need to label each claim with its kind: action, speech, time, object.\n\nDefinitions:\n- action (someone did something)\n- speech (someone said something)\n- time (a clock time or date is stated)\n- object (a thing, place or condition was present)\n\nWe have claims C1-C7.\n\nC1. Units responded to a house fire with two people believed to be inside.\nThis is action? Units responded = action. Also object? But kind is action. So action.\n\nC2. A deputy kicked down the front door. Action.\n\nC3. The deputy pulled the female resident to safety. Action.\n\nC4. The deputy rendered aid until Fire Rescue took over. Action.\n\nC5. Firefighters pulled the male occupant from the house. Action.\n\nC6. The deputy entered the house through a back window. Action.\n\nC7. A neighbor handed the deputy a fire extinguisher. Action.\n\nAll are actions. No speech, time, object.\n\nBut need to consider: maybe C1 could be object? \"house fire with two people believed to be inside\" - condition was present. But \"Units responded\" is action. So action.\n\nAll actions.\n\nWe must output JSON only: {\"claims\":[{\"id\":\"C1\",\"kind\":\"action\"}]}\n\nNeed to include all C1-C7.\n\nSo output: {\"claims\":[{\"id\":\"C1\",\"kind\":\"action\"},{\"id\":\"C2\",\"kind\":\"action\"},{\"id\":\"C3\",\"kind\":\"action\"},{\"id\":\"C4\",\"kind\":\"action\"},{\"id\":\"C5\",\"kind\":\"action\"},{\"id\":\"C6\",\"kind\":\"action\"},{\"id\":\"C7\",\"kind\":\"action\"}]}\n\nCheck formatting: Keep every id exactly as given. Answer with JSON only.\n\nWe should ensure valid JSON.\n\nPotential nuance: Could any be object? Let's think: object = a thing, place or condition was present. Example: \"house fire\" could be object. But the claim as a whole is about units responded. So action dominates.\n\nAll are actions.\n\nThus final answer is JSON with all actions.\n\nWe must not add extra text.\n\nWe should output exactly JSON.\n\nProbably need to ensure no trailing comma.\n\nWe should do that.\n\nPotential trick: The user wants classification. All actions.\n\nWe should comply.\n\nWe must not add explanation.\n\nJust JSON.\n\nWe should ensure we use double quotes.\n\nWe should output {\"claims\":[...]}\n\nWe need to ensure we include all 7.\n\nWe should do that.\n\nWe should not add markdown code block? Probably just raw JSON. The instruction says Answer with JSON only. So no markdown.\n\nWe should output raw JSON.\n\nWe should ensure we don't add extra whitespace? Whitespace is okay but JSON only.\n\nWe should output exactly.\n\nWe should consider if any claim is speech? No.\n\nTime? No clock time or date.\n\nObject? No.\n\nSo all action.\n\nWe should answer.\n\nWe must not hallucinate.\n\nWe should output.\n\nWe should ensure we follow system instructions: You are a helpful AI assistant. So we should be helpful.\n\nWe should output JSON.\n\nWe should not add commentary.\n\nWe should do that.\n\nPotential edge: The user might expect some object classifications? Let's re-evaluate definitions:\n\n- action (someone did something)\n- speech (someone said something)\n- time (a clock time or date is stated)\n- object (a thing, place or condition was present)\n\nC1: \"Units responded to a house fire with two people believed to be inside.\" This could be interpreted as object: a thing, place or condition was present - house fire, two people inside. But the main verb is responded. So action.\n\nC2-C7 all clearly actions.\n\nThus answer is all actions.\n\nWe should output.\n\nWe should ensure we don't miss any.\n\nWe should output final."
+    },
+    "finish_reason": "stop"
+   }
+  ],
+  "created": 1793818631,
+  "model": "meta-models/muse-spark-open-1026",
+  "object": "chat.completion",
+  "usage": {
+   "prompt_tokens": 313,
+   "completion_tokens": 854,
+   "total_tokens": 1167,
+   "prompt_tokens_details": {
+    "audio_tokens": 0,
+    "cached_tokens": 128
+   },
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": 661,
+    "audio_tokens": 0,
+    "reasoning_tokens": 777,
+    "rejected_prediction_tokens": 690
+   }
+  }
+ },
+ "latency_s": 2.55,
+ "usd": 0.0,
+ "model": "meta-models/muse-spark-open-1026"
+}

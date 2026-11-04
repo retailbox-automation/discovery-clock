@@ -1,0 +1,235 @@
+{
+ "step": "transcribe-0",
+ "hash": "90a98a4b50733e6c",
+ "recorded_utc": "2026-11-04T19:02:42Z",
+ "request": {
+  "endpoint": "/asr/transcribe",
+  "mode": "DIARIZATION",
+  "model": "muse-voice-transcribe-1.0",
+  "audioEncoding": "WAV",
+  "media_sha256": "5fb06781c45861633b4cf61018aae5e5db92c783818b0d5c74927327f39539dc",
+  "piece_s": [
+   0.0,
+   203.685
+  ],
+  "audio": "mono s16le 24000 Hz"
+ },
+ "response": {
+  "sessionId": "dc-b367742aa318",
+  "transcript": "I think the middle one we can't see a tag on the camera. They're 12 half. weaving through traffic. traffic. I won't deny it, I'm a straight rider Traffic, I don't have eyes Alright, he just passed he's 12 F in and out of traffic Soon I hear in the left lane Rider no tag on the bike. In the fast lane right now. Inside lane. Got a multi color selfie stick one shield. He's cutting in and out of traffic. He He just passed your unit. high rate of speed. Yes, 12 playing all leading charges. He just flew by a trooper here here that's 1050 with somebody. Okay, he's pulling into a gas station here. Uh, 40640 D Street. Be at J and 44. So far from there. Okay, still got his helmet on, white helmet, black t-shirt, black pants, don't see a plate and he's got his credit card out paying for gas. Okay, back on the go 44 eastbound County on 44 on a step on it. Yeah all of us are here Officer lane of travel. Okay, still signal 12 eastbound 44. Victor 16 on a traffic stop internationally here he comes down Eastbound 92 from 15 A Looks like three north now now in Daytona. Okay we're at stone and 92 through the red light still eastbound There's about four on March now shadowing you so if he pulls he pulls in somewhere we got enough people to to grab him Great thank you still eastbound coming up to Thames Now we're still northbound he's he's so fast he's pulling away from us right now we're trying to catch up uh our map showing mile marker 280 Air one we're going to have to break off he's he's so far ahead we're barely getting him on camera he's north of the way station up here Air one's all the way up there. And he's breaking off",
+  "audioDurationMs": 203760,
+  "turns": [
+   {
+    "turnId": 0,
+    "startMs": 3180,
+    "endMs": 5820,
+    "transcript": "I think the middle one we can't see a tag on the camera.",
+    "speaker": "A"
+   },
+   {
+    "turnId": 1,
+    "startMs": 8620,
+    "endMs": 12620,
+    "transcript": "They're 12 half. weaving through traffic. traffic.",
+    "speaker": "B"
+   },
+   {
+    "turnId": 2,
+    "startMs": 12780,
+    "endMs": 16380,
+    "transcript": "I won't deny it, I'm a straight rider",
+    "speaker": "C"
+   },
+   {
+    "turnId": 3,
+    "startMs": 29180,
+    "endMs": 32300,
+    "transcript": "Traffic, I don't have eyes",
+    "speaker": "B"
+   },
+   {
+    "turnId": 4,
+    "startMs": 32460,
+    "endMs": 38380,
+    "transcript": "Alright, he just passed he's 12 F in and out of traffic",
+    "speaker": "D"
+   },
+   {
+    "turnId": 5,
+    "startMs": 38700,
+    "endMs": 43580,
+    "transcript": "Soon I hear in the left lane",
+    "speaker": "E"
+   },
+   {
+    "turnId": 6,
+    "startMs": 45420,
+    "endMs": 52140,
+    "transcript": "Rider no tag on the bike. In the fast lane right now. Inside lane.",
+    "speaker": "E"
+   },
+   {
+    "turnId": 7,
+    "startMs": 52300,
+    "endMs": 52380,
+    "transcript": ""
+   },
+   {
+    "turnId": 8,
+    "startMs": 52380,
+    "endMs": 59100,
+    "transcript": "Got a multi color selfie stick one shield.",
+    "speaker": "F"
+   },
+   {
+    "turnId": 9,
+    "startMs": 60700,
+    "endMs": 63900,
+    "transcript": "He's cutting in and out of traffic.",
+    "speaker": "E"
+   },
+   {
+    "turnId": 10,
+    "startMs": 67340,
+    "endMs": 72540,
+    "transcript": "He He just passed your unit. high rate of speed.",
+    "speaker": "A"
+   },
+   {
+    "turnId": 11,
+    "startMs": 72860,
+    "endMs": 77340,
+    "transcript": "Yes, 12 playing all leading charges.",
+    "speaker": "G"
+   },
+   {
+    "turnId": 12,
+    "startMs": 81260,
+    "endMs": 90940,
+    "transcript": "He just flew by a trooper here here that's 1050 with somebody. Okay, he's pulling into a gas station here. Uh, 40640 D Street.",
+    "speaker": "A"
+   },
+   {
+    "turnId": 13,
+    "startMs": 92060,
+    "endMs": 94060,
+    "transcript": "Be at J and 44.",
+    "speaker": "A"
+   },
+   {
+    "turnId": 14,
+    "startMs": 96300,
+    "endMs": 99420,
+    "transcript": "So far from there.",
+    "speaker": "F"
+   },
+   {
+    "turnId": 15,
+    "startMs": 99500,
+    "endMs": 109980,
+    "transcript": "Okay, still got his helmet on, white helmet, black t-shirt, black pants, don't see a plate and he's got his credit card out paying for gas.",
+    "speaker": "A"
+   },
+   {
+    "turnId": 16,
+    "startMs": 111420,
+    "endMs": 113980,
+    "transcript": "Okay, back on the go 44 eastbound",
+    "speaker": "A"
+   },
+   {
+    "turnId": 17,
+    "startMs": 114460,
+    "endMs": 120300,
+    "transcript": "County on 44 on a step on it.",
+    "speaker": "H"
+   },
+   {
+    "turnId": 18,
+    "startMs": 120380,
+    "endMs": 123820,
+    "transcript": "Yeah all of us are here",
+    "speaker": "B"
+   },
+   {
+    "turnId": 19,
+    "startMs": 123900,
+    "endMs": 125180,
+    "transcript": "Officer lane of travel.",
+    "speaker": "I"
+   },
+   {
+    "turnId": 20,
+    "startMs": 136860,
+    "endMs": 138940,
+    "transcript": "Okay, still signal 12 eastbound 44.",
+    "speaker": "A"
+   },
+   {
+    "turnId": 21,
+    "startMs": 141020,
+    "endMs": 146780,
+    "transcript": "Victor 16 on a traffic stop internationally here he comes down",
+    "speaker": "J"
+   },
+   {
+    "turnId": 22,
+    "startMs": 146860,
+    "endMs": 152060,
+    "transcript": "Eastbound 92 from 15 A",
+    "speaker": "A"
+   },
+   {
+    "turnId": 23,
+    "startMs": 153660,
+    "endMs": 155660,
+    "transcript": "Looks like three north now now in Daytona.",
+    "speaker": "E"
+   },
+   {
+    "turnId": 24,
+    "startMs": 155980,
+    "endMs": 162540,
+    "transcript": "Okay we're at stone and 92 through the red light still eastbound",
+    "speaker": "A"
+   },
+   {
+    "turnId": 25,
+    "startMs": 162540,
+    "endMs": 162700,
+    "transcript": "",
+    "speaker": "A"
+   },
+   {
+    "turnId": 26,
+    "startMs": 162700,
+    "endMs": 169100,
+    "transcript": "There's about four on March now shadowing you so if he pulls he pulls in somewhere we got enough people to to grab him",
+    "speaker": "F"
+   },
+   {
+    "turnId": 27,
+    "startMs": 169260,
+    "endMs": 169340,
+    "transcript": ""
+   },
+   {
+    "turnId": 28,
+    "startMs": 169340,
+    "endMs": 189980,
+    "transcript": "Great thank you still eastbound coming up to Thames Now we're still northbound he's he's so fast he's pulling away from us right now we're trying to catch up uh our map showing mile marker 280 Air one we're going to have to break off he's he's so far ahead we're barely getting him on camera he's north of the way station up here",
+    "speaker": "A"
+   },
+   {
+    "turnId": 29,
+    "startMs": 190140,
+    "endMs": 193980,
+    "transcript": "Air one's all the way up there. And he's breaking off",
+    "speaker": "K"
+   }
+  ]
+ },
+ "latency_s": 38.47,
+ "usd": 0.010188,
+ "model": "muse-voice-transcribe-1.0"
+}

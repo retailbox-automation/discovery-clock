@@ -1,0 +1,600 @@
+{
+ "step": "transcribe-0",
+ "hash": "176a8b0b38e98a86",
+ "recorded_utc": "2026-11-04T18:59:12Z",
+ "request": {
+  "endpoint": "/asr/transcribe",
+  "mode": "DIARIZATION",
+  "model": "muse-voice-transcribe-1.0",
+  "audioEncoding": "WAV",
+  "media_sha256": "25c46a3ed2f4eda8029bf2857d0285b12d721aa496c74ac97f4680f37b2d78b3",
+  "piece_s": [
+   0.0,
+   255.211
+  ],
+  "audio": "mono s16le 24000 Hz"
+ },
+ "response": {
+  "sessionId": "dc-2e9af6bde1e1",
+  "transcript": "And I just need need to report that there's a pickup truck with three wheels that rammed a bunch of people across huge accident on I-4 just a few moments ago and somehow he continued to drive with no wheel and flew off what color is the truck? it's a white pickup truck it's a big truck I'm so sorry I don't know if it was a Chevy or Chevy or but it's a big truck Kilo uniform delta November November nine three white Chevy Hey, I'm going to move the I'm going to move these barricades so you can make Hey, what's going on today? How are you? What's going on? Good. How are you? What's going on? Nothing. We're It's fine. It's not fine. Go stand over here. It's fine. Go stand in front of the car. Go stand over there. Who? Go stand by the car. Are you serious? Yeah, go stand by the car. Oh, hold Stand by the car. You too. Go stand by the car. Stand by the car. You better look go stand by the car For what? Go stand by the car For what? Go stand by the car Are you good? For what? For For what? Stop I'm not stop Throw me under you were your boy Hey boy. What is this? You need to relax, okay? You better talk to your boss In a second whenever whenever I get to you you can talk as of right now go stand over there please at the at the back of the car What's what do you Huh? What are you doing? I mean seriously what is this? What's Is it good? Yeah, he's good. Front pocket. Just make sure. Yeah, no. I'm not trying Can I ask you a question? Is that normal? from where you guys were driving? Because I don't think it is. Just stand right here, man. We'll talk to you in a little bit. What's your name? I'm Gomez. All and all your bosses shit. Yeah. Fuck this way. Walk this way, dude. What's hey man, what the fuck? Walk this way. I mean, I'm not you got damn fucking kidding me? We're keeping you out of the heat for now. You put me in the fucking truck with those those two sit down I really sit down dude are you really sit down are you really sit down sit down what's your name dude sit in the car no what's your name sit in the car yeah you better fucking grow Hey is this your buddy hey now you just got charged I don't give a fuck sit down boy you're good yeah yeah for what good enough yep you good yeah I'm good can we not do this No, no, we're past that. He just kicked my partner over here. Okay, we're past that. He's going to jail on a bare minimum on a felony. I don't give a fuck if that's that's his shop or not. We're done. Okay, he wants to act out. He can he can suffer the consequences for it. We're done.",
+  "audioDurationMs": 255280,
+  "turns": [
+   {
+    "turnId": 0,
+    "startMs": 60,
+    "endMs": 14620,
+    "transcript": "And I just need need to report that there's a pickup truck with three wheels that rammed a bunch of people across huge accident on I-4 just a few moments ago and somehow he continued to drive with no wheel and flew off",
+    "speaker": "A"
+   },
+   {
+    "turnId": 1,
+    "startMs": 14620,
+    "endMs": 15820,
+    "transcript": "what color is the truck?",
+    "speaker": "B"
+   },
+   {
+    "turnId": 2,
+    "startMs": 16140,
+    "endMs": 23260,
+    "transcript": "it's a white pickup truck it's a big truck I'm so sorry I don't know if it was a Chevy or Chevy or but it's a big truck",
+    "speaker": "A"
+   },
+   {
+    "turnId": 3,
+    "startMs": 29100,
+    "endMs": 39100,
+    "transcript": "Kilo uniform delta November November nine three white Chevy Hey, I'm going to move the I'm going to move these barricades so you can make",
+    "speaker": "C"
+   },
+   {
+    "turnId": 4,
+    "startMs": 39660,
+    "endMs": 48060,
+    "transcript": "Hey, what's going on today?",
+    "speaker": "D"
+   },
+   {
+    "turnId": 5,
+    "startMs": 48060,
+    "endMs": 48700,
+    "transcript": "How are you?",
+    "speaker": "E"
+   },
+   {
+    "turnId": 6,
+    "startMs": 48940,
+    "endMs": 49500,
+    "transcript": "What's going on?",
+    "speaker": "D"
+   },
+   {
+    "turnId": 7,
+    "startMs": 49820,
+    "endMs": 50700,
+    "transcript": "Good. How are you?",
+    "speaker": "E"
+   },
+   {
+    "turnId": 8,
+    "startMs": 50860,
+    "endMs": 51500,
+    "transcript": "What's going on?",
+    "speaker": "D"
+   },
+   {
+    "turnId": 9,
+    "startMs": 51500,
+    "endMs": 59180,
+    "transcript": "Nothing. We're It's fine. It's not fine.",
+    "speaker": "E"
+   },
+   {
+    "turnId": 10,
+    "startMs": 59340,
+    "endMs": 60300,
+    "transcript": "Go stand over here.",
+    "speaker": "D"
+   },
+   {
+    "turnId": 11,
+    "startMs": 60300,
+    "endMs": 60620,
+    "transcript": "It's fine.",
+    "speaker": "E"
+   },
+   {
+    "turnId": 12,
+    "startMs": 60620,
+    "endMs": 63500,
+    "transcript": "Go stand in front of the car. Go stand over there.",
+    "speaker": "D"
+   },
+   {
+    "turnId": 13,
+    "startMs": 63500,
+    "endMs": 63980,
+    "transcript": "Who?",
+    "speaker": "F"
+   },
+   {
+    "turnId": 14,
+    "startMs": 63980,
+    "endMs": 67180,
+    "transcript": "Go stand by the car.",
+    "speaker": "D"
+   },
+   {
+    "turnId": 15,
+    "startMs": 67820,
+    "endMs": 69100,
+    "transcript": "Are you serious?",
+    "speaker": "F"
+   },
+   {
+    "turnId": 16,
+    "startMs": 69100,
+    "endMs": 70380,
+    "transcript": "Yeah, go stand by the car.",
+    "speaker": "D"
+   },
+   {
+    "turnId": 17,
+    "startMs": 70460,
+    "endMs": 73020,
+    "transcript": "Oh, hold",
+    "speaker": "F"
+   },
+   {
+    "turnId": 18,
+    "startMs": 73020,
+    "endMs": 75820,
+    "transcript": "Stand by the car. You too. Go stand by the car.",
+    "speaker": "D"
+   },
+   {
+    "turnId": 19,
+    "startMs": 77660,
+    "endMs": 78540,
+    "transcript": "Stand by the car.",
+    "speaker": "D"
+   },
+   {
+    "turnId": 20,
+    "startMs": 78540,
+    "endMs": 80540,
+    "transcript": "You better look",
+    "speaker": "F"
+   },
+   {
+    "turnId": 21,
+    "startMs": 80540,
+    "endMs": 81980,
+    "transcript": "go stand by the car",
+    "speaker": "D"
+   },
+   {
+    "turnId": 22,
+    "startMs": 82060,
+    "endMs": 82860,
+    "transcript": "For what?",
+    "speaker": "F"
+   },
+   {
+    "turnId": 23,
+    "startMs": 82860,
+    "endMs": 83580,
+    "transcript": "Go stand by the car",
+    "speaker": "D"
+   },
+   {
+    "turnId": 24,
+    "startMs": 83660,
+    "endMs": 84380,
+    "transcript": "For what?",
+    "speaker": "F"
+   },
+   {
+    "turnId": 25,
+    "startMs": 84380,
+    "endMs": 85180,
+    "transcript": "Go stand by the car",
+    "speaker": "D"
+   },
+   {
+    "turnId": 26,
+    "startMs": 85180,
+    "endMs": 90380,
+    "transcript": "Are you good?",
+    "speaker": "F"
+   },
+   {
+    "turnId": 27,
+    "startMs": 90540,
+    "endMs": 94300,
+    "transcript": "For what? For For what?",
+    "speaker": "F"
+   },
+   {
+    "turnId": 28,
+    "startMs": 94380,
+    "endMs": 98060,
+    "transcript": "Stop I'm not stop",
+    "speaker": "F"
+   },
+   {
+    "turnId": 29,
+    "startMs": 98220,
+    "endMs": 103580,
+    "transcript": "Throw me under you were your boy",
+    "speaker": "F"
+   },
+   {
+    "turnId": 30,
+    "startMs": 108140,
+    "endMs": 112540,
+    "transcript": "Hey boy. What is this?",
+    "speaker": "F"
+   },
+   {
+    "turnId": 31,
+    "startMs": 112860,
+    "endMs": 116700,
+    "transcript": "You need to relax, okay?",
+    "speaker": "D"
+   },
+   {
+    "turnId": 32,
+    "startMs": 116780,
+    "endMs": 119180,
+    "transcript": "You better talk to your boss",
+    "speaker": "F"
+   },
+   {
+    "turnId": 33,
+    "startMs": 119260,
+    "endMs": 128700,
+    "transcript": "In a second whenever whenever I get to you you can talk as of right now go stand over there please at the at the back of the car",
+    "speaker": "D"
+   },
+   {
+    "turnId": 34,
+    "startMs": 136300,
+    "endMs": 138140,
+    "transcript": "What's what do you",
+    "speaker": "F"
+   },
+   {
+    "turnId": 35,
+    "startMs": 138300,
+    "endMs": 138700,
+    "transcript": "Huh?",
+    "speaker": "C"
+   },
+   {
+    "turnId": 36,
+    "startMs": 138780,
+    "endMs": 145340,
+    "transcript": "What are you doing? I mean seriously what is this? What's",
+    "speaker": "F"
+   },
+   {
+    "turnId": 37,
+    "startMs": 145340,
+    "endMs": 145340,
+    "transcript": "Is it good?",
+    "speaker": "C"
+   },
+   {
+    "turnId": 38,
+    "startMs": 145340,
+    "endMs": 146460,
+    "transcript": "Yeah, he's good.",
+    "speaker": "G"
+   },
+   {
+    "turnId": 39,
+    "startMs": 146460,
+    "endMs": 146700,
+    "transcript": "Front pocket. Just make sure.",
+    "speaker": "C"
+   },
+   {
+    "turnId": 40,
+    "startMs": 146940,
+    "endMs": 150860,
+    "transcript": "Yeah, no. I'm not trying",
+    "speaker": "F"
+   },
+   {
+    "turnId": 41,
+    "startMs": 155020,
+    "endMs": 159180,
+    "transcript": "Can I ask you a question? Is that normal?",
+    "speaker": "C"
+   },
+   {
+    "turnId": 42,
+    "startMs": 159580,
+    "endMs": 166140,
+    "transcript": "from where you guys were driving? Because I don't think it is.",
+    "speaker": "C"
+   },
+   {
+    "turnId": 43,
+    "startMs": 171340,
+    "endMs": 174220,
+    "transcript": "Just stand right here, man. We'll talk to you in a little bit.",
+    "speaker": "D"
+   },
+   {
+    "turnId": 44,
+    "startMs": 174380,
+    "endMs": 175420,
+    "transcript": "What's your name?",
+    "speaker": "F"
+   },
+   {
+    "turnId": 45,
+    "startMs": 175740,
+    "endMs": 178780,
+    "transcript": "I'm Gomez.",
+    "speaker": "D"
+   },
+   {
+    "turnId": 46,
+    "startMs": 179100,
+    "endMs": 187100,
+    "transcript": "All and all your bosses shit.",
+    "speaker": "F"
+   },
+   {
+    "turnId": 47,
+    "startMs": 187580,
+    "endMs": 189340,
+    "transcript": "Yeah.",
+    "speaker": "F"
+   },
+   {
+    "turnId": 48,
+    "startMs": 189340,
+    "endMs": 191660,
+    "transcript": "Fuck this way. Walk this way, dude.",
+    "speaker": "D"
+   },
+   {
+    "turnId": 49,
+    "startMs": 191660,
+    "endMs": 193580,
+    "transcript": "What's hey man, what the fuck?",
+    "speaker": "F"
+   },
+   {
+    "turnId": 50,
+    "startMs": 193660,
+    "endMs": 194620,
+    "transcript": "Walk this way.",
+    "speaker": "D"
+   },
+   {
+    "turnId": 51,
+    "startMs": 194620,
+    "endMs": 199020,
+    "transcript": "I mean, I'm not you got damn fucking kidding me?",
+    "speaker": "F"
+   },
+   {
+    "turnId": 52,
+    "startMs": 199100,
+    "endMs": 201260,
+    "transcript": "We're keeping you out of the heat for now.",
+    "speaker": "C"
+   },
+   {
+    "turnId": 53,
+    "startMs": 201580,
+    "endMs": 204060,
+    "transcript": "You put me in the fucking truck with those those two",
+    "speaker": "F"
+   },
+   {
+    "turnId": 54,
+    "startMs": 204060,
+    "endMs": 204700,
+    "transcript": "sit down",
+    "speaker": "D"
+   },
+   {
+    "turnId": 55,
+    "startMs": 204860,
+    "endMs": 205500,
+    "transcript": "I really",
+    "speaker": "F"
+   },
+   {
+    "turnId": 56,
+    "startMs": 205500,
+    "endMs": 206220,
+    "transcript": "sit down dude",
+    "speaker": "D"
+   },
+   {
+    "turnId": 57,
+    "startMs": 206220,
+    "endMs": 207260,
+    "transcript": "are you really",
+    "speaker": "F"
+   },
+   {
+    "turnId": 58,
+    "startMs": 207500,
+    "endMs": 208140,
+    "transcript": "sit down",
+    "speaker": "D"
+   },
+   {
+    "turnId": 59,
+    "startMs": 208140,
+    "endMs": 208940,
+    "transcript": "are you really",
+    "speaker": "F"
+   },
+   {
+    "turnId": 60,
+    "startMs": 208940,
+    "endMs": 209660,
+    "transcript": "sit down",
+    "speaker": "D"
+   },
+   {
+    "turnId": 61,
+    "startMs": 209660,
+    "endMs": 210860,
+    "transcript": "sit down",
+    "speaker": "D"
+   },
+   {
+    "turnId": 62,
+    "startMs": 210860,
+    "endMs": 211500,
+    "transcript": "what's your name",
+    "speaker": "F"
+   },
+   {
+    "turnId": 63,
+    "startMs": 211580,
+    "endMs": 212140,
+    "transcript": "dude sit in the car",
+    "speaker": "D"
+   },
+   {
+    "turnId": 64,
+    "startMs": 212540,
+    "endMs": 213340,
+    "transcript": "no what's your name",
+    "speaker": "F"
+   },
+   {
+    "turnId": 65,
+    "startMs": 213420,
+    "endMs": 214060,
+    "transcript": "sit in the car",
+    "speaker": "D"
+   },
+   {
+    "turnId": 66,
+    "startMs": 214060,
+    "endMs": 216140,
+    "transcript": "yeah you better fucking grow",
+    "speaker": "F"
+   },
+   {
+    "turnId": 67,
+    "startMs": 216220,
+    "endMs": 217740,
+    "transcript": "Hey is this your buddy",
+    "speaker": "C"
+   },
+   {
+    "turnId": 68,
+    "startMs": 217740,
+    "endMs": 218540,
+    "transcript": "hey",
+    "speaker": "D"
+   },
+   {
+    "turnId": 69,
+    "startMs": 218620,
+    "endMs": 218700,
+    "transcript": ""
+   },
+   {
+    "turnId": 70,
+    "startMs": 218700,
+    "endMs": 219900,
+    "transcript": "now you just got charged",
+    "speaker": "C"
+   },
+   {
+    "turnId": 71,
+    "startMs": 219900,
+    "endMs": 223100,
+    "transcript": "I don't give a fuck",
+    "speaker": "F"
+   },
+   {
+    "turnId": 72,
+    "startMs": 223500,
+    "endMs": 223900,
+    "transcript": "sit down",
+    "speaker": "C"
+   },
+   {
+    "turnId": 73,
+    "startMs": 223900,
+    "endMs": 225740,
+    "transcript": "boy you're good",
+    "speaker": "C"
+   },
+   {
+    "turnId": 74,
+    "startMs": 225740,
+    "endMs": 226460,
+    "transcript": "yeah",
+    "speaker": "C"
+   },
+   {
+    "turnId": 75,
+    "startMs": 226460,
+    "endMs": 231740,
+    "transcript": "yeah for what",
+    "speaker": "F"
+   },
+   {
+    "turnId": 76,
+    "startMs": 233660,
+    "endMs": 234540,
+    "transcript": "good enough",
+    "speaker": "E"
+   },
+   {
+    "turnId": 77,
+    "startMs": 234540,
+    "endMs": 235020,
+    "transcript": "yep",
+    "speaker": "D"
+   },
+   {
+    "turnId": 78,
+    "startMs": 235020,
+    "endMs": 235260,
+    "transcript": "you good",
+    "speaker": "E"
+   },
+   {
+    "turnId": 79,
+    "startMs": 235260,
+    "endMs": 237340,
+    "transcript": "yeah I'm good",
+    "speaker": "D"
+   },
+   {
+    "turnId": 80,
+    "startMs": 237580,
+    "endMs": 238620,
+    "transcript": "can we not do this",
+    "speaker": "G"
+   },
+   {
+    "turnId": 81,
+    "startMs": 238620,
+    "endMs": 254540,
+    "transcript": "No, no, we're past that. He just kicked my partner over here. Okay, we're past that. He's going to jail on a bare minimum on a felony. I don't give a fuck if that's that's his shop or not. We're done. Okay, he wants to act out. He can he can suffer the consequences for it. We're done.",
+    "speaker": "D"
+   }
+  ]
+ },
+ "latency_s": 53.39,
+ "usd": 0.012764,
+ "model": "muse-voice-transcribe-1.0"
+}
