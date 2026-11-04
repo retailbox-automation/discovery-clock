@@ -17,6 +17,7 @@
   };
   const fmtUsage = u => {
     if (!u) return "";
+    if (u.frames !== undefined) return `${u.frames} video frames billed`;
     if (u.input_tokens !== undefined) return `${u.input_tokens.toLocaleString()} in · ${u.output_tokens.toLocaleString()} out tokens`;
     if (u.prompt_tokens !== undefined) return `${u.prompt_tokens.toLocaleString()} in · ${(u.completion_tokens || 0).toLocaleString()} out tokens`;
     if (u.audioDurationMs !== undefined) return `${(u.audioDurationMs / 1000).toFixed(1)} s audio · ${u.turns} turns`;

@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import re
 import shutil
 import subprocess
 import threading
@@ -166,3 +167,42 @@ def reverify(case_id: str, runs_dir: Path | None = None, recordings_dir: Path | 
             shutil.copy(d / f"result-v{old_v}.json", rec / f"result-v{old_v}.json")
         shutil.copy(d / "result.json", rec / "result.json")
     return result
+
+
+_SAM_TRACK = re.compile(r"^sam-track-([0-9.]+)-(\d+)-(\d+)-[0-9a-f]{16}\.json$")
+_SAM_FACES = re.compile(r"^sam-faces-([0-9.]+)-([0-9.]+)-[0-9a-f]{16}\.json$")
+
+
+def replay_sam(case_id: str, video: str | Path, runs_dir: Path | None = None, recordings_dir: Path | None = None) -> list[str]:
+    """Rebuild the recorded SAM 3.1 results of a case (followed person, clips with faces blurred) from recordings/,
+    without network, so the web page shows them in replay."""
+    from . import track as track_mod
+    d = Path(runs_dir or RUNS) / case_id
+    rec = Path(recordings_dir or RECORDINGS) / case_id
+    result = json.loads((d / "result.json").read_text())
+    sha, dur = result["video"]["sha256"], result["video"]["duration_s"]
+    client = MetaClient(case_id, runs_dir=Path(runs_dir or RUNS), recordings_dir=Path(recordings_dir or RECORDINGS), replay=True)
+    done = []
+    for p in sorted(rec.glob("sam-*.json")):
+        m = _SAM_TRACK.match(p.name)
+        if m:
+            t, x, y = float(m.group(1)), int(m.group(2)), int(m.group(3))
+            out = track_mod.track(client, video, sha, dur, t, x, y)
+            track_mod.save_json(out, d / "tracks" / f"{t:.1f}-{x}-{y}.json")
+            (d / "tracks" / "latest.json").write_text(json.dumps({"state": "done", **out}))
+            done.append(f"follow {t:.1f}s ({x},{y}): {len(out['boxes'])} boxes")
+            continue
+        m = _SAM_FACES.match(p.name)
+        if m:
+            a, b = float(m.group(1)), float(m.group(2))
+            claim = next((c for c in result["claims"] if c.get("start_s") is not None
+                          and track_mod.clip_window(c, dur) == (round(a, 2), round(b, 2))), None)
+            if claim is None:
+                continue
+            fc = track_mod.faces(client, video, sha, dur, a, b)
+            track_mod.export_clip(video, a, b, fc["boxes"], d / "clips" / f"{claim['id']}.mp4")
+            (d / "clips" / f"{claim['id']}.json").write_text(json.dumps({
+                "state": "done", "url": f"/clips/{case_id}/{claim['id']}.mp4", "window": [a, b],
+                "face_boxes": len({(r["t"], r["id"]) for r in fc["boxes"]}), "kept_followed_person": False}))
+            done.append(f"clip {claim['id']} {a:.1f}-{b:.1f}s: {len(fc['boxes'])} face boxes")
+    return done

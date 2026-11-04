@@ -139,14 +139,17 @@ def main(argv=None) -> int:
         if res is None:
             missing.append(case_dir.name)
             continue
-        as_run = score_case(case_dir, res)
-        answer = saved_answer(case_dir.name, ROOT / src if not Path(src).is_absolute() else Path(src))
+        src_path = ROOT / src if not Path(src).is_absolute() else Path(src)
+        first = sorted(src_path.parent.glob("result-v*.json"))  # result as first run, kept by `reverify`
+        first_res = json.loads(first[0].read_text()) if first else res
+        as_run = score_case(case_dir, first_res)
+        answer = saved_answer(case_dir.name, src_path)
         s = as_run
         if answer is not None:
             s = score_case(case_dir, reverified(res, answer))
         s["source"] = src
         s["as_run"] = as_run
-        s["as_run_version"] = res.get("verify_version", 1)
+        s["as_run_version"] = first_res.get("verify_version", 1)
         scored.append(s)
 
     T = lambda k: sum(s[k] if isinstance(s[k], int) else len(s[k]) for s in scored)

@@ -178,8 +178,6 @@ def api_calls(case: str = "", limit: int = 60):
 
 
 # ---------------------------------------------------------------- SAM 3.1: follow a person, export a clip with faces blurred
-CLIP_PAD_S = 2.0
-CLIP_MAX_S = 30.0
 JOB_LOCK = threading.Lock()
 
 
@@ -238,12 +236,6 @@ def get_track(case_id: str):
     return JSONResponse(st or {"state": "none"})
 
 
-def _clip_window(c: dict, dur: float) -> tuple[float, float]:
-    a = max(0.0, c["start_s"] - CLIP_PAD_S)
-    b = min(dur, max(c["end_s"], c["start_s"]) + CLIP_PAD_S)
-    return round(a, 2), round(min(b, a + CLIP_MAX_S), 2)
-
-
 @app.post("/api/cases/{case_id}/claims/{claim_id}/clip")
 def start_clip(case_id: str, claim_id: str):
     vp, result, case = _case_media(case_id)
@@ -254,7 +246,7 @@ def start_clip(case_id: str, claim_id: str):
         raise HTTPException(400, "bad claim id")
     d = _case_dir(case_id)
     dur = result["video"]["duration_s"]
-    a, b = _clip_window(c, dur)
+    a, b = track_mod.clip_window(c, dur)
 
     def run():
         client = MetaClient(case_id, runs_dir=runs_dir())

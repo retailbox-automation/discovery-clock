@@ -19,6 +19,15 @@ from .meta import SAM_MODEL, sam_cost
 
 CLIP_FPS = 10
 FACE_MARGIN = 0.25  # grow face boxes by 25 % on each side before blurring
+CLIP_PAD_S = 2.0
+CLIP_MAX_S = 30.0
+
+
+def clip_window(claim: dict, duration: float) -> tuple[float, float]:
+    """Window exported for a claim: its timecode plus 2 s on each side, at most 30 s."""
+    a = max(0.0, claim["start_s"] - CLIP_PAD_S)
+    b = min(duration, max(claim["end_s"], claim["start_s"]) + CLIP_PAD_S)
+    return round(a, 2), round(min(b, a + CLIP_MAX_S), 2)
 
 _FRAME = re.compile(r"<(\d+)f>")
 _REC = re.compile(r"(\d+)<\|box;x1=(-?\d+);y1=(-?\d+);x2=(-?\d+);y2=(-?\d+);w=(\d+);h=(\d+)(?:;c=([0-9.]+))?\|>")
@@ -78,7 +87,7 @@ def _sam_call(client, file_id: str, prompt: str, *, step: str, frames: int, summ
         {"type": "input_text", "text": prompt}, {"type": "input_video", "file_id": file_id}]}],
         "stream": False, "store": False, "metadata": {"mask_encoding": "one_bit", **metadata}}
     text, raw = client.responses(body, step=step, summary=summary, estimate=sam_cost(frames),
-                                 cost_fn=lambda r: sam_cost(frames))
+                                 cost_fn=lambda r: sam_cost(frames), usage_extra={"frames": frames})
     return parse_sam(text)
 
 

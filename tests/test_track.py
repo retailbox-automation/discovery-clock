@@ -77,3 +77,19 @@ def test_export_clip_blurs_only_face_boxes(tiny_video, tmp_path):
         return sum((b - m) ** 2 for b in raw) / len(raw)
     assert region_var(out, "20:20:30:30") < region_var(src, "20:20:30:30") * 0.3   # face area blurred
     assert region_var(out, "20:20:110:40") > region_var(src, "20:20:110:40") * 0.7  # elsewhere sharp
+
+
+def test_replay_sam_rebuilds_follow_and_clip(dirs, tiny_video):
+    from discovery_clock import pipeline
+    live = make_client(dirs, case="s1", cls=SamClient)
+    res = pipeline.run("s1", tiny_video, "The deputy got in the water.\nA boater pulled him out.\nNo one.", claims_mode="lines",
+                       client=live, runs_dir=dirs["runs"])
+    c1 = res["claims"][0]
+    a, b = T.clip_window(c1, 3.0)
+    T.track(live, tiny_video, res["video"]["sha256"], 3.0, t=1.0, x=80, y=45)
+    T.faces(live, tiny_video, res["video"]["sha256"], 3.0, a, b)
+    n = len(live.http)
+    out = pipeline.replay_sam("s1", tiny_video, runs_dir=dirs["runs"], recordings_dir=dirs["recordings"])
+    assert len(live.http) == n and len(out) == 2
+    d = dirs["runs"] / "s1"
+    assert (d / "tracks" / "latest.json").exists() and (d / "clips" / "C1.mp4").stat().st_size > 1000

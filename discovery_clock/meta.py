@@ -327,7 +327,8 @@ class MetaClient:
         return {"model": VOICE_MODEL, "turns": merge_turns(pieces), "audioDurationMs": total_ms, "pieces": len(pieces)}
 
     # ---------- /responses (Muse Spark 1.3, SAM 3.1) ----------
-    def responses(self, body: dict, *, step: str, summary: dict, estimate: float = 0.0, cost_fn=None) -> tuple[str, dict]:
+    def responses(self, body: dict, *, step: str, summary: dict, estimate: float = 0.0, cost_fn=None,
+                  usage_extra: dict | None = None) -> tuple[str, dict]:
         """POST /responses. Returns (message text, raw response). cost_fn(raw) -> usd (default: Spark token prices)."""
         key = {"endpoint": "/responses", "body": self._canon(body)}
         h = canonical_hash(key)
@@ -348,7 +349,8 @@ class MetaClient:
         text = response_text(raw)
         self._log({"step": step, "model": model, "endpoint": "POST /responses", "latency_s": round(sec, 2),
                    "usd": round(usd, 6), "request": summary, "response": _clip(text or json.dumps(raw)[:EXCERPT]),
-                   "usage": raw.get("usage"), "status": raw.get("status"), "replay_changed": changed})
+                   "usage": {**(raw.get("usage") or {}), **(usage_extra or {})} or None, "status": raw.get("status"),
+                   "replay_changed": changed})
         return text, raw
 
     # ---------- Muse Spark Open on Baseten (OpenAI-compatible) ----------

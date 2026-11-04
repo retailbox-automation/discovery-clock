@@ -47,6 +47,8 @@ def main(argv=None):
         rc = pipeline.recorded_case(a.case)
         res = pipeline.run(a.case, a.video, rc["report"], claims_mode=rc.get("claims_mode", "extract"))
         _print_result(res)
+        for line in pipeline.replay_sam(a.case, a.video):
+            print("SAM 3.1 (replay):", line)
     elif a.cmd == "reverify":
         for cid in a.case:
             res = pipeline.reverify(cid)

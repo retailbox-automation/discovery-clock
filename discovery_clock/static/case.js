@@ -140,7 +140,9 @@
     g.strokeStyle = "#2dd4bf"; g.lineWidth = 3;
     g.strokeRect(r.ox + x1 * r.s, r.oy + y1 * r.s, (x2 - x1) * r.s, (y2 - y1) * r.s);
     g.fillStyle = "#2dd4bf"; g.font = "bold 13px -apple-system, sans-serif";
-    g.fillText("followed person · SAM 3.1", r.ox + x1 * r.s + 4, Math.max(14, r.oy + y1 * r.s - 6));
+    const label = "followed person · SAM 3.1";
+    const lx = Math.min(r.ox + x1 * r.s + 4, video.clientWidth - g.measureText(label).width - 6);
+    g.fillText(label, Math.max(4, lx), Math.max(14, r.oy + y1 * r.s - 6));
   }
   const fmt = s => new Date(s * 1000).toISOString().slice(11, 19);
   async function pollTrack(once) {

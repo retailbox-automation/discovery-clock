@@ -1,0 +1,827 @@
+{
+ "case": "i4driver-iqxWGjr1PRk",
+ "created_utc": "2026-11-04T19:00:31Z",
+ "replay": false,
+ "video": {
+  "name": "iqxWGjr1PRk.mp4",
+  "sha256": "25c46a3ed2f4eda8029bf2857d0285b12d721aa496c74ac97f4680f37b2d78b3",
+  "duration_s": 255.211
+ },
+ "source": {
+  "id": "iqxWGjr1PRk",
+  "url": "https://www.youtube.com/watch?v=iqxWGjr1PRk",
+  "title": "I-4 reckless drunk driver",
+  "publisher": "Volusia Sheriff's Office (official YouTube channel @VolusiaSheriff)",
+  "rights": "Florida public record (Fla. Stat. ch. 119), released by the agency; Florida agencies cannot claim copyright in public records (Microdecisions, Inc. v. Skinner, 889 So. 2d 871, Fla. 2d DCA 2004). Faces of bystanders are blurred in anything we publish; names of arrested people are not used."
+ },
+ "report": "The suspect vehicle had lost a front wheel.\nThe vehicle got stuck at a construction site.\nDeputies detained the driver.\nThe driver appeared to be under the influence.\nThe driver resisted and kicked a deputy while being escorted into the back of a patrol vehicle.\nWhen asked about the crash, the driver responded \"What crash?\"\nThe driver asked deputies to release him in exchange for $2,000.\nThe driver walked to the patrol car calmly and without resisting.\nThe driver said he was late for a job interview.\n",
+ "claims_mode": "lines",
+ "models": {
+  "claims": "meta-models/muse-spark-open-1026",
+  "transcribe": "muse-voice-transcribe-1.0",
+  "review": "muse-spark-1.3",
+  "verify": "code"
+ },
+ "claims_notes": [],
+ "turns": [
+  {
+   "startMs": 60,
+   "endMs": 14620,
+   "speaker": "A",
+   "transcript": "And I just need need to report that there's a pickup truck with three wheels that rammed a bunch of people across huge accident on I-4 just a few moments ago and somehow he continued to drive with no wheel and flew off",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 14620,
+   "endMs": 15820,
+   "speaker": "B",
+   "transcript": "what color is the truck?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 16140,
+   "endMs": 23260,
+   "speaker": "A",
+   "transcript": "it's a white pickup truck it's a big truck I'm so sorry I don't know if it was a Chevy or Chevy or but it's a big truck",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 29100,
+   "endMs": 39100,
+   "speaker": "C",
+   "transcript": "Kilo uniform delta November November nine three white Chevy Hey, I'm going to move the I'm going to move these barricades so you can make",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 39660,
+   "endMs": 48060,
+   "speaker": "D",
+   "transcript": "Hey, what's going on today?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 48060,
+   "endMs": 48700,
+   "speaker": "E",
+   "transcript": "How are you?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 48940,
+   "endMs": 49500,
+   "speaker": "D",
+   "transcript": "What's going on?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 49820,
+   "endMs": 50700,
+   "speaker": "E",
+   "transcript": "Good. How are you?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 50860,
+   "endMs": 51500,
+   "speaker": "D",
+   "transcript": "What's going on?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 51500,
+   "endMs": 59180,
+   "speaker": "E",
+   "transcript": "Nothing. We're It's fine. It's not fine.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 59340,
+   "endMs": 60300,
+   "speaker": "D",
+   "transcript": "Go stand over here.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 60300,
+   "endMs": 60620,
+   "speaker": "E",
+   "transcript": "It's fine.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 60620,
+   "endMs": 63500,
+   "speaker": "D",
+   "transcript": "Go stand in front of the car. Go stand over there.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 63500,
+   "endMs": 63980,
+   "speaker": "F",
+   "transcript": "Who?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 63980,
+   "endMs": 67180,
+   "speaker": "D",
+   "transcript": "Go stand by the car.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 67820,
+   "endMs": 69100,
+   "speaker": "F",
+   "transcript": "Are you serious?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 69100,
+   "endMs": 70380,
+   "speaker": "D",
+   "transcript": "Yeah, go stand by the car.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 70460,
+   "endMs": 73020,
+   "speaker": "F",
+   "transcript": "Oh, hold",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 73020,
+   "endMs": 75820,
+   "speaker": "D",
+   "transcript": "Stand by the car. You too. Go stand by the car.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 77660,
+   "endMs": 78540,
+   "speaker": "D",
+   "transcript": "Stand by the car.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 78540,
+   "endMs": 80540,
+   "speaker": "F",
+   "transcript": "You better look",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 80540,
+   "endMs": 81980,
+   "speaker": "D",
+   "transcript": "go stand by the car",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 82060,
+   "endMs": 82860,
+   "speaker": "F",
+   "transcript": "For what?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 82860,
+   "endMs": 83580,
+   "speaker": "D",
+   "transcript": "Go stand by the car",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 83660,
+   "endMs": 84380,
+   "speaker": "F",
+   "transcript": "For what?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 84380,
+   "endMs": 85180,
+   "speaker": "D",
+   "transcript": "Go stand by the car",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 85180,
+   "endMs": 90380,
+   "speaker": "F",
+   "transcript": "Are you good?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 90540,
+   "endMs": 94300,
+   "speaker": "F",
+   "transcript": "For what? For For what?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 94380,
+   "endMs": 98060,
+   "speaker": "F",
+   "transcript": "Stop I'm not stop",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 98220,
+   "endMs": 103580,
+   "speaker": "F",
+   "transcript": "Throw me under you were your boy",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 108140,
+   "endMs": 112540,
+   "speaker": "F",
+   "transcript": "Hey boy. What is this?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 112860,
+   "endMs": 116700,
+   "speaker": "D",
+   "transcript": "You need to relax, okay?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 116780,
+   "endMs": 119180,
+   "speaker": "F",
+   "transcript": "You better talk to your boss",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 119260,
+   "endMs": 128700,
+   "speaker": "D",
+   "transcript": "In a second whenever whenever I get to you you can talk as of right now go stand over there please at the at the back of the car",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 136300,
+   "endMs": 138140,
+   "speaker": "F",
+   "transcript": "What's what do you",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 138300,
+   "endMs": 138700,
+   "speaker": "C",
+   "transcript": "Huh?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 138780,
+   "endMs": 145340,
+   "speaker": "F",
+   "transcript": "What are you doing? I mean seriously what is this? What's",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 145340,
+   "endMs": 145340,
+   "speaker": "C",
+   "transcript": "Is it good?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 145340,
+   "endMs": 146460,
+   "speaker": "G",
+   "transcript": "Yeah, he's good.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 146460,
+   "endMs": 146700,
+   "speaker": "C",
+   "transcript": "Front pocket. Just make sure.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 146940,
+   "endMs": 150860,
+   "speaker": "F",
+   "transcript": "Yeah, no. I'm not trying",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 155020,
+   "endMs": 159180,
+   "speaker": "C",
+   "transcript": "Can I ask you a question? Is that normal?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 159580,
+   "endMs": 166140,
+   "speaker": "C",
+   "transcript": "from where you guys were driving? Because I don't think it is.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 171340,
+   "endMs": 174220,
+   "speaker": "D",
+   "transcript": "Just stand right here, man. We'll talk to you in a little bit.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 174380,
+   "endMs": 175420,
+   "speaker": "F",
+   "transcript": "What's your name?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 175740,
+   "endMs": 178780,
+   "speaker": "D",
+   "transcript": "I'm Gomez.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 179100,
+   "endMs": 187100,
+   "speaker": "F",
+   "transcript": "All and all your bosses shit.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 187580,
+   "endMs": 189340,
+   "speaker": "F",
+   "transcript": "Yeah.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 189340,
+   "endMs": 191660,
+   "speaker": "D",
+   "transcript": "Fuck this way. Walk this way, dude.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 191660,
+   "endMs": 193580,
+   "speaker": "F",
+   "transcript": "What's hey man, what the fuck?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 193660,
+   "endMs": 194620,
+   "speaker": "D",
+   "transcript": "Walk this way.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 194620,
+   "endMs": 199020,
+   "speaker": "F",
+   "transcript": "I mean, I'm not you got damn fucking kidding me?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 199100,
+   "endMs": 201260,
+   "speaker": "C",
+   "transcript": "We're keeping you out of the heat for now.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 201580,
+   "endMs": 204060,
+   "speaker": "F",
+   "transcript": "You put me in the fucking truck with those those two",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 204060,
+   "endMs": 204700,
+   "speaker": "D",
+   "transcript": "sit down",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 204860,
+   "endMs": 205500,
+   "speaker": "F",
+   "transcript": "I really",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 205500,
+   "endMs": 206220,
+   "speaker": "D",
+   "transcript": "sit down dude",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 206220,
+   "endMs": 207260,
+   "speaker": "F",
+   "transcript": "are you really",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 207500,
+   "endMs": 208140,
+   "speaker": "D",
+   "transcript": "sit down",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 208140,
+   "endMs": 208940,
+   "speaker": "F",
+   "transcript": "are you really",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 208940,
+   "endMs": 209660,
+   "speaker": "D",
+   "transcript": "sit down",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 209660,
+   "endMs": 210860,
+   "speaker": "D",
+   "transcript": "sit down",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 210860,
+   "endMs": 211500,
+   "speaker": "F",
+   "transcript": "what's your name",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 211580,
+   "endMs": 212140,
+   "speaker": "D",
+   "transcript": "dude sit in the car",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 212540,
+   "endMs": 213340,
+   "speaker": "F",
+   "transcript": "no what's your name",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 213420,
+   "endMs": 214060,
+   "speaker": "D",
+   "transcript": "sit in the car",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 214060,
+   "endMs": 216140,
+   "speaker": "F",
+   "transcript": "yeah you better fucking grow",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 216220,
+   "endMs": 217740,
+   "speaker": "C",
+   "transcript": "Hey is this your buddy",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 217740,
+   "endMs": 218540,
+   "speaker": "D",
+   "transcript": "hey",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 218620,
+   "endMs": 218700,
+   "speaker": "?",
+   "transcript": "",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 218700,
+   "endMs": 219900,
+   "speaker": "C",
+   "transcript": "now you just got charged",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 219900,
+   "endMs": 223100,
+   "speaker": "F",
+   "transcript": "I don't give a fuck",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 223500,
+   "endMs": 223900,
+   "speaker": "C",
+   "transcript": "sit down",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 223900,
+   "endMs": 225740,
+   "speaker": "C",
+   "transcript": "boy you're good",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 225740,
+   "endMs": 226460,
+   "speaker": "C",
+   "transcript": "yeah",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 226460,
+   "endMs": 231740,
+   "speaker": "F",
+   "transcript": "yeah for what",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 233660,
+   "endMs": 234540,
+   "speaker": "E",
+   "transcript": "good enough",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 234540,
+   "endMs": 235020,
+   "speaker": "D",
+   "transcript": "yep",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 235020,
+   "endMs": 235260,
+   "speaker": "E",
+   "transcript": "you good",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 235260,
+   "endMs": 237340,
+   "speaker": "D",
+   "transcript": "yeah I'm good",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 237580,
+   "endMs": 238620,
+   "speaker": "G",
+   "transcript": "can we not do this",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 238620,
+   "endMs": 254540,
+   "speaker": "D",
+   "transcript": "No, no, we're past that. He just kicked my partner over here. Okay, we're past that. He's going to jail on a bare minimum on a felony. I don't give a fuck if that's that's his shop or not. We're done. Okay, he wants to act out. He can he can suffer the consequences for it. We're done.",
+   "piece_offset_s": 0.0
+  }
+ ],
+ "camera_clock": {
+  "start": "16:05:40",
+  "end": "16:50:53",
+  "date": "2026-04-22",
+  "readings": [
+   {
+    "video_s": 19.0,
+    "clock": "2026-04-22 16:05:40 -0400",
+    "camera": "D01A15389"
+   },
+   {
+    "video_s": 38.0,
+    "clock": "2026-04-22 16:46:54 -0400",
+    "camera": "D01A1012C"
+   },
+   {
+    "video_s": 78.0,
+    "clock": "2026-04-22 16:47:33 -0400",
+    "camera": "D01A1212B"
+   },
+   {
+    "video_s": 133.0,
+    "clock": "2026-04-22 16:48:28 -0400",
+    "camera": "D01A15389"
+   },
+   {
+    "video_s": 166.0,
+    "clock": "2026-04-22 16:49:08 -0400",
+    "camera": "D01A1012C"
+   },
+   {
+    "video_s": 237.0,
+    "clock": "2026-04-22 16:50:35 -0400",
+    "camera": "D01A1212B"
+   },
+   {
+    "video_s": 255.0,
+    "clock": "2026-04-22 16:50:53 -0400",
+    "camera": "D01A1212B"
+   }
+  ]
+ },
+ "claims": [
+  {
+   "id": "C1",
+   "text": "The suspect vehicle had lost a front wheel.",
+   "kind": "object",
+   "line": 1,
+   "status": "check",
+   "start_s": 0.1,
+   "end_s": 14.6,
+   "evidence": "Heard \"there's a pickup truck with three wheels that rammed a bunch of people\" and white pickup seen driving, wheel count but not which wheel is front is visible.",
+   "reason": "Recording confirms a missing wheel but does not show it was the front wheel.",
+   "model": {
+    "status": "check",
+    "start_s": 0.1,
+    "end_s": 14.6,
+    "evidence": "Heard \"there's a pickup truck with three wheels that rammed a bunch of people\" and white pickup seen driving, wheel count but not which wheel is front is visible.",
+    "reason": "Recording confirms a missing wheel but does not show it was the front wheel."
+   },
+   "verify_notes": []
+  },
+  {
+   "id": "C2",
+   "text": "The vehicle got stuck at a construction site.",
+   "kind": "object",
+   "line": 2,
+   "status": "on_recording",
+   "start_s": 19.0,
+   "end_s": 28.0,
+   "evidence": "White pickup stationary off paved road on dirt mound beside water in unfinished construction area.",
+   "reason": "Video shows the truck stuck at the construction site.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 19,
+    "end_s": 28,
+    "evidence": "White pickup stationary off paved road on dirt mound beside water in unfinished construction area.",
+    "reason": "Video shows the truck stuck at the construction site."
+   },
+   "verify_notes": []
+  },
+  {
+   "id": "C3",
+   "text": "Deputies detained the driver.",
+   "kind": "action",
+   "line": 3,
+   "status": "on_recording",
+   "start_s": 133.0,
+   "end_s": 145.0,
+   "evidence": "Man in black shirt with hands cuffed behind back leaning on patrol SUV hood while deputy searches his pockets.",
+   "reason": "Video shows the driver handcuffed and detained, name/rank not shown.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 133,
+    "end_s": 145,
+    "evidence": "Man in black shirt with hands cuffed behind back leaning on patrol SUV hood while deputy searches his pockets.",
+    "reason": "Video shows the driver handcuffed and detained, name/rank not shown."
+   },
+   "verify_notes": []
+  },
+  {
+   "id": "C4",
+   "text": "The driver appeared to be under the influence.",
+   "kind": "object",
+   "line": 4,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "No video or speech about intoxication or appearance of influence.",
+   "reason": "Recording neither shows nor contradicts influence.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1,
+    "end_s": -1,
+    "evidence": "No video or speech about intoxication or appearance of influence.",
+    "reason": "Recording neither shows nor contradicts influence."
+   },
+   "verify_notes": []
+  },
+  {
+   "id": "C5",
+   "text": "The driver resisted and kicked a deputy while being escorted into the back of a patrol vehicle.",
+   "kind": "action",
+   "line": 5,
+   "status": "on_recording",
+   "start_s": 217.0,
+   "end_s": 245.0,
+   "evidence": "Deputies force handcuffed man into rear seat and heard \"He just kicked my partner over here.\"",
+   "reason": "Video shows forced escort into patrol vehicle and speech confirms the kick.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 217,
+    "end_s": 245,
+    "evidence": "Deputies force handcuffed man into rear seat and heard \"He just kicked my partner over here.\"",
+    "reason": "Video shows forced escort into patrol vehicle and speech confirms the kick."
+   },
+   "verify_notes": []
+  },
+  {
+   "id": "C6",
+   "text": "When asked about the crash, the driver responded \"What crash?\"",
+   "kind": "speech",
+   "line": 6,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "No \"What crash?\" response heard in recording.",
+   "reason": "Recording neither shows nor contradicts the quote.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1,
+    "end_s": -1,
+    "evidence": "No \"What crash?\" response heard in recording.",
+    "reason": "Recording neither shows nor contradicts the quote."
+   },
+   "verify_notes": []
+  },
+  {
+   "id": "C7",
+   "text": "The driver asked deputies to release him in exchange for $2,000.",
+   "kind": "speech",
+   "line": 7,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "No offer of $2,000 heard in recording.",
+   "reason": "Recording neither shows nor contradicts the bribe.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1,
+    "end_s": -1,
+    "evidence": "No offer of $2,000 heard in recording.",
+    "reason": "Recording neither shows nor contradicts the bribe."
+   },
+   "verify_notes": []
+  },
+  {
+   "id": "C8",
+   "text": "The driver walked to the patrol car calmly and without resisting.",
+   "kind": "action",
+   "line": 8,
+   "status": "check",
+   "start_s": 200.0,
+   "end_s": 225.0,
+   "evidence": "Handcuffed man resists being pushed into rear seat while deputies order \"sit down\" \"sit down\" repeatedly.",
+   "reason": "Recording contradicts calm compliance and shows resistance.",
+   "model": {
+    "status": "check",
+    "start_s": 200,
+    "end_s": 225,
+    "evidence": "Handcuffed man resists being pushed into rear seat while deputies order \"sit down\" \"sit down\" repeatedly.",
+    "reason": "Recording contradicts calm compliance and shows resistance."
+   },
+   "verify_notes": []
+  },
+  {
+   "id": "C9",
+   "text": "The driver said he was late for a job interview.",
+   "kind": "speech",
+   "line": 9,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "No statement about job interview heard in recording.",
+   "reason": "Recording neither shows nor contradicts the statement.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1,
+    "end_s": -1,
+    "evidence": "No statement about job interview heard in recording.",
+    "reason": "Recording neither shows nor contradicts the statement."
+   },
+   "verify_notes": []
+  }
+ ],
+ "summary": {
+  "total": 9,
+  "on_recording": 3,
+  "not_found": 4,
+  "check": 2,
+  "changed_by_code": 0
+ },
+ "verify_notes": [],
+ "spend_usd": 0.12582,
+ "seconds": 134.7
+}
