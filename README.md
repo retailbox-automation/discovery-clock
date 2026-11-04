@@ -71,7 +71,7 @@ Python 3.12, ffmpeg on PATH.
 
 ```bash
 python3.12 -m venv .venv && .venv/bin/pip install -r requirements.txt
-python scripts/fetch_media.py            # downloads the public videos listed in data/sources.json (yt-dlp)
+python scripts/fetch_media.py            # the public videos from the eval-media release (sha256 checked), YouTube as fallback
 ```
 
 **Without a key (judges):** every live answer used for the five evaluation cases is recorded in `recordings/`. Replay runs the full pipeline, including the code checks, with no network:
@@ -135,7 +135,7 @@ All videos come from the official YouTube channel of the Volusia Sheriff's Offic
 | dog-kCu9d3LMN6A | [Dog saved from starving, owner arrested](https://www.youtube.com/watch?v=kCu9d3LMN6A) |
 | motorcycle-r-ub7DZN8BA | [Fleeing motorcyclist arrest](https://www.youtube.com/watch?v=r-ub7DZN8BA) |
 
-- No media is stored in this repository; `scripts/fetch_media.py` downloads the videos by id from `data/sources.json`.
+- No media is stored in git. The five evaluation videos are attached, byte-identical to the files the recorded runs were made on, to the release [`eval-media`](https://github.com/retailbox-automation/discovery-clock/releases/tag/eval-media); `scripts/fetch_media.py` downloads them from there, checks the sha256 listed in `data/sources.json`, and falls back to YouTube (yt-dlp) only if that fails.
 - Names of arrested people are replaced in the claims.
 - Bystanders' faces are blurred in anything we export or publish (SAM 3.1 finds the faces, the code blurs them).
 
