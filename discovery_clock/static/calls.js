@@ -5,6 +5,7 @@
   const dot = document.getElementById("live-dot");
   let seen = new Set();
   let first = true;
+  let lastSig = null;
 
   const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const fmtReq = r => {
@@ -53,6 +54,9 @@
       const r = await fetch(`/api/calls${q}`, { cache: "no-store" });
       const d = await r.json();
       const calls = d.calls || [];
+      const sig = calls.map(key).join(";");
+      if (sig === lastSig) { dot.classList.remove("paused"); setTimeout(tick, 2000); return; }
+      lastSig = sig;
       feed.innerHTML = "";
       if (!calls.length) feed.innerHTML = `<div class="empty">No calls yet. Start a case and the requests appear here as they happen.</div>`;
       calls.forEach(c => {
@@ -72,7 +76,7 @@
     const u = new URL(location.href);
     sel.value ? u.searchParams.set("case", sel.value) : u.searchParams.delete("case");
     history.replaceState(null, "", u);
-    seen = new Set(); first = true;
+    seen = new Set(); first = true; lastSig = null;
   });
   tick();
 })();

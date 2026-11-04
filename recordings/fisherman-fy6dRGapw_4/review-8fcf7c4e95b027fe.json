@@ -1,0 +1,252 @@
+{
+ "step": "review",
+ "hash": "8fcf7c4e95b027fe",
+ "recorded_utc": "2026-11-04T18:50:24Z",
+ "request": {
+  "endpoint": "/responses",
+  "body": {
+   "model": "muse-spark-1.3",
+   "input": [
+    {
+     "type": "message",
+     "role": "user",
+     "content": [
+      {
+       "type": "input_text",
+       "text": "You review a body-worn camera recording against a written account of the same incident.\nFor each numbered CLAIM, find where the recording shows or says it.\nTIME: our software stamped every frame in the top-left corner with \"t=N s\" = seconds from the start of this video\n(the stamp is not part of the original recording). Read start_s, end_s and every video_s from that stamp; do not estimate time.\nstatus: on_recording = the video or the speech clearly supports the claim at start_s..end_s;\nnot_found = the recording neither shows nor contradicts the claim (start_s=end_s=-1);\ncheck = the recording contradicts the claim, or shows only part of it in a way that matters (for example the claim says\na man was clinging to a pipe and the recording shows him floating free). If unsure between on_recording and check, use check.\nA name, rank or job title that the recording cannot show does not by itself make a claim partial: if the event is shown,\nuse on_recording and say in reason that the name or rank is not shown.\nevidence: what is visible or said at that time. When you quote speech, copy the words exactly from TURNS inside double quotes.\nreason: one sentence why this status.\ncamera_clock: read the date and time the body camera burned into the frame (for example \"2026-09-27 21:00:29 -0400  AXON BODY 4 D01A16937\",\nusually top-right) on the first frame, on the last frame, and wherever the camera id or the clock jumps (the video can join several cameras).\nFor each reading give video_s (from our stamp), clock exactly as printed (date and time) and camera (the id printed, or \"\").\nIf the camera prints no clock, return an empty list.\nTURNS (speech with speaker labels and times, from a separate transcriber):\n[1.0-7.3s] A: Alright, Ocean 20 Central, I'm coming on scene and whatever it's on scene. scene I've got a with me\n[21.7-27.3s] A: Can you see him?\n[30.2-31.3s] B: You want to\n[31.5-40.0s] A: Where'd you see him at? Like out or in here?\n[42.5-45.5s] A: Alright.\n[52.5-57.3s] A: You got that bottom part? You good buddy?\n[77.7-77.9s] ?: \n[77.9-90.0s] A: You good buddy? Okay. Ocean 20 Central, I'm getting in the water and I'll be waiting for him.\n[101.8-103.3s] C: Pretty good or not at all? all?\n[103.6-104.0s] D: What?\n[104.1-105.9s] C: Can you swim at all?\n[106.1-109.7s] B: Like a ladder to get up anywhere around here.\n[110.1-114.1s] C: You can what? Okay\n[115.2-128.3s] C: What's that? that? Yeah, I'm going to get in with in with you and we're going to go over there. At least get to somewhere where do your legs over where?\n[129.1-132.5s] C: Okay, give me one second\n[135.2-137.3s] A: Can I stand?\n[137.5-137.9s] B: it's pretty deep\n[138.0-138.9s] A: absolutely not\n[138.9-144.8s] B: it's pretty deep here\n[153.1-158.0s] E: You got\n[158.0-158.6s] A: Yeah, don't come in\n[158.8-159.1s] F: What do you need\n[159.1-163.0s] A: find me somewhere\n[168.7-169.2s] ?: Yeah\n[169.2-175.0s] F: Yeah. Alright, we have eyes eyes on 20. He has the patient. We're just trying to get him on the water.\n[177.5-179.9s] B: Are you okay, man? You good?\n[179.9-181.0s] A: Yeah.\n[181.0-188.4s] G: Good luck. You're going to want to you're going to want to come underneath the deep part right here and there's a big set of stairs that can get get him out on the other side.\n[188.9-192.1s] D: I gotta go back and try to retrieve my\n[192.1-192.7s] G: We got your bag.\n[192.7-193.0s] C: I got it.\n[193.3-196.3s] G: We got your bag. Yep.\n[196.3-197.3s] G: He seen it seen it floating.\n[197.3-197.7s] C: I hooked it\n[197.7-199.3s] C: And by\n[199.5-203.9s] H: Well, catch\n[203.9-204.1s] H: \n[204.1-206.3s] C: just floating by. I saw it.\n[206.3-208.1s] A: I would say it's your lucky day.\n[208.3-210.8s] G: Yeah, we got all your stuff. You're just a little wet.\n[211.2-211.3s] D: Yeah.\n[211.3-211.4s] D: That's\n[211.4-214.5s] G: That's all.\n[214.5-221.9s] A: Water.\nCLAIMS (kind in brackets):\nC1. [action] Deputies responded to a report of a possible drowning in the marina.\nC2. [object] The area was behind a locked gate.\nC3. [action] A man had fallen out of his wheelchair into the marina.\nC4. [action] The man was clinging to a pipe to keep his head above water.\nC5. [action] A sergeant jumped into the water with a buoy.\nC6. [action] The man was floated to safety.\nC7. [action] The man was evaluated by the fire department and declined further medical attention.\nC8. [action] A passing boater pulled the man out of the water before deputies arrived.\nC9. [speech] The man told deputies he had been drinking."
+      },
+      {
+       "type": "input_file",
+       "file_id": "sha256:959f3fbcf44a0e448b9d6f7684ccdf56e8119d7a94e6bcb420f2b3164b545fce:t-seconds-v1"
+      }
+     ]
+    }
+   ],
+   "text": {
+    "format": {
+     "type": "json_schema",
+     "name": "claims_review",
+     "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "claims",
+       "camera_clock"
+      ],
+      "properties": {
+       "claims": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "additionalProperties": false,
+         "required": [
+          "id",
+          "status",
+          "start_s",
+          "end_s",
+          "evidence",
+          "reason"
+         ],
+         "properties": {
+          "id": {
+           "type": "string"
+          },
+          "status": {
+           "type": "string",
+           "enum": [
+            "on_recording",
+            "not_found",
+            "check"
+           ]
+          },
+          "start_s": {
+           "type": "number"
+          },
+          "end_s": {
+           "type": "number"
+          },
+          "evidence": {
+           "type": "string"
+          },
+          "reason": {
+           "type": "string"
+          }
+         }
+        }
+       },
+       "camera_clock": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "additionalProperties": false,
+         "required": [
+          "video_s",
+          "clock",
+          "camera"
+         ],
+         "properties": {
+          "video_s": {
+           "type": "number"
+          },
+          "clock": {
+           "type": "string"
+          },
+          "camera": {
+           "type": "string"
+          }
+         }
+        }
+       }
+      }
+     },
+     "strict": true
+    }
+   },
+   "max_output_tokens": 30000,
+   "reasoning": {
+    "effort": "medium"
+   }
+  }
+ },
+ "response": {
+  "top_logprobs": 0,
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "service_tier": "default",
+  "model": "muse-spark-1.3",
+  "reasoning": {
+   "effort": "medium"
+  },
+  "background": false,
+  "text": {
+   "format": {
+    "type": "json_schema",
+    "name": "claims_review",
+    "schema": {
+     "type": "object",
+     "required": [
+      "claims",
+      "camera_clock"
+     ],
+     "additionalProperties": false,
+     "properties": {
+      "camera_clock": {
+       "items": {
+        "additionalProperties": false,
+        "properties": {
+         "camera": {
+          "type": "string"
+         },
+         "clock": {
+          "type": "string"
+         },
+         "video_s": {
+          "type": "number"
+         }
+        },
+        "required": [
+         "video_s",
+         "clock",
+         "camera"
+        ],
+        "type": "object"
+       },
+       "type": "array"
+      },
+      "claims": {
+       "items": {
+        "additionalProperties": false,
+        "properties": {
+         "end_s": {
+          "type": "number"
+         },
+         "evidence": {
+          "type": "string"
+         },
+         "id": {
+          "type": "string"
+         },
+         "reason": {
+          "type": "string"
+         },
+         "start_s": {
+          "type": "number"
+         },
+         "status": {
+          "enum": [
+           "on_recording",
+           "not_found",
+           "check"
+          ],
+          "type": "string"
+         }
+        },
+        "required": [
+         "id",
+         "status",
+         "start_s",
+         "end_s",
+         "evidence",
+         "reason"
+        ],
+        "type": "object"
+       },
+       "type": "array"
+      }
+     }
+    },
+    "strict": true
+   }
+  },
+  "tools": [],
+  "tool_choice": "auto",
+  "truncation": "disabled",
+  "id": "resp_6aeb7e70f1f0931c190d4af0",
+  "object": "response",
+  "status": "completed",
+  "created_at": 1793818224.0,
+  "completed_at": 1793818224.0,
+  "error": null,
+  "incomplete_details": null,
+  "output": [
+   {
+    "type": "reasoning",
+    "id": "rs_6aeb7e70f1f0931c190d4af0:rs_ff603890-d8e6-4d1f-a20c-4bc886fdd3d7",
+    "summary": [],
+    "status": "completed"
+   },
+   {
+    "type": "message",
+    "id": "msg_f999e0c3-2470-4b5f-911a-591cd82569cc",
+    "role": "assistant",
+    "content": [
+     {
+      "type": "output_text",
+      "text": "{\"camera_clock\": [{\"camera\": \"D01A16937\", \"clock\": \"2026-09-27 21:00:25 -0400\", \"video_s\": 0}, {\"camera\": \"D01A16937\", \"clock\": \"2026-09-27 21:01:19 -0400\", \"video_s\": 8}, {\"camera\": \"D01AP085E\", \"clock\": \"2026-09-27 21:04:22 -0400\", \"video_s\": 140}, {\"camera\": \"D01AP085E\", \"clock\": \"2026-09-27 21:11:41 -0400\", \"video_s\": 188}, {\"camera\": \"D01AP085E\", \"clock\": \"2026-09-27 21:19:50 -0400\", \"video_s\": 213}, {\"camera\": \"D01AP085E\", \"clock\": \"2026-09-27 21:20:00 -0400\", \"video_s\": 222}], \"claims\": [{\"end_s\": 160, \"evidence\": \"Night marina dock with deputies shining lights on a man floating in the water while radio says \\\"Yeah. Alright, we have eyes eyes on 20. He has the patient. We're just trying to get him on the water.\\\"\", \"id\": \"C1\", \"reason\": \"Video and speech show deputies on scene at a marina with a person in the water requiring rescue.\", \"start_s\": 154, \"status\": \"on_recording\"}, {\"end_s\": 30, \"evidence\": \"White metal barred gate across dock walkway is opened by two men as deputy with light approaches to enter marina docks.\", \"id\": \"C2\", \"reason\": \"Video clearly shows a gate blocking dock access being opened for entry.\", \"start_s\": 24, \"status\": \"on_recording\"}, {\"end_s\": -1, \"evidence\": \"No footage or speech shows a fall from a wheelchair; a wheelchair is only seen later being pushed on a sidewalk.\", \"id\": \"C3\", \"reason\": \"The recording never shows how the man entered the water.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": 173, \"evidence\": \"Man in red shorts floating on his back in open green-lit water beside the dock with no pipe visible or held.\", \"id\": \"C4\", \"reason\": \"Recording shows the man floating free, not clinging to a pipe.\", \"start_s\": 155, \"status\": \"check\"}, {\"end_s\": 90, \"evidence\": \"Green rescue buoy carried on dock then dark water view as deputy says \\\"You good buddy? Okay. Ocean 20 Central, I'm getting in the water and I'll be waiting for him.\\\"\", \"id\": \"C5\", \"reason\": \"Video and speech show deputy entering the water with flotation, though rank is not shown.\", \"start_s\": 52, \"status\": \"on_recording\"}, {\"end_s\": 188, \"evidence\": \"Man floating on back under flashlight while deputy is with him and voice directs \\\"Good luck. You're going to want to you're going to want to come underneath the deep part right here and there's a big set of stairs that can get get him out on the other side.\\\"\", \"id\": \"C6\", \"reason\": \"Recording shows the man kept afloat and moved toward stairs for exit.\", \"start_s\": 155, \"status\": \"on_recording\"}, {\"end_s\": -1, \"evidence\": \"No fire department evaluation, treatment, or refusal is seen or heard in video or speech.\", \"id\": \"C7\", \"reason\": \"The recording contains no medical evaluation or declination.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": 175, \"evidence\": \"Man still floating in water after deputies are on the dock with lights on him while radio says \\\"Yeah. Alright, we have eyes eyes on 20. He has the patient. We're just trying to get him on the water.\\\"\", \"id\": \"C8\", \"reason\": \"Recording shows the man still in the water during deputies' rescue, contradicting earlier removal.\", \"start_s\": 155, \"status\": \"check\"}, {\"end_s\": -1, \"evidence\": \"No speech about drinking appears in TURNS and no such statement is audible in the described audio.\", \"id\": \"C9\", \"reason\": \"The recording contains no admission of drinking by the man.\", \"start_s\": -1, \"status\": \"not_found\"}]}",
+      "annotations": [],
+      "logprobs": []
+     }
+    ],
+    "status": "completed"
+   }
+  ],
+  "instructions": null,
+  "usage": {
+   "input_tokens": 61962,
+   "input_tokens_details": {
+    "cached_tokens": 0
+   },
+   "output_tokens": 5749,
+   "output_tokens_details": {
+    "reasoning_tokens": 4757
+   },
+   "total_tokens": 67711
+  },
+  "parallel_tool_calls": true,
+  "store": true,
+  "max_output_tokens": 30000
+ },
+ "latency_s": 33.41,
+ "usd": 0.101886,
+ "model": "muse-spark-1.3"
+}

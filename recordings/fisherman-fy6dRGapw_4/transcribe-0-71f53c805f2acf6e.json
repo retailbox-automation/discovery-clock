@@ -1,0 +1,333 @@
+{
+ "step": "transcribe-0",
+ "hash": "71f53c805f2acf6e",
+ "recorded_utc": "2026-11-04T18:49:28Z",
+ "request": {
+  "endpoint": "/asr/transcribe",
+  "mode": "DIARIZATION",
+  "model": "muse-voice-transcribe-1.0",
+  "audioEncoding": "WAV",
+  "media_sha256": "959f3fbcf44a0e448b9d6f7684ccdf56e8119d7a94e6bcb420f2b3164b545fce",
+  "piece_s": [
+   0.0,
+   222.354
+  ],
+  "audio": "mono s16le 24000 Hz"
+ },
+ "response": {
+  "sessionId": "dc-484e687b099b",
+  "transcript": "Alright, Ocean 20 Central, I'm coming on scene and whatever it's on scene. scene I've got a with me Can you see him? You want to Where'd you see him at? Like out or in here? Alright. You got that bottom part? You good buddy? You good buddy? Okay. Ocean 20 Central, I'm getting in the water and I'll be waiting for him. Pretty good or not at all? all? What? Can you swim at all? Like a ladder to get up anywhere around here. You can what? Okay What's that? that? Yeah, I'm going to get in with in with you and we're going to go over there. At least get to somewhere where do your legs over where? Okay, give me one second Can I stand? it's pretty deep absolutely not it's pretty deep here You got Yeah, don't come in What do you need find me somewhere Yeah Yeah. Alright, we have eyes eyes on 20. He has the patient. We're just trying to get him on the water. Are you okay, man? You good? Yeah. Good luck. You're going to want to you're going to want to come underneath the deep part right here and there's a big set of stairs that can get get him out on the other side. I gotta go back and try to retrieve my We got your bag. I got it. We got your bag. Yep. He seen it seen it floating. I hooked it And by Well, catch just floating by. I saw it. I would say it's your lucky day. Yeah, we got all your stuff. You're just a little wet. Yeah. That's That's all. Water.",
+  "audioDurationMs": 222400,
+  "turns": [
+   {
+    "turnId": 0,
+    "startMs": 1020,
+    "endMs": 7340,
+    "transcript": "Alright, Ocean 20 Central, I'm coming on scene and whatever it's on scene. scene I've got a with me",
+    "speaker": "A"
+   },
+   {
+    "turnId": 1,
+    "startMs": 21740,
+    "endMs": 27340,
+    "transcript": "Can you see him?",
+    "speaker": "A"
+   },
+   {
+    "turnId": 2,
+    "startMs": 30220,
+    "endMs": 31260,
+    "transcript": "You want to",
+    "speaker": "B"
+   },
+   {
+    "turnId": 3,
+    "startMs": 31500,
+    "endMs": 39980,
+    "transcript": "Where'd you see him at? Like out or in here?",
+    "speaker": "A"
+   },
+   {
+    "turnId": 4,
+    "startMs": 42540,
+    "endMs": 45500,
+    "transcript": "Alright.",
+    "speaker": "A"
+   },
+   {
+    "turnId": 5,
+    "startMs": 52460,
+    "endMs": 57340,
+    "transcript": "You got that bottom part? You good buddy?",
+    "speaker": "A"
+   },
+   {
+    "turnId": 6,
+    "startMs": 77660,
+    "endMs": 77900,
+    "transcript": ""
+   },
+   {
+    "turnId": 7,
+    "startMs": 77900,
+    "endMs": 89980,
+    "transcript": "You good buddy? Okay. Ocean 20 Central, I'm getting in the water and I'll be waiting for him.",
+    "speaker": "A"
+   },
+   {
+    "turnId": 8,
+    "startMs": 101820,
+    "endMs": 103340,
+    "transcript": "Pretty good or not at all? all?",
+    "speaker": "C"
+   },
+   {
+    "turnId": 9,
+    "startMs": 103580,
+    "endMs": 103980,
+    "transcript": "What?",
+    "speaker": "D"
+   },
+   {
+    "turnId": 10,
+    "startMs": 104060,
+    "endMs": 105900,
+    "transcript": "Can you swim at all?",
+    "speaker": "C"
+   },
+   {
+    "turnId": 11,
+    "startMs": 106060,
+    "endMs": 109660,
+    "transcript": "Like a ladder to get up anywhere around here.",
+    "speaker": "B"
+   },
+   {
+    "turnId": 12,
+    "startMs": 110060,
+    "endMs": 114060,
+    "transcript": "You can what? Okay",
+    "speaker": "C"
+   },
+   {
+    "turnId": 13,
+    "startMs": 115180,
+    "endMs": 128300,
+    "transcript": "What's that? that? Yeah, I'm going to get in with in with you and we're going to go over there. At least get to somewhere where do your legs over where?",
+    "speaker": "C"
+   },
+   {
+    "turnId": 14,
+    "startMs": 129100,
+    "endMs": 132460,
+    "transcript": "Okay, give me one second",
+    "speaker": "C"
+   },
+   {
+    "turnId": 15,
+    "startMs": 135180,
+    "endMs": 137340,
+    "transcript": "Can I stand?",
+    "speaker": "A"
+   },
+   {
+    "turnId": 16,
+    "startMs": 137500,
+    "endMs": 137900,
+    "transcript": "it's pretty deep",
+    "speaker": "B"
+   },
+   {
+    "turnId": 17,
+    "startMs": 137980,
+    "endMs": 138940,
+    "transcript": "absolutely not",
+    "speaker": "A"
+   },
+   {
+    "turnId": 18,
+    "startMs": 138940,
+    "endMs": 144780,
+    "transcript": "it's pretty deep here",
+    "speaker": "B"
+   },
+   {
+    "turnId": 19,
+    "startMs": 153100,
+    "endMs": 157980,
+    "transcript": "You got",
+    "speaker": "E"
+   },
+   {
+    "turnId": 20,
+    "startMs": 157980,
+    "endMs": 158620,
+    "transcript": "Yeah, don't come in",
+    "speaker": "A"
+   },
+   {
+    "turnId": 21,
+    "startMs": 158780,
+    "endMs": 159100,
+    "transcript": "What do you need",
+    "speaker": "F"
+   },
+   {
+    "turnId": 22,
+    "startMs": 159100,
+    "endMs": 163020,
+    "transcript": "find me somewhere",
+    "speaker": "A"
+   },
+   {
+    "turnId": 23,
+    "startMs": 168700,
+    "endMs": 169180,
+    "transcript": "Yeah"
+   },
+   {
+    "turnId": 24,
+    "startMs": 169180,
+    "endMs": 175020,
+    "transcript": "Yeah. Alright, we have eyes eyes on 20. He has the patient. We're just trying to get him on the water.",
+    "speaker": "F"
+   },
+   {
+    "turnId": 25,
+    "startMs": 177500,
+    "endMs": 179900,
+    "transcript": "Are you okay, man? You good?",
+    "speaker": "B"
+   },
+   {
+    "turnId": 26,
+    "startMs": 179900,
+    "endMs": 181020,
+    "transcript": "Yeah.",
+    "speaker": "A"
+   },
+   {
+    "turnId": 27,
+    "startMs": 181020,
+    "endMs": 188380,
+    "transcript": "Good luck. You're going to want to you're going to want to come underneath the deep part right here and there's a big set of stairs that can get get him out on the other side.",
+    "speaker": "G"
+   },
+   {
+    "turnId": 28,
+    "startMs": 188860,
+    "endMs": 192060,
+    "transcript": "I gotta go back and try to retrieve my",
+    "speaker": "D"
+   },
+   {
+    "turnId": 29,
+    "startMs": 192060,
+    "endMs": 192700,
+    "transcript": "We got your bag.",
+    "speaker": "G"
+   },
+   {
+    "turnId": 30,
+    "startMs": 192700,
+    "endMs": 193020,
+    "transcript": "I got it.",
+    "speaker": "C"
+   },
+   {
+    "turnId": 31,
+    "startMs": 193260,
+    "endMs": 196300,
+    "transcript": "We got your bag. Yep.",
+    "speaker": "G"
+   },
+   {
+    "turnId": 32,
+    "startMs": 196300,
+    "endMs": 197260,
+    "transcript": "He seen it seen it floating.",
+    "speaker": "G"
+   },
+   {
+    "turnId": 33,
+    "startMs": 197260,
+    "endMs": 197740,
+    "transcript": "I hooked it",
+    "speaker": "C"
+   },
+   {
+    "turnId": 34,
+    "startMs": 197740,
+    "endMs": 199260,
+    "transcript": "And by",
+    "speaker": "C"
+   },
+   {
+    "turnId": 35,
+    "startMs": 199500,
+    "endMs": 203900,
+    "transcript": "Well, catch",
+    "speaker": "H"
+   },
+   {
+    "turnId": 36,
+    "startMs": 203900,
+    "endMs": 204060,
+    "transcript": "",
+    "speaker": "H"
+   },
+   {
+    "turnId": 37,
+    "startMs": 204060,
+    "endMs": 206300,
+    "transcript": "just floating by. I saw it.",
+    "speaker": "C"
+   },
+   {
+    "turnId": 38,
+    "startMs": 206300,
+    "endMs": 208140,
+    "transcript": "I would say it's your lucky day.",
+    "speaker": "A"
+   },
+   {
+    "turnId": 39,
+    "startMs": 208300,
+    "endMs": 210780,
+    "transcript": "Yeah, we got all your stuff. You're just a little wet.",
+    "speaker": "G"
+   },
+   {
+    "turnId": 40,
+    "startMs": 211180,
+    "endMs": 211340,
+    "transcript": "Yeah.",
+    "speaker": "D"
+   },
+   {
+    "turnId": 41,
+    "startMs": 211340,
+    "endMs": 211420,
+    "transcript": "That's",
+    "speaker": "D"
+   },
+   {
+    "turnId": 42,
+    "startMs": 211420,
+    "endMs": 214540,
+    "transcript": "That's all.",
+    "speaker": "G"
+   },
+   {
+    "turnId": 43,
+    "startMs": 214540,
+    "endMs": 221900,
+    "transcript": "Water.",
+    "speaker": "A"
+   }
+  ]
+ },
+ "latency_s": 42.92,
+ "usd": 0.01112,
+ "model": "muse-voice-transcribe-1.0"
+}

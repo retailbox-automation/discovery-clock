@@ -42,14 +42,31 @@
   function drawMarkers() {
     if (!timeline) return;
     timeline.querySelectorAll(".mk").forEach(m => m.remove());
-    (data.claims || []).forEach((c, i) => {
-      if (c.start_s === null || c.start_s === undefined || c.status === "not_found") return;
+    // overlapping claims go to separate lanes so every marker stays visible and clickable
+    const d = dur();
+    const placed = (data.claims || []).map((c, i) => ({ c, i }))
+      .filter(x => x.c.start_s !== null && x.c.start_s !== undefined && x.c.status !== "not_found")
+      .sort((a, b) => a.c.start_s - b.c.start_s);
+    const laneEnd = [];
+    const minSpan = d * 0.025;
+    placed.forEach(x => {
+      const end = Math.max(x.c.end_s, x.c.start_s + minSpan);
+      let lane = laneEnd.findIndex(e => e <= x.c.start_s);
+      if (lane < 0) { lane = laneEnd.length; laneEnd.push(0); }
+      laneEnd[lane] = end;
+      x.lane = lane;
+    });
+    const lanes = Math.max(1, laneEnd.length);
+    timeline.style.height = `${8 + lanes * 20}px`;
+    placed.forEach(({ c, i, lane }) => {
       const m = document.createElement("div");
       m.className = `mk ${c.status === "on_recording" ? "on" : "ck"}`;
       m.dataset.id = c.id;
-      const d = dur();
+      m.style.top = `${4 + lane * 20}px`;
+      m.style.height = "17px";
+      m.style.bottom = "auto";
       m.style.left = `${(c.start_s / d) * 100}%`;
-      m.style.width = `${Math.max(0.6, ((c.end_s - c.start_s) / d) * 100)}%`;
+      m.style.width = `${Math.max(2.5, ((c.end_s - c.start_s) / d) * 100)}%`;
       m.title = `${i + 1}. ${c.text}`;
       m.innerHTML = `<span>${i + 1}</span>`;
       m.addEventListener("click", ev => {
