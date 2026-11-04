@@ -1,4 +1,4 @@
-"""Spike 1 (CT0411-CG1): can Muse Spark 1.3 place report claims on a body-camera video with usable timecodes?
+"""Spike 1: can Muse Spark 1.3 place report claims on a body-camera video with usable timecodes?
 Steps: ffmpeg audio -> Muse Voice Transcribe (DIARIZATION) -> Files API upload -> one Muse Spark 1.3 call with the video,
 the diarized turns and the claims -> JSON per claim. Logs every call (request summary, latency, usage) to spike/calls.jsonl
 and estimated cost to spike/ledger.jsonl; stops if the ledger passes CAP_USD.
