@@ -1,0 +1,4251 @@
+{
+ "case": "packet-volusia",
+ "created_utc": "2026-11-04T20:43:31Z",
+ "replay": false,
+ "video": {
+  "name": "packet-volusia.mp4",
+  "sha256": "4eef9ad82cbde170493c68e067f91c74856a572a06e805399cc7654e22dd1d8c",
+  "duration_s": 1901.7
+ },
+ "source": {
+  "id": "packet-volusia",
+  "url": "",
+  "title": "Long-input test: 10 public Volusia Sheriff's Office clips in one file (31.7 min)",
+  "publisher": "Volusia Sheriff's Office (official YouTube channel @VolusiaSheriff)",
+  "rights": "Florida public record (Fla. Stat. ch. 119), released by the agency; Florida agencies cannot claim copyright in public records (Microdecisions, Inc. v. Skinner, 889 So. 2d 871, Fla. 2d DCA 2004). Faces of bystanders are blurred in anything we publish; names of arrested people are not used. The packet is built locally by scripts/make_packet.py from the clips listed in data/packets/volusia.json; it is not one incident.",
+  "sha256": "4eef9ad82cbde170493c68e067f91c74856a572a06e805399cc7654e22dd1d8c",
+  "duration_s": 1901.7
+ },
+ "report": "Deputies responded to a report of a possible drowning in the marina.\nThe area was behind a locked gate.\nA man had fallen out of his wheelchair into the marina.\nThe man was clinging to a pipe to keep his head above water.\nA sergeant jumped into the water with a buoy.\nThe man was floated to safety.\nThe man was evaluated by the fire department and declined further medical attention.\nA passing boater pulled the man out of the water before deputies arrived.\nThe man told deputies he had been drinking.\nUnits responded to a house fire with two people believed to be inside.\nA deputy kicked down the front door.\nThe deputy pulled the female resident to safety.\nThe deputy rendered aid until Fire Rescue took over.\nFirefighters pulled the male occupant from the house.\nThe deputy entered the house through a back window.\nA neighbor handed the deputy a fire extinguisher.\nThe suspect vehicle had lost a front wheel.\nThe vehicle got stuck at a construction site.\nDeputies detained the driver.\nThe driver appeared to be under the influence.\nThe driver resisted and kicked a deputy while being escorted into the back of a patrol vehicle.\nWhen asked about the crash, the driver responded \"What crash?\"\nThe driver asked deputies to release him in exchange for $2,000.\nThe driver walked to the patrol car calmly and without resisting.\nThe driver said he was late for a job interview.\nWhen found, the dog's body was covered in sores and he was weak.\nThe dog has gained a significant amount of weight since he was admitted to the shelter.\nThe owner was arrested.\nThe owner denied the neglect.\nThe owner asked for his mom.\nA pipe was found in the owner's pocket.\nThe owner thanked the detectives for taking care of the dog.\nThe owner was arrested inside a moving car during a traffic stop.\nA motorcycle fled from deputies during a traffic operation.\nThe motorcycle sped at high speed, weaving in and out of traffic.\nThe aviation unit was overhead when the rider stopped to refuel.\nThe rider stopped to refuel at a gas station.\nThe rider stopped voluntarily for deputies on the highway shoulder.\nA passenger was riding on the back of the motorcycle.\nThe driver was stopped for driving 120 mph on I-95.\nThe driver was going more than 50 mph over the speed limit.\nThe driver was arrested.\nThe deputy let the driver go with a warning.\nThe driver's dog jumped out of the car and ran across the highway.\nDeputies spotted a gold Chrysler minivan parked over the fuel port at a Racetrac gas station.\nThe van then parked at a nearby Waffle House, where the driver ran from responding deputies.\nThe driver was taken into custody after a short foot chase.\nThe minivan was carrying a large auxiliary fuel tank.\nA hole was cut through the floorboard of the minivan.\nThe chassis was sitting on wooden 2x4 blocks strapped to the axle using metal retention straps.\nGas cans and a hose were found in the back of the second minivan.\nThe minivan driver gave up at the gas pump without running.\nDeputies found a stolen motorcycle inside the minivan.\nThe Nissan sedan came to a stop after striking a parked vehicle.\nThe driver and a passenger took off running while a female passenger stayed behind.\nThe Air One crew spotted two suspects hiding in the water.\nFWC responded with an airboat to bring both suspects back to dry land.\nA firearm with an extended magazine was recovered from the Nissan.\nA .22 Uzi pistol was found inside a backpack that was discarded at the scene.\nBoth suspects swam to shore on their own and walked up to the deputies.\nThe suspects threw a bag of cash into the water.\nA rip current pulled the swimmer about 100 yards out in the ocean.\nThe swimmer was unresponsive with no pulse when lifeguards brought him in.\nThe swimmer regained a pulse.\nThe swimmer made a full recovery.\nThe swimmer walked out of the water on his own.\nA dog on the beach barked and alerted the lifeguards.\nA boat was spinning in circles on the lake.\nResponding units spotted a single unresponsive occupant on the boat.\nThe Marine Unit crew moved in close enough for a rescuer to jump on board.\nThe rescuer stopped the boat.\nThe patient was taken to shore for further treatment.\nTwo people were on the boat, waving for help.\nThe boat had run aground on a sandbar before deputies arrived.\n",
+ "claims_mode": "lines",
+ "models": {
+  "claims": "meta-models/muse-spark-open-1026",
+  "transcribe": "muse-voice-transcribe-1.0",
+  "review": "muse-spark-1.3",
+  "verify": "code"
+ },
+ "claims_notes": [],
+ "turns": [
+  {
+   "startMs": 700,
+   "endMs": 7980,
+   "speaker": "A",
+   "transcript": "Alright, Ocean 20 Central I'm coming on coming on scene whatever it's on scene I've got a buoy with me",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 22060,
+   "endMs": 27420,
+   "speaker": "A",
+   "transcript": "Can you see him?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 30140,
+   "endMs": 34220,
+   "speaker": "A",
+   "transcript": "You want to where'd you see him at?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 36540,
+   "endMs": 40380,
+   "speaker": "A",
+   "transcript": "Like out out or in here?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 52140,
+   "endMs": 57260,
+   "speaker": "A",
+   "transcript": "You got that bottom part? You good buddy?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 78140,
+   "endMs": 82700,
+   "speaker": "A",
+   "transcript": "You good You good buddy? Okay.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 85820,
+   "endMs": 89980,
+   "speaker": "A",
+   "transcript": "Ocean 20 Central, I'm getting in the water and I'll be waiting for",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 101660,
+   "endMs": 106540,
+   "speaker": "A",
+   "transcript": "Pretty good or not at all? Can you swim at all?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 106940,
+   "endMs": 109740,
+   "speaker": "B",
+   "transcript": "up Up anywhere around here?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 109900,
+   "endMs": 113980,
+   "speaker": "A",
+   "transcript": "You can what? Okay.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 115260,
+   "endMs": 128780,
+   "speaker": "A",
+   "transcript": "What's that? Yeah, I'm going to get in with you and we're going to go over there. At least get to somewhere where your legs over where",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 129020,
+   "endMs": 132620,
+   "speaker": "A",
+   "transcript": "okay give me one second one second",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 134780,
+   "endMs": 137580,
+   "speaker": "A",
+   "transcript": "can I stand yeah",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 137580,
+   "endMs": 137900,
+   "speaker": "B",
+   "transcript": "it's pretty deep",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 137900,
+   "endMs": 138860,
+   "speaker": "A",
+   "transcript": "absolutely not",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 138860,
+   "endMs": 141980,
+   "speaker": "B",
+   "transcript": "it's pretty deep deep here",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 153100,
+   "endMs": 156300,
+   "speaker": "C",
+   "transcript": "He got him.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 156540,
+   "endMs": 157420,
+   "speaker": "D",
+   "transcript": "You good buddy?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 157420,
+   "endMs": 158460,
+   "speaker": "A",
+   "transcript": "Yeah you're good don't come in.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 158700,
+   "endMs": 159260,
+   "speaker": "D",
+   "transcript": "What do you need?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 159260,
+   "endMs": 162940,
+   "speaker": "A",
+   "transcript": "Find me somewhere",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 168220,
+   "endMs": 174140,
+   "speaker": "D",
+   "transcript": "Yeah alright we have eyes on 20 he has the has the patient we're just trying to get him on the water",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 174140,
+   "endMs": 176860,
+   "speaker": "A",
+   "transcript": "I just don't want to get cut up by",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 177500,
+   "endMs": 180060,
+   "speaker": "C",
+   "transcript": "Are you okay? You good?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 180060,
+   "endMs": 181100,
+   "speaker": "A",
+   "transcript": "Yeah.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 181100,
+   "endMs": 188780,
+   "speaker": "E",
+   "transcript": "You're going to want to you're going to want to come underneath the deep part right here. And it's a big set of stairs. We can get him out on the other side.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 188860,
+   "endMs": 192460,
+   "speaker": "F",
+   "transcript": "I gotta go back and try to retrieve my We got your",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 192460,
+   "endMs": 193340,
+   "speaker": "B",
+   "transcript": "I got it.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 193420,
+   "endMs": 196060,
+   "speaker": "E",
+   "transcript": "We got your bag. Yep.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 196060,
+   "endMs": 197260,
+   "speaker": "E",
+   "transcript": "Yep. He seen it floating.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 197260,
+   "endMs": 199260,
+   "speaker": "B",
+   "transcript": "I hooked it. And he caught it by",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 199420,
+   "endMs": 202460,
+   "speaker": "F",
+   "transcript": "well hell help",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 202700,
+   "endMs": 203500,
+   "speaker": "G",
+   "transcript": "night",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 203500,
+   "endMs": 206460,
+   "speaker": "B",
+   "transcript": "yeah it was floating by I saw it",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 206460,
+   "endMs": 208140,
+   "speaker": "A",
+   "transcript": "I would say it's your lucky day day",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 208140,
+   "endMs": 210860,
+   "speaker": "E",
+   "transcript": "yeah we got all your stuff you're just a little wet",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 210940,
+   "endMs": 211660,
+   "speaker": "F",
+   "transcript": "yeah",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 211660,
+   "endMs": 216940,
+   "speaker": "A",
+   "transcript": "that's all water",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 232700,
+   "endMs": 234620,
+   "speaker": "H",
+   "transcript": "How many people might be inside?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 234700,
+   "endMs": 235660,
+   "speaker": "I",
+   "transcript": "Two elderly people.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 235740,
+   "endMs": 236540,
+   "speaker": "H",
+   "transcript": "Two elderly people?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 236540,
+   "endMs": 237580,
+   "speaker": "I",
+   "transcript": "They are They are not outside.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 237580,
+   "endMs": 238540,
+   "speaker": "H",
+   "transcript": "A male and a female?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 238540,
+   "endMs": 258540,
+   "speaker": "H",
+   "transcript": "Yes. Damn!",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 271420,
+   "endMs": 275020,
+   "speaker": "H",
+   "transcript": "Hey there might be another one in there",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 275020,
+   "endMs": 281740,
+   "speaker": "H",
+   "transcript": "ma'am ma'am Can you breathe in?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 282140,
+   "endMs": 286700,
+   "speaker": "H",
+   "transcript": "keep breathing sweetheart there you go",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 286860,
+   "endMs": 292300,
+   "speaker": "H",
+   "transcript": "keep breathing Yeah she's breathing",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 293340,
+   "endMs": 293420,
+   "speaker": "?",
+   "transcript": "I",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 293420,
+   "endMs": 300620,
+   "speaker": "H",
+   "transcript": "I pulled one from the house he's trying to trying to get another one she's she's she's breathing but it might be one more in there yes there yes",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 304860,
+   "endMs": 317980,
+   "speaker": "H",
+   "transcript": "There you go baby girl keep breathing you hear me can you hear me there you go your eyes are open good job sweetheart you keep breathing okay just breathing okay just stay here don't move don't move relax I got you",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 319580,
+   "endMs": 334220,
+   "speaker": "J",
+   "transcript": "And I just need to report that there's a pickup truck with three wheels that rammed a bunch bunch of people caused huge accident on I-4 just a few moments ago and somehow he continued to drive with with no wheel and flew off",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 334220,
+   "endMs": 335340,
+   "speaker": "K",
+   "transcript": "What color is the truck?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 335580,
+   "endMs": 342700,
+   "speaker": "J",
+   "transcript": "It's a white pickup truck. It's It's a big truck. I'm so sorry. I don't know if it was a Chevy or but it's a big truck",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 348300,
+   "endMs": 358220,
+   "speaker": "B",
+   "transcript": "Kilo uniform Delta November nine three white Chevy hey I'm going to move the I'm going to move these barricades barricades so you can make",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 359100,
+   "endMs": 365820,
+   "speaker": "A",
+   "transcript": "Hey.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 365980,
+   "endMs": 367500,
+   "speaker": "L",
+   "transcript": "What's going on today?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 367740,
+   "endMs": 368380,
+   "speaker": "M",
+   "transcript": "How are you?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 368380,
+   "endMs": 369020,
+   "speaker": "L",
+   "transcript": "What's going on?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 369180,
+   "endMs": 370300,
+   "speaker": "M",
+   "transcript": "Good. How are you?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 370540,
+   "endMs": 371420,
+   "speaker": "L",
+   "transcript": "What's going on?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 371500,
+   "endMs": 377500,
+   "speaker": "M",
+   "transcript": "Nothing. We're It's fine.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 377500,
+   "endMs": 379660,
+   "speaker": "L",
+   "transcript": "fine. It's not fine. Go stand over here.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 379660,
+   "endMs": 380380,
+   "speaker": "F",
+   "transcript": "It's fine.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 380380,
+   "endMs": 382940,
+   "speaker": "L",
+   "transcript": "Go stand in front of the car. the car. Go stand over there. there.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 382940,
+   "endMs": 383820,
+   "speaker": "E",
+   "transcript": "Who?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 383820,
+   "endMs": 387180,
+   "speaker": "L",
+   "transcript": "Go stand by the car.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 387340,
+   "endMs": 388620,
+   "speaker": "E",
+   "transcript": "Are you sure?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 388620,
+   "endMs": 392620,
+   "speaker": "F",
+   "transcript": "Yeah. Hold",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 392700,
+   "endMs": 395740,
+   "speaker": "L",
+   "transcript": "stand by the car. You two go stand by the car.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 397500,
+   "endMs": 397580,
+   "speaker": "?",
+   "transcript": "",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 397580,
+   "endMs": 398060,
+   "speaker": "L",
+   "transcript": "stand by the car",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 398460,
+   "endMs": 399660,
+   "speaker": "E",
+   "transcript": "You better look",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 400060,
+   "endMs": 401580,
+   "speaker": "L",
+   "transcript": "go stand by the car",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 401900,
+   "endMs": 402220,
+   "speaker": "E",
+   "transcript": "For what?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 402220,
+   "endMs": 403260,
+   "speaker": "L",
+   "transcript": "Go stand by the car",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 403260,
+   "endMs": 403660,
+   "speaker": "E",
+   "transcript": "For what?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 403820,
+   "endMs": 404700,
+   "speaker": "L",
+   "transcript": "Go stand by the car",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 404700,
+   "endMs": 413900,
+   "speaker": "E",
+   "transcript": "Are you For what? For what?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 413980,
+   "endMs": 414940,
+   "speaker": "L",
+   "transcript": "Stop.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 414940,
+   "endMs": 423500,
+   "speaker": "E",
+   "transcript": "I'm not stop. Throw me under. You were your boy.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 427420,
+   "endMs": 432300,
+   "speaker": "E",
+   "transcript": "Hey boy. What is this?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 432460,
+   "endMs": 435020,
+   "speaker": "L",
+   "transcript": "You need to relax okay",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 435020,
+   "endMs": 438540,
+   "speaker": "E",
+   "transcript": "boy you're going to talk to your boss",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 439420,
+   "endMs": 446940,
+   "speaker": "L",
+   "transcript": "second whenever whenever I get to you you can talk as of right now go stand over there please at the at the back of the car car",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 448860,
+   "endMs": 457820,
+   "speaker": "E",
+   "transcript": "I didn't say nothing what's what are you",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 458140,
+   "endMs": 458140,
+   "speaker": "B",
+   "transcript": "Huh?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 458220,
+   "endMs": 459340,
+   "speaker": "E",
+   "transcript": "what are you doing",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 461580,
+   "endMs": 464940,
+   "speaker": "E",
+   "transcript": "I mean seriously what is this what's",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 464940,
+   "endMs": 465020,
+   "speaker": "B",
+   "transcript": "Is he good?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 465020,
+   "endMs": 466540,
+   "speaker": "B",
+   "transcript": "Yeah he's good front pocket just make sure",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 466540,
+   "endMs": 469740,
+   "speaker": "E",
+   "transcript": "Yeah no I'm not trying to",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 472780,
+   "endMs": 478860,
+   "speaker": "B",
+   "transcript": "Okay. Can I ask you a question? Is that normal?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 479100,
+   "endMs": 485340,
+   "speaker": "B",
+   "transcript": "From where you guys were driving? Because I don't think it is.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 491100,
+   "endMs": 494380,
+   "speaker": "L",
+   "transcript": "Just stand right here, man. We'll talk to you in a little bit. you in a little bit.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 494860,
+   "endMs": 495180,
+   "speaker": "E",
+   "transcript": "What's your name?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 495180,
+   "endMs": 498700,
+   "speaker": "L",
+   "transcript": "I'm Gomez.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 498700,
+   "endMs": 506780,
+   "speaker": "E",
+   "transcript": "Sheriff and all your bosses shit.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 507020,
+   "endMs": 512060,
+   "speaker": "L",
+   "transcript": "Yeah Fuck this Walk this way, dude.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 512060,
+   "endMs": 512940,
+   "speaker": "E",
+   "transcript": "Hey, man, what the",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 512940,
+   "endMs": 515180,
+   "speaker": "B",
+   "transcript": "Walk this way.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 515180,
+   "endMs": 516220,
+   "speaker": "B",
+   "transcript": "AC.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 516220,
+   "endMs": 518700,
+   "speaker": "E",
+   "transcript": "You goddamn fucking kidding me?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 519020,
+   "endMs": 520780,
+   "speaker": "B",
+   "transcript": "We're keeping keeping you out of the heat.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 521100,
+   "endMs": 523500,
+   "speaker": "E",
+   "transcript": "You put me in the fucking truck. Don't you",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 523500,
+   "endMs": 524220,
+   "speaker": "L",
+   "transcript": "sit down.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 524380,
+   "endMs": 527740,
+   "speaker": "L",
+   "transcript": "I really sit down dude oh you really sit down",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 527740,
+   "endMs": 528380,
+   "speaker": "L",
+   "transcript": "",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 528380,
+   "endMs": 530460,
+   "speaker": "L",
+   "transcript": "sit down sit down",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 530460,
+   "endMs": 531340,
+   "speaker": "E",
+   "transcript": "what's your name your name dude",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 531340,
+   "endMs": 532140,
+   "speaker": "L",
+   "transcript": "sit in the car",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 532220,
+   "endMs": 533020,
+   "speaker": "E",
+   "transcript": "no what's your name",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 533020,
+   "endMs": 533580,
+   "speaker": "L",
+   "transcript": "sit in the sit in the car",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 533580,
+   "endMs": 535660,
+   "speaker": "E",
+   "transcript": "yeah you better fucking grow",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 535820,
+   "endMs": 539740,
+   "speaker": "B",
+   "transcript": "hey is this your buddy hey now you just got charged",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 539740,
+   "endMs": 543020,
+   "speaker": "E",
+   "transcript": "I don't give a fuck",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 543180,
+   "endMs": 547020,
+   "speaker": "B",
+   "transcript": "you're good you're good you got a hold on",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 547020,
+   "endMs": 548380,
+   "speaker": "B",
+   "transcript": "you're wrong",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 548700,
+   "endMs": 553340,
+   "speaker": "E",
+   "transcript": "For what?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 553340,
+   "endMs": 554060,
+   "speaker": "L",
+   "transcript": "Good enough.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 554060,
+   "endMs": 554460,
+   "speaker": "B",
+   "transcript": "Yep.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 554540,
+   "endMs": 554940,
+   "speaker": "L",
+   "transcript": "You good?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 555100,
+   "endMs": 556780,
+   "speaker": "L",
+   "transcript": "Yeah, I'm good.",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 557100,
+   "endMs": 558300,
+   "speaker": "F",
+   "transcript": "Can we not do this in front of shop?",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 558540,
+   "endMs": 569500,
+   "speaker": "L",
+   "transcript": "No. No. We're past that. He just just kicked my partner over here. Okay? We're past that. He's going to jail on a bare minimum on a felony. I don't give a fuck if that's his shop or not. We're done. done. Okay? He wants to act",
+   "piece_offset_s": 0.0
+  },
+  {
+   "startMs": 570060,
+   "endMs": 575740,
+   "speaker": "A",
+   "transcript": "He can, he can suffer the consequences for it. We're done.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 576940,
+   "endMs": 581660,
+   "speaker": "B",
+   "transcript": "Whoa. Dawson. Hey, come here, come here.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 581900,
+   "endMs": 582540,
+   "speaker": "C",
+   "transcript": "Why?",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 582540,
+   "endMs": 587580,
+   "speaker": "B",
+   "transcript": "Come here. answer the sheriff's office. Come here. Come here.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 588860,
+   "endMs": 599100,
+   "speaker": "C",
+   "transcript": "Stop. Stop What happened? What's going",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 599260,
+   "endMs": 602940,
+   "speaker": "C",
+   "transcript": "Stop fighting, please. Why am I being arrested?",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 603260,
+   "endMs": 608620,
+   "speaker": "D",
+   "transcript": "Quit resisting. You're going to catch an extra charge. Do not understand me right now. Put your hand behind your back.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 608780,
+   "endMs": 608860,
+   "speaker": "?",
+   "transcript": "",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 608860,
+   "endMs": 613340,
+   "speaker": "C",
+   "transcript": "Why?",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 613500,
+   "endMs": 618860,
+   "speaker": "B",
+   "transcript": "Stop.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 619180,
+   "endMs": 623180,
+   "speaker": "C",
+   "transcript": "What is going on? on? Just tell me why I'm being arrested.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 623180,
+   "endMs": 626780,
+   "speaker": "D",
+   "transcript": "Yeah, we will in just a second.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 626860,
+   "endMs": 628620,
+   "speaker": "C",
+   "transcript": "I don't understand what's going on.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 628700,
+   "endMs": 630220,
+   "speaker": "B",
+   "transcript": "Stop resisting.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 630380,
+   "endMs": 631180,
+   "speaker": "C",
+   "transcript": "I'm not resisting.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 631180,
+   "endMs": 634620,
+   "speaker": "B",
+   "transcript": "You are. You're are. You're pulling it away.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 635020,
+   "endMs": 640140,
+   "speaker": "C",
+   "transcript": "Can you call my mom?",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 640300,
+   "endMs": 644780,
+   "speaker": "B",
+   "transcript": "This way. This way.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 644940,
+   "endMs": 645980,
+   "speaker": "B",
+   "transcript": "Walk to the car.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 645980,
+   "endMs": 649900,
+   "speaker": "C",
+   "transcript": "Yes, sir. But I just like I just want to know what's going on.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 650220,
+   "endMs": 654780,
+   "speaker": "B",
+   "transcript": "Well you're under arrest now you just gotta do charge too.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 655980,
+   "endMs": 658140,
+   "speaker": "C",
+   "transcript": "Why? What is happening?",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 658300,
+   "endMs": 660700,
+   "speaker": "D",
+   "transcript": "aggravated animal cruelty is what you're getting arrested for today.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 660860,
+   "endMs": 661260,
+   "speaker": "C",
+   "transcript": "Why?",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 661340,
+   "endMs": 664860,
+   "speaker": "D",
+   "transcript": "You're also catching an additional charge for resisting resisting us.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 664940,
+   "endMs": 670540,
+   "speaker": "C",
+   "transcript": "I did not resist. I don't even know what was going on.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 672460,
+   "endMs": 676060,
+   "speaker": "C",
+   "transcript": "I'm so confused right now.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 677740,
+   "endMs": 678140,
+   "speaker": "?",
+   "transcript": "I",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 678140,
+   "endMs": 679980,
+   "speaker": "C",
+   "transcript": "I I my dog. I don't understand.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 680060,
+   "endMs": 681900,
+   "speaker": "B",
+   "transcript": "Apparently not.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 682220,
+   "endMs": 689260,
+   "speaker": "D",
+   "transcript": "Your dog is in one of the worst states of a dog I've seen in my career. Do not take care of that dog.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 689260,
+   "endMs": 690220,
+   "speaker": "C",
+   "transcript": "We did.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 690220,
+   "endMs": 700700,
+   "speaker": "D",
+   "transcript": "You do not take care of that dog. That dog has been in custody of animal control for a month and has gained almost 15 pounds just simply from eating.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 707900,
+   "endMs": 711660,
+   "speaker": "D",
+   "transcript": "Pretty sad how bad Tanner was. was.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 713820,
+   "endMs": 717580,
+   "speaker": "C",
+   "transcript": "I swear I did. I don't know why",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 718700,
+   "endMs": 723820,
+   "speaker": "C",
+   "transcript": "I swear. I took care of my dog. dog",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 728620,
+   "endMs": 737900,
+   "speaker": "B",
+   "transcript": "Hello. We're going to go let's take him over to your car and just go through it one more time.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 740620,
+   "endMs": 743900,
+   "speaker": "C",
+   "transcript": "I don't know.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 744060,
+   "endMs": 745580,
+   "speaker": "B",
+   "transcript": "end up against the car.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 749180,
+   "endMs": 752380,
+   "speaker": "E",
+   "transcript": "I think the middle one we can't see a tag on the camera.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 754220,
+   "endMs": 758540,
+   "speaker": "F",
+   "transcript": "They're 12 we've been through traffic",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 758540,
+   "endMs": 762380,
+   "speaker": "G",
+   "transcript": "I won't deny it I'm a straight rider",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 775100,
+   "endMs": 784140,
+   "speaker": "H",
+   "transcript": "Traffic I don't have Alright, right. He's 12 in and out of traffic.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 784620,
+   "endMs": 789500,
+   "speaker": "I",
+   "transcript": "I hear in the left lane.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 791900,
+   "endMs": 797820,
+   "speaker": "I",
+   "transcript": "Rider no tag on the bike. In the fast lane right now. Inside lane.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 798220,
+   "endMs": 804220,
+   "speaker": "J",
+   "transcript": "Got a multi color selfie stick front windshield",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 806380,
+   "endMs": 809740,
+   "speaker": "I",
+   "transcript": "He's cutting in and out of traffic.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 813260,
+   "endMs": 817820,
+   "speaker": "E",
+   "transcript": "He just passed a unit high rate of speed",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 818540,
+   "endMs": 821260,
+   "speaker": "K",
+   "transcript": "Yes, 12 laying charges",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 827020,
+   "endMs": 841500,
+   "speaker": "E",
+   "transcript": "He just flew by a trooper here that's 1050 with somebody Okay, he's pulling into a gas station here 40640 D Street Be at J and 44",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 842060,
+   "endMs": 845180,
+   "speaker": "J",
+   "transcript": "Mother so far from there",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 845500,
+   "endMs": 855660,
+   "speaker": "E",
+   "transcript": "Okay, still got his helmet on white helmet black t-shirt black pants don't see a plate and he's got his credit card out paying for gas",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 857260,
+   "endMs": 859740,
+   "speaker": "E",
+   "transcript": "okay back on the go 44 eastbound",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 859740,
+   "endMs": 865180,
+   "speaker": "L",
+   "transcript": "are there any county canines on 44 on a step on",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 866460,
+   "endMs": 869180,
+   "speaker": "C",
+   "transcript": "Yeah, all of us are here.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 869260,
+   "endMs": 870940,
+   "speaker": "M",
+   "transcript": "Officer laying the travel.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 882220,
+   "endMs": 885020,
+   "speaker": "E",
+   "transcript": "Okay, still signal 12 eastbound 44",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 886700,
+   "endMs": 892220,
+   "speaker": "N",
+   "transcript": "Victor 16 on a traffic stop internationally here he comes comes down",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 892460,
+   "endMs": 894220,
+   "speaker": "E",
+   "transcript": "Eastbound 92",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 895100,
+   "endMs": 899020,
+   "speaker": "E",
+   "transcript": "from 15A",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 899580,
+   "endMs": 901420,
+   "speaker": "I",
+   "transcript": "Green now",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 901580,
+   "endMs": 908140,
+   "speaker": "E",
+   "transcript": "Okay, we're at Stone and 92. through the red light still eastbound",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 908300,
+   "endMs": 914620,
+   "speaker": "J",
+   "transcript": "There's about four unmarked now shadowing you so if he pulls in somewhere we got enough people to grab him",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 914780,
+   "endMs": 935980,
+   "speaker": "E",
+   "transcript": "Great, thank you Still eastbound coming up to Thames. No, we're still still northbound He's he's so fast he's pulling away from us right now we're trying to catch to catch up Uh our map showing mile marker 280 280 we're going to have to break off he's he's so far ahead we're barely barely getting him on camera he's north of the way way station up here",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 936220,
+   "endMs": 939340,
+   "speaker": "O",
+   "transcript": "everyone's all the way up there and he's breaking",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 955580,
+   "endMs": 961660,
+   "speaker": "A",
+   "transcript": "About the 270 southbound on a motorcycle give you give you a tag in a minute",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 971900,
+   "endMs": 973980,
+   "speaker": "A",
+   "transcript": "Put it on the kickstand.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 974220,
+   "endMs": 975500,
+   "speaker": "P",
+   "transcript": "I'm so sorry man.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 975500,
+   "endMs": 979820,
+   "speaker": "A",
+   "transcript": "Uh-huh. Come here.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 980060,
+   "endMs": 984060,
+   "speaker": "A",
+   "transcript": "Come here. Take your backpack off.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 985820,
+   "endMs": 996860,
+   "speaker": "A",
+   "transcript": "Take your helmet off. Put it on so it doesn't fall.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 997420,
+   "endMs": 1004300,
+   "speaker": "A",
+   "transcript": "Turn around, put your hands behind your back. Don't do anything else until I tell you to. to. You understand?",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1004460,
+   "endMs": 1012380,
+   "speaker": "A",
+   "transcript": "Right now you're being detained anything you do from now makes your life worse. You understand?",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1024060,
+   "endMs": 1025740,
+   "speaker": "A",
+   "transcript": "You got anything on you I need to know about?",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1025820,
+   "endMs": 1027100,
+   "speaker": "P",
+   "transcript": "I do not.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1027580,
+   "endMs": 1030540,
+   "speaker": "A",
+   "transcript": "Okay, now fast we got got up to",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1030700,
+   "endMs": 1031580,
+   "speaker": "P",
+   "transcript": "man I",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1031580,
+   "endMs": 1039500,
+   "speaker": "A",
+   "transcript": "well I can tell you that truck tops out at 121 and when you tucked your head down just now you were stretching me",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1039660,
+   "endMs": 1039740,
+   "speaker": "P",
+   "transcript": "Oh.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1039820,
+   "endMs": 1044780,
+   "speaker": "A",
+   "transcript": "So especially aggressive driving through traffic like that.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1045020,
+   "endMs": 1046380,
+   "speaker": "P",
+   "transcript": "I saw you saw you get up close behind me. I",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1046380,
+   "endMs": 1046700,
+   "speaker": "A",
+   "transcript": "Yeah",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1046700,
+   "endMs": 1048140,
+   "speaker": "P",
+   "transcript": "that you were an officer man I",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1048460,
+   "endMs": 1055660,
+   "speaker": "A",
+   "transcript": "well if you were doing 70 miles an hour you and I would have have never have met so which one do you think was the right thing to do?",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1055900,
+   "endMs": 1056860,
+   "speaker": "P",
+   "transcript": "should have just slowed down down.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1056860,
+   "endMs": 1060940,
+   "speaker": "A",
+   "transcript": "You should have just gone the speed limit is what you should have done.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1061180,
+   "endMs": 1063580,
+   "speaker": "P",
+   "transcript": "I'm so sorry, man.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1063740,
+   "endMs": 1068460,
+   "speaker": "A",
+   "transcript": "Why mad at you? But I think you're out here doing dumb shit.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1069660,
+   "endMs": 1073020,
+   "speaker": "P",
+   "transcript": "I literally don't have any tickets. I don't know what I was doing, man.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1073500,
+   "endMs": 1078300,
+   "speaker": "A",
+   "transcript": "Gold male 1015 pocket knives or anything?",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1078300,
+   "endMs": 1079740,
+   "speaker": "P",
+   "transcript": "I have literally no",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1079980,
+   "endMs": 1080060,
+   "speaker": "?",
+   "transcript": "Okay",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1080060,
+   "endMs": 1083980,
+   "speaker": "A",
+   "transcript": "okay I just gotta double check",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1084540,
+   "endMs": 1087820,
+   "speaker": "A",
+   "transcript": "alright this is what I want you you to do okay",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1087820,
+   "endMs": 1088060,
+   "speaker": "P",
+   "transcript": "Yes",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1088140,
+   "endMs": 1098460,
+   "speaker": "A",
+   "transcript": "I want you to do your best I'm going to sit you down but I don't don't want you to fall so if you gotta cross your legs to sit or you gotta squat down but I want you to sit on your butt",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1098540,
+   "endMs": 1099100,
+   "speaker": "P",
+   "transcript": "okay",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1099180,
+   "endMs": 1102140,
+   "speaker": "A",
+   "transcript": "alright I don't want you to face my truck",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1102220,
+   "endMs": 1102780,
+   "speaker": "P",
+   "transcript": "anybody",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1102940,
+   "endMs": 1104060,
+   "speaker": "A",
+   "transcript": "we'll work on that",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1104060,
+   "endMs": 1104300,
+   "speaker": "P",
+   "transcript": "alright",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1104300,
+   "endMs": 1108940,
+   "speaker": "A",
+   "transcript": "alright going down go ahead",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1109580,
+   "endMs": 1113900,
+   "speaker": "A",
+   "transcript": "Alright sit on your butt cross your legs",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1118380,
+   "endMs": 1121740,
+   "speaker": "A",
+   "transcript": "Motor 12, you head over to me.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1126620,
+   "endMs": 1128140,
+   "speaker": "P",
+   "transcript": "So sorry, man.",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1128140,
+   "endMs": 1130780,
+   "speaker": "A",
+   "transcript": "Listen, I'm not mad at you, but",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1130940,
+   "endMs": 1131500,
+   "speaker": "P",
+   "transcript": "I'm mad mad at myself",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1131820,
+   "endMs": 1133580,
+   "speaker": "A",
+   "transcript": "What you were doing, bro,",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1133580,
+   "endMs": 1133740,
+   "speaker": "P",
+   "transcript": "I know",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1133740,
+   "endMs": 1139500,
+   "speaker": "A",
+   "transcript": "dangerous, man, dangerous, especially as heavy heavy a traffic and you going from the right",
+   "piece_offset_s": 570.0
+  },
+  {
+   "startMs": 1140380,
+   "endMs": 1145100,
+   "speaker": "A",
+   "transcript": "across all the way to the left lane and back dangerous dude",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1145100,
+   "endMs": 1167420,
+   "speaker": "A",
+   "transcript": "I understand I mean and listen I ride motorcycles off and off and on duty okay there's zero protection at 120 some mile an hour okay zero that jacket the only thing that jacket does is keep your pieces parts together okay I'm putting this back in the bag for right now",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1171900,
+   "endMs": 1175420,
+   "speaker": "A",
+   "transcript": "you know have you been have you been reading the news about the super speeder law",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1175580,
+   "endMs": 1176860,
+   "speaker": "B",
+   "transcript": "I have",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1176860,
+   "endMs": 1191260,
+   "speaker": "A",
+   "transcript": "so you did both of them you're over 100 100 miles an hour and you were 50 miles an hour over the speed limit speed limit 70 so so you're both you didn't just do one",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1193500,
+   "endMs": 1196540,
+   "speaker": "A",
+   "transcript": "alright hang tight right there",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1197740,
+   "endMs": 1201100,
+   "speaker": "A",
+   "transcript": "alright you're good watch your feet feet",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1206540,
+   "endMs": 1213980,
+   "speaker": "C",
+   "transcript": "yeah bro I see you keep going in it's the gold van it's facing right at you as soon as you come in back then",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1214220,
+   "endMs": 1220300,
+   "speaker": "D",
+   "transcript": "alright we're going to take them down moving in we can see them from here",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1221740,
+   "endMs": 1227420,
+   "speaker": "C",
+   "transcript": "must just went inside then guys he just he just pulled in and I went to go get cover",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1234140,
+   "endMs": 1253100,
+   "speaker": "C",
+   "transcript": "I got him stop let me see your hands running through the McDonald's right now guys going towards the boulevard black shirt blue blue jeans right here right here stop stop let me see your hands sheriff's office stop stop now stop",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1268780,
+   "endMs": 1272540,
+   "speaker": "C",
+   "transcript": "Sheriff's office stop",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1273340,
+   "endMs": 1280620,
+   "speaker": "C",
+   "transcript": "Show Show me your hands show me your hands on the ground now get on the ground get on the ground",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1281420,
+   "endMs": 1284860,
+   "speaker": "C",
+   "transcript": "Get on the ground",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1284860,
+   "endMs": 1290060,
+   "speaker": "E",
+   "transcript": "You got him behind the tree track one secure",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1291980,
+   "endMs": 1299580,
+   "speaker": "C",
+   "transcript": "Hey I want a stomach roll on the side so we can breathe better from this running running there you go",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1299580,
+   "endMs": 1304460,
+   "speaker": "C",
+   "transcript": "You speak English? alright perfect",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1312220,
+   "endMs": 1315900,
+   "speaker": "F",
+   "transcript": "X-ray 42 has one secure",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1318220,
+   "endMs": 1325180,
+   "speaker": "G",
+   "transcript": "Okay, there's a bunch of gas tanks in the back That's why it smells like gas.",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1325980,
+   "endMs": 1328300,
+   "speaker": "E",
+   "transcript": "You can see the drums.",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1328300,
+   "endMs": 1329900,
+   "speaker": "D",
+   "transcript": "In front of it just in case.",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1330060,
+   "endMs": 1331500,
+   "speaker": "G",
+   "transcript": "No, I think this is block two.",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1331740,
+   "endMs": 1335340,
+   "speaker": "H",
+   "transcript": "They might have it actually blacked out out black. Yeah, that tent's real dark.",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1335340,
+   "endMs": 1336300,
+   "speaker": "E",
+   "transcript": "It's like 0%",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1336620,
+   "endMs": 1341580,
+   "speaker": "H",
+   "transcript": "Yeah.",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1341980,
+   "endMs": 1347740,
+   "speaker": "G",
+   "transcript": "Not good. No bueno.",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1347900,
+   "endMs": 1348380,
+   "speaker": "I",
+   "transcript": "What happened?",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1348620,
+   "endMs": 1352300,
+   "speaker": "G",
+   "transcript": "You know what happened.",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1357740,
+   "endMs": 1362060,
+   "speaker": "J",
+   "transcript": "Honestly doing L cam on a white Nissan",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1366780,
+   "endMs": 1372540,
+   "speaker": "J",
+   "transcript": "Continuing south on Montecito. I'm shut down I'm following at normal speed",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1373500,
+   "endMs": 1391340,
+   "speaker": "K",
+   "transcript": "It's going down a driveway hey bail out bail out bail out bail out two black males one wearing a black shirt orange shirt and another with a black sweater and shorts running westbound behind the house I have charges 12 F bail out out",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1394940,
+   "endMs": 1406780,
+   "speaker": "K",
+   "transcript": "Show me your hands. Central I got one at gunpoint behind the house. Show me your hands. Now come out I can see you. see you.",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1407820,
+   "endMs": 1413260,
+   "speaker": "K",
+   "transcript": "Show me your hands get down to the ground get down on the ground.",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1414460,
+   "endMs": 1423980,
+   "speaker": "K",
+   "transcript": "Central I got a female gun prone out I have a male on the I believe the west west side of the house it's the one two corner I lost sight of him",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1426700,
+   "endMs": 1426780,
+   "speaker": "?",
+   "transcript": "Down here",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1426780,
+   "endMs": 1432620,
+   "speaker": "K",
+   "transcript": "Down here. Slow down slow down slow down.",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1435580,
+   "endMs": 1440940,
+   "speaker": "K",
+   "transcript": "One person over there I don't know I lost sight of him I got this",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1442540,
+   "endMs": 1452380,
+   "speaker": "K",
+   "transcript": "Just watch man we'll wait for one more unit hold on back up back up back up ma'am crawl to me crawl to me",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1453900,
+   "endMs": 1456220,
+   "speaker": "K",
+   "transcript": "Got it just watch the car",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1456380,
+   "endMs": 1457340,
+   "speaker": "I",
+   "transcript": "I got it don't worry about it",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1457340,
+   "endMs": 1458380,
+   "speaker": "K",
+   "transcript": "male ran between the truck",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1458380,
+   "endMs": 1463020,
+   "speaker": "I",
+   "transcript": "okay I got it",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1463340,
+   "endMs": 1473020,
+   "speaker": "K",
+   "transcript": "I'm going to be as easy as as I possibly can. I understand. I know. I know. I believe you. I believe you. I just I have to secure you this this way. Okay.",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1473020,
+   "endMs": 1474620,
+   "speaker": "L",
+   "transcript": "Somebody help pick me up.",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1474620,
+   "endMs": 1478300,
+   "speaker": "K",
+   "transcript": "I will pick you up.",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1480220,
+   "endMs": 1481580,
+   "speaker": "K",
+   "transcript": "Yes.",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1481580,
+   "endMs": 1481580,
+   "speaker": "M",
+   "transcript": "Gun?",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1481740,
+   "endMs": 1485420,
+   "speaker": "K",
+   "transcript": "Yep. Right there in the center console. You'll see it plain as day.",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1485580,
+   "endMs": 1485900,
+   "speaker": "M",
+   "transcript": "Yeah.",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1485980,
+   "endMs": 1486140,
+   "speaker": "?",
+   "transcript": "",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1486140,
+   "endMs": 1490540,
+   "speaker": "K",
+   "transcript": "Loaded.",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1490620,
+   "endMs": 1495580,
+   "speaker": "N",
+   "transcript": "I'm thinking he may have hit this this lake and went to the left.",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1496060,
+   "endMs": 1496140,
+   "speaker": "?",
+   "transcript": "",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1496140,
+   "endMs": 1500140,
+   "speaker": "O",
+   "transcript": "Alright I got him in the water on the shoreline",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1501660,
+   "endMs": 1506300,
+   "speaker": "O",
+   "transcript": "Still Still no movement.",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1506380,
+   "endMs": 1506460,
+   "speaker": "?",
+   "transcript": "",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1506460,
+   "endMs": 1509580,
+   "speaker": "P",
+   "transcript": "We go to jump on",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1520620,
+   "endMs": 1520780,
+   "speaker": "?",
+   "transcript": "Hey",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1520780,
+   "endMs": 1526460,
+   "speaker": "P",
+   "transcript": "Hey, hold on. Two o'clock.",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1533340,
+   "endMs": 1547020,
+   "speaker": "P",
+   "transcript": "Drop your hands! Show me your hands! walk out hey hey hey walk out towards the cars start start walking",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1547020,
+   "endMs": 1550300,
+   "speaker": "C",
+   "transcript": "Where's your partner? Where's your partner?",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1551340,
+   "endMs": 1553980,
+   "speaker": "D",
+   "transcript": "Walk out",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1554060,
+   "endMs": 1558540,
+   "speaker": "P",
+   "transcript": "Start walking we're good alright any guns any weapons?",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1558540,
+   "endMs": 1560220,
+   "speaker": "C",
+   "transcript": "No no listen",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1560220,
+   "endMs": 1563420,
+   "speaker": "C",
+   "transcript": "get in grab me",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1563420,
+   "endMs": 1563980,
+   "speaker": "C",
+   "transcript": "no sir no sir",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1563980,
+   "endMs": 1567980,
+   "speaker": "P",
+   "transcript": "come on help us here moving back a little bit",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1567980,
+   "endMs": 1570380,
+   "speaker": "C",
+   "transcript": "he's right there he's it's right there it's right there",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1570380,
+   "endMs": 1571660,
+   "speaker": "C",
+   "transcript": "now",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1571740,
+   "endMs": 1572860,
+   "speaker": "P",
+   "transcript": "Start walking towards us",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1573020,
+   "endMs": 1573100,
+   "speaker": "?",
+   "transcript": "Get",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1573100,
+   "endMs": 1573900,
+   "speaker": "C",
+   "transcript": "Get up stand up",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1573980,
+   "endMs": 1575740,
+   "speaker": "P",
+   "transcript": "Start walking towards us",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1575820,
+   "endMs": 1577900,
+   "speaker": "C",
+   "transcript": "Stand up now",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1577900,
+   "endMs": 1581020,
+   "speaker": "I",
+   "transcript": "not stand up",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1581100,
+   "endMs": 1584620,
+   "speaker": "P",
+   "transcript": "You gotta help us get you in here bud",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1584620,
+   "endMs": 1591740,
+   "speaker": "P",
+   "transcript": "There you go Hold on. Get him in more. I don't want him in the water if he can't",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1593660,
+   "endMs": 1597820,
+   "speaker": "P",
+   "transcript": "Slide it a little bit more man. There you go. There you go.",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1611420,
+   "endMs": 1613100,
+   "speaker": "D",
+   "transcript": "are you injured?",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1613420,
+   "endMs": 1622300,
+   "speaker": "E",
+   "transcript": "The first time you've had someone recovered to this degree what does that say how does that make you feel knowing that what you did worked and you know",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1622300,
+   "endMs": 1634860,
+   "speaker": "F",
+   "transcript": "it still unbelievable like I said my whole career I've never had this outcome it's usually the other outcome that no one likes but this is like I said if you believe in miracles this is probably one of them",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1645180,
+   "endMs": 1653500,
+   "speaker": "E",
+   "transcript": "So like what goes through your head when you see a a person who appears to be unconscious in the water? I know your instincts kind of kick in but are there any thoughts that come to mind?",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1653580,
+   "endMs": 1657740,
+   "speaker": "F",
+   "transcript": "Work fast. Just move as quickly",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1679660,
+   "endMs": 1683340,
+   "speaker": "B",
+   "transcript": "Sorry, corrections.",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1686940,
+   "endMs": 1690220,
+   "speaker": "B",
+   "transcript": "Let me know when you're ready, Stan.",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1696460,
+   "endMs": 1699420,
+   "speaker": "D",
+   "transcript": "Don't worry about that. that",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1708380,
+   "endMs": 1709500,
+   "speaker": "I",
+   "transcript": "I got you. I got you.",
+   "piece_offset_s": 1140.0
+  },
+  {
+   "startMs": 1723820,
+   "endMs": 1725820,
+   "speaker": "A",
+   "transcript": "Let's get info for him.",
+   "piece_offset_s": 1710.0
+  },
+  {
+   "startMs": 1726060,
+   "endMs": 1743900,
+   "speaker": "B",
+   "transcript": "You got pulses back right when we got to the hospital. Which was amazing. You know doing this 25 years every call is different and it was just just a miracle that this young man was able to pull through days after that.",
+   "piece_offset_s": 1710.0
+  },
+  {
+   "startMs": 1744380,
+   "endMs": 1773500,
+   "speaker": "B",
+   "transcript": "He weighed heavily on my mind and it it was definitely it made my week better after we found out that he made a full recovery and it's a really joy to see all the departments in the area come together and do such great life life saving procedures so all these gentlemen behind us and and ladies did a wonderful job and I can't say any more than just a lot of pride in in very proud of the area I live in.",
+   "piece_offset_s": 1710.0
+  },
+  {
+   "startMs": 1776700,
+   "endMs": 1802060,
+   "speaker": "C",
+   "transcript": "Well, late late night Diaz is one of the spots that we check as a COP that particular day I backed backed up and I noticed a boat that was spinning around in the middle and I got out of my unit and walked up to the dock I could could not see nobody in the boat whatsoever so I come back up I got on my radio and I called dispatch I asked them to send me a deputy",
+   "piece_offset_s": 1710.0
+  },
+  {
+   "startMs": 1802060,
+   "endMs": 1826780,
+   "speaker": "D",
+   "transcript": "part of our strategy when we got on scene was to get to the outside of the boat to try and you know stop the boat and when we realized that we were getting closer to shore and it wasn't working we pulled out kind of regrouped and now I started using my wake of the boat to push them push him closer to shore and hopefully that the shoreline would have disabled his boat",
+   "piece_offset_s": 1710.0
+  },
+  {
+   "startMs": 1826860,
+   "endMs": 1839340,
+   "speaker": "E",
+   "transcript": "these are dynamic situations we get on scene and and assess it and we try things and in this particular case we tried things that weren't working so we reassessed and found a different way to get it stopped.",
+   "piece_offset_s": 1710.0
+  },
+  {
+   "startMs": 1851340,
+   "endMs": 1857180,
+   "speaker": "F",
+   "transcript": "Yeah we're going to take him by boat back over there.",
+   "piece_offset_s": 1710.0
+  },
+  {
+   "startMs": 1864060,
+   "endMs": 1866780,
+   "speaker": "G",
+   "transcript": "there's a boat off",
+   "piece_offset_s": 1710.0
+  },
+  {
+   "startMs": 1867020,
+   "endMs": 1870780,
+   "speaker": "F",
+   "transcript": "Looks like a diabetes kit here so",
+   "piece_offset_s": 1710.0
+  },
+  {
+   "startMs": 1871980,
+   "endMs": 1872220,
+   "speaker": "?",
+   "transcript": "put him",
+   "piece_offset_s": 1710.0
+  },
+  {
+   "startMs": 1872220,
+   "endMs": 1875020,
+   "speaker": "F",
+   "transcript": "Put him on the deck up in the front",
+   "piece_offset_s": 1710.0
+  },
+  {
+   "startMs": 1875260,
+   "endMs": 1893420,
+   "speaker": "E",
+   "transcript": "so we we had all those resources on scene at that point fire rescue was there there was an ambulance on scene it was a matter of us getting him from that boat to shore and it was only a matter of a minute or minute or two and and then he was in the care of of EMS so and then from there they took him to a hospital.",
+   "piece_offset_s": 1710.0
+  }
+ ],
+ "camera_clock": {
+  "start": "21:00:25",
+  "end": "13:38:42",
+  "date": "2026-09-27",
+  "readings": [
+   {
+    "video_s": 0.0,
+    "clock": "2026-09-27 21:00:25 -0400",
+    "camera": "D01A16937"
+   },
+   {
+    "video_s": 141.0,
+    "clock": "2026-09-27 21:04:22 -0400",
+    "camera": "D01AP085E"
+   },
+   {
+    "video_s": 223.0,
+    "clock": "2026-05-18 23:41:57 -0400",
+    "camera": "D01A14892"
+   },
+   {
+    "video_s": 339.0,
+    "clock": "2026-04-22 16:05:40 -0400",
+    "camera": "D01A15389"
+   },
+   {
+    "video_s": 358.0,
+    "clock": "2026-04-22 16:46:54 -0400",
+    "camera": "D01A1012C"
+   },
+   {
+    "video_s": 397.0,
+    "clock": "2026-04-22 16:47:33 -0400",
+    "camera": "D01A1212B"
+   },
+   {
+    "video_s": 452.0,
+    "clock": "2026-04-22 16:48:28 -0400",
+    "camera": "D01A15389"
+   },
+   {
+    "video_s": 460.0,
+    "clock": "2026-04-22 16:48:35 -0400",
+    "camera": "D01A15389"
+   },
+   {
+    "video_s": 475.0,
+    "clock": "2026-04-22 16:48:50 -0400",
+    "camera": "D01A15389"
+   },
+   {
+    "video_s": 486.0,
+    "clock": "2026-04-22 16:49:09 -0400",
+    "camera": "D01A1012C"
+   },
+   {
+    "video_s": 530.0,
+    "clock": "2026-04-22 16:49:54 -0400",
+    "camera": "D01A15389"
+   },
+   {
+    "video_s": 546.0,
+    "clock": "2026-04-22 16:50:09 -0400",
+    "camera": "D01A1012C"
+   },
+   {
+    "video_s": 557.0,
+    "clock": "2026-04-22 16:50:35 -0400",
+    "camera": "D01A1212B"
+   },
+   {
+    "video_s": 575.0,
+    "clock": "2026-09-29 10:30:10 -0400",
+    "camera": "D01A0460X"
+   },
+   {
+    "video_s": 935.0,
+    "clock": "2026-06-12 20:40:48 -0400",
+    "camera": "X6847272X"
+   },
+   {
+    "video_s": 936.0,
+    "clock": "2026-06-12 20:48:49 -0400",
+    "camera": "X6847272X"
+   },
+   {
+    "video_s": 949.0,
+    "clock": "2025-08-07 07:42:11 -0400",
+    "camera": "D01A14612"
+   },
+   {
+    "video_s": 950.0,
+    "clock": "2025-08-07 07:42:12 -0400",
+    "camera": "D01A14612"
+   },
+   {
+    "video_s": 1206.0,
+    "clock": "2024-11-09 21:46:48 -0500",
+    "camera": "D01A13608"
+   },
+   {
+    "video_s": 1260.0,
+    "clock": "2024-11-09 21:47:46 -0500",
+    "camera": "D01A18421"
+   },
+   {
+    "video_s": 1304.0,
+    "clock": "2024-11-09 21:54:54 -0500",
+    "camera": "D01A0085W"
+   },
+   {
+    "video_s": 1317.0,
+    "clock": "2024-11-09 22:00:05 -0500",
+    "camera": "D01A11142"
+   },
+   {
+    "video_s": 1326.0,
+    "clock": "2024-11-09 21:52:27 -0500",
+    "camera": "D01A0085W"
+   },
+   {
+    "video_s": 1330.0,
+    "clock": "2024-11-09 21:52:03 -0500",
+    "camera": "D01A1893B"
+   },
+   {
+    "video_s": 1338.0,
+    "clock": "2024-11-09 22:00:23 -0500",
+    "camera": "D01A11142"
+   },
+   {
+    "video_s": 1351.0,
+    "clock": "2024-06-05 22:43:42 -0400",
+    "camera": "D01A18298"
+   },
+   {
+    "video_s": 1374.0,
+    "clock": "2024-06-05 22:51:41 -0400",
+    "camera": "D01A17459"
+   },
+   {
+    "video_s": 1411.0,
+    "clock": "2024-06-05 22:52:31 -0400",
+    "camera": "D01A17459"
+   },
+   {
+    "video_s": 1426.0,
+    "clock": "2024-06-05 22:52:59 -0400",
+    "camera": "D01A17459"
+   },
+   {
+    "video_s": 1488.0,
+    "clock": "2024-06-05 23:23:56 -0400",
+    "camera": "D01A10462"
+   },
+   {
+    "video_s": 1506.0,
+    "clock": "2024-06-06 00:41:46 -0400",
+    "camera": "D01A16937"
+   },
+   {
+    "video_s": 1634.0,
+    "clock": "2024-03-30 16:51:04 -0400",
+    "camera": "D01A16198"
+   },
+   {
+    "video_s": 1823.0,
+    "clock": "2025-02-04 13:35:20 -0500",
+    "camera": "D01A17818"
+   },
+   {
+    "video_s": 1901.0,
+    "clock": "2025-02-04 13:38:42 -0500",
+    "camera": "D01A17818"
+   }
+  ]
+ },
+ "claims": [
+  {
+   "id": "C1",
+   "text": "Deputies responded to a report of a possible drowning in the marina.",
+   "kind": "action",
+   "line": 1,
+   "status": "on_recording",
+   "start_s": 0.0,
+   "end_s": 8.0,
+   "evidence": "Night driving to marina while officer says \"Alright, Ocean 20 Central I'm coming on coming on scene whatever it's on scene I've got a buoy with me\".",
+   "reason": "Speech about coming on scene with a buoy plus marina search shows drowning response.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 0,
+    "end_s": 8,
+    "evidence": "Night driving to marina while officer says \"Alright, Ocean 20 Central I'm coming on coming on scene whatever it's on scene I've got a buoy with me\".",
+    "reason": "Speech about coming on scene with a buoy plus marina search shows drowning response."
+   },
+   "verify_notes": [],
+   "piece": 1,
+   "merge_notes": []
+  },
+  {
+   "id": "C2",
+   "text": "The area was behind a locked gate.",
+   "kind": "object",
+   "line": 2,
+   "status": "on_recording",
+   "start_s": 24.0,
+   "end_s": 29.0,
+   "evidence": "White metal barred gate across dock walkway illuminated by light with two men at gate.",
+   "reason": "Gate blocking dock access is clearly visible.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 24,
+    "end_s": 29,
+    "evidence": "White metal barred gate across dock walkway illuminated by light with two men at gate.",
+    "reason": "Gate blocking dock access is clearly visible."
+   },
+   "verify_notes": [],
+   "piece": 1,
+   "merge_notes": []
+  },
+  {
+   "id": "C3",
+   "text": "A man had fallen out of his wheelchair into the marina.",
+   "kind": "action",
+   "line": 3,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "No fall is shown; a wheelchair only appears later being pushed on a path.",
+   "reason": "This piece does not show how the man entered the water.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1,
+    "end_s": -1,
+    "evidence": "No fall is shown; a wheelchair only appears later being pushed on a path.",
+    "reason": "This piece does not show how the man entered the water."
+   },
+   "verify_notes": [],
+   "piece": null,
+   "merge_notes": [
+    "not found in any of the 4 pieces"
+   ]
+  },
+  {
+   "id": "C4",
+   "text": "The man was clinging to a pipe to keep his head above water.",
+   "kind": "action",
+   "line": 4,
+   "status": "check",
+   "start_s": 155.0,
+   "end_s": 173.0,
+   "evidence": "Man in red shorts floating on his back in green-lit water with arms free, no pipe visible.",
+   "reason": "Recording shows him floating free, contradicting clinging to a pipe.",
+   "model": {
+    "status": "check",
+    "start_s": 155,
+    "end_s": 173,
+    "evidence": "Man in red shorts floating on his back in green-lit water with arms free, no pipe visible.",
+    "reason": "Recording shows him floating free, contradicting clinging to a pipe."
+   },
+   "verify_notes": [],
+   "piece": 1,
+   "merge_notes": []
+  },
+  {
+   "id": "C5",
+   "text": "A sergeant jumped into the water with a buoy.",
+   "kind": "action",
+   "line": 5,
+   "status": "on_recording",
+   "start_s": 0.0,
+   "end_s": 90.0,
+   "evidence": "Officer says \"Alright, Ocean 20 Central I'm coming on coming on scene whatever it's on scene I've got a buoy with me\" and later \"Ocean 20 Central, I'm getting in the water and I'll be waiting for\" with dark water visuals.",
+   "reason": "Speech and water entry show entering water with buoy, rank sergeant is not shown.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 0,
+    "end_s": 90,
+    "evidence": "Officer says \"Alright, Ocean 20 Central I'm coming on coming on scene whatever it's on scene I've got a buoy with me\" and later \"Ocean 20 Central, I'm getting in the water and I'll be waiting for\" with dark water visuals.",
+    "reason": "Speech and water entry show entering water with buoy, rank sergeant is not shown."
+   },
+   "verify_notes": [],
+   "piece": 1,
+   "merge_notes": []
+  },
+  {
+   "id": "C6",
+   "text": "The man was floated to safety.",
+   "kind": "action",
+   "line": 6,
+   "status": "check",
+   "start_s": 155.0,
+   "end_s": 188.0,
+   "evidence": "Man remains floating in water under flashlights while deputies on dock direct rescue, not yet on shore.",
+   "reason": "Piece shows floating in progress but not completion to safety.",
+   "model": {
+    "status": "check",
+    "start_s": 155,
+    "end_s": 188,
+    "evidence": "Man remains floating in water under flashlights while deputies on dock direct rescue, not yet on shore.",
+    "reason": "Piece shows floating in progress but not completion to safety."
+   },
+   "verify_notes": [],
+   "piece": 1,
+   "merge_notes": []
+  },
+  {
+   "id": "C7",
+   "text": "The man was evaluated by the fire department and declined further medical attention.",
+   "kind": "action",
+   "line": 7,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "No fire department evaluation or refusal is heard or seen in marina segment.",
+   "reason": "This piece neither shows nor contradicts post-rescue medical evaluation.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1,
+    "end_s": -1,
+    "evidence": "No fire department evaluation or refusal is heard or seen in marina segment.",
+    "reason": "This piece neither shows nor contradicts post-rescue medical evaluation."
+   },
+   "verify_notes": [],
+   "piece": null,
+   "merge_notes": [
+    "not found in any of the 4 pieces"
+   ]
+  },
+  {
+   "id": "C8",
+   "text": "A passing boater pulled the man out of the water before deputies arrived.",
+   "kind": "action",
+   "line": 8,
+   "status": "check",
+   "start_s": 155.0,
+   "end_s": 174.0,
+   "evidence": "Man still in water while deputies shine lights from dock and radio \"Yeah alright we have eyes on 20 he has the has the patient we're just trying to get him on the water\".",
+   "reason": "Man is still in water after deputies arrive, contradicting prior removal by boater.",
+   "model": {
+    "status": "check",
+    "start_s": 155,
+    "end_s": 174,
+    "evidence": "Man still in water while deputies shine lights from dock and radio \"Yeah alright we have eyes on 20 he has the has the patient we're just trying to get him on the water\".",
+    "reason": "Man is still in water after deputies arrive, contradicting prior removal by boater."
+   },
+   "verify_notes": [],
+   "piece": 1,
+   "merge_notes": []
+  },
+  {
+   "id": "C9",
+   "text": "The man told deputies he had been drinking.",
+   "kind": "speech",
+   "line": 9,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "No statement about drinking is heard in marina TURNS.",
+   "reason": "This piece contains no such admission.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1,
+    "end_s": -1,
+    "evidence": "No statement about drinking is heard in marina TURNS.",
+    "reason": "This piece contains no such admission."
+   },
+   "verify_notes": [],
+   "piece": null,
+   "merge_notes": [
+    "not found in any of the 4 pieces"
+   ]
+  },
+  {
+   "id": "C10",
+   "text": "Units responded to a house fire with two people believed to be inside.",
+   "kind": "action",
+   "line": 10,
+   "status": "on_recording",
+   "start_s": 224.0,
+   "end_s": 238.0,
+   "evidence": "House engulfed in orange flames at night plus \"How many people might be inside?\" \"Two elderly people.\" \"They are They are not outside.\"",
+   "reason": "Fire visuals plus speech show response to house fire with two believed inside.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 224,
+    "end_s": 238,
+    "evidence": "House engulfed in orange flames at night plus \"How many people might be inside?\" \"Two elderly people.\" \"They are They are not outside.\"",
+    "reason": "Fire visuals plus speech show response to house fire with two believed inside."
+   },
+   "verify_notes": [],
+   "piece": 1,
+   "merge_notes": []
+  },
+  {
+   "id": "C11",
+   "text": "A deputy kicked down the front door.",
+   "kind": "action",
+   "line": 11,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "Deputy approaches front door with flashlight but no kick is visible.",
+   "reason": "This piece does not show door being kicked down.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1,
+    "end_s": -1,
+    "evidence": "Deputy approaches front door with flashlight but no kick is visible.",
+    "reason": "This piece does not show door being kicked down."
+   },
+   "verify_notes": [],
+   "piece": null,
+   "merge_notes": [
+    "not found in any of the 4 pieces"
+   ]
+  },
+  {
+   "id": "C12",
+   "text": "The deputy pulled the female resident to safety.",
+   "kind": "action",
+   "line": 12,
+   "status": "on_recording",
+   "start_s": 293.0,
+   "end_s": 300.0,
+   "evidence": "Deputy states \"I pulled one from the house he's trying to trying to get another one she's she's she's breathing but it might be one more in there yes there yes\".",
+   "reason": "Speech states deputy pulled one occupant who is breathing.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 293,
+    "end_s": 300,
+    "evidence": "Deputy states \"I pulled one from the house he's trying to trying to get another one she's she's she's breathing but it might be one more in there yes there yes\".",
+    "reason": "Speech states deputy pulled one occupant who is breathing."
+   },
+   "verify_notes": [],
+   "piece": 1,
+   "merge_notes": []
+  },
+  {
+   "id": "C13",
+   "text": "The deputy rendered aid until Fire Rescue took over.",
+   "kind": "action",
+   "line": 13,
+   "status": "check",
+   "start_s": 275.0,
+   "end_s": 318.0,
+   "evidence": "Deputy coaches \"ma'am ma'am Can you breathe in?\" \"keep breathing sweetheart there you go\" \"keep breathing Yeah she's breathing\" with no handover visible.",
+   "reason": "Shows aid being given but no Fire Rescue takeover in this piece.",
+   "model": {
+    "status": "check",
+    "start_s": 275,
+    "end_s": 318,
+    "evidence": "Deputy coaches \"ma'am ma'am Can you breathe in?\" \"keep breathing sweetheart there you go\" \"keep breathing Yeah she's breathing\" with no handover visible.",
+    "reason": "Shows aid being given but no Fire Rescue takeover in this piece."
+   },
+   "verify_notes": [],
+   "piece": 1,
+   "merge_notes": []
+  },
+  {
+   "id": "C14",
+   "text": "Firefighters pulled the male occupant from the house.",
+   "kind": "action",
+   "line": 14,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "No firefighter removal of male occupant is seen.",
+   "reason": "This piece neither shows nor contradicts that action.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1,
+    "end_s": -1,
+    "evidence": "No firefighter removal of male occupant is seen.",
+    "reason": "This piece neither shows nor contradicts that action."
+   },
+   "verify_notes": [],
+   "piece": null,
+   "merge_notes": [
+    "not found in any of the 4 pieces"
+   ]
+  },
+  {
+   "id": "C15",
+   "text": "The deputy entered the house through a back window.",
+   "kind": "action",
+   "line": 15,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "No back-window entry is seen.",
+   "reason": "This piece neither shows nor contradicts that entry method.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1,
+    "end_s": -1,
+    "evidence": "No back-window entry is seen.",
+    "reason": "This piece neither shows nor contradicts that entry method."
+   },
+   "verify_notes": [],
+   "piece": null,
+   "merge_notes": [
+    "not found in any of the 4 pieces"
+   ]
+  },
+  {
+   "id": "C16",
+   "text": "A neighbor handed the deputy a fire extinguisher.",
+   "kind": "action",
+   "line": 16,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "No extinguisher handover is seen or heard.",
+   "reason": "This piece neither shows nor contradicts that handover.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1,
+    "end_s": -1,
+    "evidence": "No extinguisher handover is seen or heard.",
+    "reason": "This piece neither shows nor contradicts that handover."
+   },
+   "verify_notes": [],
+   "piece": null,
+   "merge_notes": [
+    "not found in any of the 4 pieces"
+   ]
+  },
+  {
+   "id": "C17",
+   "text": "The suspect vehicle had lost a front wheel.",
+   "kind": "object",
+   "line": 17,
+   "status": "on_recording",
+   "start_s": 319.0,
+   "end_s": 334.0,
+   "evidence": "Caller reports \"And I just need to report that there's a pickup truck with three wheels that rammed a bunch bunch of people\" \"somehow he continued to drive with with no wheel\" \"It's a white pickup truck.\"",
+   "reason": "Speech describes white pickup missing a wheel.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 319,
+    "end_s": 334,
+    "evidence": "Caller reports \"And I just need to report that there's a pickup truck with three wheels that rammed a bunch bunch of people\" \"somehow he continued to drive with with no wheel\" \"It's a white pickup truck.\"",
+    "reason": "Speech describes white pickup missing a wheel."
+   },
+   "verify_notes": [],
+   "piece": 1,
+   "merge_notes": []
+  },
+  {
+   "id": "C18",
+   "text": "The vehicle got stuck at a construction site.",
+   "kind": "object",
+   "line": 18,
+   "status": "on_recording",
+   "start_s": 338.0,
+   "end_s": 360.0,
+   "evidence": "White pickup off pavement on dirt by water in open construction area plus \"hey I'm going to move the I'm going to move these barricades barricades so you can make\".",
+   "reason": "Visuals plus barricade speech show vehicle stuck at construction site.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 338,
+    "end_s": 360,
+    "evidence": "White pickup off pavement on dirt by water in open construction area plus \"hey I'm going to move the I'm going to move these barricades barricades so you can make\".",
+    "reason": "Visuals plus barricade speech show vehicle stuck at construction site."
+   },
+   "verify_notes": [],
+   "piece": 1,
+   "merge_notes": []
+  },
+  {
+   "id": "C19",
+   "text": "Deputies detained the driver.",
+   "kind": "action",
+   "line": 19,
+   "status": "on_recording",
+   "start_s": 452.0,
+   "end_s": 465.0,
+   "evidence": "Deputy holds man with hands behind back against white sheriff SUV and searches him.",
+   "reason": "Physical control against patrol vehicle shows detention.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 452,
+    "end_s": 465,
+    "evidence": "Deputy holds man with hands behind back against white sheriff SUV and searches him.",
+    "reason": "Physical control against patrol vehicle shows detention."
+   },
+   "verify_notes": [],
+   "piece": 1,
+   "merge_notes": [
+    "piece 2 also answered on recording at 00:07:40-00:07:46: A bearded man in black shirt and jeans stands handcuffed with hands behind back leaning on a white Volusia Sheriff SUV while a deputy stands beside him."
+   ]
+  },
+  {
+   "id": "C20",
+   "text": "The driver appeared to be under the influence.",
+   "kind": "object",
+   "line": 20,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "No signs of influence or testing are shown in this piece.",
+   "reason": "This piece neither shows nor contradicts impairment.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1,
+    "end_s": -1,
+    "evidence": "No signs of influence or testing are shown in this piece.",
+    "reason": "This piece neither shows nor contradicts impairment."
+   },
+   "verify_notes": [],
+   "piece": null,
+   "merge_notes": [
+    "not found in any of the 4 pieces"
+   ]
+  },
+  {
+   "id": "C21",
+   "text": "The driver resisted and kicked a deputy while being escorted into the back of a patrol vehicle.",
+   "kind": "action",
+   "line": 21,
+   "status": "on_recording",
+   "start_s": 558.0,
+   "end_s": 569.0,
+   "evidence": "Officer states \"He just just kicked my partner over here. Okay? We're past that. He's going to jail on a bare minimum on a felony.\"",
+   "reason": "Speech explicitly alleges the detained driver kicked a deputy.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 558,
+    "end_s": 569,
+    "evidence": "Officer states \"He just just kicked my partner over here. Okay? We're past that. He's going to jail on a bare minimum on a felony.\"",
+    "reason": "Speech explicitly alleges the detained driver kicked a deputy."
+   },
+   "verify_notes": [],
+   "piece": 2,
+   "merge_notes": [
+    "piece 1 also answered check at 00:06:19-00:07:02: Man argues \"For what? For what?\" resists \"Go stand by the car\" orders and struggles as deputies hold tattooed arm, no kick or back-seat escort shown."
+   ]
+  },
+  {
+   "id": "C22",
+   "text": "When asked about the crash, the driver responded \"What crash?\"",
+   "kind": "speech",
+   "line": 22,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "No \"What crash?\" response is heard in TURNS.",
+   "reason": "This piece contains no such statement.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1,
+    "end_s": -1,
+    "evidence": "No \"What crash?\" response is heard in TURNS.",
+    "reason": "This piece contains no such statement."
+   },
+   "verify_notes": [],
+   "piece": null,
+   "merge_notes": [
+    "not found in any of the 4 pieces"
+   ]
+  },
+  {
+   "id": "C23",
+   "text": "The driver asked deputies to release him in exchange for $2,000.",
+   "kind": "speech",
+   "line": 23,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "No $2,000 offer is heard in TURNS.",
+   "reason": "This piece contains no such bribe request.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1,
+    "end_s": -1,
+    "evidence": "No $2,000 offer is heard in TURNS.",
+    "reason": "This piece contains no such bribe request."
+   },
+   "verify_notes": [],
+   "piece": null,
+   "merge_notes": [
+    "not found in any of the 4 pieces"
+   ]
+  },
+  {
+   "id": "C24",
+   "text": "The driver walked to the patrol car calmly and without resisting.",
+   "kind": "action",
+   "line": 24,
+   "status": "check",
+   "start_s": 379.0,
+   "end_s": 414.0,
+   "evidence": "Man repeatedly challenges \"Go stand by the car\" with \"For what? For what?\" \"Are you For what? For what?\" and must be physically guided.",
+   "reason": "Non-compliant arguing contradicts calm compliance.",
+   "model": {
+    "status": "check",
+    "start_s": 379,
+    "end_s": 414,
+    "evidence": "Man repeatedly challenges \"Go stand by the car\" with \"For what? For what?\" \"Are you For what? For what?\" and must be physically guided.",
+    "reason": "Non-compliant arguing contradicts calm compliance."
+   },
+   "verify_notes": [],
+   "piece": 1,
+   "merge_notes": [
+    "piece 2 also answered check at 00:08:43-00:08:53: Officers shout \"sit down sit down\", \"sit in the car\" while forcing the handcuffed man into the patrol car and he argues, plus the kick allegation."
+   ]
+  },
+  {
+   "id": "C25",
+   "text": "The driver said he was late for a job interview.",
+   "kind": "speech",
+   "line": 25,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "No job-interview statement is heard.",
+   "reason": "This piece contains no such speech.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1,
+    "end_s": -1,
+    "evidence": "No job-interview statement is heard.",
+    "reason": "This piece contains no such speech."
+   },
+   "verify_notes": [],
+   "piece": null,
+   "merge_notes": [
+    "not found in any of the 4 pieces"
+   ]
+  },
+  {
+   "id": "C26",
+   "text": "When found, the dog's body was covered in sores and he was weak.",
+   "kind": "object",
+   "line": 26,
+   "status": "on_recording",
+   "start_s": 706.0,
+   "end_s": 716.0,
+   "evidence": "Still photos show an extremely emaciated light-colored dog with ribs, spine and hip bones protruding, patchy coat and visible sores on legs, standing weakly.",
+   "reason": "Photos clearly support sores and weak emaciated condition.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 706,
+    "end_s": 716,
+    "evidence": "Still photos show an extremely emaciated light-colored dog with ribs, spine and hip bones protruding, patchy coat and visible sores on legs, standing weakly.",
+    "reason": "Photos clearly support sores and weak emaciated condition."
+   },
+   "verify_notes": [],
+   "piece": 2,
+   "merge_notes": []
+  },
+  {
+   "id": "C27",
+   "text": "The dog has gained a significant amount of weight since he was admitted to the shelter.",
+   "kind": "object",
+   "line": 27,
+   "status": "on_recording",
+   "start_s": 690.0,
+   "end_s": 700.0,
+   "evidence": "Detective states \"That dog has been in custody of animal control for a month and has gained almost 15 pounds just simply from eating.\"",
+   "reason": "Speech explicitly states significant weight gain at shelter.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 690,
+    "end_s": 700,
+    "evidence": "Detective states \"That dog has been in custody of animal control for a month and has gained almost 15 pounds just simply from eating.\"",
+    "reason": "Speech explicitly states significant weight gain at shelter."
+   },
+   "verify_notes": [],
+   "piece": 2,
+   "merge_notes": []
+  },
+  {
+   "id": "C28",
+   "text": "The owner was arrested.",
+   "kind": "action",
+   "line": 28,
+   "status": "on_recording",
+   "start_s": 588.0,
+   "end_s": 630.22,
+   "evidence": "Deputies wrestle a man in orange shirt to the ground, order \"Put your hand behind your back\" and \"Stop resisting\" while handcuffing; man asks \"Why am I being arrested?\"",
+   "reason": "Video and speech clearly show the owner being arrested.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 588,
+    "end_s": 613,
+    "evidence": "Deputies wrestle a man in orange shirt to the ground, order \"Put your hand behind your back\" and \"Stop resisting\" while handcuffing; man asks \"Why am I being arrested?\"",
+    "reason": "Video and speech clearly show the owner being arrested."
+   },
+   "verify_notes": [
+    {
+     "rule": "quote",
+     "changed_status": false,
+     "detail": "quote is at t=628.7 s, outside the claim's window 588.0..613.0 s: \"Stop resisting\"; window widened to 588.0..630.2 s"
+    }
+   ],
+   "piece": 2,
+   "merge_notes": []
+  },
+  {
+   "id": "C29",
+   "text": "The owner denied the neglect.",
+   "kind": "speech",
+   "line": 29,
+   "status": "on_recording",
+   "start_s": 689.26,
+   "end_s": 723.0,
+   "evidence": "Owner states \"I swear. I took care of my dog. dog\" and earlier \"We did.\"",
+   "reason": "Speech is a direct denial of neglect.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 718,
+    "end_s": 723,
+    "evidence": "Owner states \"I swear. I took care of my dog. dog\" and earlier \"We did.\"",
+    "reason": "Speech is a direct denial of neglect."
+   },
+   "verify_notes": [
+    {
+     "rule": "quote",
+     "changed_status": false,
+     "detail": "quote is at t=689.3 s, outside the claim's window 718.0..723.0 s: \"We did.\"; window widened to 689.3..723.0 s"
+    }
+   ],
+   "piece": 2,
+   "merge_notes": []
+  },
+  {
+   "id": "C30",
+   "text": "The owner asked for his mom.",
+   "kind": "speech",
+   "line": 30,
+   "status": "on_recording",
+   "start_s": 635.0,
+   "end_s": 640.0,
+   "evidence": "Owner asks \"Can you call my mom?\"",
+   "reason": "Speech exactly matches the claim.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 635,
+    "end_s": 640,
+    "evidence": "Owner asks \"Can you call my mom?\"",
+    "reason": "Speech exactly matches the claim."
+   },
+   "verify_notes": [],
+   "piece": 2,
+   "merge_notes": []
+  },
+  {
+   "id": "C31",
+   "text": "A pipe was found in the owner's pocket.",
+   "kind": "object",
+   "line": 31,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "No pocket search showing a pipe is seen.",
+   "reason": "This piece neither shows nor contradicts that object.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1,
+    "end_s": -1,
+    "evidence": "No pocket search showing a pipe is seen.",
+    "reason": "This piece neither shows nor contradicts that object."
+   },
+   "verify_notes": [],
+   "piece": null,
+   "merge_notes": [
+    "not found in any of the 4 pieces"
+   ]
+  },
+  {
+   "id": "C32",
+   "text": "The owner thanked the detectives for taking care of the dog.",
+   "kind": "speech",
+   "line": 32,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "No thanks for dog care is heard.",
+   "reason": "This piece contains no such speech.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1,
+    "end_s": -1,
+    "evidence": "No thanks for dog care is heard.",
+    "reason": "This piece contains no such speech."
+   },
+   "verify_notes": [],
+   "piece": null,
+   "merge_notes": [
+    "not found in any of the 4 pieces"
+   ]
+  },
+  {
+   "id": "C33",
+   "text": "The owner was arrested inside a moving car during a traffic stop.",
+   "kind": "action",
+   "line": 33,
+   "status": "check",
+   "start_s": 581.0,
+   "end_s": 599.0,
+   "evidence": "Arrest occurs on foot outside near trailers/cars with deputies grabbing the standing man shouting \"Stop\"; he is not inside a moving car.",
+   "reason": "Location and manner contradict arrest inside a moving car.",
+   "model": {
+    "status": "check",
+    "start_s": 581,
+    "end_s": 599,
+    "evidence": "Arrest occurs on foot outside near trailers/cars with deputies grabbing the standing man shouting \"Stop\"; he is not inside a moving car.",
+    "reason": "Location and manner contradict arrest inside a moving car."
+   },
+   "verify_notes": [],
+   "piece": 2,
+   "merge_notes": []
+  },
+  {
+   "id": "C34",
+   "text": "A motorcycle fled from deputies during a traffic operation.",
+   "kind": "action",
+   "line": 34,
+   "status": "on_recording",
+   "start_s": 746.0,
+   "end_s": 841.5,
+   "evidence": "Aerial video shows multiple motorcycles on a highway with a white patrol SUV following; speech states \"He just flew by a trooper here\"",
+   "reason": "Both video and speech show flight from deputies.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 746,
+    "end_s": 752,
+    "evidence": "Aerial video shows multiple motorcycles on a highway with a white patrol SUV following; speech states \"He just flew by a trooper here\"",
+    "reason": "Both video and speech show flight from deputies."
+   },
+   "verify_notes": [
+    {
+     "rule": "quote",
+     "changed_status": false,
+     "detail": "quote is at t=827.0 s, outside the claim's window 746.0..752.0 s: \"He just flew by a trooper here\"; window widened to 746.0..841.5 s"
+    }
+   ],
+   "piece": 2,
+   "merge_notes": [
+    "piece 3 also answered on recording at 00:15:35-00:15:36: Audio at start says \"he's so fast he's pulling away from us right now we're trying to catch to catch up\" and \"we're going to have to break off he's he's so far …"
+   ]
+  },
+  {
+   "id": "C35",
+   "text": "The motorcycle sped at high speed, weaving in and out of traffic.",
+   "kind": "action",
+   "line": 35,
+   "status": "on_recording",
+   "start_s": 806.0,
+   "end_s": 817.0,
+   "evidence": "Speech states \"He's cutting in and out of traffic.\" and \"He just passed a unit high rate of speed\"",
+   "reason": "Speech explicitly describes high speed weaving.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 806,
+    "end_s": 817,
+    "evidence": "Speech states \"He's cutting in and out of traffic.\" and \"He just passed a unit high rate of speed\"",
+    "reason": "Speech explicitly describes high speed weaving."
+   },
+   "verify_notes": [],
+   "piece": 2,
+   "merge_notes": [
+    "piece 3 also answered on recording at 00:17:12-00:19:05: Deputy says \"well I can tell you that truck tops out at 121 and when you tucked your head down just now you were stretching me\" and \"especially aggressive drivi…"
+   ]
+  },
+  {
+   "id": "C36",
+   "text": "The aviation unit was overhead when the rider stopped to refuel.",
+   "kind": "object",
+   "line": 36,
+   "status": "on_recording",
+   "start_s": 841.0,
+   "end_s": 851.0,
+   "evidence": "Overhead aviation view looks straight down on the rider at a 7-Eleven gas pump while ground units report the stop.",
+   "reason": "Aviation footage is overhead during refueling.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 841,
+    "end_s": 851,
+    "evidence": "Overhead aviation view looks straight down on the rider at a 7-Eleven gas pump while ground units report the stop.",
+    "reason": "Aviation footage is overhead during refueling."
+   },
+   "verify_notes": [],
+   "piece": 2,
+   "merge_notes": []
+  },
+  {
+   "id": "C37",
+   "text": "The rider stopped to refuel at a gas station.",
+   "kind": "action",
+   "line": 37,
+   "status": "on_recording",
+   "start_s": 845.0,
+   "end_s": 855.0,
+   "evidence": "Aerial shows rider stopped at pump and speech states \"he's got his credit card out paying for gas\"",
+   "reason": "Both video and speech confirm refuel stop.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 845,
+    "end_s": 855,
+    "evidence": "Aerial shows rider stopped at pump and speech states \"he's got his credit card out paying for gas\"",
+    "reason": "Both video and speech confirm refuel stop."
+   },
+   "verify_notes": [],
+   "piece": 2,
+   "merge_notes": []
+  },
+  {
+   "id": "C38",
+   "text": "The rider stopped voluntarily for deputies on the highway shoulder.",
+   "kind": "action",
+   "line": 38,
+   "status": "check",
+   "start_s": 857.0,
+   "end_s": 859.0,
+   "evidence": "After gas, speech states \"okay back on the go 44 eastbound\" and aerial shows continued flight; no surrender occurs.",
+   "reason": "Recording shows flight continuing, contradicting voluntary stop for deputies.",
+   "model": {
+    "status": "check",
+    "start_s": 857,
+    "end_s": 859,
+    "evidence": "After gas, speech states \"okay back on the go 44 eastbound\" and aerial shows continued flight; no surrender occurs.",
+    "reason": "Recording shows flight continuing, contradicting voluntary stop for deputies."
+   },
+   "verify_notes": [],
+   "piece": 2,
+   "merge_notes": [
+    "piece 3 also answered check at 00:16:03-00:16:12: Video shows motorcycle on highway shoulder and deputy says \"Put it on the kickstand.\"; earlier audio said rider was pulling away and units would break off, so v…"
+   ]
+  },
+  {
+   "id": "C39",
+   "text": "A passenger was riding on the back of the motorcycle.",
+   "kind": "action",
+   "line": 39,
+   "status": "check",
+   "start_s": 963.0,
+   "end_s": 970.0,
+   "evidence": "Video follows single helmeted rider on shoulder; no second person on motorcycle is visible.",
+   "reason": "Recording shows solo rider, contradicting a passenger.",
+   "model": {
+    "status": "check",
+    "start_s": 963.0,
+    "end_s": 970.0,
+    "evidence": "Video follows single helmeted rider on shoulder; no second person on motorcycle is visible.",
+    "reason": "Recording shows solo rider, contradicting a passenger."
+   },
+   "verify_notes": [],
+   "piece": 3,
+   "merge_notes": []
+  },
+  {
+   "id": "C40",
+   "text": "The driver was stopped for driving 120 mph on I-95.",
+   "kind": "action",
+   "line": 40,
+   "status": "check",
+   "start_s": 1171.9,
+   "end_s": 1191.3,
+   "evidence": "Deputy says \"you're over 100 100 miles an hour and you were 50 miles an hour over the speed limit speed limit 70\"; never says \"120 mph\" or \"I-95\".",
+   "reason": "Speed over 100 is shown but exact 120 and I-95 are not stated.",
+   "model": {
+    "status": "check",
+    "start_s": 1171.9,
+    "end_s": 1191.3,
+    "evidence": "Deputy says \"you're over 100 100 miles an hour and you were 50 miles an hour over the speed limit speed limit 70\"; never says \"120 mph\" or \"I-95\".",
+    "reason": "Speed over 100 is shown but exact 120 and I-95 are not stated."
+   },
+   "verify_notes": [
+    {
+     "rule": "quote",
+     "detail": "quote not in the transcript: \"120 mph\" (best match near the timecode 0.67)",
+     "changed_status": false
+    },
+    {
+     "rule": "quote",
+     "detail": "quote not in the transcript: \"I-95\" (best match near the timecode 0.67)",
+     "changed_status": false
+    }
+   ],
+   "piece": 3,
+   "merge_notes": []
+  },
+  {
+   "id": "C41",
+   "text": "The driver was going more than 50 mph over the speed limit.",
+   "kind": "action",
+   "line": 41,
+   "status": "on_recording",
+   "start_s": 1031.58,
+   "end_s": 1191.3,
+   "evidence": "Deputy says \"so you did both of them you're over 100 100 miles an hour and you were 50 miles an hour over the speed limit speed limit 70\" and earlier \"that truck tops out at 121 and when you tucked your head down just now you were stretching me\"",
+   "reason": "Deputy states over 100 and 50-over 70 limit with 121 reference.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 1171.9,
+    "end_s": 1191.3,
+    "evidence": "Deputy says \"so you did both of them you're over 100 100 miles an hour and you were 50 miles an hour over the speed limit speed limit 70\" and earlier \"that truck tops out at 121 and when you tucked your head down just now you were stretching me\"",
+    "reason": "Deputy states over 100 and 50-over 70 limit with 121 reference."
+   },
+   "verify_notes": [
+    {
+     "rule": "quote",
+     "changed_status": false,
+     "detail": "quote is at t=1031.6 s, outside the claim's window 1171.9..1191.3 s: \"that truck tops out at 121 and when you tucked your head down just now you were \"; window widened to 1031.6..1191.3 s"
+    }
+   ],
+   "piece": 3,
+   "merge_notes": []
+  },
+  {
+   "id": "C42",
+   "text": "The driver was arrested.",
+   "kind": "action",
+   "line": 42,
+   "status": "check",
+   "start_s": 997.4,
+   "end_s": 1004.3,
+   "evidence": "Deputy says \"Turn around, put your hands behind your back.\" and \"Right now you're being detained\"; no handcuffed arrest or transport is shown in this segment.",
+   "reason": "Only detention is shown, not completed arrest.",
+   "model": {
+    "status": "check",
+    "start_s": 997.4,
+    "end_s": 1004.3,
+    "evidence": "Deputy says \"Turn around, put your hands behind your back.\" and \"Right now you're being detained\"; no handcuffed arrest or transport is shown in this segment.",
+    "reason": "Only detention is shown, not completed arrest."
+   },
+   "verify_notes": [],
+   "piece": 3,
+   "merge_notes": []
+  },
+  {
+   "id": "C43",
+   "text": "The deputy let the driver go with a warning.",
+   "kind": "action",
+   "line": 43,
+   "status": "check",
+   "start_s": 1004.5,
+   "end_s": 1191.3,
+   "evidence": "Rider is told \"Right now you're being detained\" and lectured on super speeder law with \"you're over 100 100 miles an hour\"; no warning release is shown.",
+   "reason": "Detention and violation lecture contradict a warning release.",
+   "model": {
+    "status": "check",
+    "start_s": 1004.5,
+    "end_s": 1191.3,
+    "evidence": "Rider is told \"Right now you're being detained\" and lectured on super speeder law with \"you're over 100 100 miles an hour\"; no warning release is shown.",
+    "reason": "Detention and violation lecture contradict a warning release."
+   },
+   "verify_notes": [],
+   "piece": 3,
+   "merge_notes": []
+  },
+  {
+   "id": "C44",
+   "text": "The driver's dog jumped out of the car and ran across the highway.",
+   "kind": "action",
+   "line": 44,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "No dog running across highway is seen.",
+   "reason": "This piece neither shows nor contradicts that action.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1,
+    "end_s": -1,
+    "evidence": "No dog running across highway is seen.",
+    "reason": "This piece neither shows nor contradicts that action."
+   },
+   "verify_notes": [],
+   "piece": null,
+   "merge_notes": [
+    "not found in any of the 4 pieces"
+   ]
+  },
+  {
+   "id": "C45",
+   "text": "Deputies spotted a gold Chrysler minivan parked over the fuel port at a Racetrac gas station.",
+   "kind": "action",
+   "line": 45,
+   "status": "check",
+   "start_s": 1206.5,
+   "end_s": 1214.0,
+   "evidence": "Deputy says \"yeah bro I see you keep going in it's the gold van it's facing right at you\"; no mention of Racetrac or fuel port in audio or clear signage in video.",
+   "reason": "Gold van is mentioned but Racetrac and fuel-port position are not shown.",
+   "model": {
+    "status": "check",
+    "start_s": 1206.5,
+    "end_s": 1214.0,
+    "evidence": "Deputy says \"yeah bro I see you keep going in it's the gold van it's facing right at you\"; no mention of Racetrac or fuel port in audio or clear signage in video.",
+    "reason": "Gold van is mentioned but Racetrac and fuel-port position are not shown."
+   },
+   "verify_notes": [],
+   "piece": 3,
+   "merge_notes": []
+  },
+  {
+   "id": "C46",
+   "text": "The van then parked at a nearby Waffle House, where the driver ran from responding deputies.",
+   "kind": "action",
+   "line": 46,
+   "status": "check",
+   "start_s": 1221.7,
+   "end_s": 1253.1,
+   "evidence": "Night video approaches lit \"WAFFLE HOUSE\" and audio says \"running through the McDonald's right now guys going towards the boulevard\" with chase commands; van parking at Waffle House is not clearly shown.",
+   "reason": "Running near restaurants is shown but van parking at Waffle House is only partial.",
+   "model": {
+    "status": "check",
+    "start_s": 1221.7,
+    "end_s": 1253.1,
+    "evidence": "Night video approaches lit \"WAFFLE HOUSE\" and audio says \"running through the McDonald's right now guys going towards the boulevard\" with chase commands; van parking at Waffle House is not clearly shown.",
+    "reason": "Running near restaurants is shown but van parking at Waffle House is only partial."
+   },
+   "verify_notes": [
+    {
+     "rule": "quote",
+     "detail": "quote not in the transcript: \"WAFFLE HOUSE\" (best match near the timecode 0.00)",
+     "changed_status": false
+    }
+   ],
+   "piece": 3,
+   "merge_notes": []
+  },
+  {
+   "id": "C47",
+   "text": "The driver was taken into custody after a short foot chase.",
+   "kind": "action",
+   "line": 47,
+   "status": "on_recording",
+   "start_s": 1273.3,
+   "end_s": 1315.9,
+   "evidence": "Audio shouts \"Show me your hands show me your hands on the ground now get on the ground\" and \"Get on the ground\" then \"X-ray 42 has one secure\" with video of takedown.",
+   "reason": "Foot chase takedown and secure call are shown.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 1273.3,
+    "end_s": 1315.9,
+    "evidence": "Audio shouts \"Show me your hands show me your hands on the ground now get on the ground\" and \"Get on the ground\" then \"X-ray 42 has one secure\" with video of takedown.",
+    "reason": "Foot chase takedown and secure call are shown."
+   },
+   "verify_notes": [],
+   "piece": 3,
+   "merge_notes": []
+  },
+  {
+   "id": "C48",
+   "text": "The minivan was carrying a large auxiliary fuel tank.",
+   "kind": "object",
+   "line": 48,
+   "status": "on_recording",
+   "start_s": 1318.2,
+   "end_s": 1329.9,
+   "evidence": "Deputy says \"Okay, there's a bunch of gas tanks in the back That's why it smells like gas.\" and \"You can see the drums.\"",
+   "reason": "Gas tanks/drums in back are shown, supporting auxiliary fuel load.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 1318.2,
+    "end_s": 1329.9,
+    "evidence": "Deputy says \"Okay, there's a bunch of gas tanks in the back That's why it smells like gas.\" and \"You can see the drums.\"",
+    "reason": "Gas tanks/drums in back are shown, supporting auxiliary fuel load."
+   },
+   "verify_notes": [],
+   "piece": 3,
+   "merge_notes": []
+  },
+  {
+   "id": "C49",
+   "text": "A hole was cut through the floorboard of the minivan.",
+   "kind": "object",
+   "line": 49,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "No floorboard hole is seen.",
+   "reason": "This piece neither shows nor contradicts that object.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1,
+    "end_s": -1,
+    "evidence": "No floorboard hole is seen.",
+    "reason": "This piece neither shows nor contradicts that object."
+   },
+   "verify_notes": [],
+   "piece": null,
+   "merge_notes": [
+    "not found in any of the 4 pieces"
+   ]
+  },
+  {
+   "id": "C50",
+   "text": "The chassis was sitting on wooden 2x4 blocks strapped to the axle using metal retention straps.",
+   "kind": "object",
+   "line": 50,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "No 2x4-blocked chassis is seen.",
+   "reason": "This piece neither shows nor contradicts that object.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1,
+    "end_s": -1,
+    "evidence": "No 2x4-blocked chassis is seen.",
+    "reason": "This piece neither shows nor contradicts that object."
+   },
+   "verify_notes": [],
+   "piece": null,
+   "merge_notes": [
+    "not found in any of the 4 pieces"
+   ]
+  },
+  {
+   "id": "C51",
+   "text": "Gas cans and a hose were found in the back of the second minivan.",
+   "kind": "object",
+   "line": 51,
+   "status": "check",
+   "start_s": 1318.2,
+   "end_s": 1328.3,
+   "evidence": "Deputy says \"there's a bunch of gas tanks in the back\" and \"You can see the drums.\"; no hose is mentioned or clearly shown.",
+   "reason": "Tanks are shown but hose is not shown, so only part is supported.",
+   "model": {
+    "status": "check",
+    "start_s": 1318.2,
+    "end_s": 1328.3,
+    "evidence": "Deputy says \"there's a bunch of gas tanks in the back\" and \"You can see the drums.\"; no hose is mentioned or clearly shown.",
+    "reason": "Tanks are shown but hose is not shown, so only part is supported."
+   },
+   "verify_notes": [],
+   "piece": 3,
+   "merge_notes": []
+  },
+  {
+   "id": "C52",
+   "text": "The minivan driver gave up at the gas pump without running.",
+   "kind": "action",
+   "line": 52,
+   "status": "check",
+   "start_s": 1234.1,
+   "end_s": 1253.1,
+   "evidence": "Audio says \"running through the McDonald's right now guys going towards the boulevard\" with repeated \"stop\" commands, contradicting giving up at pump.",
+   "reason": "Recording shows running, not giving up without running.",
+   "model": {
+    "status": "check",
+    "start_s": 1234.1,
+    "end_s": 1253.1,
+    "evidence": "Audio says \"running through the McDonald's right now guys going towards the boulevard\" with repeated \"stop\" commands, contradicting giving up at pump.",
+    "reason": "Recording shows running, not giving up without running."
+   },
+   "verify_notes": [],
+   "piece": 3,
+   "merge_notes": []
+  },
+  {
+   "id": "C53",
+   "text": "Deputies found a stolen motorcycle inside the minivan.",
+   "kind": "action",
+   "line": 53,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "No stolen motorcycle in minivan is seen.",
+   "reason": "This piece neither shows nor contradicts that find.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1,
+    "end_s": -1,
+    "evidence": "No stolen motorcycle in minivan is seen.",
+    "reason": "This piece neither shows nor contradicts that find."
+   },
+   "verify_notes": [],
+   "piece": null,
+   "merge_notes": [
+    "not found in any of the 4 pieces"
+   ]
+  },
+  {
+   "id": "C54",
+   "text": "The Nissan sedan came to a stop after striking a parked vehicle.",
+   "kind": "action",
+   "line": 54,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "No Nissan striking parked vehicle is seen.",
+   "reason": "This piece neither shows nor contradicts that stop.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1,
+    "end_s": -1,
+    "evidence": "No Nissan striking parked vehicle is seen.",
+    "reason": "This piece neither shows nor contradicts that stop."
+   },
+   "verify_notes": [],
+   "piece": null,
+   "merge_notes": [
+    "not found in any of the 4 pieces"
+   ]
+  },
+  {
+   "id": "C55",
+   "text": "The driver and a passenger took off running while a female passenger stayed behind.",
+   "kind": "action",
+   "line": 55,
+   "status": "on_recording",
+   "start_s": 1391.3,
+   "end_s": 1424.0,
+   "evidence": "Deputy says \"two black males ... running westbound behind the house\" and later \"Central I got a female gun prone out\" and \"Show me your hands. Now come out I can see you.\"",
+   "reason": "Two males running and female held at gunpoint are described.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 1391.3,
+    "end_s": 1424.0,
+    "evidence": "Deputy says \"two black males ... running westbound behind the house\" and later \"Central I got a female gun prone out\" and \"Show me your hands. Now come out I can see you.\"",
+    "reason": "Two males running and female held at gunpoint are described."
+   },
+   "verify_notes": [],
+   "piece": 3,
+   "merge_notes": []
+  },
+  {
+   "id": "C56",
+   "text": "The Air One crew spotted two suspects hiding in the water.",
+   "kind": "action",
+   "line": 56,
+   "status": "check",
+   "start_s": 1496.0,
+   "end_s": 1500.0,
+   "evidence": "Speech says \"Alright I got him in the water on the shoreline\" and \"Still Still no movement.\"",
+   "reason": "Shows one suspect in water with aerial IR, not two suspects and does not confirm Air One crew.",
+   "model": {
+    "status": "check",
+    "start_s": 1496,
+    "end_s": 1500,
+    "evidence": "Speech says \"Alright I got him in the water on the shoreline\" and \"Still Still no movement.\"",
+    "reason": "Shows one suspect in water with aerial IR, not two suspects and does not confirm Air One crew."
+   },
+   "verify_notes": [],
+   "piece": 4,
+   "merge_notes": []
+  },
+  {
+   "id": "C57",
+   "text": "FWC responded with an airboat to bring both suspects back to dry land.",
+   "kind": "action",
+   "line": 57,
+   "status": "check",
+   "start_s": 1556.0,
+   "end_s": 1585.0,
+   "evidence": "Night video shows boat in tall grass/water with deputies pulling a person aboard onto the boat.",
+   "reason": "Shows boat recovery but does not show FWC agency and shows one recovery clearly, not both.",
+   "model": {
+    "status": "check",
+    "start_s": 1556,
+    "end_s": 1585,
+    "evidence": "Night video shows boat in tall grass/water with deputies pulling a person aboard onto the boat.",
+    "reason": "Shows boat recovery but does not show FWC agency and shows one recovery clearly, not both."
+   },
+   "verify_notes": [],
+   "piece": 4,
+   "merge_notes": []
+  },
+  {
+   "id": "C58",
+   "text": "A firearm with an extended magazine was recovered from the Nissan.",
+   "kind": "object",
+   "line": 58,
+   "status": "check",
+   "start_s": 1481.0,
+   "end_s": 1490.0,
+   "evidence": "Speech says \"Yep. Right there in the center console. You'll see it plain as day.\" and \"Loaded.\"",
+   "reason": "Shows a gun in center console but does not show extended magazine.",
+   "model": {
+    "status": "check",
+    "start_s": 1481,
+    "end_s": 1490,
+    "evidence": "Speech says \"Yep. Right there in the center console. You'll see it plain as day.\" and \"Loaded.\"",
+    "reason": "Shows a gun in center console but does not show extended magazine."
+   },
+   "verify_notes": [],
+   "piece": 4,
+   "merge_notes": []
+  },
+  {
+   "id": "C59",
+   "text": "A .22 Uzi pistol was found inside a backpack that was discarded at the scene.",
+   "kind": "object",
+   "line": 59,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "No .22 Uzi in backpack is seen.",
+   "reason": "This piece neither shows nor contradicts that find.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1,
+    "end_s": -1,
+    "evidence": "No .22 Uzi in backpack is seen.",
+    "reason": "This piece neither shows nor contradicts that find."
+   },
+   "verify_notes": [],
+   "piece": null,
+   "merge_notes": [
+    "not found in any of the 4 pieces"
+   ]
+  },
+  {
+   "id": "C60",
+   "text": "Both suspects swam to shore on their own and walked up to the deputies.",
+   "kind": "action",
+   "line": 60,
+   "status": "check",
+   "start_s": 1584.0,
+   "end_s": 1591.0,
+   "evidence": "Speech says \"You gotta help us get you in here bud\" and \"Get him in more. I don't want him in the water if he can't\"",
+   "reason": "Suspects needed help being pulled from water onto boat, not swimming ashore and walking up alone.",
+   "model": {
+    "status": "check",
+    "start_s": 1584,
+    "end_s": 1591,
+    "evidence": "Speech says \"You gotta help us get you in here bud\" and \"Get him in more. I don't want him in the water if he can't\"",
+    "reason": "Suspects needed help being pulled from water onto boat, not swimming ashore and walking up alone."
+   },
+   "verify_notes": [],
+   "piece": 4,
+   "merge_notes": []
+  },
+  {
+   "id": "C61",
+   "text": "The suspects threw a bag of cash into the water.",
+   "kind": "action",
+   "line": 61,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "No bag of cash thrown is seen.",
+   "reason": "This piece neither shows nor contradicts that action.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1,
+    "end_s": -1,
+    "evidence": "No bag of cash thrown is seen.",
+    "reason": "This piece neither shows nor contradicts that action."
+   },
+   "verify_notes": [],
+   "piece": null,
+   "merge_notes": [
+    "not found in any of the 4 pieces"
+   ]
+  },
+  {
+   "id": "C62",
+   "text": "A rip current pulled the swimmer about 100 yards out in the ocean.",
+   "kind": "action",
+   "line": 62,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "No ocean rip current 100-yard pull is shown.",
+   "reason": "This piece neither shows nor contradicts that event.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1,
+    "end_s": -1,
+    "evidence": "No ocean rip current 100-yard pull is shown.",
+    "reason": "This piece neither shows nor contradicts that event."
+   },
+   "verify_notes": [],
+   "piece": null,
+   "merge_notes": [
+    "not found in any of the 4 pieces"
+   ]
+  },
+  {
+   "id": "C63",
+   "text": "The swimmer was unresponsive with no pulse when lifeguards brought him in.",
+   "kind": "object",
+   "line": 63,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "No unresponsive pulseless swimmer is shown.",
+   "reason": "This piece neither shows nor contradicts that condition.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1,
+    "end_s": -1,
+    "evidence": "No unresponsive pulseless swimmer is shown.",
+    "reason": "This piece neither shows nor contradicts that condition."
+   },
+   "verify_notes": [],
+   "piece": null,
+   "merge_notes": [
+    "not found in any of the 4 pieces"
+   ]
+  },
+  {
+   "id": "C64",
+   "text": "The swimmer regained a pulse.",
+   "kind": "object",
+   "line": 64,
+   "status": "on_recording",
+   "start_s": 1726.0,
+   "end_s": 1743.0,
+   "evidence": "Speech says \"You got pulses back right when we got to the hospital.\"",
+   "reason": "Directly states pulse was regained at hospital.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 1726,
+    "end_s": 1743,
+    "evidence": "Speech says \"You got pulses back right when we got to the hospital.\"",
+    "reason": "Directly states pulse was regained at hospital."
+   },
+   "verify_notes": [],
+   "piece": 4,
+   "merge_notes": []
+  },
+  {
+   "id": "C65",
+   "text": "The swimmer made a full recovery.",
+   "kind": "object",
+   "line": 65,
+   "status": "on_recording",
+   "start_s": 1744.0,
+   "end_s": 1773.0,
+   "evidence": "Speech says \"after we found out that he made a full recovery\"",
+   "reason": "Directly states full recovery, names not shown but event is stated.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 1744,
+    "end_s": 1773,
+    "evidence": "Speech says \"after we found out that he made a full recovery\"",
+    "reason": "Directly states full recovery, names not shown but event is stated."
+   },
+   "verify_notes": [],
+   "piece": 4,
+   "merge_notes": []
+  },
+  {
+   "id": "C66",
+   "text": "The swimmer walked out of the water on his own.",
+   "kind": "action",
+   "line": 66,
+   "status": "check",
+   "start_s": 1635.0,
+   "end_s": 1645.0,
+   "evidence": "Day beach video shows multiple people carrying limp person on yellow rescue board out of water to sand.",
+   "reason": "Person is carried, not walking out on his own.",
+   "model": {
+    "status": "check",
+    "start_s": 1635,
+    "end_s": 1645,
+    "evidence": "Day beach video shows multiple people carrying limp person on yellow rescue board out of water to sand.",
+    "reason": "Person is carried, not walking out on his own."
+   },
+   "verify_notes": [],
+   "piece": 4,
+   "merge_notes": []
+  },
+  {
+   "id": "C67",
+   "text": "A dog on the beach barked and alerted the lifeguards.",
+   "kind": "action",
+   "line": 67,
+   "status": "not_found",
+   "start_s": null,
+   "end_s": null,
+   "evidence": "No barking dog alert is heard.",
+   "reason": "This piece neither shows nor contradicts that alert.",
+   "model": {
+    "status": "not_found",
+    "start_s": -1,
+    "end_s": -1,
+    "evidence": "No barking dog alert is heard.",
+    "reason": "This piece neither shows nor contradicts that alert."
+   },
+   "verify_notes": [],
+   "piece": null,
+   "merge_notes": [
+    "not found in any of the 4 pieces"
+   ]
+  },
+  {
+   "id": "C68",
+   "text": "A boat was spinning in circles on the lake.",
+   "kind": "action",
+   "line": 68,
+   "status": "on_recording",
+   "start_s": 1776.0,
+   "end_s": 1802.0,
+   "evidence": "Speech says \"I noticed a boat that was spinning around in the middle\" and aerial shows boat circling.",
+   "reason": "Both speech and aerial video show boat spinning in circles.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 1776,
+    "end_s": 1802,
+    "evidence": "Speech says \"I noticed a boat that was spinning around in the middle\" and aerial shows boat circling.",
+    "reason": "Both speech and aerial video show boat spinning in circles."
+   },
+   "verify_notes": [],
+   "piece": 4,
+   "merge_notes": []
+  },
+  {
+   "id": "C69",
+   "text": "Responding units spotted a single unresponsive occupant on the boat.",
+   "kind": "action",
+   "line": 69,
+   "status": "on_recording",
+   "start_s": 1775.0,
+   "end_s": 1778.0,
+   "evidence": "Aerial close-up shows single motionless person lying in small boat with no one else visible.",
+   "reason": "Video clearly shows one unresponsive occupant, name not shown.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 1775,
+    "end_s": 1778,
+    "evidence": "Aerial close-up shows single motionless person lying in small boat with no one else visible.",
+    "reason": "Video clearly shows one unresponsive occupant, name not shown."
+   },
+   "verify_notes": [],
+   "piece": 4,
+   "merge_notes": []
+  },
+  {
+   "id": "C70",
+   "text": "The Marine Unit crew moved in close enough for a rescuer to jump on board.",
+   "kind": "action",
+   "line": 70,
+   "status": "on_recording",
+   "start_s": 1802.0,
+   "end_s": 1826.0,
+   "evidence": "Speech says \"part of our strategy when we got on scene was to get to the outside of the boat to try and you know stop the boat\" and video shows sheriff boat alongside spinning boat.",
+   "reason": "Shows Marine Unit closing in on spinning boat to board/stop it.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 1802,
+    "end_s": 1826,
+    "evidence": "Speech says \"part of our strategy when we got on scene was to get to the outside of the boat to try and you know stop the boat\" and video shows sheriff boat alongside spinning boat.",
+    "reason": "Shows Marine Unit closing in on spinning boat to board/stop it."
+   },
+   "verify_notes": [],
+   "piece": 4,
+   "merge_notes": []
+  },
+  {
+   "id": "C71",
+   "text": "The rescuer stopped the boat.",
+   "kind": "action",
+   "line": 71,
+   "status": "on_recording",
+   "start_s": 1826.0,
+   "end_s": 1839.0,
+   "evidence": "Speech says \"we tried things that weren't working so we reassessed and found a different way to get it stopped.\"",
+   "reason": "States boat was stopped by different method and video later shows it stopped at shore.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 1826,
+    "end_s": 1839,
+    "evidence": "Speech says \"we tried things that weren't working so we reassessed and found a different way to get it stopped.\"",
+    "reason": "States boat was stopped by different method and video later shows it stopped at shore."
+   },
+   "verify_notes": [],
+   "piece": 4,
+   "merge_notes": []
+  },
+  {
+   "id": "C72",
+   "text": "The patient was taken to shore for further treatment.",
+   "kind": "action",
+   "line": 72,
+   "status": "on_recording",
+   "start_s": 1875.0,
+   "end_s": 1893.0,
+   "evidence": "Speech says \"it was a matter of us getting him from that boat to shore and it was only a matter of a minute or minute or two and and then he was in the care of of EMS so and then from there they took him to a hospital.\"",
+   "reason": "Directly states patient moved from boat to shore to EMS/hospital.",
+   "model": {
+    "status": "on_recording",
+    "start_s": 1875,
+    "end_s": 1893,
+    "evidence": "Speech says \"it was a matter of us getting him from that boat to shore and it was only a matter of a minute or minute or two and and then he was in the care of of EMS so and then from there they took him to a hospital.\"",
+    "reason": "Directly states patient moved from boat to shore to EMS/hospital."
+   },
+   "verify_notes": [],
+   "piece": 4,
+   "merge_notes": []
+  },
+  {
+   "id": "C73",
+   "text": "Two people were on the boat, waving for help.",
+   "kind": "action",
+   "line": 73,
+   "status": "check",
+   "start_s": 1776.0,
+   "end_s": 1802.0,
+   "evidence": "Speech says \"I could could not see nobody in the boat whatsoever\"",
+   "reason": "States no one seen then one motionless occupant, not two waving for help.",
+   "model": {
+    "status": "check",
+    "start_s": 1776,
+    "end_s": 1802,
+    "evidence": "Speech says \"I could could not see nobody in the boat whatsoever\"",
+    "reason": "States no one seen then one motionless occupant, not two waving for help."
+   },
+   "verify_notes": [],
+   "piece": 4,
+   "merge_notes": []
+  },
+  {
+   "id": "C74",
+   "text": "The boat had run aground on a sandbar before deputies arrived.",
+   "kind": "object",
+   "line": 74,
+   "status": "check",
+   "start_s": 1796.0,
+   "end_s": 1804.0,
+   "evidence": "Aerial shows boat spinning in open water making circular wake, not grounded.",
+   "reason": "Boat is moving in circles in water, not run aground before arrival.",
+   "model": {
+    "status": "check",
+    "start_s": 1796,
+    "end_s": 1804,
+    "evidence": "Aerial shows boat spinning in open water making circular wake, not grounded.",
+    "reason": "Boat is moving in circles in water, not run aground before arrival."
+   },
+   "verify_notes": [],
+   "piece": 4,
+   "merge_notes": []
+  }
+ ],
+ "summary": {
+  "total": 74,
+  "on_recording": 29,
+  "not_found": 23,
+  "check": 22,
+  "changed_by_code": 0
+ },
+ "verify_notes": [],
+ "verify_version": 2,
+ "spend_usd": 0.73628,
+ "seconds": 580.9,
+ "review_pieces": [
+  {
+   "index": 1,
+   "window": [
+    0.0,
+    475.425
+   ]
+  },
+  {
+   "index": 2,
+   "window": [
+    460.425,
+    950.85
+   ]
+  },
+  {
+   "index": 3,
+   "window": [
+    935.85,
+    1426.275
+   ]
+  },
+  {
+   "index": 4,
+   "window": [
+    1411.275,
+    1901.7
+   ]
+  }
+ ],
+ "merge_rule": "best of on_recording > check > not_found; ties: earlier timecode; on_recording outside its piece (+-5 s) -> check",
+ "timings_s": {
+  "claims": 11.6,
+  "transcribe": 373.1,
+  "stamp_done_after_s": 385.0,
+  "upload": 58.3,
+  "review": 137.3,
+  "verify": 0.3
+ },
+ "reverified_utc": "2026-11-04T20:54:07Z"
+}

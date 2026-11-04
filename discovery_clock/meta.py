@@ -17,6 +17,7 @@ import json
 import os
 import subprocess
 import tempfile
+import threading
 import time
 import urllib.error
 import urllib.request
@@ -76,6 +77,11 @@ def voice_cost(audio_ms: float) -> float:
 
 def sam_cost(frames: int) -> float:
     return max(frames, SAM_MIN_FRAMES) / 1000 * PRICE_SAM_1000_FRAMES
+
+
+def transcribe_stall_s(piece_s: float) -> int:
+    """How long the transcribe request may receive nothing before curl gives up (measured: ~0.2 s per audio second)."""
+    return int(90 + 0.5 * piece_s)
 
 
 def plan_chunks(duration_s: float, max_s: float = CHUNK_MAX_S) -> list[tuple[float, float]]:
@@ -149,6 +155,7 @@ class MetaClient:
         self.base = os.environ.get("META_MODEL_API_BASE_URL", "https://api.meta.ai/v1").rstrip("/")
         self.file_sha: dict[str, str] = {}
         self.case_spend = 0.0
+        self._lock = threading.Lock()  # pieces of a long recording are reviewed in parallel threads
 
     # ---------- keys (read from the environment only when a live call is made; never logged) ----------
     def _meta_key(self) -> str:
@@ -175,18 +182,19 @@ class MetaClient:
             raise SpendCapReached(f"spend cap ${self.cap:.2f} reached (spent ${s:.4f}, next call ~${estimate:.4f})")
 
     def _charge(self, usd: float, model: str, note: str):
-        self.case_spend += usd
-        if self.replay:
-            return
-        self.ledger_path.parent.mkdir(parents=True, exist_ok=True)
-        with open(self.ledger_path, "a") as f:
-            f.write(json.dumps({"ts": utc_now(), "case": self.case_id, "model": model, "usd": round(usd, 6),
-                                "note": note}) + "\n")
+        with self._lock:
+            self.case_spend += usd
+            if self.replay:
+                return
+            self.ledger_path.parent.mkdir(parents=True, exist_ok=True)
+            with open(self.ledger_path, "a") as f:
+                f.write(json.dumps({"ts": utc_now(), "case": self.case_id, "model": model, "usd": round(usd, 6),
+                                    "note": note}) + "\n")
 
     # ---------- call log ----------
     def _log(self, rec: dict):
         rec = {"ts": utc_now(), "case": self.case_id, "mode": "replay" if self.replay else "live", **rec}
-        with open(self.calls_path, "a") as f:
+        with self._lock, open(self.calls_path, "a") as f:
             f.write(json.dumps(rec, ensure_ascii=False) + "\n")
 
     # ---------- recordings ----------
@@ -242,10 +250,12 @@ class MetaClient:
         except urllib.error.URLError as e:
             raise MetaAPIError(f"network error for {url.split('?')[0]}: {e.reason}") from None
 
-    def _post_multipart(self, url: str, parts: list[str], key: str, timeout: int = 900) -> dict:
+    def _post_multipart(self, url: str, parts: list[str], key: str, timeout: int = 900, stall_s: int = 90) -> dict:
         # curl streams large files; the Authorization header goes through stdin so the key never shows in `ps`.
+        # stall_s: abort a stalled transfer instead of hanging for 15 min. The transcriber sends nothing back while it
+        # works (about 0.2 s per second of audio), so a 9:30 piece needs a longer quiet window than an upload.
         cmd = ["curl", "-sS", "--fail-with-body", "-m", str(timeout), "--connect-timeout", "30",
-               "--speed-limit", "2000", "--speed-time", "90",  # abort a stalled transfer instead of hanging for 15 min
+               "--speed-limit", "2000", "--speed-time", str(stall_s),
                url, "-H", "@-", "-H", "Accept: application/json"]
         for p in parts:
             cmd += ["-F", p]
@@ -309,7 +319,7 @@ class MetaClient:
                                     "-fflags", "+bitexact", str(wav)], check=True)
                     d = self._post_multipart(f"{self.base}/asr/transcribe?sessionId=dc-{uuid.uuid4().hex[:12]}",
                                              [f"request={json.dumps(req)};type=application/json", f"audio=@{wav}"],
-                                             self._meta_key())
+                                             self._meta_key(), stall_s=transcribe_stall_s(b - a))
                     usd = voice_cost(d.get("audioDurationMs", (b - a) * 1000))
                 sec = time.time() - t0
                 self._charge(usd, VOICE_MODEL, f"piece {i} {a:.0f}-{b:.0f}s")

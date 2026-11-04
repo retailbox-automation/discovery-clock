@@ -46,5 +46,46 @@
   "publisher": "Volusia Sheriff's Office (official YouTube channel @VolusiaSheriff)",
   "rights": "Florida public record (Fla. Stat. ch. 119), released by the agency; Florida agencies cannot claim copyright in public records (Microdecisions, Inc. v. Skinner, 889 So. 2d 871, Fla. 2d DCA 2004). Faces of bystanders are blurred in anything we publish; names of arrested people are not used.",
   "sha256": "384a0a28606935186f6067ba34bf8cc6adc6f6a1a02930f76a6ae4edfb9a7d25"
+ },
+ {
+  "id": "cPrCvm5R7DI",
+  "url": "https://www.youtube.com/watch?v=cPrCvm5R7DI",
+  "title": "Gas thieves caught: 11/9/24",
+  "publisher": "Volusia Sheriff's Office (official YouTube channel @VolusiaSheriff)",
+  "rights": "Florida public record (Fla. Stat. ch. 119), released by the agency; Florida agencies cannot claim copyright in public records (Microdecisions, Inc. v. Skinner, 889 So. 2d 871, Fla. 2d DCA 2004). Faces of bystanders are blurred in anything we publish; names of arrested people are not used.",
+  "sha256": "50b8d57f84021474f60c0e2dd5f9fae80b5395aec3eeab6401938139ec201dff"
+ },
+ {
+  "id": "inKtyjwcU7E",
+  "url": "https://www.youtube.com/watch?v=inKtyjwcU7E",
+  "title": "2 arrested in water: 6/6/24",
+  "publisher": "Volusia Sheriff's Office (official YouTube channel @VolusiaSheriff)",
+  "rights": "Florida public record (Fla. Stat. ch. 119), released by the agency; Florida agencies cannot claim copyright in public records (Microdecisions, Inc. v. Skinner, 889 So. 2d 871, Fla. 2d DCA 2004). Faces of bystanders are blurred in anything we publish; names of arrested people are not used.",
+  "sha256": "95d8857f7f6a4f0c4bcd515a84dbb35803f2710fd3007adfe1d08b6047b2a0b7"
+ },
+ {
+  "id": "0WemYQrrIyM",
+  "url": "https://www.youtube.com/watch?v=0WemYQrrIyM",
+  "title": "Ocean rescue: 3/30/24",
+  "publisher": "Volusia Sheriff's Office (official YouTube channel @VolusiaSheriff)",
+  "rights": "Florida public record (Fla. Stat. ch. 119), released by the agency; Florida agencies cannot claim copyright in public records (Microdecisions, Inc. v. Skinner, 889 So. 2d 871, Fla. 2d DCA 2004). Faces of bystanders are blurred in anything we publish; names of arrested people are not used.",
+  "sha256": "069c4b137f359872b7ecde20d3cbda0669a852362accff02f2fff9afe28bf6a5"
+ },
+ {
+  "id": "cR5y4V4eGbI",
+  "url": "https://www.youtube.com/watch?v=cR5y4V4eGbI",
+  "title": "Lake Dias rescue: 2/4/25",
+  "publisher": "Volusia Sheriff's Office (official YouTube channel @VolusiaSheriff)",
+  "rights": "Florida public record (Fla. Stat. ch. 119), released by the agency; Florida agencies cannot claim copyright in public records (Microdecisions, Inc. v. Skinner, 889 So. 2d 871, Fla. 2d DCA 2004). Faces of bystanders are blurred in anything we publish; names of arrested people are not used.",
+  "sha256": "a6a75d8eca703a8fe69dd2598b1987a345af4debd913a49e39311180abc6bd21"
+ },
+ {
+  "id": "packet-volusia",
+  "url": "",
+  "title": "Long-input test: 10 public Volusia Sheriff's Office clips in one file (31.7 min)",
+  "publisher": "Volusia Sheriff's Office (official YouTube channel @VolusiaSheriff)",
+  "rights": "Florida public record (Fla. Stat. ch. 119), released by the agency; Florida agencies cannot claim copyright in public records (Microdecisions, Inc. v. Skinner, 889 So. 2d 871, Fla. 2d DCA 2004). Faces of bystanders are blurred in anything we publish; names of arrested people are not used. The packet is built locally by scripts/make_packet.py from the clips listed in data/packets/volusia.json; it is not one incident.",
+  "sha256": "4eef9ad82cbde170493c68e067f91c74856a572a06e805399cc7654e22dd1d8c",
+  "duration_s": 1901.7
  }
 ]

@@ -62,7 +62,8 @@ def from_release(vid: str, out: Path) -> bool:
 
 def ids_from_sources() -> list[str]:
     p = ROOT / "data" / "sources.json"
-    return [s["id"] for s in json.loads(p.read_text())] if p.exists() else []
+    # entries without a url (the long-input packet) are built locally by scripts/make_packet.py
+    return [s["id"] for s in json.loads(p.read_text()) if s.get("url")] if p.exists() else []
 
 
 def fetch(vid: str) -> Path:

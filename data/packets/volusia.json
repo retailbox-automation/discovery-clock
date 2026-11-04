@@ -1,0 +1,98 @@
+{
+ "id": "packet-volusia",
+ "file": "data/media/packet-volusia.mp4",
+ "duration_s": 1901.622,
+ "parts": [
+  {
+   "id": "fy6dRGapw_4",
+   "case": "fisherman-fy6dRGapw_4",
+   "title": "Fisherman falls out of wheelchair into water - rescued!",
+   "start_s": 0.0,
+   "end_s": 222.354,
+   "duration_s": 222.354,
+   "sha256": "959f3fbcf44a0e448b9d6f7684ccdf56e8119d7a94e6bcb420f2b3164b545fce"
+  },
+  {
+   "id": "phHtxd9Ln3Q",
+   "case": "housefire-phHtxd9Ln3Q",
+   "title": "House fire rescue: 5/18/26",
+   "start_s": 222.354,
+   "end_s": 319.553,
+   "duration_s": 97.199,
+   "sha256": "05e654d152564b01ad5567cf1601aa18e1fe9ec85cc9838c4c0f61f7a6e000f2"
+  },
+  {
+   "id": "iqxWGjr1PRk",
+   "case": "i4driver-iqxWGjr1PRk",
+   "title": "I-4 reckless drunk driver",
+   "start_s": 319.553,
+   "end_s": 574.764,
+   "duration_s": 255.211,
+   "sha256": "25c46a3ed2f4eda8029bf2857d0285b12d721aa496c74ac97f4680f37b2d78b3"
+  },
+  {
+   "id": "kCu9d3LMN6A",
+   "case": "dog-kCu9d3LMN6A",
+   "title": "Dog saved from starving, owner arrested",
+   "start_s": 574.764,
+   "end_s": 745.709,
+   "duration_s": 170.945,
+   "sha256": "5f9202da2f6534bbb2d03e8a46cb9f37667dba30711f0fc507fa2db97b8c5fd0"
+  },
+  {
+   "id": "r-ub7DZN8BA",
+   "case": "motorcycle-r-ub7DZN8BA",
+   "title": "Fleeing motorcyclist arrest",
+   "start_s": 745.709,
+   "end_s": 949.394,
+   "duration_s": 203.685,
+   "sha256": "5fb06781c45861633b4cf61018aae5e5db92c783818b0d5c74927327f39539dc"
+  },
+  {
+   "id": "qLXQ1PO2aME",
+   "case": "speeder-qLXQ1PO2aME",
+   "title": "120 mph Super Speeder arrest on I-95",
+   "start_s": 949.394,
+   "end_s": 1206.114,
+   "duration_s": 256.72,
+   "sha256": "384a0a28606935186f6067ba34bf8cc6adc6f6a1a02930f76a6ae4edfb9a7d25"
+  },
+  {
+   "id": "cPrCvm5R7DI",
+   "case": "gasthieves-cPrCvm5R7DI",
+   "title": "Gas thieves caught: 11/9/24",
+   "start_s": 1206.114,
+   "end_s": 1350.635,
+   "duration_s": 144.521,
+   "sha256": "50b8d57f84021474f60c0e2dd5f9fae80b5395aec3eeab6401938139ec201dff"
+  },
+  {
+   "id": "inKtyjwcU7E",
+   "case": "water-inKtyjwcU7E",
+   "title": "2 arrested in water: 6/6/24",
+   "start_s": 1350.635,
+   "end_s": 1612.463,
+   "duration_s": 261.828,
+   "sha256": "95d8857f7f6a4f0c4bcd515a84dbb35803f2710fd3007adfe1d08b6047b2a0b7"
+  },
+  {
+   "id": "0WemYQrrIyM",
+   "case": "ocean-0WemYQrrIyM",
+   "title": "Ocean rescue: 3/30/24",
+   "start_s": 1612.463,
+   "end_s": 1774.353,
+   "duration_s": 161.89,
+   "sha256": "069c4b137f359872b7ecde20d3cbda0669a852362accff02f2fff9afe28bf6a5"
+  },
+  {
+   "id": "cR5y4V4eGbI",
+   "case": "lakedias-cR5y4V4eGbI",
+   "title": "Lake Dias rescue: 2/4/25",
+   "start_s": 1774.353,
+   "end_s": 1901.622,
+   "duration_s": 127.269,
+   "sha256": "a6a75d8eca703a8fe69dd2598b1987a345af4debd913a49e39311180abc6bd21"
+  }
+ ],
+ "note": "public Volusia Sheriff's Office clips joined in a fixed order to test long input; not one incident"
+}

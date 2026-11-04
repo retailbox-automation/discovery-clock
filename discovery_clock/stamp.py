@@ -13,6 +13,7 @@ import tempfile
 from pathlib import Path
 
 STAMP_VERSION = "t-seconds-v1"
+PIECE_KEYINT_S = 2.0  # key frame every 2 s in the stamped copy of a long recording (cut_piece)
 FONT_CANDIDATES = ["/System/Library/Fonts/Menlo.ttc", "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
                    "/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf", "/usr/share/fonts/TTF/DejaVuSansMono-Bold.ttf"]
 
@@ -52,7 +53,16 @@ def _encoder() -> list[str]:
     return ["-c:v", "libx264", "-preset", "veryfast", "-crf", "26", "-threads", "2"]
 
 
-def make_stamped(video: str | Path, out: str | Path, duration_s: float, max_height: int = 720) -> Path:
+class StampCancelled(RuntimeError):
+    pass
+
+
+def make_stamped(video: str | Path, out: str | Path, duration_s: float, max_height: int = 720,
+                 keyint_s: float | None = None, cancel=None) -> Path:
+    """keyint_s: force a key frame every keyint_s seconds, so the stamped copy can later be cut into pieces
+    without re-encoding (cut_piece) at points no more than keyint_s before the planned start.
+    cancel: a threading.Event; when it is set, ffmpeg is stopped, the partial file removed and StampCancelled raised
+    (a long recording is stamped in the background, and a failed run must not leave ffmpeg running)."""
     video, out = Path(video), Path(out)
     with tempfile.TemporaryDirectory() as td:
         render_stamps(int(duration_s) + 1, Path(td), height=max_height)
@@ -60,8 +70,29 @@ def make_stamped(video: str | Path, out: str | Path, duration_s: float, max_heig
               f"[v][s]overlay=x=12:y=12:shortest=0:eof_action=repeat[o]")
         cmd = ["ffmpeg", "-y", "-loglevel", "error", "-i", str(video), "-framerate", "1", "-i", str(Path(td) / "%05d.png"),
                "-filter_complex", vf, "-map", "[o]", "-map", "0:a?", *_encoder(), "-pix_fmt", "yuv420p",
+               *(["-force_key_frames", f"expr:gte(t,n_forced*{keyint_s:g})"] if keyint_s else []),
                "-c:a", "copy", "-t", f"{duration_s:.3f}", "-movflags", "+faststart", str(out)]
-        subprocess.run(cmd, check=True)
+        if cancel is None:
+            subprocess.run(cmd, check=True)
+            return out
+        proc = subprocess.Popen(cmd)
+        try:
+            while proc.poll() is None:
+                if cancel.wait(0.5):
+                    proc.terminate()
+                    try:
+                        proc.wait(10)
+                    except subprocess.TimeoutExpired:
+                        proc.kill()
+                        proc.wait()
+                    out.unlink(missing_ok=True)
+                    raise StampCancelled("stamping stopped: the run failed")
+        finally:
+            if proc.poll() is None:
+                proc.kill()
+                proc.wait()
+        if proc.returncode:
+            raise subprocess.CalledProcessError(proc.returncode, cmd)
     return out
 
 
@@ -71,3 +102,14 @@ def available() -> bool:
     except ImportError:
         return False
     return shutil.which("ffmpeg") is not None
+
+
+def cut_piece(src: str | Path, out: str | Path, start_s: float, end_s: float) -> Path:
+    """Cut [start_s, end_s] out of the stamped copy without re-encoding (stream copy). The cut starts at the key frame
+    at or before start_s, so the piece can begin up to one key-frame interval early; the burned-in stamp still shows
+    the time of the full recording, so the model reads absolute seconds either way."""
+    src, out = Path(src), Path(out)
+    cmd = ["ffmpeg", "-y", "-loglevel", "error", "-ss", f"{start_s:.3f}", "-i", str(src), "-t", f"{end_s - start_s:.3f}",
+           "-map", "0:v", "-map", "0:a?", "-c", "copy", "-avoid_negative_ts", "make_zero", "-movflags", "+faststart", str(out)]
+    subprocess.run(cmd, check=True)
+    return out

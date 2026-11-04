@@ -135,7 +135,8 @@ def case_page(request: Request, case_id: str):
         "page": "cases", "case_id": case_id, "result": result, "status": status, "case": case,
         "has_video": vp is not None, "steps": pipeline.STEPS, "labels": pipeline.STEP_LABELS,
         "result_json": json.dumps({"claims": (result or {}).get("claims", []),
-                                   "duration": ((result or {}).get("video") or {}).get("duration_s", 0)}).replace("</", "<\\/")})
+                                   "duration": ((result or {}).get("video") or {}).get("duration_s", 0),
+                                   "pieces": [p["window"] for p in (result or {}).get("review_pieces") or []]}).replace("</", "<\\/")})
 
 
 @app.get("/api/cases/{case_id}/status")

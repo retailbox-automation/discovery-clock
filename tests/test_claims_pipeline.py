@@ -78,7 +78,7 @@ def test_pipeline_end_to_end_with_verify(dirs, tiny_video):
 
 def test_pipeline_failure_is_written_to_status(dirs, tiny_video):
     class Fail(FakeClient):
-        def _post_multipart(self, url, parts, key, timeout=900):
+        def _post_multipart(self, url, parts, key, timeout=900, stall_s=90):
             raise M.MetaAPIError("HTTP 500 from transcribe")
     with pytest.raises(M.MetaAPIError):
         pipeline.run("bad", tiny_video, "A man fell.", claims_mode="lines", client=make_client(dirs, case="bad", cls=Fail),

@@ -1,0 +1,37 @@
+{
+ "case": "packet-volusia",
+ "created_utc": "2026-11-04T20:33:51Z",
+ "video_name": "packet-volusia.mp4",
+ "video_sha256": "4eef9ad82cbde170493c68e067f91c74856a572a06e805399cc7654e22dd1d8c",
+ "duration_s": 1901.7,
+ "claims_mode": "lines",
+ "report": "Deputies responded to a report of a possible drowning in the marina.\nThe area was behind a locked gate.\nA man had fallen out of his wheelchair into the marina.\nThe man was clinging to a pipe to keep his head above water.\nA sergeant jumped into the water with a buoy.\nThe man was floated to safety.\nThe man was evaluated by the fire department and declined further medical attention.\nA passing boater pulled the man out of the water before deputies arrived.\nThe man told deputies he had been drinking.\nUnits responded to a house fire with two people believed to be inside.\nA deputy kicked down the front door.\nThe deputy pulled the female resident to safety.\nThe deputy rendered aid until Fire Rescue took over.\nFirefighters pulled the male occupant from the house.\nThe deputy entered the house through a back window.\nA neighbor handed the deputy a fire extinguisher.\nThe suspect vehicle had lost a front wheel.\nThe vehicle got stuck at a construction site.\nDeputies detained the driver.\nThe driver appeared to be under the influence.\nThe driver resisted and kicked a deputy while being escorted into the back of a patrol vehicle.\nWhen asked about the crash, the driver responded \"What crash?\"\nThe driver asked deputies to release him in exchange for $2,000.\nThe driver walked to the patrol car calmly and without resisting.\nThe driver said he was late for a job interview.\nWhen found, the dog's body was covered in sores and he was weak.\nThe dog has gained a significant amount of weight since he was admitted to the shelter.\nThe owner was arrested.\nThe owner denied the neglect.\nThe owner asked for his mom.\nA pipe was found in the owner's pocket.\nThe owner thanked the detectives for taking care of the dog.\nThe owner was arrested inside a moving car during a traffic stop.\nA motorcycle fled from deputies during a traffic operation.\nThe motorcycle sped at high speed, weaving in and out of traffic.\nThe aviation unit was overhead when the rider stopped to refuel.\nThe rider stopped to refuel at a gas station.\nThe rider stopped voluntarily for deputies on the highway shoulder.\nA passenger was riding on the back of the motorcycle.\nThe driver was stopped for driving 120 mph on I-95.\nThe driver was going more than 50 mph over the speed limit.\nThe driver was arrested.\nThe deputy let the driver go with a warning.\nThe driver's dog jumped out of the car and ran across the highway.\nDeputies spotted a gold Chrysler minivan parked over the fuel port at a Racetrac gas station.\nThe van then parked at a nearby Waffle House, where the driver ran from responding deputies.\nThe driver was taken into custody after a short foot chase.\nThe minivan was carrying a large auxiliary fuel tank.\nA hole was cut through the floorboard of the minivan.\nThe chassis was sitting on wooden 2x4 blocks strapped to the axle using metal retention straps.\nGas cans and a hose were found in the back of the second minivan.\nThe minivan driver gave up at the gas pump without running.\nDeputies found a stolen motorcycle inside the minivan.\nThe Nissan sedan came to a stop after striking a parked vehicle.\nThe driver and a passenger took off running while a female passenger stayed behind.\nThe Air One crew spotted two suspects hiding in the water.\nFWC responded with an airboat to bring both suspects back to dry land.\nA firearm with an extended magazine was recovered from the Nissan.\nA .22 Uzi pistol was found inside a backpack that was discarded at the scene.\nBoth suspects swam to shore on their own and walked up to the deputies.\nThe suspects threw a bag of cash into the water.\nA rip current pulled the swimmer about 100 yards out in the ocean.\nThe swimmer was unresponsive with no pulse when lifeguards brought him in.\nThe swimmer regained a pulse.\nThe swimmer made a full recovery.\nThe swimmer walked out of the water on his own.\nA dog on the beach barked and alerted the lifeguards.\nA boat was spinning in circles on the lake.\nResponding units spotted a single unresponsive occupant on the boat.\nThe Marine Unit crew moved in close enough for a rescuer to jump on board.\nThe rescuer stopped the boat.\nThe patient was taken to shore for further treatment.\nTwo people were on the boat, waving for help.\nThe boat had run aground on a sandbar before deputies arrived.\n",
+ "source": {
+  "id": "packet-volusia",
+  "url": "",
+  "title": "Long-input test: 10 public Volusia Sheriff's Office clips in one file (31.7 min)",
+  "publisher": "Volusia Sheriff's Office (official YouTube channel @VolusiaSheriff)",
+  "rights": "Florida public record (Fla. Stat. ch. 119), released by the agency; Florida agencies cannot claim copyright in public records (Microdecisions, Inc. v. Skinner, 889 So. 2d 871, Fla. 2d DCA 2004). Faces of bystanders are blurred in anything we publish; names of arrested people are not used. The packet is built locally by scripts/make_packet.py from the clips listed in data/packets/volusia.json; it is not one incident.",
+  "sha256": "4eef9ad82cbde170493c68e067f91c74856a572a06e805399cc7654e22dd1d8c",
+  "duration_s": 1901.7
+ },
+ "replay": false,
+ "review_pieces": [
+  [
+   0.0,
+   475.425
+  ],
+  [
+   460.425,
+   950.85
+  ],
+  [
+   935.85,
+   1426.275
+  ],
+  [
+   1411.275,
+   1901.7
+  ]
+ ]
+}

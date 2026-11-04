@@ -39,9 +39,36 @@
     }
   }
 
+  // time axis under the timeline: ticks every 5 min on a long recording, piece boundaries of a long recording
+  function drawTicks() {
+    const box = document.getElementById("ticks");
+    if (!box || !timeline) return;
+    box.innerHTML = "";
+    timeline.querySelectorAll(".pb").forEach(m => m.remove());
+    const d = dur();
+    const step = d > 2400 ? 600 : d > 1200 ? 300 : d > 600 ? 120 : d > 180 ? 60 : 30;
+    const lab = s => { s = Math.round(s); const h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60), x = s % 60;
+      return h ? `${h}:${String(m).padStart(2, "0")}:${String(x).padStart(2, "0")}` : `${m}:${String(x).padStart(2, "0")}`; };
+    for (let t = 0; t <= d + 0.5; t += step) {
+      const k = document.createElement("span");
+      k.className = "tick";
+      k.style.left = `${(t / d) * 100}%`;
+      k.textContent = lab(t);
+      box.appendChild(k);
+    }
+    (data.pieces || []).slice(1).forEach(([a]) => {
+      const b = document.createElement("div");
+      b.className = "pb";
+      b.style.left = `${(a / d) * 100}%`;
+      b.title = `piece starts at ${lab(a)}`;
+      timeline.appendChild(b);
+    });
+  }
+
   function drawMarkers() {
     if (!timeline) return;
     timeline.querySelectorAll(".mk").forEach(m => m.remove());
+    drawTicks();
     // overlapping claims go to separate lanes so every marker stays visible and clickable
     const d = dur();
     const placed = (data.claims || []).map((c, i) => ({ c, i }))

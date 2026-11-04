@@ -1,0 +1,110 @@
+{
+ "step": "transcribe-3",
+ "hash": "2f22efc3361689a2",
+ "recorded_utc": "2026-11-04T20:40:15Z",
+ "request": {
+  "endpoint": "/asr/transcribe",
+  "mode": "DIARIZATION",
+  "model": "muse-voice-transcribe-1.0",
+  "audioEncoding": "WAV",
+  "media_sha256": "4eef9ad82cbde170493c68e067f91c74856a572a06e805399cc7654e22dd1d8c",
+  "piece_s": [
+   1710.0,
+   1901.7
+  ],
+  "audio": "mono s16le 24000 Hz"
+ },
+ "response": {
+  "sessionId": "dc-756106ea6c89",
+  "transcript": "Let's get info for him. You got pulses back right when we got to the hospital. Which was amazing. You know doing this 25 years every call is different and it was just just a miracle that this young man was able to pull through days after that. He weighed heavily on my mind and it it was definitely it made my week better after we found out that he made a full recovery and it's a really joy to see all the departments in the area come together and do such great life life saving procedures so all these gentlemen behind us and and ladies did a wonderful job and I can't say any more than just a lot of pride in in very proud of the area I live in. Well, late late night Diaz is one of the spots that we check as a COP that particular day I backed backed up and I noticed a boat that was spinning around in the middle and I got out of my unit and walked up to the dock I could could not see nobody in the boat whatsoever so I come back up I got on my radio and I called dispatch I asked them to send me a deputy part of our strategy when we got on scene was to get to the outside of the boat to try and you know stop the boat and when we realized that we were getting closer to shore and it wasn't working we pulled out kind of regrouped and now I started using my wake of the boat to push them push him closer to shore and hopefully that the shoreline would have disabled his boat these are dynamic situations we get on scene and and assess it and we try things and in this particular case we tried things that weren't working so we reassessed and found a different way to get it stopped. Yeah we're going to take him by boat back over there. there's a boat off Looks like a diabetes kit here so put him Put him on the deck up in the front so we we had all those resources on scene at that point fire rescue was there there was an ambulance on scene it was a matter of us getting him from that boat to shore and it was only a matter of a minute or minute or two and and then he was in the care of of EMS so and then from there they took him to a hospital.",
+  "audioDurationMs": 191760,
+  "turns": [
+   {
+    "turnId": 0,
+    "startMs": 13820,
+    "endMs": 15820,
+    "transcript": "Let's get info for him.",
+    "speaker": "A"
+   },
+   {
+    "turnId": 1,
+    "startMs": 16060,
+    "endMs": 33900,
+    "transcript": "You got pulses back right when we got to the hospital. Which was amazing. You know doing this 25 years every call is different and it was just just a miracle that this young man was able to pull through days after that.",
+    "speaker": "B"
+   },
+   {
+    "turnId": 2,
+    "startMs": 34380,
+    "endMs": 63500,
+    "transcript": "He weighed heavily on my mind and it it was definitely it made my week better after we found out that he made a full recovery and it's a really joy to see all the departments in the area come together and do such great life life saving procedures so all these gentlemen behind us and and ladies did a wonderful job and I can't say any more than just a lot of pride in in very proud of the area I live in.",
+    "speaker": "B"
+   },
+   {
+    "turnId": 3,
+    "startMs": 66700,
+    "endMs": 92060,
+    "transcript": "Well, late late night Diaz is one of the spots that we check as a COP that particular day I backed backed up and I noticed a boat that was spinning around in the middle and I got out of my unit and walked up to the dock I could could not see nobody in the boat whatsoever so I come back up I got on my radio and I called dispatch I asked them to send me a deputy",
+    "speaker": "C"
+   },
+   {
+    "turnId": 4,
+    "startMs": 92060,
+    "endMs": 116780,
+    "transcript": "part of our strategy when we got on scene was to get to the outside of the boat to try and you know stop the boat and when we realized that we were getting closer to shore and it wasn't working we pulled out kind of regrouped and now I started using my wake of the boat to push them push him closer to shore and hopefully that the shoreline would have disabled his boat",
+    "speaker": "D"
+   },
+   {
+    "turnId": 5,
+    "startMs": 116860,
+    "endMs": 129340,
+    "transcript": "these are dynamic situations we get on scene and and assess it and we try things and in this particular case we tried things that weren't working so we reassessed and found a different way to get it stopped.",
+    "speaker": "E"
+   },
+   {
+    "turnId": 6,
+    "startMs": 141340,
+    "endMs": 147180,
+    "transcript": "Yeah we're going to take him by boat back over there.",
+    "speaker": "F"
+   },
+   {
+    "turnId": 7,
+    "startMs": 154060,
+    "endMs": 156780,
+    "transcript": "there's a boat off",
+    "speaker": "G"
+   },
+   {
+    "turnId": 8,
+    "startMs": 157020,
+    "endMs": 160780,
+    "transcript": "Looks like a diabetes kit here so",
+    "speaker": "F"
+   },
+   {
+    "turnId": 9,
+    "startMs": 161980,
+    "endMs": 162220,
+    "transcript": "put him"
+   },
+   {
+    "turnId": 10,
+    "startMs": 162220,
+    "endMs": 165020,
+    "transcript": "Put him on the deck up in the front",
+    "speaker": "F"
+   },
+   {
+    "turnId": 11,
+    "startMs": 165260,
+    "endMs": 183420,
+    "transcript": "so we we had all those resources on scene at that point fire rescue was there there was an ambulance on scene it was a matter of us getting him from that boat to shore and it was only a matter of a minute or minute or two and and then he was in the care of of EMS so and then from there they took him to a hospital.",
+    "speaker": "E"
+   }
+  ]
+ },
+ "latency_s": 39.57,
+ "usd": 0.009588,
+ "model": "muse-voice-transcribe-1.0"
+}

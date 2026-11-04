@@ -1,0 +1,252 @@
+{
+ "step": "review-p2",
+ "hash": "7020d0462b7d8f22",
+ "recorded_utc": "2026-11-04T20:42:33Z",
+ "request": {
+  "endpoint": "/responses",
+  "body": {
+   "model": "muse-spark-1.3",
+   "input": [
+    {
+     "type": "message",
+     "role": "user",
+     "content": [
+      {
+       "type": "input_text",
+       "text": "You review a body-worn camera recording against a written account of the same incident.\nFor each numbered CLAIM, find where the recording shows or says it.\nTIME: our software stamped every frame in the top-left corner with \"t=N s\" = seconds from the start of this video\n(the stamp is not part of the original recording). Read start_s, end_s and every video_s from that stamp; do not estimate time.\nPIECE: this file is piece 3 of 4 of a longer recording; it covers t=935 s to t=1427 s of the FULL recording.\nThe stamp shows seconds of the FULL recording, so read start_s, end_s and video_s from the stamp as usual.\nAnswer every claim from this piece only: if this piece neither shows nor contradicts a claim, use not_found\n(another piece may show it). For camera_clock, \"first frame\" and \"last frame\" mean the first and last frame of this piece.\nstatus: on_recording = the video or the speech clearly supports the claim at start_s..end_s;\nnot_found = the recording neither shows nor contradicts the claim (start_s=end_s=-1);\ncheck = the recording contradicts the claim, or shows only part of it in a way that matters (for example the claim says\na man was clinging to a pipe and the recording shows him floating free). If unsure between on_recording and check, use check.\nA name, rank or job title that the recording cannot show does not by itself make a claim partial: if the event is shown,\nuse on_recording and say in reason that the name or rank is not shown.\nevidence: what is visible or said at that time. When you quote speech, copy the words exactly from TURNS inside double quotes.\nreason: one sentence why this status.\ncamera_clock: read the date and time the body camera burned into the frame (for example \"2026-09-27 21:00:29 -0400  AXON BODY 4 D01A16937\",\nusually top-right) on the first frame, on the last frame, and wherever the camera id or the clock jumps (the video can join several cameras).\nFor each reading give video_s (from our stamp), clock exactly as printed (date and time) and camera (the id printed, or \"\").\nIf the camera prints no clock, return an empty list.\nTURNS (speech with speaker labels and times, from a separate transcriber):\n[914.8-936.0s] E: Great, thank you Still eastbound coming up to Thames. No, we're still still northbound He's he's so fast he's pulling away from us right now we're trying to catch to catch up Uh our map showing mile marker 280 280 we're going to have to break off he's he's so far ahead we're barely barely getting him on camera he's north of the way way station up here\n[936.2-939.3s] O: everyone's all the way up there and he's breaking\n[955.6-961.7s] A: About the 270 southbound on a motorcycle give you give you a tag in a minute\n[971.9-974.0s] A: Put it on the kickstand.\n[974.2-975.5s] P: I'm so sorry man.\n[975.5-979.8s] A: Uh-huh. Come here.\n[980.1-984.1s] A: Come here. Take your backpack off.\n[985.8-996.9s] A: Take your helmet off. Put it on so it doesn't fall.\n[997.4-1004.3s] A: Turn around, put your hands behind your back. Don't do anything else until I tell you to. to. You understand?\n[1004.5-1012.4s] A: Right now you're being detained anything you do from now makes your life worse. You understand?\n[1024.1-1025.7s] A: You got anything on you I need to know about?\n[1025.8-1027.1s] P: I do not.\n[1027.6-1030.5s] A: Okay, now fast we got got up to\n[1030.7-1031.6s] P: man I\n[1031.6-1039.5s] A: well I can tell you that truck tops out at 121 and when you tucked your head down just now you were stretching me\n[1039.7-1039.7s] P: Oh.\n[1039.8-1044.8s] A: So especially aggressive driving through traffic like that.\n[1045.0-1046.4s] P: I saw you saw you get up close behind me. I\n[1046.4-1046.7s] A: Yeah\n[1046.7-1048.1s] P: that you were an officer man I\n[1048.5-1055.7s] A: well if you were doing 70 miles an hour you and I would have have never have met so which one do you think was the right thing to do?\n[1055.9-1056.9s] P: should have just slowed down down.\n[1056.9-1060.9s] A: You should have just gone the speed limit is what you should have done.\n[1061.2-1063.6s] P: I'm so sorry, man.\n[1063.7-1068.5s] A: Why mad at you? But I think you're out here doing dumb shit.\n[1069.7-1073.0s] P: I literally don't have any tickets. I don't know what I was doing, man.\n[1073.5-1078.3s] A: Gold male 1015 pocket knives or anything?\n[1078.3-1079.7s] P: I have literally no\n[1080.0-1080.1s] ?: Okay\n[1080.1-1084.0s] A: okay I just gotta double check\n[1084.5-1087.8s] A: alright this is what I want you you to do okay\n[1087.8-1088.1s] P: Yes\n[1088.1-1098.5s] A: I want you to do your best I'm going to sit you down but I don't don't want you to fall so if you gotta cross your legs to sit or you gotta squat down but I want you to sit on your butt\n[1098.5-1099.1s] P: okay\n[1099.2-1102.1s] A: alright I don't want you to face my truck\n[1102.2-1102.8s] P: anybody\n[1102.9-1104.1s] A: we'll work on that\n[1104.1-1104.3s] P: alright\n[1104.3-1108.9s] A: alright going down go ahead\n[1109.6-1113.9s] A: Alright sit on your butt cross your legs\n[1118.4-1121.7s] A: Motor 12, you head over to me.\n[1126.6-1128.1s] P: So sorry, man.\n[1128.1-1130.8s] A: Listen, I'm not mad at you, but\n[1130.9-1131.5s] P: I'm mad mad at myself\n[1131.8-1133.6s] A: What you were doing, bro,\n[1133.6-1133.7s] P: I know\n[1133.7-1139.5s] A: dangerous, man, dangerous, especially as heavy heavy a traffic and you going from the right\n[1140.4-1145.1s] A: across all the way to the left lane and back dangerous dude\n[1145.1-1167.4s] A: I understand I mean and listen I ride motorcycles off and off and on duty okay there's zero protection at 120 some mile an hour okay zero that jacket the only thing that jacket does is keep your pieces parts together okay I'm putting this back in the bag for right now\n[1171.9-1175.4s] A: you know have you been have you been reading the news about the super speeder law\n[1175.6-1176.9s] B: I have\n[1176.9-1191.3s] A: so you did both of them you're over 100 100 miles an hour and you were 50 miles an hour over the speed limit speed limit 70 so so you're both you didn't just do one\n[1193.5-1196.5s] A: alright hang tight right there\n[1197.7-1201.1s] A: alright you're good watch your feet feet\n[1206.5-1214.0s] C: yeah bro I see you keep going in it's the gold van it's facing right at you as soon as you come in back then\n[1214.2-1220.3s] D: alright we're going to take them down moving in we can see them from here\n[1221.7-1227.4s] C: must just went inside then guys he just he just pulled in and I went to go get cover\n[1234.1-1253.1s] C: I got him stop let me see your hands running through the McDonald's right now guys going towards the boulevard black shirt blue blue jeans right here right here stop stop let me see your hands sheriff's office stop stop now stop\n[1268.8-1272.5s] C: Sheriff's office stop\n[1273.3-1280.6s] C: Show Show me your hands show me your hands on the ground now get on the ground get on the ground\n[1281.4-1284.9s] C: Get on the ground\n[1284.9-1290.1s] E: You got him behind the tree track one secure\n[1292.0-1299.6s] C: Hey I want a stomach roll on the side so we can breathe better from this running running there you go\n[1299.6-1304.5s] C: You speak English? alright perfect\n[1312.2-1315.9s] F: X-ray 42 has one secure\n[1318.2-1325.2s] G: Okay, there's a bunch of gas tanks in the back That's why it smells like gas.\n[1326.0-1328.3s] E: You can see the drums.\n[1328.3-1329.9s] D: In front of it just in case.\n[1330.1-1331.5s] G: No, I think this is block two.\n[1331.7-1335.3s] H: They might have it actually blacked out out black. Yeah, that tent's real dark.\n[1335.3-1336.3s] E: It's like 0%\n[1336.6-1341.6s] H: Yeah.\n[1342.0-1347.7s] G: Not good. No bueno.\n[1347.9-1348.4s] I: What happened?\n[1348.6-1352.3s] G: You know what happened.\n[1357.7-1362.1s] J: Honestly doing L cam on a white Nissan\n[1366.8-1372.5s] J: Continuing south on Montecito. I'm shut down I'm following at normal speed\n[1373.5-1391.3s] K: It's going down a driveway hey bail out bail out bail out bail out two black males one wearing a black shirt orange shirt and another with a black sweater and shorts running westbound behind the house I have charges 12 F bail out out\n[1394.9-1406.8s] K: Show me your hands. Central I got one at gunpoint behind the house. Show me your hands. Now come out I can see you. see you.\n[1407.8-1413.3s] K: Show me your hands get down to the ground get down on the ground.\n[1414.5-1424.0s] K: Central I got a female gun prone out I have a male on the I believe the west west side of the house it's the one two corner I lost sight of him\n[1426.7-1426.8s] ?: Down here\n[1426.8-1432.6s] K: Down here. Slow down slow down slow down.\nCLAIMS (kind in brackets):\nC1. [action] Deputies responded to a report of a possible drowning in the marina.\nC2. [object] The area was behind a locked gate.\nC3. [action] A man had fallen out of his wheelchair into the marina.\nC4. [action] The man was clinging to a pipe to keep his head above water.\nC5. [action] A sergeant jumped into the water with a buoy.\nC6. [action] The man was floated to safety.\nC7. [action] The man was evaluated by the fire department and declined further medical attention.\nC8. [action] A passing boater pulled the man out of the water before deputies arrived.\nC9. [speech] The man told deputies he had been drinking.\nC10. [action] Units responded to a house fire with two people believed to be inside.\nC11. [action] A deputy kicked down the front door.\nC12. [action] The deputy pulled the female resident to safety.\nC13. [action] The deputy rendered aid until Fire Rescue took over.\nC14. [action] Firefighters pulled the male occupant from the house.\nC15. [action] The deputy entered the house through a back window.\nC16. [action] A neighbor handed the deputy a fire extinguisher.\nC17. [object] The suspect vehicle had lost a front wheel.\nC18. [object] The vehicle got stuck at a construction site.\nC19. [action] Deputies detained the driver.\nC20. [object] The driver appeared to be under the influence.\nC21. [action] The driver resisted and kicked a deputy while being escorted into the back of a patrol vehicle.\nC22. [speech] When asked about the crash, the driver responded \"What crash?\"\nC23. [speech] The driver asked deputies to release him in exchange for $2,000.\nC24. [action] The driver walked to the patrol car calmly and without resisting.\nC25. [speech] The driver said he was late for a job interview.\nC26. [object] When found, the dog's body was covered in sores and he was weak.\nC27. [object] The dog has gained a significant amount of weight since he was admitted to the shelter.\nC28. [action] The owner was arrested.\nC29. [speech] The owner denied the neglect.\nC30. [speech] The owner asked for his mom.\nC31. [object] A pipe was found in the owner's pocket.\nC32. [speech] The owner thanked the detectives for taking care of the dog.\nC33. [action] The owner was arrested inside a moving car during a traffic stop.\nC34. [action] A motorcycle fled from deputies during a traffic operation.\nC35. [action] The motorcycle sped at high speed, weaving in and out of traffic.\nC36. [object] The aviation unit was overhead when the rider stopped to refuel.\nC37. [action] The rider stopped to refuel at a gas station.\nC38. [action] The rider stopped voluntarily for deputies on the highway shoulder.\nC39. [action] A passenger was riding on the back of the motorcycle.\nC40. [action] The driver was stopped for driving 120 mph on I-95.\nC41. [action] The driver was going more than 50 mph over the speed limit.\nC42. [action] The driver was arrested.\nC43. [action] The deputy let the driver go with a warning.\nC44. [action] The driver's dog jumped out of the car and ran across the highway.\nC45. [action] Deputies spotted a gold Chrysler minivan parked over the fuel port at a Racetrac gas station.\nC46. [action] The van then parked at a nearby Waffle House, where the driver ran from responding deputies.\nC47. [action] The driver was taken into custody after a short foot chase.\nC48. [object] The minivan was carrying a large auxiliary fuel tank.\nC49. [object] A hole was cut through the floorboard of the minivan.\nC50. [object] The chassis was sitting on wooden 2x4 blocks strapped to the axle using metal retention straps.\nC51. [object] Gas cans and a hose were found in the back of the second minivan.\nC52. [action] The minivan driver gave up at the gas pump without running.\nC53. [action] Deputies found a stolen motorcycle inside the minivan.\nC54. [action] The Nissan sedan came to a stop after striking a parked vehicle.\nC55. [action] The driver and a passenger took off running while a female passenger stayed behind.\nC56. [action] The Air One crew spotted two suspects hiding in the water.\nC57. [action] FWC responded with an airboat to bring both suspects back to dry land.\nC58. [object] A firearm with an extended magazine was recovered from the Nissan.\nC59. [object] A .22 Uzi pistol was found inside a backpack that was discarded at the scene.\nC60. [action] Both suspects swam to shore on their own and walked up to the deputies.\nC61. [action] The suspects threw a bag of cash into the water.\nC62. [action] A rip current pulled the swimmer about 100 yards out in the ocean.\nC63. [object] The swimmer was unresponsive with no pulse when lifeguards brought him in.\nC64. [object] The swimmer regained a pulse.\nC65. [object] The swimmer made a full recovery.\nC66. [action] The swimmer walked out of the water on his own.\nC67. [action] A dog on the beach barked and alerted the lifeguards.\nC68. [action] A boat was spinning in circles on the lake.\nC69. [action] Responding units spotted a single unresponsive occupant on the boat.\nC70. [action] The Marine Unit crew moved in close enough for a rescuer to jump on board.\nC71. [action] The rescuer stopped the boat.\nC72. [action] The patient was taken to shore for further treatment.\nC73. [action] Two people were on the boat, waving for help.\nC74. [object] The boat had run aground on a sandbar before deputies arrived."
+      },
+      {
+       "type": "input_file",
+       "file_id": "sha256:4eef9ad82cbde170493c68e067f91c74856a572a06e805399cc7654e22dd1d8c:t-seconds-v1:piece-935.850-1426.275"
+      }
+     ]
+    }
+   ],
+   "text": {
+    "format": {
+     "type": "json_schema",
+     "name": "claims_review",
+     "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "claims",
+       "camera_clock"
+      ],
+      "properties": {
+       "claims": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "additionalProperties": false,
+         "required": [
+          "id",
+          "status",
+          "start_s",
+          "end_s",
+          "evidence",
+          "reason"
+         ],
+         "properties": {
+          "id": {
+           "type": "string"
+          },
+          "status": {
+           "type": "string",
+           "enum": [
+            "on_recording",
+            "not_found",
+            "check"
+           ]
+          },
+          "start_s": {
+           "type": "number"
+          },
+          "end_s": {
+           "type": "number"
+          },
+          "evidence": {
+           "type": "string"
+          },
+          "reason": {
+           "type": "string"
+          }
+         }
+        }
+       },
+       "camera_clock": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "additionalProperties": false,
+         "required": [
+          "video_s",
+          "clock",
+          "camera"
+         ],
+         "properties": {
+          "video_s": {
+           "type": "number"
+          },
+          "clock": {
+           "type": "string"
+          },
+          "camera": {
+           "type": "string"
+          }
+         }
+        }
+       }
+      }
+     },
+     "strict": true
+    }
+   },
+   "max_output_tokens": 57000,
+   "reasoning": {
+    "effort": "medium"
+   }
+  }
+ },
+ "response": {
+  "top_logprobs": 0,
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "service_tier": "default",
+  "model": "muse-spark-1.3",
+  "reasoning": {
+   "effort": "medium"
+  },
+  "background": false,
+  "text": {
+   "format": {
+    "type": "json_schema",
+    "name": "claims_review",
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "properties": {
+      "camera_clock": {
+       "items": {
+        "additionalProperties": false,
+        "properties": {
+         "camera": {
+          "type": "string"
+         },
+         "clock": {
+          "type": "string"
+         },
+         "video_s": {
+          "type": "number"
+         }
+        },
+        "required": [
+         "video_s",
+         "clock",
+         "camera"
+        ],
+        "type": "object"
+       },
+       "type": "array"
+      },
+      "claims": {
+       "items": {
+        "additionalProperties": false,
+        "properties": {
+         "end_s": {
+          "type": "number"
+         },
+         "evidence": {
+          "type": "string"
+         },
+         "id": {
+          "type": "string"
+         },
+         "reason": {
+          "type": "string"
+         },
+         "start_s": {
+          "type": "number"
+         },
+         "status": {
+          "enum": [
+           "on_recording",
+           "not_found",
+           "check"
+          ],
+          "type": "string"
+         }
+        },
+        "required": [
+         "id",
+         "status",
+         "start_s",
+         "end_s",
+         "evidence",
+         "reason"
+        ],
+        "type": "object"
+       },
+       "type": "array"
+      }
+     },
+     "required": [
+      "claims",
+      "camera_clock"
+     ]
+    },
+    "strict": true
+   }
+  },
+  "tools": [],
+  "tool_choice": "auto",
+  "truncation": "disabled",
+  "id": "resp_6aeb98b905ae25ff97154395",
+  "object": "response",
+  "status": "completed",
+  "created_at": 1793824953.0,
+  "completed_at": 1793824953.0,
+  "error": null,
+  "incomplete_details": null,
+  "output": [
+   {
+    "type": "reasoning",
+    "id": "rs_6aeb98b905ae25ff97154395:rs_e1367875-8951-4755-a2ea-cc8c3756cc67",
+    "summary": [],
+    "status": "completed"
+   },
+   {
+    "type": "message",
+    "id": "msg_702eae76-89f5-42bc-bbc1-586f36026573",
+    "role": "assistant",
+    "content": [
+     {
+      "type": "output_text",
+      "text": "{\"camera_clock\": [{\"camera\": \"X6847272X\", \"clock\": \"2026-06-12 20:40:48 -0400\", \"video_s\": 935}, {\"camera\": \"D01A14612\", \"clock\": \"2025-08-07 07:42:11 -0400\", \"video_s\": 949}, {\"camera\": \"D01A13608\", \"clock\": \"2024-11-09 21:46:48 -0500\", \"video_s\": 1206}, {\"camera\": \"D01A18421\", \"clock\": \"2024-11-09 21:47:46 -0500\", \"video_s\": 1260}, {\"camera\": \"D01A0085W\", \"clock\": \"2024-11-09 21:54:54 -0500\", \"video_s\": 1304}, {\"camera\": \"D01A11142\", \"clock\": \"2024-11-09 22:00:05 -0500\", \"video_s\": 1317}, {\"camera\": \"D01A0085W\", \"clock\": \"2024-11-09 21:52:27 -0500\", \"video_s\": 1326}, {\"camera\": \"D01A1893B\", \"clock\": \"2024-11-09 21:52:03 -0500\", \"video_s\": 1330}, {\"camera\": \"D01A11142\", \"clock\": \"2024-11-09 22:00:23 -0500\", \"video_s\": 1338}, {\"camera\": \"D01A18298\", \"clock\": \"2024-06-05 22:43:42 -0400\", \"video_s\": 1351}, {\"camera\": \"D01A17459\", \"clock\": \"2024-06-05 22:51:41 -0400\", \"video_s\": 1374}, {\"camera\": \"D01A17459\", \"clock\": \"2024-06-05 22:52:59 -0400\", \"video_s\": 1426}], \"claims\": [{\"end_s\": -1, \"evidence\": \"This piece shows highway motorcycle stop and night Waffle House/gas station foot pursuit; no marina, water or drowning is visible or mentioned.\", \"id\": \"C1\", \"reason\": \"No drowning report is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No gate is visible or mentioned in this highway and parking-lot footage.\", \"id\": \"C2\", \"reason\": \"No locked gate is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No wheelchair or marina fall is visible or mentioned.\", \"id\": \"C3\", \"reason\": \"No wheelchair incident is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No pipe, water clinging or marina is visible.\", \"id\": \"C4\", \"reason\": \"No clinging to pipe is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No water entry with buoy is visible or mentioned.\", \"id\": \"C5\", \"reason\": \"No sergeant jumping with buoy is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No floating rescue is visible.\", \"id\": \"C6\", \"reason\": \"No floating to safety is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No fire department evaluation is visible or mentioned.\", \"id\": \"C7\", \"reason\": \"No medical evaluation is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No boater rescue is visible or mentioned.\", \"id\": \"C8\", \"reason\": \"No passing boater rescue is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No statement about drinking is heard; rider says \\\"I'm so sorry man.\\\" and \\\"I do not.\\\" about weapons.\", \"id\": \"C9\", \"reason\": \"No drinking admission is heard in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No house fire is visible; footage is highway shoulder and night commercial lots.\", \"id\": \"C10\", \"reason\": \"No house fire response is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No door kick is visible.\", \"id\": \"C11\", \"reason\": \"No front door kick is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No female resident rescue is visible.\", \"id\": \"C12\", \"reason\": \"No female pulled to safety is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No aid rendering to fire victim is visible.\", \"id\": \"C13\", \"reason\": \"No aid until Fire Rescue is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No firefighters pulling occupant is visible.\", \"id\": \"C14\", \"reason\": \"No firefighter rescue is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No back window entry is visible.\", \"id\": \"C15\", \"reason\": \"No back window entry is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No neighbor or extinguisher is visible or mentioned.\", \"id\": \"C16\", \"reason\": \"No extinguisher handoff is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No lost wheel or construction site is visible; vehicles are driving normally on highway.\", \"id\": \"C17\", \"reason\": \"No lost front wheel is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No construction site or stuck vehicle is visible.\", \"id\": \"C18\", \"reason\": \"No stuck at construction site is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No car driver detention for crash is shown; only motorcycle and night foot-chase detentions are shown.\", \"id\": \"C19\", \"reason\": \"No crash driver detention is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No signs of influence or DUI tests are visible or mentioned.\", \"id\": \"C20\", \"reason\": \"No influence appearance is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No escort to patrol vehicle or kick is visible.\", \"id\": \"C21\", \"reason\": \"No resistance/kick during escort is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No question about crash and no reply \\\"What crash?\\\" is heard.\", \"id\": \"C22\", \"reason\": \"No \\\"What crash?\\\" speech is heard in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No $2,000 offer is heard.\", \"id\": \"C23\", \"reason\": \"No bribe request is heard in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No calm walk to patrol car for crash driver is shown.\", \"id\": \"C24\", \"reason\": \"No calm walk to patrol car is shown for that claim in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No job interview statement is heard.\", \"id\": \"C25\", \"reason\": \"No late for interview speech is heard in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No dog is visible or mentioned.\", \"id\": \"C26\", \"reason\": \"No dog body condition is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No shelter or dog weight is visible or mentioned.\", \"id\": \"C27\", \"reason\": \"No dog weight gain is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No owner arrest for neglect is shown; arrests shown are motorcycle rider and night foot-chase suspect.\", \"id\": \"C28\", \"reason\": \"No owner arrest for neglect is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No denial of neglect is heard.\", \"id\": \"C29\", \"reason\": \"No denial speech is heard in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No request for mom is heard.\", \"id\": \"C30\", \"reason\": \"No mom request is heard in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No pipe in pocket is visible or mentioned.\", \"id\": \"C31\", \"reason\": \"No pipe in pocket is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No thanks to detectives is heard.\", \"id\": \"C32\", \"reason\": \"No thanks speech is heard in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No moving-car traffic stop arrest is shown.\", \"id\": \"C33\", \"reason\": \"No moving-car arrest is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": 936.0, \"evidence\": \"Audio at start says \\\"he's so fast he's pulling away from us right now we're trying to catch to catch up\\\" and \\\"we're going to have to break off he's he's so far ahead we're barely barely getting him on camera\\\"\", \"id\": \"C34\", \"reason\": \"Audio describes motorcycle pulling away and outrunning units.\", \"start_s\": 935.0, \"status\": \"on_recording\"}, {\"end_s\": 1145.1, \"evidence\": \"Deputy says \\\"well I can tell you that truck tops out at 121 and when you tucked your head down just now you were stretching me\\\" and \\\"especially aggressive driving through traffic like that.\\\" and \\\"you going from the right across all the way to the left lane and back\\\"\", \"id\": \"C35\", \"reason\": \"Deputy describes high speed over 120 and weaving across lanes in traffic.\", \"start_s\": 1031.6, \"status\": \"on_recording\"}, {\"end_s\": -1, \"evidence\": \"No refuel, gas station stop for motorcycle, or aviation overhead at refuel is shown; motorcycle stop is on highway shoulder in daylight.\", \"id\": \"C36\", \"reason\": \"No aviation at refuel is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"Motorcycle is stopped on highway shoulder, no gas station refueling is visible or mentioned.\", \"id\": \"C37\", \"reason\": \"No gas-station refuel stop is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": 972.0, \"evidence\": \"Video shows motorcycle on highway shoulder and deputy says \\\"Put it on the kickstand.\\\"; earlier audio said rider was pulling away and units would break off, so voluntariness is unclear.\", \"id\": \"C38\", \"reason\": \"Stop on shoulder is shown but whether it was voluntary is not clear.\", \"start_s\": 963.0, \"status\": \"check\"}, {\"end_s\": 970.0, \"evidence\": \"Video follows single helmeted rider on shoulder; no second person on motorcycle is visible.\", \"id\": \"C39\", \"reason\": \"Recording shows solo rider, contradicting a passenger.\", \"start_s\": 963.0, \"status\": \"check\"}, {\"end_s\": 1191.3, \"evidence\": \"Deputy says \\\"you're over 100 100 miles an hour and you were 50 miles an hour over the speed limit speed limit 70\\\"; never says \\\"120 mph\\\" or \\\"I-95\\\".\", \"id\": \"C40\", \"reason\": \"Speed over 100 is shown but exact 120 and I-95 are not stated.\", \"start_s\": 1171.9, \"status\": \"check\"}, {\"end_s\": 1191.3, \"evidence\": \"Deputy says \\\"so you did both of them you're over 100 100 miles an hour and you were 50 miles an hour over the speed limit speed limit 70\\\" and earlier \\\"that truck tops out at 121 and when you tucked your head down just now you were stretching me\\\"\", \"id\": \"C41\", \"reason\": \"Deputy states over 100 and 50-over 70 limit with 121 reference.\", \"start_s\": 1171.9, \"status\": \"on_recording\"}, {\"end_s\": 1004.3, \"evidence\": \"Deputy says \\\"Turn around, put your hands behind your back.\\\" and \\\"Right now you're being detained\\\"; no handcuffed arrest or transport is shown in this segment.\", \"id\": \"C42\", \"reason\": \"Only detention is shown, not completed arrest.\", \"start_s\": 997.4, \"status\": \"check\"}, {\"end_s\": 1191.3, \"evidence\": \"Rider is told \\\"Right now you're being detained\\\" and lectured on super speeder law with \\\"you're over 100 100 miles an hour\\\"; no warning release is shown.\", \"id\": \"C43\", \"reason\": \"Detention and violation lecture contradict a warning release.\", \"start_s\": 1004.5, \"status\": \"check\"}, {\"end_s\": -1, \"evidence\": \"No dog is visible or mentioned around motorcycle or vehicles.\", \"id\": \"C44\", \"reason\": \"No dog running across highway is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": 1214.0, \"evidence\": \"Deputy says \\\"yeah bro I see you keep going in it's the gold van it's facing right at you\\\"; no mention of Racetrac or fuel port in audio or clear signage in video.\", \"id\": \"C45\", \"reason\": \"Gold van is mentioned but Racetrac and fuel-port position are not shown.\", \"start_s\": 1206.5, \"status\": \"check\"}, {\"end_s\": 1253.1, \"evidence\": \"Night video approaches lit \\\"WAFFLE HOUSE\\\" and audio says \\\"running through the McDonald's right now guys going towards the boulevard\\\" with chase commands; van parking at Waffle House is not clearly shown.\", \"id\": \"C46\", \"reason\": \"Running near restaurants is shown but van parking at Waffle House is only partial.\", \"start_s\": 1221.7, \"status\": \"check\"}, {\"end_s\": 1315.9, \"evidence\": \"Audio shouts \\\"Show me your hands show me your hands on the ground now get on the ground\\\" and \\\"Get on the ground\\\" then \\\"X-ray 42 has one secure\\\" with video of takedown.\", \"id\": \"C47\", \"reason\": \"Foot chase takedown and secure call are shown.\", \"start_s\": 1273.3, \"status\": \"on_recording\"}, {\"end_s\": 1329.9, \"evidence\": \"Deputy says \\\"Okay, there's a bunch of gas tanks in the back That's why it smells like gas.\\\" and \\\"You can see the drums.\\\"\", \"id\": \"C48\", \"reason\": \"Gas tanks/drums in back are shown, supporting auxiliary fuel load.\", \"start_s\": 1318.2, \"status\": \"on_recording\"}, {\"end_s\": -1, \"evidence\": \"No floorboard, hole, or under-vehicle view is visible or mentioned.\", \"id\": \"C49\", \"reason\": \"No floorboard hole is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"Discussion is about tint: \\\"No, I think this is block two.\\\" \\\"That tent's real dark.\\\" \\\"It's like 0%\\\"; no 2x4 blocks or straps are visible or mentioned.\", \"id\": \"C50\", \"reason\": \"No chassis on wooden blocks is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": 1328.3, \"evidence\": \"Deputy says \\\"there's a bunch of gas tanks in the back\\\" and \\\"You can see the drums.\\\"; no hose is mentioned or clearly shown.\", \"id\": \"C51\", \"reason\": \"Tanks are shown but hose is not shown, so only part is supported.\", \"start_s\": 1318.2, \"status\": \"check\"}, {\"end_s\": 1253.1, \"evidence\": \"Audio says \\\"running through the McDonald's right now guys going towards the boulevard\\\" with repeated \\\"stop\\\" commands, contradicting giving up at pump.\", \"id\": \"C52\", \"reason\": \"Recording shows running, not giving up without running.\", \"start_s\": 1234.1, \"status\": \"check\"}, {\"end_s\": -1, \"evidence\": \"No motorcycle inside van is visible or mentioned; rear view shows tanks and items but no motorcycle.\", \"id\": \"C53\", \"reason\": \"No stolen motorcycle in van is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"Nissan pursuit audio mentions driveway and bail out but no striking of parked vehicle is visible or mentioned.\", \"id\": \"C54\", \"reason\": \"No striking parked vehicle is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": 1424.0, \"evidence\": \"Deputy says \\\"two black males ... running westbound behind the house\\\" and later \\\"Central I got a female gun prone out\\\" and \\\"Show me your hands. Now come out I can see you.\\\"\", \"id\": \"C55\", \"reason\": \"Two males running and female held at gunpoint are described.\", \"start_s\": 1391.3, \"status\": \"on_recording\"}, {\"end_s\": -1, \"evidence\": \"No water, hiding in water, or Air One spotting in water is mentioned.\", \"id\": \"C56\", \"reason\": \"No suspects in water are shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No FWC or airboat is visible or mentioned.\", \"id\": \"C57\", \"reason\": \"No airboat response is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No firearm or magazine is visible or mentioned for Nissan.\", \"id\": \"C58\", \"reason\": \"No firearm with extended magazine is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No backpack or Uzi is visible or mentioned.\", \"id\": \"C59\", \"reason\": \"No Uzi in backpack is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No swimming to shore is visible; suspects are on land behind house.\", \"id\": \"C60\", \"reason\": \"No swim to shore is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No bag of cash thrown in water is visible or mentioned.\", \"id\": \"C61\", \"reason\": \"No cash bag is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No ocean swimmer or rip current is visible or mentioned.\", \"id\": \"C62\", \"reason\": \"No rip current pull is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No lifeguards or unresponsive swimmer is visible.\", \"id\": \"C63\", \"reason\": \"No unresponsive swimmer is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No pulse regain is mentioned.\", \"id\": \"C64\", \"reason\": \"No regained pulse is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No recovery is mentioned.\", \"id\": \"C65\", \"reason\": \"No full recovery is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No swimmer walking from water is visible.\", \"id\": \"C66\", \"reason\": \"No swimmer walking out is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No dog on beach or barking is visible or mentioned.\", \"id\": \"C67\", \"reason\": \"No alerting dog is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No lake or spinning boat is visible.\", \"id\": \"C68\", \"reason\": \"No spinning boat is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No boat occupant is visible.\", \"id\": \"C69\", \"reason\": \"No unresponsive boat occupant is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No Marine Unit boarding is visible.\", \"id\": \"C70\", \"reason\": \"No jump on board is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No boat stop is visible.\", \"id\": \"C71\", \"reason\": \"No rescuer stopping boat is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No patient transport to shore is visible.\", \"id\": \"C72\", \"reason\": \"No patient taken to shore is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No two people waving for help is visible.\", \"id\": \"C73\", \"reason\": \"No two waving people is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}, {\"end_s\": -1, \"evidence\": \"No grounded boat or sandbar is visible.\", \"id\": \"C74\", \"reason\": \"No run-aground boat is shown in this piece.\", \"start_s\": -1, \"status\": \"not_found\"}]}",
+      "annotations": [],
+      "logprobs": []
+     }
+    ],
+    "status": "completed"
+   }
+  ],
+  "instructions": null,
+  "usage": {
+   "input_tokens": 88290,
+   "input_tokens_details": {
+    "cached_tokens": 0
+   },
+   "output_tokens": 12730,
+   "output_tokens_details": {
+    "reasoning_tokens": 7373
+   },
+   "total_tokens": 101020
+  },
+  "parallel_tool_calls": true,
+  "store": true,
+  "max_output_tokens": 57000
+ },
+ "latency_s": 79.59,
+ "usd": 0.164465,
+ "model": "muse-spark-1.3"
+}

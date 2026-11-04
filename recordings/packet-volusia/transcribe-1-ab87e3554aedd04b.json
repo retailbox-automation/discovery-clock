@@ -1,0 +1,794 @@
+{
+ "step": "transcribe-1",
+ "hash": "ab87e3554aedd04b",
+ "recorded_utc": "2026-11-04T20:37:48Z",
+ "request": {
+  "endpoint": "/asr/transcribe",
+  "mode": "DIARIZATION",
+  "model": "muse-voice-transcribe-1.0",
+  "audioEncoding": "WAV",
+  "media_sha256": "4eef9ad82cbde170493c68e067f91c74856a572a06e805399cc7654e22dd1d8c",
+  "piece_s": [
+   570.0,
+   1140.0
+  ],
+  "audio": "mono s16le 24000 Hz"
+ },
+ "response": {
+  "sessionId": "dc-892dda2dcf60",
+  "transcript": "He can, he can suffer the consequences for it. We're done. Whoa. Dawson. Hey, come here, come here. Why? Come here. answer the sheriff's office. Come here. Come here. Stop. Stop What happened? What's going Stop fighting, please. Why am I being arrested? Quit resisting. You're going to catch an extra charge. Do not understand me right now. Put your hand behind your back. Why? Stop. What is going on? on? Just tell me why I'm being arrested. Yeah, we will in just a second. I don't understand what's going on. Stop resisting. I'm not resisting. You are. You're are. You're pulling it away. Can you call my mom? This way. This way. Walk to the car. Yes, sir. But I just like I just want to know what's going on. Well you're under arrest now you just gotta do charge too. Why? What is happening? aggravated animal cruelty is what you're getting arrested for today. Why? You're also catching an additional charge for resisting resisting us. I did not resist. I don't even know what was going on. I'm so confused right now. I I I my dog. I don't understand. Apparently not. Your dog is in one of the worst states of a dog I've seen in my career. Do not take care of that dog. We did. You do not take care of that dog. That dog has been in custody of animal control for a month and has gained almost 15 pounds just simply from eating. Pretty sad how bad Tanner was. was. I swear I did. I don't know why I swear. I took care of my dog. dog Hello. We're going to go let's take him over to your car and just go through it one more time. I don't know. end up against the car. I think the middle one we can't see a tag on the camera. They're 12 we've been through traffic I won't deny it I'm a straight rider Traffic I don't have Alright, right. He's 12 in and out of traffic. I hear in the left lane. Rider no tag on the bike. In the fast lane right now. Inside lane. Got a multi color selfie stick front windshield He's cutting in and out of traffic. He just passed a unit high rate of speed Yes, 12 laying charges He just flew by a trooper here that's 1050 with somebody Okay, he's pulling into a gas station here 40640 D Street Be at J and 44 Mother so far from there Okay, still got his helmet on white helmet black t-shirt black pants don't see a plate and he's got his credit card out paying for gas okay back on the go 44 eastbound are there any county canines on 44 on a step on Yeah, all of us are here. Officer laying the travel. Okay, still signal 12 eastbound 44 Victor 16 on a traffic stop internationally here he comes comes down Eastbound 92 from 15A Green now Okay, we're at Stone and 92. through the red light still eastbound There's about four unmarked now shadowing you so if he pulls in somewhere we got enough people to grab him Great, thank you Still eastbound coming up to Thames. No, we're still still northbound He's he's so fast he's pulling away from us right now we're trying to catch to catch up Uh our map showing mile marker 280 280 we're going to have to break off he's he's so far ahead we're barely barely getting him on camera he's north of the way way station up here everyone's all the way up there and he's breaking About the 270 southbound on a motorcycle give you give you a tag in a minute Put it on the kickstand. I'm so sorry man. Uh-huh. Come here. Come here. Take your backpack off. Take your helmet off. Put it on so it doesn't fall. Turn around, put your hands behind your back. Don't do anything else until I tell you to. to. You understand? Right now you're being detained anything you do from now makes your life worse. You understand? You got anything on you I need to know about? I do not. Okay, now fast we got got up to man I well I can tell you that truck tops out at 121 and when you tucked your head down just now you were stretching me Oh. So especially aggressive driving through traffic like that. I saw you saw you get up close behind me. I Yeah that you were an officer man I well if you were doing 70 miles an hour you and I would have have never have met so which one do you think was the right thing to do? should have just slowed down down. You should have just gone the speed limit is what you should have done. I'm so sorry, man. Why mad at you? But I think you're out here doing dumb shit. I literally don't have any tickets. I don't know what I was doing, man. Gold male 1015 pocket knives or anything? I have literally no Okay okay I just gotta double check alright this is what I want you you to do okay Yes I want you to do your best I'm going to sit you down but I don't don't want you to fall so if you gotta cross your legs to sit or you gotta squat down but I want you to sit on your butt okay alright I don't want you to face my truck anybody we'll work on that alright alright going down go ahead Alright sit on your butt cross your legs Motor 12, you head over to me. So sorry, man. Listen, I'm not mad at you, but I'm mad mad at myself What you were doing, bro, I know dangerous, man, dangerous, especially as heavy heavy a traffic and you going from the right",
+  "audioDurationMs": 570000,
+  "turns": [
+   {
+    "turnId": 0,
+    "startMs": 60,
+    "endMs": 5740,
+    "transcript": "He can, he can suffer the consequences for it. We're done.",
+    "speaker": "A"
+   },
+   {
+    "turnId": 1,
+    "startMs": 6940,
+    "endMs": 11660,
+    "transcript": "Whoa. Dawson. Hey, come here, come here.",
+    "speaker": "B"
+   },
+   {
+    "turnId": 2,
+    "startMs": 11900,
+    "endMs": 12540,
+    "transcript": "Why?",
+    "speaker": "C"
+   },
+   {
+    "turnId": 3,
+    "startMs": 12540,
+    "endMs": 17580,
+    "transcript": "Come here. answer the sheriff's office. Come here. Come here.",
+    "speaker": "B"
+   },
+   {
+    "turnId": 4,
+    "startMs": 18860,
+    "endMs": 29100,
+    "transcript": "Stop. Stop What happened? What's going",
+    "speaker": "C"
+   },
+   {
+    "turnId": 5,
+    "startMs": 29260,
+    "endMs": 32940,
+    "transcript": "Stop fighting, please. Why am I being arrested?",
+    "speaker": "C"
+   },
+   {
+    "turnId": 6,
+    "startMs": 33260,
+    "endMs": 38620,
+    "transcript": "Quit resisting. You're going to catch an extra charge. Do not understand me right now. Put your hand behind your back.",
+    "speaker": "D"
+   },
+   {
+    "turnId": 7,
+    "startMs": 38780,
+    "endMs": 38860,
+    "transcript": ""
+   },
+   {
+    "turnId": 8,
+    "startMs": 38860,
+    "endMs": 43340,
+    "transcript": "Why?",
+    "speaker": "C"
+   },
+   {
+    "turnId": 9,
+    "startMs": 43500,
+    "endMs": 48860,
+    "transcript": "Stop.",
+    "speaker": "B"
+   },
+   {
+    "turnId": 10,
+    "startMs": 49180,
+    "endMs": 53180,
+    "transcript": "What is going on? on? Just tell me why I'm being arrested.",
+    "speaker": "C"
+   },
+   {
+    "turnId": 11,
+    "startMs": 53180,
+    "endMs": 56780,
+    "transcript": "Yeah, we will in just a second.",
+    "speaker": "D"
+   },
+   {
+    "turnId": 12,
+    "startMs": 56860,
+    "endMs": 58620,
+    "transcript": "I don't understand what's going on.",
+    "speaker": "C"
+   },
+   {
+    "turnId": 13,
+    "startMs": 58700,
+    "endMs": 60220,
+    "transcript": "Stop resisting.",
+    "speaker": "B"
+   },
+   {
+    "turnId": 14,
+    "startMs": 60380,
+    "endMs": 61180,
+    "transcript": "I'm not resisting.",
+    "speaker": "C"
+   },
+   {
+    "turnId": 15,
+    "startMs": 61180,
+    "endMs": 64620,
+    "transcript": "You are. You're are. You're pulling it away.",
+    "speaker": "B"
+   },
+   {
+    "turnId": 16,
+    "startMs": 65020,
+    "endMs": 70140,
+    "transcript": "Can you call my mom?",
+    "speaker": "C"
+   },
+   {
+    "turnId": 17,
+    "startMs": 70300,
+    "endMs": 74780,
+    "transcript": "This way. This way.",
+    "speaker": "B"
+   },
+   {
+    "turnId": 18,
+    "startMs": 74940,
+    "endMs": 75980,
+    "transcript": "Walk to the car.",
+    "speaker": "B"
+   },
+   {
+    "turnId": 19,
+    "startMs": 75980,
+    "endMs": 79900,
+    "transcript": "Yes, sir. But I just like I just want to know what's going on.",
+    "speaker": "C"
+   },
+   {
+    "turnId": 20,
+    "startMs": 80220,
+    "endMs": 84780,
+    "transcript": "Well you're under arrest now you just gotta do charge too.",
+    "speaker": "B"
+   },
+   {
+    "turnId": 21,
+    "startMs": 85980,
+    "endMs": 88140,
+    "transcript": "Why? What is happening?",
+    "speaker": "C"
+   },
+   {
+    "turnId": 22,
+    "startMs": 88300,
+    "endMs": 90700,
+    "transcript": "aggravated animal cruelty is what you're getting arrested for today.",
+    "speaker": "D"
+   },
+   {
+    "turnId": 23,
+    "startMs": 90860,
+    "endMs": 91260,
+    "transcript": "Why?",
+    "speaker": "C"
+   },
+   {
+    "turnId": 24,
+    "startMs": 91340,
+    "endMs": 94860,
+    "transcript": "You're also catching an additional charge for resisting resisting us.",
+    "speaker": "D"
+   },
+   {
+    "turnId": 25,
+    "startMs": 94940,
+    "endMs": 100540,
+    "transcript": "I did not resist. I don't even know what was going on.",
+    "speaker": "C"
+   },
+   {
+    "turnId": 26,
+    "startMs": 102460,
+    "endMs": 106060,
+    "transcript": "I'm so confused right now.",
+    "speaker": "C"
+   },
+   {
+    "turnId": 27,
+    "startMs": 107740,
+    "endMs": 108140,
+    "transcript": "I"
+   },
+   {
+    "turnId": 28,
+    "startMs": 108140,
+    "endMs": 109980,
+    "transcript": "I I my dog. I don't understand.",
+    "speaker": "C"
+   },
+   {
+    "turnId": 29,
+    "startMs": 110060,
+    "endMs": 111900,
+    "transcript": "Apparently not.",
+    "speaker": "B"
+   },
+   {
+    "turnId": 30,
+    "startMs": 112220,
+    "endMs": 119260,
+    "transcript": "Your dog is in one of the worst states of a dog I've seen in my career. Do not take care of that dog.",
+    "speaker": "D"
+   },
+   {
+    "turnId": 31,
+    "startMs": 119260,
+    "endMs": 120220,
+    "transcript": "We did.",
+    "speaker": "C"
+   },
+   {
+    "turnId": 32,
+    "startMs": 120220,
+    "endMs": 130700,
+    "transcript": "You do not take care of that dog. That dog has been in custody of animal control for a month and has gained almost 15 pounds just simply from eating.",
+    "speaker": "D"
+   },
+   {
+    "turnId": 33,
+    "startMs": 137900,
+    "endMs": 141660,
+    "transcript": "Pretty sad how bad Tanner was. was.",
+    "speaker": "D"
+   },
+   {
+    "turnId": 34,
+    "startMs": 143820,
+    "endMs": 147580,
+    "transcript": "I swear I did. I don't know why",
+    "speaker": "C"
+   },
+   {
+    "turnId": 35,
+    "startMs": 148700,
+    "endMs": 153820,
+    "transcript": "I swear. I took care of my dog. dog",
+    "speaker": "C"
+   },
+   {
+    "turnId": 36,
+    "startMs": 158620,
+    "endMs": 167900,
+    "transcript": "Hello. We're going to go let's take him over to your car and just go through it one more time.",
+    "speaker": "B"
+   },
+   {
+    "turnId": 37,
+    "startMs": 170620,
+    "endMs": 173900,
+    "transcript": "I don't know.",
+    "speaker": "C"
+   },
+   {
+    "turnId": 38,
+    "startMs": 174060,
+    "endMs": 175580,
+    "transcript": "end up against the car.",
+    "speaker": "B"
+   },
+   {
+    "turnId": 39,
+    "startMs": 179180,
+    "endMs": 182380,
+    "transcript": "I think the middle one we can't see a tag on the camera.",
+    "speaker": "E"
+   },
+   {
+    "turnId": 40,
+    "startMs": 184220,
+    "endMs": 188540,
+    "transcript": "They're 12 we've been through traffic",
+    "speaker": "F"
+   },
+   {
+    "turnId": 41,
+    "startMs": 188540,
+    "endMs": 192380,
+    "transcript": "I won't deny it I'm a straight rider",
+    "speaker": "G"
+   },
+   {
+    "turnId": 42,
+    "startMs": 205100,
+    "endMs": 214140,
+    "transcript": "Traffic I don't have Alright, right. He's 12 in and out of traffic.",
+    "speaker": "H"
+   },
+   {
+    "turnId": 43,
+    "startMs": 214620,
+    "endMs": 219500,
+    "transcript": "I hear in the left lane.",
+    "speaker": "I"
+   },
+   {
+    "turnId": 44,
+    "startMs": 221900,
+    "endMs": 227820,
+    "transcript": "Rider no tag on the bike. In the fast lane right now. Inside lane.",
+    "speaker": "I"
+   },
+   {
+    "turnId": 45,
+    "startMs": 228220,
+    "endMs": 234220,
+    "transcript": "Got a multi color selfie stick front windshield",
+    "speaker": "J"
+   },
+   {
+    "turnId": 46,
+    "startMs": 236380,
+    "endMs": 239740,
+    "transcript": "He's cutting in and out of traffic.",
+    "speaker": "I"
+   },
+   {
+    "turnId": 47,
+    "startMs": 243260,
+    "endMs": 247820,
+    "transcript": "He just passed a unit high rate of speed",
+    "speaker": "E"
+   },
+   {
+    "turnId": 48,
+    "startMs": 248540,
+    "endMs": 251260,
+    "transcript": "Yes, 12 laying charges",
+    "speaker": "K"
+   },
+   {
+    "turnId": 49,
+    "startMs": 257020,
+    "endMs": 271500,
+    "transcript": "He just flew by a trooper here that's 1050 with somebody Okay, he's pulling into a gas station here 40640 D Street Be at J and 44",
+    "speaker": "E"
+   },
+   {
+    "turnId": 50,
+    "startMs": 272060,
+    "endMs": 275180,
+    "transcript": "Mother so far from there",
+    "speaker": "J"
+   },
+   {
+    "turnId": 51,
+    "startMs": 275500,
+    "endMs": 285660,
+    "transcript": "Okay, still got his helmet on white helmet black t-shirt black pants don't see a plate and he's got his credit card out paying for gas",
+    "speaker": "E"
+   },
+   {
+    "turnId": 52,
+    "startMs": 287260,
+    "endMs": 289740,
+    "transcript": "okay back on the go 44 eastbound",
+    "speaker": "E"
+   },
+   {
+    "turnId": 53,
+    "startMs": 289740,
+    "endMs": 295180,
+    "transcript": "are there any county canines on 44 on a step on",
+    "speaker": "L"
+   },
+   {
+    "turnId": 54,
+    "startMs": 296460,
+    "endMs": 299180,
+    "transcript": "Yeah, all of us are here.",
+    "speaker": "C"
+   },
+   {
+    "turnId": 55,
+    "startMs": 299260,
+    "endMs": 300940,
+    "transcript": "Officer laying the travel.",
+    "speaker": "M"
+   },
+   {
+    "turnId": 56,
+    "startMs": 312220,
+    "endMs": 315020,
+    "transcript": "Okay, still signal 12 eastbound 44",
+    "speaker": "E"
+   },
+   {
+    "turnId": 57,
+    "startMs": 316700,
+    "endMs": 322220,
+    "transcript": "Victor 16 on a traffic stop internationally here he comes comes down",
+    "speaker": "N"
+   },
+   {
+    "turnId": 58,
+    "startMs": 322460,
+    "endMs": 324220,
+    "transcript": "Eastbound 92",
+    "speaker": "E"
+   },
+   {
+    "turnId": 59,
+    "startMs": 325100,
+    "endMs": 329020,
+    "transcript": "from 15A",
+    "speaker": "E"
+   },
+   {
+    "turnId": 60,
+    "startMs": 329580,
+    "endMs": 331420,
+    "transcript": "Green now",
+    "speaker": "I"
+   },
+   {
+    "turnId": 61,
+    "startMs": 331580,
+    "endMs": 338140,
+    "transcript": "Okay, we're at Stone and 92. through the red light still eastbound",
+    "speaker": "E"
+   },
+   {
+    "turnId": 62,
+    "startMs": 338300,
+    "endMs": 344620,
+    "transcript": "There's about four unmarked now shadowing you so if he pulls in somewhere we got enough people to grab him",
+    "speaker": "J"
+   },
+   {
+    "turnId": 63,
+    "startMs": 344780,
+    "endMs": 365980,
+    "transcript": "Great, thank you Still eastbound coming up to Thames. No, we're still still northbound He's he's so fast he's pulling away from us right now we're trying to catch to catch up Uh our map showing mile marker 280 280 we're going to have to break off he's he's so far ahead we're barely barely getting him on camera he's north of the way way station up here",
+    "speaker": "E"
+   },
+   {
+    "turnId": 64,
+    "startMs": 366220,
+    "endMs": 369340,
+    "transcript": "everyone's all the way up there and he's breaking",
+    "speaker": "O"
+   },
+   {
+    "turnId": 65,
+    "startMs": 385580,
+    "endMs": 391660,
+    "transcript": "About the 270 southbound on a motorcycle give you give you a tag in a minute",
+    "speaker": "A"
+   },
+   {
+    "turnId": 66,
+    "startMs": 401900,
+    "endMs": 403980,
+    "transcript": "Put it on the kickstand.",
+    "speaker": "A"
+   },
+   {
+    "turnId": 67,
+    "startMs": 404220,
+    "endMs": 405500,
+    "transcript": "I'm so sorry man.",
+    "speaker": "P"
+   },
+   {
+    "turnId": 68,
+    "startMs": 405500,
+    "endMs": 409820,
+    "transcript": "Uh-huh. Come here.",
+    "speaker": "A"
+   },
+   {
+    "turnId": 69,
+    "startMs": 410060,
+    "endMs": 414060,
+    "transcript": "Come here. Take your backpack off.",
+    "speaker": "A"
+   },
+   {
+    "turnId": 70,
+    "startMs": 415820,
+    "endMs": 426860,
+    "transcript": "Take your helmet off. Put it on so it doesn't fall.",
+    "speaker": "A"
+   },
+   {
+    "turnId": 71,
+    "startMs": 427420,
+    "endMs": 434300,
+    "transcript": "Turn around, put your hands behind your back. Don't do anything else until I tell you to. to. You understand?",
+    "speaker": "A"
+   },
+   {
+    "turnId": 72,
+    "startMs": 434460,
+    "endMs": 442380,
+    "transcript": "Right now you're being detained anything you do from now makes your life worse. You understand?",
+    "speaker": "A"
+   },
+   {
+    "turnId": 73,
+    "startMs": 454060,
+    "endMs": 455740,
+    "transcript": "You got anything on you I need to know about?",
+    "speaker": "A"
+   },
+   {
+    "turnId": 74,
+    "startMs": 455820,
+    "endMs": 457100,
+    "transcript": "I do not.",
+    "speaker": "P"
+   },
+   {
+    "turnId": 75,
+    "startMs": 457580,
+    "endMs": 460540,
+    "transcript": "Okay, now fast we got got up to",
+    "speaker": "A"
+   },
+   {
+    "turnId": 76,
+    "startMs": 460700,
+    "endMs": 461580,
+    "transcript": "man I",
+    "speaker": "P"
+   },
+   {
+    "turnId": 77,
+    "startMs": 461580,
+    "endMs": 469500,
+    "transcript": "well I can tell you that truck tops out at 121 and when you tucked your head down just now you were stretching me",
+    "speaker": "A"
+   },
+   {
+    "turnId": 78,
+    "startMs": 469660,
+    "endMs": 469740,
+    "transcript": "Oh.",
+    "speaker": "P"
+   },
+   {
+    "turnId": 79,
+    "startMs": 469820,
+    "endMs": 474780,
+    "transcript": "So especially aggressive driving through traffic like that.",
+    "speaker": "A"
+   },
+   {
+    "turnId": 80,
+    "startMs": 475020,
+    "endMs": 476380,
+    "transcript": "I saw you saw you get up close behind me. I",
+    "speaker": "P"
+   },
+   {
+    "turnId": 81,
+    "startMs": 476380,
+    "endMs": 476700,
+    "transcript": "Yeah",
+    "speaker": "A"
+   },
+   {
+    "turnId": 82,
+    "startMs": 476700,
+    "endMs": 478140,
+    "transcript": "that you were an officer man I",
+    "speaker": "P"
+   },
+   {
+    "turnId": 83,
+    "startMs": 478460,
+    "endMs": 485660,
+    "transcript": "well if you were doing 70 miles an hour you and I would have have never have met so which one do you think was the right thing to do?",
+    "speaker": "A"
+   },
+   {
+    "turnId": 84,
+    "startMs": 485900,
+    "endMs": 486860,
+    "transcript": "should have just slowed down down.",
+    "speaker": "P"
+   },
+   {
+    "turnId": 85,
+    "startMs": 486860,
+    "endMs": 490940,
+    "transcript": "You should have just gone the speed limit is what you should have done.",
+    "speaker": "A"
+   },
+   {
+    "turnId": 86,
+    "startMs": 491180,
+    "endMs": 493580,
+    "transcript": "I'm so sorry, man.",
+    "speaker": "P"
+   },
+   {
+    "turnId": 87,
+    "startMs": 493740,
+    "endMs": 498460,
+    "transcript": "Why mad at you? But I think you're out here doing dumb shit.",
+    "speaker": "A"
+   },
+   {
+    "turnId": 88,
+    "startMs": 499660,
+    "endMs": 503020,
+    "transcript": "I literally don't have any tickets. I don't know what I was doing, man.",
+    "speaker": "P"
+   },
+   {
+    "turnId": 89,
+    "startMs": 503500,
+    "endMs": 508300,
+    "transcript": "Gold male 1015 pocket knives or anything?",
+    "speaker": "A"
+   },
+   {
+    "turnId": 90,
+    "startMs": 508300,
+    "endMs": 509740,
+    "transcript": "I have literally no",
+    "speaker": "P"
+   },
+   {
+    "turnId": 91,
+    "startMs": 509980,
+    "endMs": 510060,
+    "transcript": "Okay"
+   },
+   {
+    "turnId": 92,
+    "startMs": 510060,
+    "endMs": 513980,
+    "transcript": "okay I just gotta double check",
+    "speaker": "A"
+   },
+   {
+    "turnId": 93,
+    "startMs": 514540,
+    "endMs": 517820,
+    "transcript": "alright this is what I want you you to do okay",
+    "speaker": "A"
+   },
+   {
+    "turnId": 94,
+    "startMs": 517820,
+    "endMs": 518060,
+    "transcript": "Yes",
+    "speaker": "P"
+   },
+   {
+    "turnId": 95,
+    "startMs": 518140,
+    "endMs": 528460,
+    "transcript": "I want you to do your best I'm going to sit you down but I don't don't want you to fall so if you gotta cross your legs to sit or you gotta squat down but I want you to sit on your butt",
+    "speaker": "A"
+   },
+   {
+    "turnId": 96,
+    "startMs": 528540,
+    "endMs": 529100,
+    "transcript": "okay",
+    "speaker": "P"
+   },
+   {
+    "turnId": 97,
+    "startMs": 529180,
+    "endMs": 532140,
+    "transcript": "alright I don't want you to face my truck",
+    "speaker": "A"
+   },
+   {
+    "turnId": 98,
+    "startMs": 532220,
+    "endMs": 532780,
+    "transcript": "anybody",
+    "speaker": "P"
+   },
+   {
+    "turnId": 99,
+    "startMs": 532940,
+    "endMs": 534060,
+    "transcript": "we'll work on that",
+    "speaker": "A"
+   },
+   {
+    "turnId": 100,
+    "startMs": 534060,
+    "endMs": 534300,
+    "transcript": "alright",
+    "speaker": "P"
+   },
+   {
+    "turnId": 101,
+    "startMs": 534300,
+    "endMs": 538940,
+    "transcript": "alright going down go ahead",
+    "speaker": "A"
+   },
+   {
+    "turnId": 102,
+    "startMs": 539580,
+    "endMs": 543900,
+    "transcript": "Alright sit on your butt cross your legs",
+    "speaker": "A"
+   },
+   {
+    "turnId": 103,
+    "startMs": 548380,
+    "endMs": 551740,
+    "transcript": "Motor 12, you head over to me.",
+    "speaker": "A"
+   },
+   {
+    "turnId": 104,
+    "startMs": 556620,
+    "endMs": 558140,
+    "transcript": "So sorry, man.",
+    "speaker": "P"
+   },
+   {
+    "turnId": 105,
+    "startMs": 558140,
+    "endMs": 560780,
+    "transcript": "Listen, I'm not mad at you, but",
+    "speaker": "A"
+   },
+   {
+    "turnId": 106,
+    "startMs": 560940,
+    "endMs": 561500,
+    "transcript": "I'm mad mad at myself",
+    "speaker": "P"
+   },
+   {
+    "turnId": 107,
+    "startMs": 561820,
+    "endMs": 563580,
+    "transcript": "What you were doing, bro,",
+    "speaker": "A"
+   },
+   {
+    "turnId": 108,
+    "startMs": 563580,
+    "endMs": 563740,
+    "transcript": "I know",
+    "speaker": "P"
+   },
+   {
+    "turnId": 109,
+    "startMs": 563740,
+    "endMs": 569500,
+    "transcript": "dangerous, man, dangerous, especially as heavy heavy a traffic and you going from the right",
+    "speaker": "A"
+   }
+  ]
+ },
+ "latency_s": 112.02,
+ "usd": 0.0285,
+ "model": "muse-voice-transcribe-1.0"
+}

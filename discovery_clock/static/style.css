@@ -139,3 +139,9 @@ button.ghost.on { background: var(--teal); color: #fff; }
 .claim-actions { margin: 8px 0 0 34px; display: flex; align-items: center; gap: 10px; }
 .code-reason { margin: 8px 0 0 34px; font-size: 13.5px; color: #78350f; background: var(--amber-bg); border: 1px solid #fcd34d; border-radius: 6px; padding: 6px 9px; }
 .reason .who { font-weight: 600; color: var(--grey); }
+.ticks { position: relative; height: 16px; margin-top: 2px; font-size: 10.5px; color: #64748b; }
+.ticks .tick { position: absolute; top: 0; transform: translateX(-50%); white-space: nowrap; }
+.ticks .tick::before { content: ""; position: absolute; left: 50%; top: -3px; width: 1px; height: 4px; background: #94a3b8; }
+.ticks .tick:first-child { transform: none; } .ticks .tick:first-child::before { left: 0; }
+.timeline .pb { position: absolute; top: 0; bottom: 0; width: 0; border-left: 2px dashed #64748b; opacity: .55; z-index: 1; pointer-events: none; }
+.legend .sw.pc { background: none; border-left: 2px dashed #64748b; border-radius: 0; width: 4px; }

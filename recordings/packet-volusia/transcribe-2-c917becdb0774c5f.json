@@ -1,0 +1,630 @@
+{
+ "step": "transcribe-2",
+ "hash": "c917becdb0774c5f",
+ "recorded_utc": "2026-11-04T20:39:36Z",
+ "request": {
+  "endpoint": "/asr/transcribe",
+  "mode": "DIARIZATION",
+  "model": "muse-voice-transcribe-1.0",
+  "audioEncoding": "WAV",
+  "media_sha256": "4eef9ad82cbde170493c68e067f91c74856a572a06e805399cc7654e22dd1d8c",
+  "piece_s": [
+   1140.0,
+   1710.0
+  ],
+  "audio": "mono s16le 24000 Hz"
+ },
+ "response": {
+  "sessionId": "dc-0fa45449686d",
+  "transcript": "across all the way to the left lane and back dangerous dude I understand I mean and listen I ride motorcycles off and off and on duty okay there's zero protection at 120 some mile an hour okay zero that jacket the only thing that jacket does is keep your pieces parts together okay I'm putting this back in the bag for right now you know have you been have you been reading the news about the super speeder law I have so you did both of them you're over 100 100 miles an hour and you were 50 miles an hour over the speed limit speed limit 70 so so you're both you didn't just do one alright hang tight right there alright you're good watch your feet feet yeah bro I see you keep going in it's the gold van it's facing right at you as soon as you come in back then alright we're going to take them down moving in we can see them from here must just went inside then guys he just he just pulled in and I went to go get cover I got him stop let me see your hands running through the McDonald's right now guys going towards the boulevard black shirt blue blue jeans right here right here stop stop let me see your hands sheriff's office stop stop now stop Sheriff's office stop Show Show me your hands show me your hands on the ground now get on the ground get on the ground Get on the ground You got him behind the tree track one secure Hey I want a stomach roll on the side so we can breathe better from this running running there you go You speak English? alright perfect X-ray 42 has one secure Okay, there's a bunch of gas tanks in the back That's why it smells like gas. You can see the drums. In front of it just in case. No, I think this is block two. They might have it actually blacked out out black. Yeah, that tent's real dark. It's like 0% Yeah. Not good. No bueno. What happened? You know what happened. Honestly doing L cam on a white Nissan Continuing south on Montecito. I'm shut down I'm following at normal speed It's going down a driveway hey bail out bail out bail out bail out two black males one wearing a black shirt orange shirt and another with a black sweater and shorts running westbound behind the house I have charges 12 F bail out out Show me your hands. Central I got one at gunpoint behind the house. Show me your hands. Now come out I can see you. see you. Show me your hands get down to the ground get down on the ground. Central I got a female gun prone out I have a male on the I believe the west west side of the house it's the one two corner I lost sight of him Down here Down here. Slow down slow down slow down. One person over there I don't know I lost sight of him I got this Just watch man we'll wait for one more unit hold on back up back up back up ma'am crawl to me crawl to me Got it just watch the car I got it don't worry about it male ran between the truck okay I got it I'm going to be as easy as as I possibly can. I understand. I know. I know. I believe you. I believe you. I just I have to secure you this this way. Okay. Somebody help pick me up. I will pick you up. Yes. Gun? Yep. Right there in the center console. You'll see it plain as day. Yeah. Loaded. I'm thinking he may have hit this this lake and went to the left. Alright I got him in the water on the shoreline Still Still no movement. We go to jump on Hey Hey, hold on. Two o'clock. Drop your hands! Show me your hands! walk out hey hey hey walk out towards the cars start start walking Where's your partner? Where's your partner? Walk out Start walking we're good alright any guns any weapons? No no listen get in grab me no sir no sir come on help us here moving back a little bit he's right there he's it's right there it's right there now Start walking towards us Get Get up stand up Start walking towards us Stand up now not stand up You gotta help us get you in here bud There you go Hold on. Get him in more. I don't want him in the water if he can't Slide it a little bit more man. There you go. There you go. are you injured? The first time you've had someone recovered to this degree what does that say how does that make you feel knowing that what you did worked and you know it still unbelievable like I said my whole career I've never had this outcome it's usually the other outcome that no one likes but this is like I said if you believe in miracles this is probably one of them So like what goes through your head when you see a a person who appears to be unconscious in the water? I know your instincts kind of kick in but are there any thoughts that come to mind? Work fast. Just move as quickly Sorry, corrections. Let me know when you're ready, Stan. Don't worry about that. that I got you. I got you.",
+  "audioDurationMs": 570000,
+  "turns": [
+   {
+    "turnId": 0,
+    "startMs": 380,
+    "endMs": 5100,
+    "transcript": "across all the way to the left lane and back dangerous dude",
+    "speaker": "A"
+   },
+   {
+    "turnId": 1,
+    "startMs": 5100,
+    "endMs": 27420,
+    "transcript": "I understand I mean and listen I ride motorcycles off and off and on duty okay there's zero protection at 120 some mile an hour okay zero that jacket the only thing that jacket does is keep your pieces parts together okay I'm putting this back in the bag for right now",
+    "speaker": "A"
+   },
+   {
+    "turnId": 2,
+    "startMs": 31900,
+    "endMs": 35420,
+    "transcript": "you know have you been have you been reading the news about the super speeder law",
+    "speaker": "A"
+   },
+   {
+    "turnId": 3,
+    "startMs": 35580,
+    "endMs": 36860,
+    "transcript": "I have",
+    "speaker": "B"
+   },
+   {
+    "turnId": 4,
+    "startMs": 36860,
+    "endMs": 51260,
+    "transcript": "so you did both of them you're over 100 100 miles an hour and you were 50 miles an hour over the speed limit speed limit 70 so so you're both you didn't just do one",
+    "speaker": "A"
+   },
+   {
+    "turnId": 5,
+    "startMs": 53500,
+    "endMs": 56540,
+    "transcript": "alright hang tight right there",
+    "speaker": "A"
+   },
+   {
+    "turnId": 6,
+    "startMs": 57740,
+    "endMs": 61100,
+    "transcript": "alright you're good watch your feet feet",
+    "speaker": "A"
+   },
+   {
+    "turnId": 7,
+    "startMs": 66540,
+    "endMs": 73980,
+    "transcript": "yeah bro I see you keep going in it's the gold van it's facing right at you as soon as you come in back then",
+    "speaker": "C"
+   },
+   {
+    "turnId": 8,
+    "startMs": 74220,
+    "endMs": 80300,
+    "transcript": "alright we're going to take them down moving in we can see them from here",
+    "speaker": "D"
+   },
+   {
+    "turnId": 9,
+    "startMs": 81740,
+    "endMs": 87420,
+    "transcript": "must just went inside then guys he just he just pulled in and I went to go get cover",
+    "speaker": "C"
+   },
+   {
+    "turnId": 10,
+    "startMs": 94140,
+    "endMs": 113100,
+    "transcript": "I got him stop let me see your hands running through the McDonald's right now guys going towards the boulevard black shirt blue blue jeans right here right here stop stop let me see your hands sheriff's office stop stop now stop",
+    "speaker": "C"
+   },
+   {
+    "turnId": 11,
+    "startMs": 128780,
+    "endMs": 132540,
+    "transcript": "Sheriff's office stop",
+    "speaker": "C"
+   },
+   {
+    "turnId": 12,
+    "startMs": 133340,
+    "endMs": 140620,
+    "transcript": "Show Show me your hands show me your hands on the ground now get on the ground get on the ground",
+    "speaker": "C"
+   },
+   {
+    "turnId": 13,
+    "startMs": 141420,
+    "endMs": 144860,
+    "transcript": "Get on the ground",
+    "speaker": "C"
+   },
+   {
+    "turnId": 14,
+    "startMs": 144860,
+    "endMs": 150060,
+    "transcript": "You got him behind the tree track one secure",
+    "speaker": "E"
+   },
+   {
+    "turnId": 15,
+    "startMs": 151980,
+    "endMs": 159580,
+    "transcript": "Hey I want a stomach roll on the side so we can breathe better from this running running there you go",
+    "speaker": "C"
+   },
+   {
+    "turnId": 16,
+    "startMs": 159580,
+    "endMs": 164460,
+    "transcript": "You speak English? alright perfect",
+    "speaker": "C"
+   },
+   {
+    "turnId": 17,
+    "startMs": 172220,
+    "endMs": 175900,
+    "transcript": "X-ray 42 has one secure",
+    "speaker": "F"
+   },
+   {
+    "turnId": 18,
+    "startMs": 178220,
+    "endMs": 185180,
+    "transcript": "Okay, there's a bunch of gas tanks in the back That's why it smells like gas.",
+    "speaker": "G"
+   },
+   {
+    "turnId": 19,
+    "startMs": 185980,
+    "endMs": 188300,
+    "transcript": "You can see the drums.",
+    "speaker": "E"
+   },
+   {
+    "turnId": 20,
+    "startMs": 188300,
+    "endMs": 189900,
+    "transcript": "In front of it just in case.",
+    "speaker": "D"
+   },
+   {
+    "turnId": 21,
+    "startMs": 190060,
+    "endMs": 191500,
+    "transcript": "No, I think this is block two.",
+    "speaker": "G"
+   },
+   {
+    "turnId": 22,
+    "startMs": 191740,
+    "endMs": 195340,
+    "transcript": "They might have it actually blacked out out black. Yeah, that tent's real dark.",
+    "speaker": "H"
+   },
+   {
+    "turnId": 23,
+    "startMs": 195340,
+    "endMs": 196300,
+    "transcript": "It's like 0%",
+    "speaker": "E"
+   },
+   {
+    "turnId": 24,
+    "startMs": 196620,
+    "endMs": 201580,
+    "transcript": "Yeah.",
+    "speaker": "H"
+   },
+   {
+    "turnId": 25,
+    "startMs": 201980,
+    "endMs": 207740,
+    "transcript": "Not good. No bueno.",
+    "speaker": "G"
+   },
+   {
+    "turnId": 26,
+    "startMs": 207900,
+    "endMs": 208380,
+    "transcript": "What happened?",
+    "speaker": "I"
+   },
+   {
+    "turnId": 27,
+    "startMs": 208620,
+    "endMs": 212300,
+    "transcript": "You know what happened.",
+    "speaker": "G"
+   },
+   {
+    "turnId": 28,
+    "startMs": 217740,
+    "endMs": 222060,
+    "transcript": "Honestly doing L cam on a white Nissan",
+    "speaker": "J"
+   },
+   {
+    "turnId": 29,
+    "startMs": 226780,
+    "endMs": 232540,
+    "transcript": "Continuing south on Montecito. I'm shut down I'm following at normal speed",
+    "speaker": "J"
+   },
+   {
+    "turnId": 30,
+    "startMs": 233500,
+    "endMs": 251340,
+    "transcript": "It's going down a driveway hey bail out bail out bail out bail out two black males one wearing a black shirt orange shirt and another with a black sweater and shorts running westbound behind the house I have charges 12 F bail out out",
+    "speaker": "K"
+   },
+   {
+    "turnId": 31,
+    "startMs": 254940,
+    "endMs": 266780,
+    "transcript": "Show me your hands. Central I got one at gunpoint behind the house. Show me your hands. Now come out I can see you. see you.",
+    "speaker": "K"
+   },
+   {
+    "turnId": 32,
+    "startMs": 267820,
+    "endMs": 273260,
+    "transcript": "Show me your hands get down to the ground get down on the ground.",
+    "speaker": "K"
+   },
+   {
+    "turnId": 33,
+    "startMs": 274460,
+    "endMs": 283980,
+    "transcript": "Central I got a female gun prone out I have a male on the I believe the west west side of the house it's the one two corner I lost sight of him",
+    "speaker": "K"
+   },
+   {
+    "turnId": 34,
+    "startMs": 286700,
+    "endMs": 286780,
+    "transcript": "Down here"
+   },
+   {
+    "turnId": 35,
+    "startMs": 286780,
+    "endMs": 292620,
+    "transcript": "Down here. Slow down slow down slow down.",
+    "speaker": "K"
+   },
+   {
+    "turnId": 36,
+    "startMs": 295580,
+    "endMs": 300940,
+    "transcript": "One person over there I don't know I lost sight of him I got this",
+    "speaker": "K"
+   },
+   {
+    "turnId": 37,
+    "startMs": 302540,
+    "endMs": 312380,
+    "transcript": "Just watch man we'll wait for one more unit hold on back up back up back up ma'am crawl to me crawl to me",
+    "speaker": "K"
+   },
+   {
+    "turnId": 38,
+    "startMs": 313900,
+    "endMs": 316220,
+    "transcript": "Got it just watch the car",
+    "speaker": "K"
+   },
+   {
+    "turnId": 39,
+    "startMs": 316380,
+    "endMs": 317340,
+    "transcript": "I got it don't worry about it",
+    "speaker": "I"
+   },
+   {
+    "turnId": 40,
+    "startMs": 317340,
+    "endMs": 318380,
+    "transcript": "male ran between the truck",
+    "speaker": "K"
+   },
+   {
+    "turnId": 41,
+    "startMs": 318380,
+    "endMs": 323020,
+    "transcript": "okay I got it",
+    "speaker": "I"
+   },
+   {
+    "turnId": 42,
+    "startMs": 323340,
+    "endMs": 333020,
+    "transcript": "I'm going to be as easy as as I possibly can. I understand. I know. I know. I believe you. I believe you. I just I have to secure you this this way. Okay.",
+    "speaker": "K"
+   },
+   {
+    "turnId": 43,
+    "startMs": 333020,
+    "endMs": 334620,
+    "transcript": "Somebody help pick me up.",
+    "speaker": "L"
+   },
+   {
+    "turnId": 44,
+    "startMs": 334620,
+    "endMs": 338300,
+    "transcript": "I will pick you up.",
+    "speaker": "K"
+   },
+   {
+    "turnId": 45,
+    "startMs": 340220,
+    "endMs": 341580,
+    "transcript": "Yes.",
+    "speaker": "K"
+   },
+   {
+    "turnId": 46,
+    "startMs": 341580,
+    "endMs": 341580,
+    "transcript": "Gun?",
+    "speaker": "M"
+   },
+   {
+    "turnId": 47,
+    "startMs": 341740,
+    "endMs": 345420,
+    "transcript": "Yep. Right there in the center console. You'll see it plain as day.",
+    "speaker": "K"
+   },
+   {
+    "turnId": 48,
+    "startMs": 345580,
+    "endMs": 345900,
+    "transcript": "Yeah.",
+    "speaker": "M"
+   },
+   {
+    "turnId": 49,
+    "startMs": 345980,
+    "endMs": 346140,
+    "transcript": ""
+   },
+   {
+    "turnId": 50,
+    "startMs": 346140,
+    "endMs": 350540,
+    "transcript": "Loaded.",
+    "speaker": "K"
+   },
+   {
+    "turnId": 51,
+    "startMs": 350620,
+    "endMs": 355580,
+    "transcript": "I'm thinking he may have hit this this lake and went to the left.",
+    "speaker": "N"
+   },
+   {
+    "turnId": 52,
+    "startMs": 356060,
+    "endMs": 356140,
+    "transcript": ""
+   },
+   {
+    "turnId": 53,
+    "startMs": 356140,
+    "endMs": 360140,
+    "transcript": "Alright I got him in the water on the shoreline",
+    "speaker": "O"
+   },
+   {
+    "turnId": 54,
+    "startMs": 361660,
+    "endMs": 366300,
+    "transcript": "Still Still no movement.",
+    "speaker": "O"
+   },
+   {
+    "turnId": 55,
+    "startMs": 366380,
+    "endMs": 366460,
+    "transcript": ""
+   },
+   {
+    "turnId": 56,
+    "startMs": 366460,
+    "endMs": 369580,
+    "transcript": "We go to jump on",
+    "speaker": "P"
+   },
+   {
+    "turnId": 57,
+    "startMs": 380620,
+    "endMs": 380780,
+    "transcript": "Hey"
+   },
+   {
+    "turnId": 58,
+    "startMs": 380780,
+    "endMs": 386460,
+    "transcript": "Hey, hold on. Two o'clock.",
+    "speaker": "P"
+   },
+   {
+    "turnId": 59,
+    "startMs": 393340,
+    "endMs": 407020,
+    "transcript": "Drop your hands! Show me your hands! walk out hey hey hey walk out towards the cars start start walking",
+    "speaker": "P"
+   },
+   {
+    "turnId": 60,
+    "startMs": 407020,
+    "endMs": 410300,
+    "transcript": "Where's your partner? Where's your partner?",
+    "speaker": "C"
+   },
+   {
+    "turnId": 61,
+    "startMs": 411340,
+    "endMs": 413980,
+    "transcript": "Walk out",
+    "speaker": "D"
+   },
+   {
+    "turnId": 62,
+    "startMs": 414060,
+    "endMs": 418540,
+    "transcript": "Start walking we're good alright any guns any weapons?",
+    "speaker": "P"
+   },
+   {
+    "turnId": 63,
+    "startMs": 418540,
+    "endMs": 420220,
+    "transcript": "No no listen",
+    "speaker": "C"
+   },
+   {
+    "turnId": 64,
+    "startMs": 420220,
+    "endMs": 423420,
+    "transcript": "get in grab me",
+    "speaker": "C"
+   },
+   {
+    "turnId": 65,
+    "startMs": 423420,
+    "endMs": 423980,
+    "transcript": "no sir no sir",
+    "speaker": "C"
+   },
+   {
+    "turnId": 66,
+    "startMs": 423980,
+    "endMs": 427980,
+    "transcript": "come on help us here moving back a little bit",
+    "speaker": "P"
+   },
+   {
+    "turnId": 67,
+    "startMs": 427980,
+    "endMs": 430380,
+    "transcript": "he's right there he's it's right there it's right there",
+    "speaker": "C"
+   },
+   {
+    "turnId": 68,
+    "startMs": 430380,
+    "endMs": 431660,
+    "transcript": "now",
+    "speaker": "C"
+   },
+   {
+    "turnId": 69,
+    "startMs": 431740,
+    "endMs": 432860,
+    "transcript": "Start walking towards us",
+    "speaker": "P"
+   },
+   {
+    "turnId": 70,
+    "startMs": 433020,
+    "endMs": 433100,
+    "transcript": "Get"
+   },
+   {
+    "turnId": 71,
+    "startMs": 433100,
+    "endMs": 433900,
+    "transcript": "Get up stand up",
+    "speaker": "C"
+   },
+   {
+    "turnId": 72,
+    "startMs": 433980,
+    "endMs": 435740,
+    "transcript": "Start walking towards us",
+    "speaker": "P"
+   },
+   {
+    "turnId": 73,
+    "startMs": 435820,
+    "endMs": 437900,
+    "transcript": "Stand up now",
+    "speaker": "C"
+   },
+   {
+    "turnId": 74,
+    "startMs": 437900,
+    "endMs": 441020,
+    "transcript": "not stand up",
+    "speaker": "I"
+   },
+   {
+    "turnId": 75,
+    "startMs": 441100,
+    "endMs": 444620,
+    "transcript": "You gotta help us get you in here bud",
+    "speaker": "P"
+   },
+   {
+    "turnId": 76,
+    "startMs": 444620,
+    "endMs": 451740,
+    "transcript": "There you go Hold on. Get him in more. I don't want him in the water if he can't",
+    "speaker": "P"
+   },
+   {
+    "turnId": 77,
+    "startMs": 453660,
+    "endMs": 457820,
+    "transcript": "Slide it a little bit more man. There you go. There you go.",
+    "speaker": "P"
+   },
+   {
+    "turnId": 78,
+    "startMs": 471420,
+    "endMs": 473100,
+    "transcript": "are you injured?",
+    "speaker": "D"
+   },
+   {
+    "turnId": 79,
+    "startMs": 473420,
+    "endMs": 482300,
+    "transcript": "The first time you've had someone recovered to this degree what does that say how does that make you feel knowing that what you did worked and you know",
+    "speaker": "E"
+   },
+   {
+    "turnId": 80,
+    "startMs": 482300,
+    "endMs": 494860,
+    "transcript": "it still unbelievable like I said my whole career I've never had this outcome it's usually the other outcome that no one likes but this is like I said if you believe in miracles this is probably one of them",
+    "speaker": "F"
+   },
+   {
+    "turnId": 81,
+    "startMs": 505180,
+    "endMs": 513500,
+    "transcript": "So like what goes through your head when you see a a person who appears to be unconscious in the water? I know your instincts kind of kick in but are there any thoughts that come to mind?",
+    "speaker": "E"
+   },
+   {
+    "turnId": 82,
+    "startMs": 513580,
+    "endMs": 517740,
+    "transcript": "Work fast. Just move as quickly",
+    "speaker": "F"
+   },
+   {
+    "turnId": 83,
+    "startMs": 539660,
+    "endMs": 543340,
+    "transcript": "Sorry, corrections.",
+    "speaker": "B"
+   },
+   {
+    "turnId": 84,
+    "startMs": 546940,
+    "endMs": 550220,
+    "transcript": "Let me know when you're ready, Stan.",
+    "speaker": "B"
+   },
+   {
+    "turnId": 85,
+    "startMs": 556460,
+    "endMs": 559420,
+    "transcript": "Don't worry about that. that",
+    "speaker": "D"
+   },
+   {
+    "turnId": 86,
+    "startMs": 568380,
+    "endMs": 569500,
+    "transcript": "I got you. I got you.",
+    "speaker": "I"
+   }
+  ]
+ },
+ "latency_s": 107.22,
+ "usd": 0.0285,
+ "model": "muse-voice-transcribe-1.0"
+}

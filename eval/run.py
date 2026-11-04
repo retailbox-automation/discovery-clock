@@ -27,6 +27,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 EXPECTED = {"account": "on_recording", "planted_contradiction": "check", "planted_invented": "not_found"}
+PART_TOL_S = 2.0  # packet of clips: a timecode this close to its own clip still counts as inside it
 
 
 def hms(s) -> str:
@@ -70,12 +71,22 @@ def saved_answer(case: str, result_src: Path) -> dict | None:
     return None
 
 
-def reverified(result: dict, answer: dict) -> dict:
-    """Current code checks over the saved model answer (no model calls)."""
+def saved_raw(result_src: Path) -> dict | None:
+    """review-raw.json next to the result (for a long recording it holds the per-piece answers)."""
+    p = result_src.parent / "review-raw.json"
+    return json.loads(p.read_text()) if p.exists() else None
+
+
+def reverified(result: dict, answer: dict, raw: dict | None = None) -> dict:
+    """Current code checks (and, for a long recording, the current merge of the per-piece answers) over the saved
+    model answers (no model calls)."""
     sys.path.insert(0, str(ROOT))
-    from discovery_clock import verify as V
+    from discovery_clock import review as R, verify as V
     base = [{k: c.get(k) for k in ("id", "text", "kind", "line")} for c in result["claims"]]
-    chk = V.verify(answer, base, result.get("turns", []), result["video"]["duration_s"])
+    merge = None
+    if raw and raw.get("pieces"):
+        answer, merge = R.remerge(raw, [c["id"] for c in base])
+    chk = R.apply_merge(V.verify(answer, base, result.get("turns", []), result["video"]["duration_s"]), merge)
     return {**result, "claims": chk["claims"], "summary": chk["summary"], "verify_version": chk["verify_version"]}
 
 
@@ -100,7 +111,15 @@ def score_case(case_dir: Path, result: dict) -> dict:
             problems.append(f"{cid} text differs from claims.txt (run with --claims lines)")
         rows.append({"id": cid, "label": labels.get(cid, "?"), "text": text, "status": c["status"], "start_s": c.get("start_s"),
                      "end_s": c.get("end_s"), "evidence": c.get("evidence", ""), "reason": c.get("reason", ""),
-                     "code": [n["detail"] for n in c.get("verify_notes", []) if n.get("changed_status")]})
+                     "code": [n["detail"] for n in c.get("verify_notes", []) if n.get("changed_status")],
+                     "part": (key.get("claim_part") or {}).get(cid), "piece": c.get("piece")})
+    parts = {p["part"]: p for p in key.get("parts") or []}
+    for r in rows:  # a packet of clips: is the claim placed inside its own clip?
+        p = parts.get(r["part"])
+        if p and r["status"] in ("on_recording", "check") and r["start_s"] is not None:
+            r["in_part"] = p["start_s"] - PART_TOL_S <= r["start_s"] <= p["end_s"] + PART_TOL_S
+            if not r["in_part"]:
+                r["found_in"] = next((q["part"] for q in parts.values() if q["start_s"] <= r["start_s"] < q["end_s"]), "?")
     planted = [r for r in rows if r["label"].startswith("planted")]
     account = [r for r in rows if r["label"] == "account"]
     return {
@@ -115,6 +134,62 @@ def score_case(case_dir: Path, result: dict) -> dict:
         "expected_ok": sum(EXPECTED.get(r["label"]) == r["status"] for r in rows), "total": len(rows),
         "changed_by_code": sum(1 for r in rows if r["code"]),
     }
+
+
+def long_sections(longs: list[dict], short_by_case: dict) -> list[str]:
+    """Packet of clips: per clip, and whether each timecoded claim sits inside its own clip; the claims copied from the
+    short evaluation cases are compared with their own separate runs."""
+    out = []
+    cell = lambda t: str(t).replace("|", "\\|").replace("\n", " ")
+    for s in longs:
+        rows = [r for r in s["rows"] if r.get("part")]
+        if not rows:
+            continue
+        tc = [r for r in rows if "in_part" in r]
+        inside = [r for r in tc if r["in_part"]]
+        out += [f"## Long input: {s['case']}", "",
+                f"**Timecoded claims inside their own clip: {pct(len(inside), len(tc))}.** Every claim belongs to one clip of the "
+                f"packet (`claim_part` in the sealed key); a timecode outside that clip (± {PART_TOL_S:.0f} s) means the model "
+                "placed it on another clip.", "",
+                "| clip | claims | account on recording | account with timecode | planted kept off on recording | timecoded inside own clip |",
+                "|---|---|---|---|---|---|"]
+        order = []
+        for r in rows:
+            if r["part"] not in order:
+                order.append(r["part"])
+        for part in order:
+            rr = [r for r in rows if r["part"] == part]
+            acc = [r for r in rr if r["label"] == "account"]
+            pl = [r for r in rr if r["label"].startswith("planted")]
+            t = [r for r in rr if "in_part" in r]
+            out.append(f"| {part} | {len(rr)} | {pct(sum(r['status'] == 'on_recording' for r in acc), len(acc))} | "
+                       f"{pct(sum(r['status'] in ('on_recording', 'check') and r['start_s'] is not None for r in acc), len(acc))} | "
+                       f"{pct(sum(r['status'] != 'on_recording' for r in pl), len(pl))} | {pct(sum(r['in_part'] for r in t), len(t))} |")
+        wrong = [r for r in tc if not r["in_part"]]
+        out += ["", "Claims placed outside their own clip:", ""]
+        out += [f"- {r['id']} ({r['part']}, {r['label']}, {r['status']}) at {hms(r['start_s'])} — in {r.get('found_in', '?')}: "
+                f"{cell(r['text'])} — {cell(r['evidence'])[:200]}" for r in wrong] or ["- none"]
+        same, diff = 0, []
+        key = json.loads((ROOT / "eval" / "cases" / s["case"] / "key.json").read_text())
+        for r in rows:
+            m = re.match(r"^(\S+) (C\d+) \(sealed", (key.get("claim_sources") or {}).get(r["id"], ""))
+            if not m or m.group(1) not in short_by_case:
+                continue
+            o = next((x for x in short_by_case[m.group(1)]["rows"] if x["id"] == m.group(2)), None)
+            if o is None:
+                continue
+            if o["status"] == r["status"]:
+                same += 1
+            else:
+                diff.append((r, o, m.group(1)))
+        n = same + len(diff)
+        if n:
+            out += ["", f"**Claims of the five evaluation clips, packet run vs their own separate runs: same status {pct(same, n)}.**", "",
+                    "| claim | clip | separate run | packet run |", "|---|---|---|---|"]
+            out += [f"| {r['id']}. {cell(r['text'])} | {c} {o['id']} | {o['status']} {hms(o['start_s'])} | {r['status']} {hms(r['start_s'])} |"
+                    for r, o, c in diff]
+        out.append("")
+    return out
 
 
 def pct(a: int, b: int) -> str:
@@ -146,13 +221,19 @@ def main(argv=None) -> int:
         answer = saved_answer(case_dir.name, src_path)
         s = as_run
         if answer is not None:
-            s = score_case(case_dir, reverified(res, answer))
+            s = score_case(case_dir, reverified(res, answer, saved_raw(src_path)))
         s["source"] = src
+        s["long"] = bool(res.get("review_pieces"))
+        s["duration_s"] = (res.get("video") or {}).get("duration_s")
+        s["pieces"] = len(res.get("review_pieces") or [])
+        s["spend_usd"], s["seconds"] = res.get("spend_usd"), res.get("seconds")
         s["as_run"] = as_run
         s["as_run_version"] = first_res.get("verify_version", 1)
         scored.append(s)
 
-    T = lambda k: sum(s[k] if isinstance(s[k], int) else len(s[k]) for s in scored)
+    short = [s for s in scored if not s["long"]]   # the totals stay over the short clips; long recordings get their own rows
+    longs = [s for s in scored if s["long"]]
+    T = lambda k, ss=None: sum(s[k] if isinstance(s[k], int) else len(s[k]) for s in (short if ss is None else ss))
     out = ["# Discovery Clock — evaluation results", "",
            "Generated by `python eval/run.py`. Claims: sentences from the agency's official narrative (*account*) plus claims we "
            "planted before any model run (*planted*). A planted claim must never be marked **on recording**.", "",
@@ -163,15 +244,28 @@ def main(argv=None) -> int:
         out += ["## Summary", "",
                 "| case | planted caught | account on recording | account to check (disputed) | account not found | account with timecode | expected status | changed by code | source |",
                 "|---|---|---|---|---|---|---|---|---|"]
-        for s in scored:
-            out.append(f"| {s['case']} | {pct(s['planted_caught'], s['planted'])} | {pct(s['account_on'], s['account'])} | "
-                       f"{len(s['account_check'])} | {len(s['account_not_found'])} | {pct(s['account_timecoded'], s['account'])} | "
-                       f"{pct(s['expected_ok'], s['total'])} | {s['changed_by_code']} | `{s['source']}`{' (replay)' if s['replay'] else ''} |")
-        out.append(f"| **all** | **{pct(T('planted_caught'), T('planted'))}** | {pct(T('account_on'), T('account'))} | "
-                   f"{T('account_check')} | {T('account_not_found')} | {pct(T('account_timecoded'), T('account'))} | "
-                   f"{pct(T('expected_ok'), T('total'))} | {T('changed_by_code')} | |")
+        row = lambda s, name: (f"| {name} | {pct(s['planted_caught'], s['planted'])} | {pct(s['account_on'], s['account'])} | "
+                               f"{len(s['account_check'])} | {len(s['account_not_found'])} | {pct(s['account_timecoded'], s['account'])} | "
+                               f"{pct(s['expected_ok'], s['total'])} | {s['changed_by_code']} | `{s['source']}`{' (replay)' if s['replay'] else ''} |")
+        for s in short:
+            out.append(row(s, s["case"]))
+        if short:
+            out.append(f"| **all** | **{pct(T('planted_caught'), T('planted'))}** | {pct(T('account_on'), T('account'))} | "
+                       f"{T('account_check')} | {T('account_not_found')} | {pct(T('account_timecoded'), T('account'))} | "
+                       f"{pct(T('expected_ok'), T('total'))} | {T('changed_by_code')} | |")
+        for s in longs:
+            out.append(row(s, f"{s['case']} (long recording, {hms(s['duration_s'])}, {s['pieces']} pieces)"))
         out += ["", "**Misses** (planted claim marked on recording) are the failure that matters most: "
-                f"{T('planted_missed')} in total.", ""]
+                f"{T('planted_missed', scored)} in total.", ""]
+        if longs:
+            out += ["Long recordings are listed apart from the short clips; the **all** row covers the short clips only. "
+                    "A long recording is reviewed in pieces of at most 10 minutes, one Muse Spark 1.3 call per piece, "
+                    "and the per-piece answers are merged by code before the checks.", ""]
+            for s in longs:
+                out.append(f"- {s['case']}: {hms(s['duration_s'])} of video, {s['pieces']} pieces, run took {s['seconds']} s "
+                           f"wall-clock, spend ${s['spend_usd']}")
+            out.append("")
+            out += long_sections(longs, {x["case"]: x for x in short})
         for s in scored:
             for r in s["planted_missed"]:
                 out.append(f"- MISS {s['case']} {r['id']} ({r['label']}): {r['text']} — at {hms(r['start_s'])}: {r['evidence']}")
@@ -224,6 +318,9 @@ def main(argv=None) -> int:
     if scored:
         print(f"planted caught {pct(T('planted_caught'), T('planted'))} · disputed account {T('account_check')} · "
               f"account with timecode {pct(T('account_timecoded'), T('account'))}")
+        for s in longs:
+            print(f"long {s['case']}: planted caught {pct(s['planted_caught'], s['planted'])} · disputed account "
+                  f"{len(s['account_check'])} · account with timecode {pct(s['account_timecoded'], s['account'])}")
     return 0
 
 

@@ -34,8 +34,9 @@ class FakeClient(MetaClient):
     def _meta_key(self):
         return "test-key-not-real"
 
-    def _post_multipart(self, url, parts, key, timeout=900):
+    def _post_multipart(self, url, parts, key, timeout=900, stall_s=90):
         self.http.append(url)
+        self.stalls = getattr(self, 'stalls', []) + [stall_s]
         if url.endswith("/files"):
             return {"id": "file-123"}
         return {"audioDurationMs": 3000, "turns": [

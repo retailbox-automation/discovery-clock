@@ -30,7 +30,8 @@
     {% if result.camera_clock %}<span class="chip clock">Camera clock {{ result.camera_clock.start }} → {{ result.camera_clock.end }}{% if result.camera_clock.date %} · {{ result.camera_clock.date }}{% endif %}</span>{% endif %}
     <span class="chip">Claims: {{ result.models.claims | model_name }}</span>
     <span class="chip">Speech: {{ result.models.transcribe | model_name }}</span>
-    <span class="chip">Review: {{ result.models.review | model_name }}</span>
+    <span class="chip">Review: {{ result.models.review | model_name }}{% if result.review_pieces %} · {{ result.review_pieces | length }} calls, one per piece of ≤ 10 min{% endif %}</span>
+    {% if result.review_pieces %}<span class="chip">Recording {{ result.video.duration_s | hms }} · checked in {{ result.seconds | hms }} · ${{ '%.2f' % result.spend_usd }}</span>{% endif %}
     <span class="chip">Checks: code ({{ s.changed_by_code }} changed)</span>
     <a class="chip link" href="/calls?case={{ case_id }}">Meta calls →</a>
   </div>
@@ -49,7 +50,7 @@
         {% if c.status == 'on_recording' %}<span class="pill on">On recording · {{ c.start_s | hms }}</span>
         {% elif c.status == 'not_found' %}<span class="pill nf">Not found on recording</span>
         {% else %}<span class="pill ck">Check this claim{% if c.start_s is not none %} · {{ c.start_s | hms }}{% endif %}</span>{% endif %}
-        <span class="kind">{{ c.kind }}</span>
+        <span class="kind">{{ c.kind }}</span>{% if c.piece %}<span class="kind">piece {{ c.piece }}</span>{% endif %}
       </div>
       {% for n in c.verify_notes if n.changed_status %}
       <p class="code-reason"><b>Changed by code check</b> (the model said “{{ (c.model.status or 'nothing') | replace('_', ' ') }}”): {{ n.detail }}</p>
@@ -58,6 +59,9 @@
       {% if c.reason %}<p class="reason"><span class="who">{{ result.models.review | model_name }}:</span> {{ c.reason }}</p>{% endif %}
       {% for n in c.verify_notes if not n.changed_status %}
       <p class="vnote"><b>Code check:</b> {{ n.detail }}</p>
+      {% endfor %}
+      {% for n in c.merge_notes or [] %}
+      <p class="vnote"><b>Other pieces:</b> {{ n }}</p>
       {% endfor %}
       {% if c.start_s is not none and has_video %}
       <div class="claim-actions"><button type="button" class="ghost clip-btn" data-id="{{ c.id }}">Export clip · bystander faces blurred</button><span class="clip-status small muted"></span></div>
@@ -75,7 +79,8 @@
       <div class="novideo">The video file is not on this computer.{% if src %} Fetch it with <code>python scripts/fetch_media.py {{ src.id }}</code>.{% endif %}</div>
       {% endif %}
       <div class="timeline" id="timeline" title="Claims on the recording"><div class="playhead" id="playhead"></div></div>
-      <div class="legend small"><span class="sw on"></span>on recording <span class="sw ck"></span>check this claim</div>
+      <div class="ticks" id="ticks"></div>
+      <div class="legend small"><span class="sw on"></span>on recording <span class="sw ck"></span>check this claim{% if result.review_pieces %} <span class="sw pc"></span>piece boundary ({{ result.review_pieces | length }} pieces){% endif %}</div>
       <h3>Speech on the recording <span class="muted small">· {{ result.models.transcribe | model_name }}, speakers A, B, C…</span></h3>
       <div class="turns" id="turns">
         {% for t in result.turns %}

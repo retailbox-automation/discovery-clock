@@ -8,6 +8,7 @@ import subprocess
 import threading
 import time
 import traceback
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 from . import RECORDINGS, ROOT, RUNS, claims as claims_mod, review as review_mod, stamp as stamp_mod, verify as verify_mod
@@ -59,8 +60,13 @@ class Status:
         self.save()
 
 
+def piece_media_key(media_sha: str, a: float, b: float) -> str:
+    return f"{media_sha}:{stamp_mod.STAMP_VERSION}:piece-{a:.3f}-{b:.3f}"
+
+
 def run(case_id: str, video: str | Path, report_text: str, *, claims_mode: str = "extract", use_open: bool = True,
-        client: MetaClient | None = None, runs_dir: Path | None = None, duration_s: float | None = None) -> dict:
+        client: MetaClient | None = None, runs_dir: Path | None = None, duration_s: float | None = None,
+        long_over_s: float | None = None, piece_max_s: float | None = None) -> dict:
     video = Path(video).resolve()
     runs = Path(runs_dir or RUNS)
     case_dir = runs / case_id
@@ -68,48 +74,98 @@ def run(case_id: str, video: str | Path, report_text: str, *, claims_mode: str =
     client = client or MetaClient(case_id, runs_dir=runs)
     st = Status(case_dir)
     t_start = time.time()
+    timings: dict[str, float] = {}
     current = "claims"
+    bg = ThreadPoolExecutor(max_workers=1, thread_name_prefix=f"stamp-{case_id}")
+    stop_stamp = threading.Event()
+    stamp_job = None
+    stamped = case_dir / "upload-stamped.mp4"
     try:
         duration = duration_s if duration_s is not None else probe_duration(video)
         media_sha = sha256_file(video)
         src = source_for(video)
+        pieces = review_mod.plan_pieces(duration, piece_max_s) if review_mod.needs_pieces(duration, long_over_s) else None
         case = {"case": case_id, "created_utc": utc_now(), "video_path": str(video), "video_name": video.name,
                 "video_sha256": media_sha, "duration_s": round(duration, 3), "claims_mode": claims_mode,
                 "report": report_text, "source": src, "replay": client.replay}
+        if pieces:
+            case["review_pieces"] = [list(p) for p in pieces]
         (case_dir / "case.json").write_text(json.dumps(case, indent=1, ensure_ascii=False))
 
+        # a long recording: stamp the whole video in the background while the speech is transcribed
+        stamped = case_dir / "upload-stamped.mp4"
+        if pieces and not client.replay:
+            stamp_job = bg.submit(stamp_mod.make_stamped, video, stamped, duration, 720, stamp_mod.PIECE_KEYINT_S, stop_stamp)
+
+        t0 = time.time()
         st.step("claims", "running")
         cl = claims_mod.extract(client, report_text, claims_mode, use_open=use_open)
         st.step("claims", "done", count=len(cl["claims"]), model=cl["model"])
+        timings["claims"] = round(time.time() - t0, 1)
 
         current = "transcribe"
+        t0 = time.time()
         st.step("transcribe", "running")
         tr = client.transcribe(video, duration, media_sha=media_sha)
         st.step("transcribe", "done", turns=len(tr["turns"]), pieces=tr["pieces"])
+        timings["transcribe"] = round(time.time() - t0, 1)
 
         current = "upload"
-        st.step("upload", "running")
-        media_key = f"{media_sha}:{stamp_mod.STAMP_VERSION}"
-        if client.replay:  # the recorded upload is found by media_key; no need to rebuild the stamped copy
-            fid = client.upload(video, media_key=media_key)
+        t0 = time.time()
+        st.step("upload", "running", **({"pieces": len(pieces)} if pieces else {}))
+        if pieces:
+            keys = [piece_media_key(media_sha, a, b) for a, b in pieces]
+            if client.replay:
+                fids = [client.upload(video, step=f"upload-p{i}", media_key=k) for i, k in enumerate(keys)]
+            else:
+                stamp_job.result()
+                timings["stamp_done_after_s"] = round(time.time() - t_start, 1)
+
+                def up(i):
+                    a, b = pieces[i]
+                    part = stamp_mod.cut_piece(stamped, case_dir / f"upload-p{i}.mp4", a, b)
+                    try:
+                        return client.upload(part, step=f"upload-p{i}", media_key=keys[i])
+                    finally:
+                        part.unlink(missing_ok=True)
+                with ThreadPoolExecutor(max_workers=3) as ex:
+                    fids = list(ex.map(up, range(len(pieces))))
         else:
-            stamped = case_dir / "upload-stamped.mp4"
-            stamp_mod.make_stamped(video, stamped, duration)
-            fid = client.upload(stamped, media_key=media_key)
-            stamped.unlink(missing_ok=True)
-        st.step("upload", "done")
+            media_key = f"{media_sha}:{stamp_mod.STAMP_VERSION}"
+            if client.replay:  # the recorded upload is found by media_key; no need to rebuild the stamped copy
+                fid = client.upload(video, media_key=media_key)
+            else:
+                stamp_mod.make_stamped(video, stamped, duration)
+                fid = client.upload(stamped, media_key=media_key)
+        st.step("upload", "done", **({"pieces": len(pieces)} if pieces else {}))
+        timings["upload"] = round(time.time() - t0, 1)
 
         current = "review"
-        st.step("review", "running")
-        answer, raw = review_mod.review(client, fid, tr["turns"], cl["claims"], duration)
-        (case_dir / "review-raw.json").write_text(json.dumps({"answer": answer, "usage": raw.get("usage"),
-                                                              "status": raw.get("status")}, indent=1, ensure_ascii=False))
-        st.step("review", "done", usage=raw.get("usage"))
+        t0 = time.time()
+        merge_info = None
+        st.step("review", "running", **({"pieces": len(pieces)} if pieces else {}))
+        if pieces:
+            outs = review_mod.review_pieces(client, fids, tr["turns"], cl["claims"], pieces)
+            answer, merge_info = review_mod.merge_answers([o[0] for o in outs], pieces, [c["id"] for c in cl["claims"]])
+            usage = {k: sum((o[1].get("usage") or {}).get(k, 0) or 0 for o in outs) for k in ("input_tokens", "output_tokens")}
+            review_raw = {"answer": answer, "usage": usage, "status": [o[1].get("status") for o in outs], "merge": merge_info,
+                          "pieces": [{"index": i + 1, "window": list(pieces[i]), "answer": o[0], "usage": o[1].get("usage"),
+                                      "status": o[1].get("status")} for i, o in enumerate(outs)]}
+        else:
+            answer, raw = review_mod.review(client, fid, tr["turns"], cl["claims"], duration)
+            usage = raw.get("usage")
+            review_raw = {"answer": answer, "usage": usage, "status": raw.get("status")}
+        (case_dir / "review-raw.json").write_text(json.dumps(review_raw, indent=1, ensure_ascii=False))
+        st.step("review", "done", usage=usage, **({"pieces": len(pieces)} if pieces else {}))
+        timings["review"] = round(time.time() - t0, 1)
 
         current = "verify"
+        t0 = time.time()
         st.step("verify", "running")
         checked = verify_mod.verify(answer, cl["claims"], tr["turns"], duration)
+        checked = review_mod.apply_merge(checked, merge_info)
         st.step("verify", "done", changed=checked["summary"]["changed_by_code"])
+        timings["verify"] = round(time.time() - t0, 1)
 
         result = {"case": case_id, "created_utc": utc_now(), "replay": client.replay,
                   "video": {"name": video.name, "sha256": media_sha, "duration_s": round(duration, 3)},
@@ -119,11 +175,17 @@ def run(case_id: str, video: str | Path, report_text: str, *, claims_mode: str =
                   "claims": checked["claims"], "summary": checked["summary"], "verify_notes": checked["notes"],
                   "verify_version": checked["verify_version"],
                   "spend_usd": round(client.case_spend, 5), "seconds": round(time.time() - t_start, 1)}
+        if pieces:
+            result["review_pieces"] = merge_info["pieces"]
+            result["merge_rule"] = merge_info["rule"]
+            result["timings_s"] = timings
         (case_dir / "result.json").write_text(json.dumps(result, indent=1, ensure_ascii=False))
         if client.record:
             rec_dir = client.recordings / case_id
             rec_dir.mkdir(parents=True, exist_ok=True)
             shutil.copy(case_dir / "result.json", rec_dir / "result.json")
+            if pieces:  # the merged answer, so the evaluation can re-check a long case from recordings/ alone
+                shutil.copy(case_dir / "review-raw.json", rec_dir / "review-raw.json")
             (rec_dir / "case.json").write_text(json.dumps({k: v for k, v in case.items() if k != "video_path"},
                                                           indent=1, ensure_ascii=False))
         st.finish("done", summary=result["summary"], spend_usd=result["spend_usd"])
@@ -132,6 +194,18 @@ def run(case_id: str, video: str | Path, report_text: str, *, claims_mode: str =
         st.step(current, "failed", error=str(e)[:500])
         st.finish("failed", error=f"{type(e).__name__}: {str(e)[:500]}", trace=traceback.format_exc()[-1500:])
         raise
+    finally:
+        # stop a background stamping job of a failed run and remove the stamped copy and any cut piece
+        stop_stamp.set()
+        if stamp_job is not None:
+            try:
+                stamp_job.result(timeout=60)
+            except Exception:  # noqa: BLE001 - cancelled or failed; the run's own error is what matters
+                pass
+        bg.shutdown(wait=False)
+        stamped.unlink(missing_ok=True)
+        for part in case_dir.glob("upload-p*.mp4"):
+            part.unlink(missing_ok=True)
 
 
 def recorded_case(case_id: str, recordings_dir: Path | None = None) -> dict:
@@ -152,7 +226,9 @@ def reverify(case_id: str, runs_dir: Path | None = None, recordings_dir: Path | 
     raw = json.loads((d / "review-raw.json").read_text())
     old_v = result.get("verify_version", 1)
     base = [{k: c.get(k) for k in ("id", "text", "kind", "line")} for c in result["claims"]]
-    checked = verify_mod.verify(raw["answer"], base, result["turns"], result["video"]["duration_s"])
+    answer, merge = review_mod.remerge(raw, [c["id"] for c in base])
+    checked = verify_mod.verify(answer, base, result["turns"], result["video"]["duration_s"])
+    checked = review_mod.apply_merge(checked, merge)
     if old_v != checked["verify_version"]:
         keep = d / f"result-v{old_v}.json"
         if not keep.exists():
