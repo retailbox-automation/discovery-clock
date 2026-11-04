@@ -2,15 +2,22 @@
 
 **Checks every claim in a written incident report against the body-worn camera recording and points to the second where it is, or is not, on the video.**
 
-Discovery Clock checks every claim in a written incident report against the body-worn camera recording. For each claim it gives a status:
+For each claim in the report it returns **On recording** (with the timecode and what is seen or said there), **Not found on recording**, or **Check this claim** (the recording shows something different or only partly supports it). Click a claim and the player jumps to that second. It never says "the officer lied": it points a public defender or prosecutor to the second of footage, and the lawyer looks.
 
-- **On recording**, with the exact timecode and what is seen or said there;
-- **Not found on recording**;
-- **Check this claim**, when the recording shows something different or supports the claim only in part.
+**Demo video (2:38):** VIDEO_URL · **Built:** all code in this repository was written on Nov 4, 2026, during the Meta Global AI Developer Hackathon.
 
-A public defender or prosecutor can then review hours of footage claim by claim instead of watching all of it. Discovery Clock never says "the officer lied". It points to the second of footage and the lawyer looks.
+**At a glance**
+- **Tested on 5 public body-camera videos** (Volusia Sheriff's Office, 39 claims): none of the 10 claims we planted (false or absent) came back as *on recording*; 21 of 29 claims from the agency's own written accounts got a timecode, 3 of them flagged *check*; 8 of 8 timecodes we checked against the frames by eye matched. Answer keys were sealed by hash before the first model run ([eval/RESULTS.md](eval/RESULTS.md)).
+- **Live Meta calls on screen:** `/calls` shows every request and answer with latency and cost. A live run on a 3.7-minute video makes 4 calls and costs about $0.12.
+- **Four Meta models, nothing else at runtime:** Muse Spark 1.3, Muse Voice Transcribe and SAM 3.1 on the Meta Model API; Muse Spark Open (open weights) on Baseten. Plain code checks every model answer and can only move a claim to *check*.
+- **Run it without a key** (recorded live answers for all five cases are in `recordings/`):
 
-Built for the Meta Global AI Developer Hackathon. **Timeline: all code was written on Nov 4, 2026, during the hackathon.**
+```bash
+python3.12 -m venv .venv && .venv/bin/pip install -r requirements.txt
+python scripts/fetch_media.py fy6dRGapw_4
+.venv/bin/python -m discovery_clock replay --case fisherman-fy6dRGapw_4 --video data/media/fy6dRGapw_4.mp4
+DC_REPLAY=1 .venv/bin/python -m discovery_clock serve --port 8765   # open http://127.0.0.1:8765
+```
 
 ![Case page: claims next to the player](docs/screens/case-fisherman-follow.png)
 
